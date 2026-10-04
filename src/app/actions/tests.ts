@@ -112,3 +112,52 @@ export async function deleteTest(id: string) {
   const supabase = await createClient();
   await supabase.from("tests").delete().eq("id", id);
 }
+
+// One-click practice on a single concept (from ARGO weakness lists).
+export async function drillConcept(formData: FormData) {
+  const dim = String(formData.get("dim"));
+  const ref = Number(formData.get("ref"));
+  const name = String(formData.get("name") ?? "concept");
+  const supabase = await createClient();
+  const base = {
+    p_mode: "tutor",
+    p_count: 10,
+    p_name: `Drill · ${name}`,
+    p_exam: null,
+    p_systems: dim === "system" ? [ref] : null,
+    p_disciplines: dim === "discipline" ? [ref] : null,
+    p_competencies: dim === "competency" ? [ref] : null,
+    p_topics: dim === "topic" ? [ref] : null,
+    p_nuggets_only: false,
+    p_seconds_per_question: 90,
+  };
+  let res = await supabase.rpc("create_test", { ...base, p_pool: ["unused", "incorrect"] });
+  if (res.error) res = await supabase.rpc("create_test", { ...base, p_pool: ["all"] });
+  if (res.error) redirect(`/argo?error=${encodeURIComponent("No questions available for that concept yet.")}`);
+  redirect(`/test/${res.data}`);
+}
+
+// Retest topics whose memory is fading (spaced retrieval practice).
+export async function retestTopics(formData: FormData) {
+  const topics = String(formData.get("topics") ?? "")
+    .split(",")
+    .map(Number)
+    .filter(Boolean);
+  if (!topics.length) redirect("/argo");
+  const supabase = await createClient();
+  const { data, error } = await supabase.rpc("create_test", {
+    p_mode: "tutor",
+    p_count: 10,
+    p_name: "Spaced retest",
+    p_exam: null,
+    p_systems: null,
+    p_disciplines: null,
+    p_competencies: null,
+    p_topics: topics,
+    p_pool: ["all"],
+    p_nuggets_only: false,
+    p_seconds_per_question: 90,
+  });
+  if (error) redirect(`/argo?error=${encodeURIComponent(error.message)}`);
+  redirect(`/test/${data}`);
+}

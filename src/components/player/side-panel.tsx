@@ -96,7 +96,7 @@ function Labs() {
             <tbody>
               {s.rows.map((r) => (
                 <tr key={r.name} className="border-b border-border last:border-0">
-                  <td className="py-2 pr-2 align-top text-text">{r.name}</td>
+                  <td className="w-[50%] py-2 pr-3 align-top text-text">{r.name}</td>
                   <td className="py-2 align-top text-right text-muted">{r.range}</td>
                 </tr>
               ))}

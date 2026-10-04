@@ -16,7 +16,7 @@ export function ActivityCalendar({ days, title = "Study activity", subtitle, cla
   return (
     <ChartFrame
       title={title}
-      subtitle={subtitle ?? `${total.toLocaleString()} answers in the last 16 weeks`}
+      subtitle={subtitle ?? `${total.toLocaleString()} ${total === 1 ? "answer" : "answers"} in the last 16 weeks`}
       className={className}
       table={{ columns: ["Date", "Answers"], rows: days.filter((d) => d.n > 0).map((d) => [d.day, d.n]) }}
     >

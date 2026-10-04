@@ -37,7 +37,7 @@ const CONFIDENCE = [
   { v: 3, label: "Sure" },
 ];
 
-export function TestPlayer({ data, initialPosition }: { data: PlayerData; initialPosition?: number }) {
+export function TestPlayer({ data, initialPosition, askConfidence = true }: { data: PlayerData; initialPosition?: number; askConfidence?: boolean }) {
   const router = useRouter();
   const supabase = useMemo(() => createClient(), []);
   const [test, setTest] = useState(data.test);
@@ -241,6 +241,11 @@ export function TestPlayer({ data, initialPosition }: { data: PlayerData; initia
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const t = e.target as HTMLElement;
+      if (e.key === "Escape" && panel) {
+        setPanel(null);
+        (document.activeElement as HTMLElement | null)?.blur();
+        return;
+      }
       if (t.closest("input, textarea, select, [contenteditable=true]") || e.metaKey || e.ctrlKey || e.altKey) return;
       const k = e.key;
       if (/^[a-jA-J]$/.test(k)) {
@@ -388,6 +393,8 @@ export function TestPlayer({ data, initialPosition }: { data: PlayerData; initia
 
             {!locked && isTutor && (
               <div className="mt-6 flex flex-wrap items-center gap-3">
+                {(askConfidence || test.kind === "argo") && (
+                <>
                 <span className="text-[13px] font-semibold text-muted">How sure are you?</span>
                 <div className="flex gap-1">
                   {CONFIDENCE.map((c) => (
@@ -405,6 +412,8 @@ export function TestPlayer({ data, initialPosition }: { data: PlayerData; initia
                     </button>
                   ))}
                 </div>
+                </>
+                )}
                 <Button className="ml-auto" size="lg" onClick={submit} loading={submitting} disabled={!item.state.selected_option_id}>
                   Submit answer
                 </Button>
