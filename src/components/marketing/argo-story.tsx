@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { Clock, Gauge, Repeat2, Scissors, Target, FlaskConical } from "lucide-react";
 import { ArgoMark } from "@/components/brand/logo";
 import { cn } from "@/lib/utils";
@@ -129,7 +129,6 @@ const SIGNALS = [
 ];
 
 function SignalsVisual() {
-  const reduce = useReducedMotion();
   return (
     <Panel>
       <p className="text-[13px] font-semibold text-on-ink-muted">One answer, as ARGO sees it</p>
@@ -137,7 +136,7 @@ function SignalsVisual() {
         {SIGNALS.map((s, i) => (
           <motion.li
             key={s.label}
-            initial={reduce ? false : { opacity: 0, x: 16 }}
+            initial={{ opacity: 0, x: 16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.08 * i, ease: EASE }}
             className="flex items-center gap-3 rounded-[10px] bg-on-ink/[0.04] px-3.5 py-3"
@@ -184,7 +183,6 @@ function divergingVar(v: number) {
 }
 
 function DiagnoseVisual() {
-  const reduce = useReducedMotion();
   return (
     <Panel className="grid gap-6">
       <div>
@@ -196,7 +194,7 @@ function DiagnoseVisual() {
               <span className="h-2.5 overflow-hidden">
                 <motion.span
                   className="block h-full rounded-r-[4px] bg-[var(--series-1)]"
-                  initial={reduce ? false : { width: 0 }}
+                  initial={{ width: 0 }}
                   animate={{ width: `${(e.value / 38) * 100}%` }}
                   transition={{ duration: 0.9, delay: 0.06 * i, ease: EASE }}
                 />
@@ -221,7 +219,7 @@ function DiagnoseVisual() {
               {row.map((v, c) => (
                 <motion.span
                   key={c}
-                  initial={reduce ? false : { opacity: 0 }}
+                  initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.03 * (r * 5 + c) }}
                   className="grid h-8 place-items-center rounded-[4px] text-[11px] font-semibold"
@@ -254,7 +252,6 @@ const MIX = [
 const PROGRESS = [41, 49, 58, 63, 71, 78];
 
 function PrescribeVisual() {
-  const reduce = useReducedMotion();
   const w = 360;
   const h = 120;
   const x = (i: number) => 8 + (i * (w - 16)) / (PROGRESS.length - 1);
@@ -273,7 +270,7 @@ function PrescribeVisual() {
               key={m.label}
               className="h-full first:rounded-l-[4px] last:rounded-r-[4px]"
               style={{ background: m.color }}
-              initial={reduce ? false : { flexGrow: 0.001 }}
+              initial={{ flexGrow: 0.001 }}
               animate={{ flexGrow: m.value }}
               transition={{ duration: 0.9, delay: 0.08 * i, ease: EASE }}
             />
@@ -303,7 +300,7 @@ function PrescribeVisual() {
             strokeWidth={2}
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={reduce ? false : { pathLength: 0 }}
+            initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
             transition={{ duration: 1.4, ease: EASE }}
           />

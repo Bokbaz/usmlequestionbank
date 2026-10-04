@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 // Argo Navis-inspired star field. Decorative, behind the hero; aria-hidden.
 const STARS: [number, number, number][] = [
@@ -13,7 +13,6 @@ const LINES: [number, number][] = [
 ];
 
 export function Constellation({ className }: { className?: string }) {
-  const reduce = useReducedMotion();
   return (
     <svg className={className} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
       <g stroke="currentColor" strokeWidth="0.12" fill="none" opacity="0.5">
@@ -24,7 +23,7 @@ export function Constellation({ className }: { className?: string }) {
             y1={STARS[a][1]}
             x2={STARS[b][0]}
             y2={STARS[b][1]}
-            initial={reduce ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+            initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 2.4, delay: 0.6 + i * 0.18, ease: [0.16, 1, 0.3, 1] }}
             vectorEffect="non-scaling-stroke"
@@ -39,8 +38,8 @@ export function Constellation({ className }: { className?: string }) {
           r={r * 0.22}
           fill="currentColor"
           initial={{ opacity: 0 }}
-          animate={reduce ? { opacity: 0.8 } : { opacity: [0, 0.9, 0.55, 0.9] }}
-          transition={reduce ? { duration: 0 } : { duration: 6 + (i % 5), delay: i * 0.12, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
+          animate={{ opacity: [0, 0.9, 0.55, 0.9] }}
+          transition={{ duration: 6 + (i % 5), delay: i * 0.12, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" }}
         />
       ))}
     </svg>

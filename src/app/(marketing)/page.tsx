@@ -52,7 +52,7 @@ export default async function HomePage() {
                 <p className="eyebrow text-on-ink-muted">USMLE Step 1 · Step 2 CK</p>
               </Reveal>
               <Reveal delay={0.08}>
-                <h1 className="display mt-6 text-[clamp(48px,7.4vw,108px)] font-[820]">
+                <h1 className="display mt-6 text-[clamp(46px,6.8vw,98px)] font-[820]">
                   The question bank that hunts your weaknesses.
                 </h1>
               </Reveal>

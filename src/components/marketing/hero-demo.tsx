@@ -23,10 +23,13 @@ const TIMINGS = [1400, 1500, 1700, 1600, 3200];
 
 export function HeroDemo() {
   const reduce = useReducedMotion();
-  const [step, setStep] = useState(reduce ? 4 : 0);
+  const [step, setStep] = useState(0);
 
   useEffect(() => {
-    if (reduce) return;
+    if (reduce) {
+      setStep(4);
+      return;
+    }
     const t = setTimeout(() => setStep((s) => (s + 1) % 5), TIMINGS[step]);
     return () => clearTimeout(t);
   }, [step, reduce]);
@@ -36,8 +39,8 @@ export function HeroDemo() {
   return (
     <div className="relative mx-auto w-full max-w-[560px]">
       <motion.div
-        initial={reduce ? false : { opacity: 0, y: 40, rotateX: 8 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.25, ease: EASE }}
         className="relative overflow-hidden rounded-[14px] bg-surface text-text shadow-[0_30px_80px_-20px_oklch(0.1_0.06_266/0.6)] ring-1 ring-white/10"
       >
@@ -101,11 +104,11 @@ export function HeroDemo() {
         {step >= 3 && (
           <motion.div
             key="argo"
-            initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.97 }}
+            initial={{ opacity: 0, y: 24, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
+            exit={{ opacity: 0, y: 12 }}
             transition={{ duration: reduce ? 0.15 : 0.7, ease: EASE }}
-            className="relative -mt-10 ml-auto w-[88%] rounded-[12px] border border-white/10 bg-ink-2 p-4 text-on-ink shadow-[0_24px_60px_-18px_oklch(0.05_0.05_266/0.8)] sm:-mr-8"
+            className="relative -mt-5 ml-auto w-[88%] rounded-[12px] border border-white/10 bg-ink-2 p-4 text-on-ink shadow-[0_24px_60px_-18px_oklch(0.05_0.05_266/0.8)] sm:-mr-8"
           >
             <div className="flex items-center gap-2">
               <ArgoMark className="size-4 text-on-ink" />
