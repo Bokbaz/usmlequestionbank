@@ -2,9 +2,10 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, CircleDashed } from "lucide-react";
 import { PageHeader, Panel, SectionTitle } from "@/components/app/page-header";
 import { Stat, StatCell, StatRow } from "@/components/charts/stat";
-import { aiEnabled } from "@/lib/ai/client";
+import { aiEnabled, usageCostUsd, type AiUsage } from "@/lib/ai/client";
 import { monthlyWriteLimit } from "@/lib/argo/write";
 import { createClient } from "@/lib/supabase/server";
+import { daysAgoIso } from "@/lib/utils";
 
 type Overview = {
   questions: number;
@@ -24,12 +25,16 @@ type GenStats = { accepted: number; rejected: number; failed: number; last_7d: n
 
 export default async function AdminOverviewPage() {
   const supabase = await createClient();
-  const [{ data: o }, { data: gen }, { count: reviews }, { data: nextDaily }] = await Promise.all([
+  const since = daysAgoIso(30);
+  const [{ data: o }, { data: gen }, { count: reviews }, { data: nextDaily }, { data: recentGen }] = await Promise.all([
     supabase.rpc("admin_overview"),
     supabase.rpc("admin_argo_generation_stats"),
     supabase.from("nugget_reviews").select("id", { count: "exact", head: true }).eq("status", "open"),
     supabase.from("daily_challenges").select("day").gte("day", new Date().toISOString().slice(0, 10)).order("day", { ascending: false }).limit(1),
+    supabase.from("argo_generations").select("status, usage").gte("created_at", since).limit(5000),
   ]);
+  const spend = (recentGen ?? []).reduce((sum, r) => sum + usageCostUsd(r.usage as Partial<AiUsage>), 0);
+  const accepted30 = (recentGen ?? []).filter((r) => r.status === "accepted").length;
   const ov = o as Overview;
   const g = gen as GenStats | null;
   const ai = aiEnabled();
@@ -107,7 +112,11 @@ export default async function AdminOverviewPage() {
                   <dd className="tabular text-[22px] font-[750]">{g?.failed ?? 0}</dd>
                 </div>
               </dl>
-              <p className="mt-4 text-[13px] text-muted">
+              <p className="mt-4 text-[14px]">
+                Claude spend, last 30 days: <strong className="tabular">${spend.toFixed(2)}</strong>
+                {accepted30 > 0 && <span className="text-muted"> · ${(spend / accepted30).toFixed(2)} per accepted question</span>}
+              </p>
+              <p className="mt-2 text-[13px] text-muted">
                 {g?.last_7d ?? 0} drafts in the last 7 days for {g?.students ?? 0} students. Limit {monthlyWriteLimit()} drafts per subscriber per 30 days (ARGO_WRITE_MONTHLY_LIMIT). Generated questions stay private to the student who asked for them.
               </p>
             </>

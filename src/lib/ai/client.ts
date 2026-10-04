@@ -93,6 +93,16 @@ export function addUsage(a: AiUsage, b: AiUsage): AiUsage {
 
 export const NO_USAGE: AiUsage = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
 
+// USD per million tokens for MODEL (cache writes bill at 1.25x input).
+const PRICE_PER_MTOK = { input: 4, output: 20, cacheRead: 0.2, cacheWrite: 5 };
+
+export function usageCostUsd(u: Partial<AiUsage>) {
+  return (
+    ((u.input ?? 0) * PRICE_PER_MTOK.input + (u.output ?? 0) * PRICE_PER_MTOK.output + (u.cacheRead ?? 0) * PRICE_PER_MTOK.cacheRead + (u.cacheWrite ?? 0) * PRICE_PER_MTOK.cacheWrite) /
+    1_000_000
+  );
+}
+
 function toAiError(error: unknown): AiError {
   if (error instanceof Anthropic.RateLimitError) return new AiError("Claude is busy. Try again in a minute.", "rate_limited");
   if (error instanceof Anthropic.AuthenticationError) return new AiError("ANTHROPIC_API_KEY was rejected", "unavailable");

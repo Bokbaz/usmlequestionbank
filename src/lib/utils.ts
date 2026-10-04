@@ -45,3 +45,8 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://argonaut-us
 export function daysUntil(isoDate: string) {
   return Math.ceil((new Date(isoDate).getTime() - Date.now()) / 86_400_000);
 }
+
+// ISO timestamp n days before now. Server-side helper.
+export function daysAgoIso(n: number) {
+  return new Date(Date.now() - n * 86_400_000).toISOString();
+}
