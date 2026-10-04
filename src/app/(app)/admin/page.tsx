@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2, CircleDashed } from "lucide-react";
 import { PageHeader, Panel, SectionTitle } from "@/components/app/page-header";
 import { Stat, StatCell, StatRow } from "@/components/charts/stat";
 import { aiEnabled } from "@/lib/ai/client";
-import { weeklyWriteLimit } from "@/lib/argo/write";
+import { monthlyWriteLimit } from "@/lib/argo/write";
 import { createClient } from "@/lib/supabase/server";
 
 type Overview = {
@@ -90,7 +90,7 @@ export default async function AdminOverviewPage() {
         <Panel className="p-5">
           <SectionTitle>ARGO question writing</SectionTitle>
           {!ai ? (
-            <p className="text-[14px] text-muted">Off. With ANTHROPIC_API_KEY set, ARGO students can ask for new questions on concepts where the bank runs short. Every draft is solved blind and audited by separate Claude calls before a student sees it.</p>
+            <p className="text-[14px] text-muted">Off. With ANTHROPIC_API_KEY set, students on the $4.99 add-on can ask for new questions on concepts where the bank runs short. Every draft is solved blind and audited by separate Claude calls before a student sees it.</p>
           ) : (
             <>
               <dl className="grid grid-cols-3 gap-4">
@@ -108,7 +108,7 @@ export default async function AdminOverviewPage() {
                 </div>
               </dl>
               <p className="mt-4 text-[13px] text-muted">
-                {g?.last_7d ?? 0} drafts in the last 7 days for {g?.students ?? 0} students. Limit {weeklyWriteLimit()} per student per week (ARGO_WRITE_WEEKLY_LIMIT). Generated questions stay private to the student who asked for them.
+                {g?.last_7d ?? 0} drafts in the last 7 days for {g?.students ?? 0} students. Limit {monthlyWriteLimit()} drafts per subscriber per 30 days (ARGO_WRITE_MONTHLY_LIMIT). Generated questions stay private to the student who asked for them.
               </p>
             </>
           )}

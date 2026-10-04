@@ -31,7 +31,7 @@ export default async function AdminUsersPage({ searchParams }: PageProps<"/admin
   const users = (data ?? []) as UserRow[];
   return (
     <>
-      <PageHeader title="Users" description="Search accounts and grant plans manually (scholarships, partners, refunds). Stripe subscriptions update plans on their own." />
+      <PageHeader title="Users" description="Search accounts and grant access manually (scholarships, partners). Stripe purchases and refunds update access on their own." />
       <form className="mb-4 flex gap-2" action="/admin/users">
         <Input name="q" defaultValue={q} placeholder="Email, name or username" className="h-9 w-72 text-[14px]" />
         <Button type="submit" variant="secondary">

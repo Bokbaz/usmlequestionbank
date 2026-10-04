@@ -4,7 +4,7 @@ import Link from "next/link";
 import { DropdownMenu } from "radix-ui";
 import { useTheme } from "next-themes";
 import { ChevronsUpDown, CreditCard, LogOut, Moon, Settings, Sun } from "lucide-react";
-import { PLANS } from "@/lib/plans";
+import { PLAN_NAME } from "@/lib/plans";
 
 type ShellUser = { name: string; email: string; plan: "free" | "core" | "argo"; isAdmin: boolean; streak: number };
 
@@ -23,7 +23,7 @@ export function UserMenu({ user }: { user: ShellUser }) {
         <span className="min-w-0 flex-1">
           <span className="block truncate text-[13.5px] font-semibold text-text">{user.name}</span>
           <span className="block truncate text-[12px] text-muted">
-            {user.isAdmin ? "Admin" : PLANS[user.plan].name}
+            {user.isAdmin ? "Admin" : PLAN_NAME[user.plan]}
             {user.streak > 0 ? ` · ${user.streak}-day streak` : ""}
           </span>
         </span>

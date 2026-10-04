@@ -26,10 +26,10 @@ export default async function QbankPage({ searchParams }: PageProps<"/qbank">) {
       {plan === "free" && (
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-[10px] border border-border bg-brand-soft px-5 py-3.5">
           <p className="text-[14px] text-brand-strong">
-            <strong>Free plan:</strong> you are drawing from the free sample questions. The full bank unlocks with QBank.
+            <strong>Free plan:</strong> you are drawing from the free sample questions. Every question unlocks with Full access, $48 once.
           </p>
           <Link href="/pricing" className="text-[14px] font-semibold text-brand-strong underline underline-offset-2">
-            See plans
+            Unlock
           </Link>
         </div>
       )}

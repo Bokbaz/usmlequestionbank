@@ -134,7 +134,7 @@ export function SettingsForm({ initial }: { initial: Initial }) {
             <AlertDialog.Content className="fixed left-1/2 top-1/2 z-50 w-[min(440px,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-[12px] border border-border bg-surface p-6 shadow-[var(--shadow-float)]">
               <AlertDialog.Title className="text-[18px] font-[700]">Delete your account?</AlertDialog.Title>
               <AlertDialog.Description className="mt-2 text-[14.5px] text-muted">
-                All answers, notes, flashcards and ARGO history will be erased. Active subscriptions should be canceled in billing first.
+                All answers, notes, flashcards and ARGO history will be erased, and the question-writing add-on, if active, is canceled.
               </AlertDialog.Description>
               <div className="mt-6 flex justify-end gap-2">
                 <AlertDialog.Cancel asChild>

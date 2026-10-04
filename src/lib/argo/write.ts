@@ -12,13 +12,15 @@ import { effectiveMastery, recall, strength } from "./model";
 export const WRITE_DIMS = ["system", "discipline", "competency", "topic", "nugget"] as const;
 export type WriteDim = (typeof WRITE_DIMS)[number];
 
-export function weeklyWriteLimit() {
-  const n = Number(process.env.ARGO_WRITE_WEEKLY_LIMIT ?? 15);
+// Drafts per student per rolling 30 days, matching the monthly add-on price. Rejected drafts
+// count too: they cost the same to write and verify.
+export function monthlyWriteLimit() {
+  const n = Number(process.env.ARGO_WRITE_MONTHLY_LIMIT ?? 15);
   return Number.isFinite(n) ? Math.max(0, Math.floor(n)) : 15;
 }
 
-export async function writesThisWeek(sb: SupabaseClient, userId: string) {
-  const since = new Date(Date.now() - 7 * 86_400_000).toISOString();
+export async function writesThisMonth(sb: SupabaseClient, userId: string) {
+  const since = new Date(Date.now() - 30 * 86_400_000).toISOString();
   const { count } = await sb.from("argo_generations").select("id", { count: "exact", head: true }).eq("user_id", userId).gte("created_at", since);
   return count ?? 0;
 }

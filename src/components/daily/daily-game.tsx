@@ -154,7 +154,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
   if (state.state === "started" && p) {
     const urgent = remainingMs < 20_000;
     return (
-      <div className="overflow-hidden rounded-[14px] border border-border bg-surface">
+      <div className="overflow-clip rounded-[14px] border border-border bg-surface">
         <div className="sticky top-16 z-10 flex items-center justify-between gap-4 bg-ink px-5 py-3 text-on-ink">
           <p className="text-[14px] font-semibold">Daily Challenge #{state.number}</p>
           <div className="flex items-center gap-3">

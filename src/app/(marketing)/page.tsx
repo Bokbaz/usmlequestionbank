@@ -179,7 +179,7 @@ export default async function HomePage() {
           <div className="mx-auto max-w-[1240px] px-5 py-28 md:px-8 md:py-36">
             <Reveal className="mx-auto max-w-[720px] text-center">
               <p className="eyebrow text-brand">Pricing</p>
-              <h2 className="display mt-5 text-[clamp(36px,4.6vw,64px)] font-[800]">Start free. Upgrade when it&apos;s working.</h2>
+              <h2 className="display mt-5 text-[clamp(36px,4.6vw,64px)] font-[800]">Start free. Pay once when it&apos;s working.</h2>
             </Reveal>
             <Reveal delay={0.1} className="mt-14">
               <PricingTable />

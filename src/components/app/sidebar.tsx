@@ -59,9 +59,9 @@ function SidebarBody({ user, onNavigate }: { user: ShellUser; onNavigate?: () =>
       {user.plan === "free" && (
         <div className="mx-3 mb-3 rounded-[10px] bg-ink p-3.5 text-on-ink">
           <p className="text-[13.5px] font-semibold">Unlock the full bank</p>
-          <p className="mt-1 text-[12.5px] leading-snug text-on-ink-muted">Every question, the Library, and ARGO&apos;s adaptive sessions.</p>
+          <p className="mt-1 text-[12.5px] leading-snug text-on-ink-muted">Every question, the Library and ARGO analytics. One payment, no subscription.</p>
           <Link href="/pricing" onClick={onNavigate} className="mt-3 inline-flex h-8 items-center rounded-[6px] bg-on-ink px-3 text-[12.5px] font-semibold text-ink hover:bg-white/90">
-            See plans
+            Unlock for $48
           </Link>
         </div>
       )}

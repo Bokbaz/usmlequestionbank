@@ -1,57 +1,81 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { createClient } from "@/lib/supabase/server";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { effectivePlan, getProfile, getUser } from "@/lib/auth";
+import { writerAddonActive } from "@/lib/billing";
+import { OFFERS, planAllows, type OfferKey } from "@/lib/plans";
 import { getStripe } from "@/lib/stripe";
-import { PRICES, PLANS, type PriceKey } from "@/lib/plans";
+import { createAdminClient } from "@/lib/supabase/admin";
 
-// GET /api/stripe/checkout?price=argo_3m  -> redirects to Stripe Checkout.
+// GET /api/stripe/checkout?offer=access|writer  -> redirects to Stripe Checkout.
 export async function GET(request: NextRequest) {
-  const url = new URL(request.url);
-  const priceKey = url.searchParams.get("price") as PriceKey | null;
-  if (!priceKey || !(priceKey in PRICES)) return NextResponse.redirect(new URL("/pricing", url.origin));
+  const origin = request.nextUrl.origin;
+  const offerKey = request.nextUrl.searchParams.get("offer") as OfferKey | null;
+  if (!offerKey || !(offerKey in OFFERS)) return NextResponse.redirect(new URL("/pricing", origin));
+  const back = (q: string) => NextResponse.redirect(new URL(`/settings/billing?${q}`, origin));
 
-  const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getUser();
-  if (!auth.user) {
-    return NextResponse.redirect(new URL(`/signup?next=${encodeURIComponent(`/api/stripe/checkout?price=${priceKey}`)}`, url.origin));
-  }
-  const stripe = getStripe();
-  if (!stripe) return NextResponse.redirect(new URL("/settings/billing?error=stripe_not_configured", url.origin));
-
-  const price = PRICES[priceKey];
+  const user = await getUser();
+  if (!user) return NextResponse.redirect(new URL(`/signup?next=${encodeURIComponent(`/api/stripe/checkout?offer=${offerKey}`)}`, origin));
+  const profile = await getProfile();
+  const plan = effectivePlan(profile);
   const admin = createAdminClient();
-  const { data: profile } = await admin.from("profiles").select("stripe_customer_id, display_name").eq("id", auth.user.id).single();
+
+  if (offerKey === "access" && planAllows(plan, "argo")) return back("owned=access");
+  if (offerKey === "writer") {
+    if (!planAllows(plan, "argo")) return back("error=needs_access");
+    if (await writerAddonActive(admin, user.id)) return back("owned=writer");
+  }
+
+  const stripe = getStripe();
+  if (!stripe) return back("error=stripe_not_configured");
+
   let customer = profile?.stripe_customer_id ?? null;
   if (!customer) {
-    const c = await stripe.customers.create({
-      email: auth.user.email,
-      name: profile?.display_name ?? undefined,
-      metadata: { user_id: auth.user.id },
-    });
+    const c = await stripe.customers.create({ email: user.email, name: profile?.display_name ?? undefined, metadata: { user_id: user.id } });
     customer = c.id;
-    await admin.from("profiles").update({ stripe_customer_id: customer }).eq("id", auth.user.id);
+    await admin.from("profiles").update({ stripe_customer_id: customer }).eq("id", user.id);
   }
 
-  const session = await stripe.checkout.sessions.create({
-    mode: "subscription",
+  const offer = OFFERS[offerKey];
+  const metadata = { user_id: user.id, offer: offerKey };
+  const common = {
     customer,
-    client_reference_id: auth.user.id,
+    client_reference_id: user.id,
     allow_promotion_codes: true,
-    line_items: [
-      {
-        quantity: 1,
-        price_data: {
-          currency: "usd",
-          unit_amount: Math.round(price.amountUsd * 100),
-          recurring: { interval: "month", interval_count: price.months },
-          product_data: { name: `Argonaut ${PLANS[price.tier].name} (${price.label})` },
-        },
-      },
-    ],
-    subscription_data: { metadata: { user_id: auth.user.id, price_key: priceKey, tier: price.tier } },
-    metadata: { user_id: auth.user.id, price_key: priceKey, tier: price.tier },
-    success_url: `${url.origin}/settings/billing?success=1`,
-    cancel_url: `${url.origin}/pricing?canceled=1`,
-  });
+    metadata,
+    success_url: `${origin}/settings/billing?success=${offerKey}`,
+    cancel_url: `${origin}/pricing?canceled=1`,
+  };
+  const session =
+    offerKey === "access"
+      ? await stripe.checkout.sessions.create({
+          ...common,
+          mode: "payment",
+          line_items: [
+            {
+              quantity: 1,
+              price_data: {
+                currency: "usd",
+                unit_amount: Math.round(offer.amountUsd * 100),
+                product_data: { name: "Argonaut USMLE: Full access", description: offer.tagline },
+              },
+            },
+          ],
+          payment_intent_data: { metadata },
+        })
+      : await stripe.checkout.sessions.create({
+          ...common,
+          mode: "subscription",
+          line_items: [
+            {
+              quantity: 1,
+              price_data: {
+                currency: "usd",
+                unit_amount: Math.round(offer.amountUsd * 100),
+                recurring: { interval: "month" },
+                product_data: { name: "Argonaut USMLE: ARGO question writing", description: offer.tagline },
+              },
+            },
+          ],
+          subscription_data: { metadata: { ...metadata, price_key: "writer" } },
+        });
   return NextResponse.redirect(session.url!, { status: 303 });
 }

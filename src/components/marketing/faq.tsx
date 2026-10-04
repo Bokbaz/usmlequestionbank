@@ -25,8 +25,12 @@ const QA = [
     a: "Step 1 and Step 2 CK, tagged to the official USMLE content outline. Step 3 content is planned.",
   },
   {
-    q: "Can I cancel?",
-    a: "Anytime, from Settings. You keep access until the end of the period you paid for.",
+    q: "Is it a subscription?",
+    a: "No. Full access is one $48 payment that unlocks every question, the Library and ARGO analytics, with nothing to renew. The only recurring charge is the optional question-writing add-on at $4.99 a month, which you can cancel anytime from Settings.",
+  },
+  {
+    q: "What does the question-writing add-on do?",
+    a: "When ARGO runs short of unseen questions on a concept you keep missing, it writes new ones built around the wrong answers you tend to choose. Every draft is answered blind and fact-checked by separate reviews before you see it, and drafts that fail are discarded.",
   },
 ];
 

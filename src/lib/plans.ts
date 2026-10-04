@@ -1,57 +1,60 @@
-// Commercial configuration. Prices are placeholders the owner can change in one place;
-// Stripe Checkout uses inline price data, so no Stripe dashboard setup is required.
+// Commercial configuration, in one place. Stripe Checkout uses inline price data, so no
+// Stripe dashboard setup is needed beyond the API key and webhook.
+//
+// Two products:
+//   Full access           $48 once     every question, the Library and ARGO analytics; never expires
+//   ARGO question writing $4.99/month  add-on for full-access students: new questions written
+//                                      for their weakest concepts
 
 export type PlanTier = "free" | "core" | "argo";
 
+// "core" (bank without ARGO) is no longer sold; it stays for accounts granted it manually.
 export const PLAN_RANK: Record<PlanTier, number> = { free: 0, core: 1, argo: 2 };
 
-export const PLANS: Record<PlanTier, { name: string; tagline: string; features: string[] }> = {
-  free: {
-    name: "Free",
-    tagline: "Play the Daily Challenge and sample the bank.",
-    features: [
-      "Daily Challenge and global leaderboard",
-      "Free sample questions with full explanations",
-      "Free Library chapters",
-      "Basic performance stats",
-    ],
-  },
-  core: {
-    name: "QBank",
-    tagline: "The full question bank, explanations and Library.",
+export const PLAN_NAME: Record<PlanTier, string> = { free: "Free", core: "QBank", argo: "Full access" };
+
+export const OFFERS = {
+  access: {
+    name: "Full access",
+    amountUsd: 48,
+    mode: "payment",
+    tagline: "The whole bank and ARGO analytics. One payment, no subscription.",
     features: [
       "Every question, tutor and timed modes",
       "Explanations for every answer choice",
-      "Complete high-yield Library",
-      "Performance by system, discipline and task",
-      "Notebook and flashcards",
-    ],
-  },
-  argo: {
-    name: "QBank + ARGO",
-    tagline: "Everything, plus the engine that hunts your weaknesses.",
-    features: [
-      "Everything in QBank",
+      "The complete high-yield Library",
       "ARGO adaptive sessions built from your weaknesses",
       "Deep analytics: mastery map, error types, calibration, stamina",
-      "Confusion-pair drills and spaced retesting",
-      "AI-crafted practice questions when the bank runs out",
+      "Confusion-pair drills, spaced retests, Nuggets, notebook and flashcards",
     ],
   },
-};
+  writer: {
+    name: "ARGO question writing",
+    amountUsd: 4.99,
+    mode: "subscription",
+    tagline: "New questions written for the concepts you keep missing.",
+    features: [
+      "Fresh questions when the bank runs short on a weakness",
+      "Built around the distractors you keep choosing",
+      "Each one solved blind and fact-checked before you see it",
+      "Cancel anytime",
+    ],
+  },
+} as const;
 
-export type PriceKey = "core_1m" | "core_3m" | "argo_1m" | "argo_3m";
+export type OfferKey = keyof typeof OFFERS;
 
-export const PRICES: Record<
-  PriceKey,
-  { tier: Exclude<PlanTier, "free">; label: string; months: number; amountUsd: number; perMonthUsd: number; badge?: string }
-> = {
-  core_1m: { tier: "core", label: "1 month", months: 1, amountUsd: 39, perMonthUsd: 39 },
-  core_3m: { tier: "core", label: "3 months", months: 3, amountUsd: 99, perMonthUsd: 33, badge: "Save 15%" },
-  argo_1m: { tier: "argo", label: "1 month", months: 1, amountUsd: 69, perMonthUsd: 69 },
-  argo_3m: { tier: "argo", label: "3 months", months: 3, amountUsd: 179, perMonthUsd: 59.67, badge: "Save 14%" },
-};
+export const FREE_FEATURES = [
+  "Daily Challenge and global leaderboard",
+  "Free sample questions with full explanations",
+  "Free Library chapters",
+  "Basic performance stats",
+];
 
 export function planAllows(plan: PlanTier | null | undefined, min: PlanTier) {
   return PLAN_RANK[plan ?? "free"] >= PLAN_RANK[min];
+}
+
+export function formatUsd(n: number) {
+  return Number.isInteger(n) ? `$${n}` : `$${n.toFixed(2)}`;
 }

@@ -3,7 +3,8 @@ import * as z from "zod";
 import { AiError, aiEnabled } from "@/lib/ai/client";
 import { aiErrorResponse } from "@/lib/ai/http";
 import { writeVerifiedQuestion } from "@/lib/ai/writer";
-import { WRITE_DIMS, buildWriterContext, logGeneration, saveWrittenQuestion, weeklyWriteLimit, writesThisWeek } from "@/lib/argo/write";
+import { WRITE_DIMS, buildWriterContext, logGeneration, monthlyWriteLimit, saveWrittenQuestion, writesThisMonth } from "@/lib/argo/write";
+import { writerAddonActive } from "@/lib/billing";
 import { effectivePlan, getProfile, getUser } from "@/lib/auth";
 import { planAllows } from "@/lib/plans";
 import { createAdminClient } from "@/lib/supabase/admin";
@@ -18,7 +19,7 @@ export async function POST(request: Request) {
   const user = await getUser();
   if (!user) return NextResponse.json({ error: "Sign in first" }, { status: 401 });
   const profile = await getProfile();
-  if (!planAllows(effectivePlan(profile), "argo")) return NextResponse.json({ error: "ARGO question writing is part of the ARGO plan" }, { status: 402 });
+  if (!planAllows(effectivePlan(profile), "argo")) return NextResponse.json({ error: "Question writing needs Full access and the question-writing add-on" }, { status: 402 });
   if (!aiEnabled()) return NextResponse.json({ error: "Question writing is not switched on yet" }, { status: 503 });
   const parsed = Body.safeParse(await request.json().catch(() => null));
   if (!parsed.success) return NextResponse.json({ error: "Invalid request" }, { status: 400 });
@@ -26,10 +27,13 @@ export async function POST(request: Request) {
 
   const service = createAdminClient();
   const isAdmin = profile?.role === "admin";
-  const limit = weeklyWriteLimit();
-  const used = await writesThisWeek(service, user.id);
+  if (!isAdmin && !(await writerAddonActive(service, user.id))) {
+    return NextResponse.json({ error: "Question writing is a $4.99 monthly add-on. Turn it on in Plan and billing." }, { status: 402 });
+  }
+  const limit = monthlyWriteLimit();
+  const used = await writesThisMonth(service, user.id);
   if (!isAdmin && used >= limit) {
-    return NextResponse.json({ error: `You have used this week's ${limit} new questions. More unlock as the week rolls over.`, remaining: 0 }, { status: 429 });
+    return NextResponse.json({ error: `You have used this month's ${limit} new questions. More unlock as older ones age past 30 days.`, remaining: 0 }, { status: 429 });
   }
 
   const session = await createClient();

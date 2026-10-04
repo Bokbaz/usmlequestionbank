@@ -19,7 +19,7 @@ const PER_RUN = 3;
 
 // Lets an ARGO student ask for new questions when the bank runs short on a weak concept.
 // Each question is written and verified server-side; this tracks the parallel requests.
-export function ArgoWriter({ targets, remaining }: { targets: Target[]; remaining: number | null }) {
+export function ArgoWriter({ targets, remaining, subscribed }: { targets: Target[]; remaining: number | null; subscribed: boolean }) {
   const router = useRouter();
   const [target, setTarget] = useState(targets[0]);
   const [slots, setSlots] = useState<Slot[]>([]);
@@ -66,6 +66,25 @@ export function ArgoWriter({ targets, remaining }: { targets: Target[]; remainin
       }
       router.push(`/test/${res.id}`);
     });
+  }
+
+  if (!subscribed) {
+    return (
+      <div className="mt-4 rounded-[8px] bg-panel p-4">
+        <p className="flex items-start gap-2 text-[13.5px]">
+          <Sparkles className="mt-0.5 size-4 shrink-0 text-brand" />
+          <span>
+            Running low on unseen questions for <strong>{target.name}</strong>. With question writing, ARGO writes new ones aimed at the answers you keep getting wrong, each solved blind and
+            fact-checked before you see it.
+          </span>
+        </p>
+        <div className="mt-3 pl-6">
+          <Button asChild size="sm" variant="secondary">
+            <a href="/api/stripe/checkout?offer=writer">Add question writing, $4.99 a month</a>
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -126,7 +145,7 @@ export function ArgoWriter({ targets, remaining }: { targets: Target[]; remainin
             Write {count} new {count === 1 ? "question" : "questions"}
           </Button>
         )}
-        {left != null && <span className="text-[12.5px] text-muted">{left} left this week</span>}
+        {left != null && <span className="text-[12.5px] text-muted">{left} left this month</span>}
       </div>
     </div>
   );

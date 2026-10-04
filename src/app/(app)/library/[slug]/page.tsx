@@ -58,13 +58,13 @@ export default async function ArticlePage({ params }: PageProps<"/library/[slug]
         ) : (
           <div className="mt-10 max-w-[68ch] rounded-[12px] bg-ink p-7 text-on-ink">
             <p className="flex items-center gap-2 text-[17px] font-[700]">
-              <Lock className="size-4" /> This chapter is part of QBank
+              <Lock className="size-4" /> This chapter is part of Full access
             </p>
             <p className="mt-2 text-[15px] leading-relaxed text-on-ink-muted">
-              The full Library unlocks with QBank: every chapter, linked to the questions that test it.
+              The full Library unlocks with Full access, a single $48 payment: every chapter, linked to the questions that test it.
             </p>
             <Button asChild variant="ink" size="lg" className="mt-5">
-              <Link href="/pricing?from=library">See plans</Link>
+              <Link href="/pricing?from=library">Unlock Full access</Link>
             </Button>
           </div>
         )}

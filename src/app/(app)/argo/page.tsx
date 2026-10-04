@@ -19,7 +19,8 @@ import { createClient } from "@/lib/supabase/server";
 import { drillConcept, retestTopics, startArgoSession } from "@/app/actions/tests";
 import { pct } from "@/lib/utils";
 import { aiEnabled } from "@/lib/ai/client";
-import { weeklyWriteLimit, writesThisWeek } from "@/lib/argo/write";
+import { monthlyWriteLimit, writesThisMonth } from "@/lib/argo/write";
+import { writerAddonActive } from "@/lib/billing";
 import { ArgoWriter } from "./argo-writer";
 
 export const metadata: Metadata = { title: "ARGO" };
@@ -72,7 +73,7 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
             </ul>
             <Button asChild variant="ink" size="lg" className="mt-6">
               <Link href="/pricing?from=argo">
-                See ARGO plans <ArrowRight className="size-4" />
+                Unlock for $48 <ArrowRight className="size-4" />
               </Link>
             </Button>
           </Panel>
@@ -93,7 +94,9 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
     exam: profile?.target_exam ?? null,
   });
   const canWrite = aiEnabled() && preview.shortfall.length > 0;
-  const writesLeft = canWrite && profile.role !== "admin" ? Math.max(0, weeklyWriteLimit() - (await writesThisWeek(supabase, profile.id))) : null;
+  const isAdmin = profile.role === "admin";
+  const hasWriter = canWrite && (isAdmin || (await writerAddonActive(supabase, profile.id)));
+  const writesLeft = hasWriter && !isAdmin ? Math.max(0, monthlyWriteLimit() - (await writesThisMonth(supabase, profile.id))) : null;
   const mixEntries = (Object.entries(preview.mix) as [keyof typeof MIX_LABEL, number][]).filter(([, v]) => v > 0);
   const totalMix = mixEntries.reduce((s, [, v]) => s + v, 0);
   const errorParam = typeof sp.error === "string" ? sp.error : null;
@@ -181,7 +184,7 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
                 <p className="mt-2 text-[13.5px] text-muted">Calibration session: ARGO samples broadly until it has enough evidence to target.</p>
               )}
               {canWrite ? (
-                <ArgoWriter targets={preview.shortfall.slice(0, 3)} remaining={writesLeft} />
+                <ArgoWriter targets={preview.shortfall.slice(0, 3)} remaining={writesLeft} subscribed={hasWriter} />
               ) : (
                 preview.shortfall.length > 0 && (
                   <p className="mt-4 flex gap-2 rounded-[8px] bg-panel p-3 text-[13px] text-muted">
