@@ -303,7 +303,7 @@ export function Importer({ ai }: { ai: boolean }) {
               dragging ? "border-brand bg-brand-soft" : "border-border-strong bg-surface hover:border-brand",
             )}
           >
-            <Upload className="size-6 text-brand" />
+            <Upload className="size-6 text-brand-strong" />
             <span className="text-[15px] font-semibold">Drop a .txt file or click to choose</span>
             <span className="text-[13px] text-muted">Any size. Parsing happens in your browser before anything is saved.</span>
             <input
@@ -426,7 +426,7 @@ export function Importer({ ai }: { ai: boolean }) {
       <div className="rounded-[10px] border border-border bg-surface p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-3">
-            <FileText className="size-5 shrink-0 text-brand" />
+            <FileText className="size-5 shrink-0 text-brand-strong" />
             <div className="min-w-0">
               <p className="truncate text-[15px] font-semibold">{fileName ?? "Pasted text"}</p>
               <p className="text-[13px] text-muted">
@@ -493,7 +493,7 @@ export function Importer({ ai }: { ai: boolean }) {
           {ai && (
             <div className="grid content-start gap-1.5">
               <p className="flex items-center gap-1.5 text-[13px] font-semibold">
-                <Sparkles className="size-3.5 text-brand" /> AI assist
+                <Sparkles className="size-3.5 text-brand-strong" /> AI assist
               </p>
               <div className="flex flex-wrap gap-2">
                 <Button size="sm" variant="secondary" onClick={classifyAll} disabled={!toClassify.length || aiTask != null}>

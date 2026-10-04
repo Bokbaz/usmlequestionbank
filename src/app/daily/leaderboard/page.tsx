@@ -75,7 +75,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps<"/dail
                       <span className="mr-2">{flagEmoji(r.country)}</span>
                       <span className="font-semibold">{r.display_name || r.username}</span>
                       <span className="ml-2 text-[12.5px] text-faint">@{r.username}</span>
-                      {r.is_me && <span className="ml-2 text-[12px] font-semibold text-brand">You</span>}
+                      {r.is_me && <span className="ml-2 text-[12px] font-semibold text-brand-strong">You</span>}
                     </td>
                     <td className="tabular px-4 py-3 text-right text-muted">{r.is_correct ? formatSeconds(r.time_ms) : "–"}</td>
                     <td className="tabular px-4 py-3 text-right font-[700]">{r.score}</td>

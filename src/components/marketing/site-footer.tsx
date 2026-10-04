@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Logo } from "@/components/brand/logo";
 
 const COLS = [
   {
@@ -31,13 +30,11 @@ const COLS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink text-on-ink">
-      <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-16 md:grid-cols-[1.4fr_repeat(3,1fr)] md:px-8">
-        <div className="max-w-[34ch]">
-          <Logo tone="inverse" />
-          <p className="mt-4 text-[14px] leading-relaxed text-on-ink-muted">
-            USMLE preparation built around one idea: practice should adapt to the student. Powered by ARGO.
-          </p>
+    <footer className="overflow-hidden bg-ink text-on-ink">
+      <div className="mx-auto grid max-w-[1320px] gap-12 px-5 pb-12 pt-20 md:grid-cols-[1.4fr_repeat(3,1fr)] md:px-8">
+        <div className="max-w-[36ch]">
+          <p className="display text-[26px] font-[850] leading-[1.05]">A question bank that runs like an F1 team.</p>
+          <p className="mt-4 text-[15px] leading-relaxed text-on-ink-muted">Big-bank quality for $48, once. Built to get you the score.</p>
         </div>
         {COLS.map((c) => (
           <div key={c.title}>
@@ -45,7 +42,7 @@ export function SiteFooter() {
             <ul className="mt-4 grid gap-2.5">
               {c.links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-[14px] text-on-ink/85 transition-colors hover:text-on-ink">
+                  <Link href={l.href} className="text-[14.5px] text-on-ink/85 transition-colors hover:text-brand">
                     {l.label}
                   </Link>
                 </li>
@@ -54,8 +51,18 @@ export function SiteFooter() {
           </div>
         ))}
       </div>
-      <div className="border-t border-on-ink/10">
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-2 px-5 py-6 text-[12.5px] text-on-ink-muted md:flex-row md:items-center md:justify-between md:px-8">
+
+      {/* Oversize wordmark sized to the container (ARGONAUT is ~10.1x its font size wide), cropped at the baseline. */}
+      <div className="mx-auto max-w-[1320px] px-5 md:px-8" aria-hidden>
+        <div className="overflow-hidden border-t border-on-ink/10 pt-10">
+          <span className="display -mb-[0.1em] block select-none whitespace-nowrap text-[min(calc((100vw-40px)/10.1),124px)] font-[900] leading-[0.8] text-on-ink [font-stretch:150%] md:text-[min(calc((100vw-64px)/10.1),124px)]">
+            ARGONAUT
+          </span>
+        </div>
+      </div>
+
+      <div className="relative border-t border-on-ink/10 bg-ink">
+        <div className="mx-auto flex max-w-[1320px] flex-col gap-2 px-5 py-6 text-[12.5px] text-on-ink-muted md:flex-row md:items-center md:justify-between md:px-8">
           <p>© {new Date().getFullYear()} Argonaut USMLE. Not affiliated with or endorsed by the FSMB or NBME.</p>
           <p>USMLE® is a registered trademark of the FSMB and NBME.</p>
         </div>

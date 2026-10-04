@@ -57,7 +57,7 @@ export function LibraryBrowser({ rows }: { rows: CatalogRow[] }) {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search chapters"
-              className="h-10 w-full rounded-[8px] border border-border bg-surface pl-9 pr-3 text-[15px] focus:border-brand focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)]"
+              className="h-10 w-full rounded-[8px] border border-border bg-surface pl-9 pr-3 text-[15px] focus:border-brand-strong focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)]"
             />
           </div>
           <button

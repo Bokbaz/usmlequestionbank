@@ -22,7 +22,15 @@ Success looks like: students trust the questions, feel measurably sharper week o
 
 ## Brand Personality
 
-Ambitious, sharp, competitive. Elite training, not a classroom. Confident and precise like a top attending, with the energy of a scoreboard. Never cute, never hype. Every claim is backed by a number the student can inspect.
+Ambitious, sharp, competitive. Elite training, not a classroom. Never cute, never hype. Every claim is backed by a number the student can inspect.
+
+Motto: **a question bank that runs like a hyper-efficient Formula 1 team.** The analytics go so deep that not improving is practically a mathematical impossibility. The F1 team is the organising metaphor (telemetry, timing, pit stops, race engineer); use it with a light touch so students who don't follow F1 still understand every line.
+
+Two missions, stated plainly on the site:
+1. Main: do our genuine best to get every student the score they want (a Step 1 pass they never had to sweat, a Step 2 CK score they're proud of; Step 1 is pass/fail).
+2. Side: beat the giants. Big-bank quality at a price students can afford ($48 once, no expiry). Don't name competitors or quote their prices.
+
+Voice: to the point and down to earth. Short sentences, plain words, no corporate waffle. Show what the student gets; don't explain how the system works behind the scenes.
 
 ## Anti-references
 

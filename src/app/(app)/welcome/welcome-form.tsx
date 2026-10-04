@@ -57,7 +57,7 @@ export function WelcomeForm({
           id="country"
           value={form.country ?? ""}
           onChange={(e) => setForm((f) => ({ ...f, country: e.target.value || null }))}
-          className="h-10 w-full max-w-[320px] rounded-[6px] border border-border bg-surface px-3 text-[15px] text-text hover:border-border-strong focus:border-brand focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)]"
+          className="h-10 w-full max-w-[320px] rounded-[6px] border border-border bg-surface px-3 text-[15px] text-text hover:border-border-strong focus:border-brand-strong focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)]"
         >
           <option value="">Prefer not to say</option>
           {COUNTRIES.map((c) => (

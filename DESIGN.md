@@ -2,64 +2,67 @@
 
 ## Overview
 
-Argonaut is precise, quick and competitive: elite training equipment for the USMLE. Clean AMBOSS-like clarity in the product, re-voiced in a saturated deep cobalt with crisp hairlines, tight radii and scoreboard-grade numerals. Gold appears only where something is genuinely ultra-high-yield (Nuggets) or earned (ranks). Marketing pages drench sections in deep ink-blue and move with long, decelerating Apple-style scroll choreography; the app itself stays still and fast.
+Argonaut is a question bank that runs like a Formula 1 team: precise, fast, measured to the millimetre. The look borrows from race engineering rather than racing costume: timing screens, telemetry traces, pit-wall readouts and tick-marked rulers, set in a wide, forward-leaning gothic. One signal orange carries the brand; carbon (near-black ink) and cool aluminium greys do everything else. Marketing pages drench whole sections in orange or carbon and move with long, decelerating scroll; the app itself stays still and fast.
 
-Signature motif: **Argo Navis**, the ship constellation. Concepts are stars, mastery is brightness. It is the logo mark, the hero graphic and ARGO's knowledge map.
+Signature components: the **timing tower** (a ranked, live-updating table of a student's systems with a "team radio" line from ARGO) and the **telemetry trace** (stacked channels sharing one x-axis, with ARGO sessions marked as pit stops). The Argo Navis "A" mark stays as the logo, its apex star in signal orange.
 
 ## Colors
 
-Strategy: Restrained in the product (tinted neutrals + cobalt for action/selection + semantic states). Committed on marketing (deep ink-blue carries whole sections). All values OKLCH; neutrals tinted toward hue 265. Contrast verified: every text pair is AA or better in both themes.
+Strategy: Committed on marketing (signal orange and carbon each own whole sections). Restrained in the product (aluminium neutrals, carbon for emphasis, orange for action and selection, semantic states). All values OKLCH. Contrast verified numerically: every text pair is AA or better in both themes.
 
 | Token | Light | Dark | Role |
 |---|---|---|---|
-| `--bg` | oklch(0.985 0.004 265) | oklch(0.2 0.035 266) | Page background |
-| `--surface` | oklch(0.997 0.002 265) | oklch(0.235 0.038 266) | Content surfaces, question canvas |
-| `--panel` | oklch(0.966 0.008 265) | oklch(0.215 0.036 266) | Sidebar, toolbars, secondary layer |
-| `--border` | oklch(0.905 0.014 265) | oklch(0.33 0.04 266) | Hairlines |
-| `--text` | oklch(0.225 0.035 265) | oklch(0.94 0.012 265) | Primary text |
-| `--muted` | oklch(0.47 0.03 265) | oklch(0.74 0.025 265) | Secondary text |
-| `--faint` | oklch(0.56 0.022 265) | oklch(0.64 0.028 265) | Tertiary labels, placeholders |
-| `--brand` | oklch(0.45 0.19 264) | oklch(0.7 0.15 262) | Primary action, links, selection |
-| `--brand-strong` | oklch(0.37 0.165 265) | oklch(0.78 0.12 262) | Pressed/hover, text on brand-soft |
-| `--brand-soft` | oklch(0.95 0.028 264) | oklch(0.27 0.07 264) | Selected rows, focus tints |
-| `--ink` | oklch(0.235 0.085 266) | oklch(0.12 0.04 266) | Drenched marketing sections, test-player header |
-| `--gold` | oklch(0.8 0.155 80) | oklch(0.82 0.15 82) | Nugget mark, rank medals (fills, not text) |
-| `--gold-ink` | oklch(0.5 0.105 68) | oklch(0.85 0.13 85) | Nugget text |
-| `--gold-soft` | oklch(0.965 0.045 92) | oklch(0.28 0.06 80) | Nugget callout background |
-| `--correct` / `--correct-soft` | oklch(0.5 0.13 152) / oklch(0.962 0.035 152) | oklch(0.74 0.15 152) / oklch(0.26 0.05 152) | Correct answers (always with a check icon) |
-| `--incorrect` / `--incorrect-soft` | oklch(0.55 0.19 27) / oklch(0.962 0.025 25) | oklch(0.7 0.17 25) / oklch(0.27 0.06 25) | Incorrect answers (always with a cross icon) |
+| `--bg` | oklch(0.972 0.004 250) | oklch(0.19 0.012 262) | Page background |
+| `--surface` | oklch(0.994 0.002 250) | oklch(0.225 0.014 262) | Content surfaces, question canvas |
+| `--panel` | oklch(0.952 0.005 250) | oklch(0.205 0.013 262) | Sidebar, toolbars, secondary layer |
+| `--border` | oklch(0.885 0.007 250) | oklch(0.31 0.015 262) | Hairlines |
+| `--text` | oklch(0.19 0.02 262) | oklch(0.95 0.004 250) | Primary text |
+| `--muted` | oklch(0.45 0.016 258) | oklch(0.76 0.01 255) | Secondary text |
+| `--faint` | oklch(0.54 0.014 258) | oklch(0.66 0.012 255) | Tertiary labels, placeholders |
+| `--brand` | oklch(0.68 0.19 45) | oklch(0.72 0.18 48) | Signal orange. A **fill** only: buttons, selection chips, markers. Always carries ink text (`--on-brand`). |
+| `--brand-hover` | oklch(0.64 0.185 43) | oklch(0.77 0.145 52) | Hover/pressed fill |
+| `--brand-strong` | oklch(0.52 0.15 40) | oklch(0.8 0.125 55) | Orange for **text and icons** (links, eyebrows), focus rings |
+| `--brand-soft` | oklch(0.955 0.024 55) | oklch(0.3 0.06 45) | Selected rows, tints |
+| `--on-brand` / `--on-brand-muted` | oklch(0.18 0.02 262) / oklch(0.28 0.05 40) | same | Text on orange (never use `--muted` on orange) |
+| `--ink` / `--ink-2` | oklch(0.18 0.02 262) / oklch(0.235 0.022 262) | oklch(0.14 0.012 262) / oklch(0.205 0.015 262) | Carbon: drenched sections, test-player header, active nav |
+| `--gold` / `--gold-ink` / `--gold-soft` | oklch(0.82 0.16 86) / oklch(0.5 0.105 72) / oklch(0.965 0.045 95) | oklch(0.83 0.15 86) / oklch(0.86 0.13 88) / oklch(0.3 0.06 82) | Nuggets, marked flags, rank 1. Never decorative. |
+| `--correct` / `--correct-soft` | oklch(0.5 0.13 152) / oklch(0.962 0.035 152) | oklch(0.74 0.15 152) / oklch(0.28 0.05 152) | Correct answers (always with a check icon) |
+| `--incorrect` / `--incorrect-soft` | oklch(0.53 0.19 22) / oklch(0.96 0.018 18) | oklch(0.7 0.17 22) / oklch(0.29 0.06 20) | Incorrect answers (always with a cross icon). Hue 22 keeps it clear of the orange at 45. |
 
-Never `#000` or `#fff`. Gold is never decorative.
+Never `#000` or `#fff`. Data-viz palettes (`--viz-*`, `--seq-*`, `--div-*`, `--series-*`) are unchanged and validated separately; blue data series against the orange brand is deliberate.
 
 ## Typography
 
-- **Archivo** (variable: weight 100 to 900, width 62 to 125) carries everything in the product. UI at width 100; display headlines at width 112 to 125 and weight 750 to 850 for scoreboard energy. Tabular numerals (`font-variant-numeric: tabular-nums`) for timers, scores, percentiles, ranks.
-- **Source Serif 4** (optical sizes) only for Library prose, so study mode reads like a textbook and test mode reads like the exam.
-- Product scale (rem, fixed): 12 / 13 / 14 / 15 (base UI) / 17 (vignette) / 20 / 24 / 30. Marketing display uses `clamp()` from 40px to 112px with tight tracking (-0.03em).
+- **Science Gothic** (variable: weight 100 to 900, width 50 to 200, slant 0 to -10) for display and labels. Classes (in the `components` layer, so per-element utilities override them): `.display` (width 140%, line-height 0.94, weights 850 to 900) for marketing headlines; `.slant` adds an 8° forward lean, reserved for the loudest lines (hero, closing call, auth aside); `.heading` (width 118%) for product page titles; `.eyebrow` (11.5px caps, width 112%, tracking 0.08em) for timing-screen labels. Its squared zero is part of the voice.
+- **Atkinson Hyperlegible Next** (weight 200 to 800) for all body and UI text, chosen for legibility in long vignettes and for non-native readers; its slashed zero keeps lab values unambiguous. Tabular numerals (`.tabular`) for timers, scores and ranks; both families support them.
+- **Source Serif 4** only for Library prose.
+- Marketing display sizes use `clamp()`; measure the text before setting a ceiling (ARGONAUT at width 150% is ~10.1× its font size wide). Product scale stays fixed.
 - Vignette text: 17px, line-height 1.65, max 72ch. Library prose: 18px serif, line-height 1.7, max 68ch.
-- Labels in caps only for short eyebrow metadata (letter-spacing 0.08em, 11 to 12px).
 
 ## Elevation & Shape
 
-- Radii: 6px controls, 10px panels, 14px marketing tiles, full pills only for status chips.
-- Depth by hairline borders and tone shifts, not shadows. One shadow token for floating layers (popovers, toasts): `0 1px 2px oklch(0.2 0.04 265 / 0.06), 0 8px 24px oklch(0.2 0.04 265 / 0.08)`.
-- No glassmorphism, no gradient text, no colored side-stripe borders.
+- Radii: 4px controls, 6px panels, 8px marketing tiles and demos; full pills only for status chips.
+- Depth by hairlines and tone shifts. Heavier 2px rules (`border-text` or `border-on-brand`) open key sections, like a timing-sheet header.
+- Precision motifs: a tick-mark ruler along the edge of orange sections; faint 12-column hairlines behind the hero.
+- No glassmorphism, no gradient text, no coloured side-stripe borders.
 
 ## Components
 
-- **Buttons**: primary (brand fill, bg-colored label), secondary (surface + border), ghost, danger. Height 36 (app) / 44 (marketing). All states: hover, focus-visible ring (2px brand + 2px offset), active, disabled, loading.
-- **Answer option**: full-width row, letter in a 28px rounded-square chip, text 16px. States: default, hover, selected (brand-soft + brand chip), struck (line-through, 45% opacity), correct (correct-soft + check), incorrect selected (incorrect-soft + cross), peer percentage bar after review.
-- **Nugget badge**: small gold diamond glyph + "Nugget" in gold-ink on gold-soft; callout block in explanations uses a full gold-soft tint with a gold glyph, never a side stripe.
-- **Data**: tables with 44px rows, right-aligned tabular numbers, sticky headers. Charts follow the dataviz skill palette; correct/incorrect series also differ in pattern or label.
-- **Navigation**: app shell with a 248px left sidebar on panel tone, collapsible to icons; test player is full-screen with an ink header bar (exam-like), question navigator rail, and bottom action bar.
+- **Buttons**: `primary` (orange fill, ink label), `secondary` (surface + border), `ghost`, `danger`; `ink` is the orange CTA on carbon; `carbon` and `carbon-outline` are for orange surfaces. Bold labels.
+- **Answer option**: selected = orange chip with ink letter on `--brand-soft`; correct/incorrect use their semantic tints with icons.
+- **Navigation**: active sidebar item is a carbon block with an orange icon. Segmented controls invert the selected option (`bg-text text-bg`). The sidebar uses the compact logo (`<Logo size="sm" />`).
+- **Timing tower** (marketing): carbon panel, position / system / accuracy / trend columns, focus row in solid orange, rows reorder with layout animation, ARGO "team radio" line below.
+- **Telemetry** (marketing): stacked channels sharing one x-axis, orange primary channel with a soft fill, dashed orange pit-stop lines for ARGO sessions.
+- **Nugget badge**: gold diamond + "Nugget" on gold-soft.
 
 ## Layout
 
-- 4px spacing base. App content max width 1240px; reading surfaces 72ch.
-- Marketing: long scroll, one idea per viewport, left-aligned asymmetric compositions, drenched ink sections alternate with light sections.
+- 4px spacing base. Marketing container 1320px; app content 1240px; reading surfaces 72ch.
+- Marketing order: orange hero (timing tower overlapping into the next section) → specs + season objectives → carbon ARGO telemetry → questions → Nuggets + Library split → carbon Daily Challenge → pricing → FAQ → orange closing call → carbon footer with a full-width wordmark.
 
 ## Motion
 
-- Product: 150 to 220ms, `cubic-bezier(0.25, 1, 0.5, 1)` (ease-out-quart). Motion only for state: selection, reveal of explanation, route transitions, toasts.
-- Marketing: Lenis smooth scroll, scroll-linked reveals 600 to 900ms with `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out-expo), sticky scrollytelling for the ARGO section, constellation lines drawing with stroke-dashoffset.
-- No bounce, no elastic, no confetti. `prefers-reduced-motion`: all spatial motion becomes a 150ms opacity fade; smooth scroll disabled.
+- Product: 150 to 220ms, ease-out-quart. Motion only for state.
+- Marketing: Lenis smooth scroll; reveals of 800ms with ease-out-expo (opacity + translate, no blur); timing-tower rows reorder every ~3.4s; telemetry traces draw on scroll.
+- Markup must not branch on `useReducedMotion()` (it is null on the server); handle reduced motion through `motion-safe:` classes and zero-duration transitions.
+- No bounce, no elastic, no confetti.

@@ -60,8 +60,8 @@ export function LoginForm() {
   if (magicSent) {
     return (
       <div className="text-center">
-        <Mail className="mx-auto size-8 text-brand" />
-        <h1 className="mt-4 text-[24px] font-[750] tracking-[-0.02em]">Check your inbox</h1>
+        <Mail className="mx-auto size-8 text-brand-strong" />
+        <h1 className="heading mt-4 text-[26px] font-[850] leading-tight">Check your inbox</h1>
         <p className="mt-2 text-[15px] text-muted">We sent a sign-in link to {email}. It expires in one hour.</p>
       </div>
     );
@@ -70,8 +70,8 @@ export function LoginForm() {
   return (
     <form onSubmit={onSubmit} className="grid gap-5" noValidate>
       <div>
-        <h1 className="text-[28px] font-[750] tracking-[-0.02em]">Welcome back</h1>
-        <p className="mt-1.5 text-[15px] text-muted">Log in to continue your prep.</p>
+        <h1 className="heading text-[30px] font-[850] leading-tight">Welcome back</h1>
+        <p className="mt-1.5 text-[15px] text-muted">Log in and pick up where you left off.</p>
       </div>
       <Field label="Email" htmlFor="email">
         <Input id="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -80,7 +80,7 @@ export function LoginForm() {
         label="Password"
         htmlFor="password"
         hint={
-          <Link href="/forgot-password" className="font-semibold text-brand hover:underline">
+          <Link href="/forgot-password" className="font-semibold text-brand-strong hover:underline">
             Forgot password?
           </Link>
         }
@@ -100,7 +100,7 @@ export function LoginForm() {
       </Button>
       <p className="text-center text-[14px] text-muted">
         New to Argonaut?{" "}
-        <Link href={`/signup${next !== "/dashboard" ? `?next=${encodeURIComponent(next)}` : ""}`} className="font-semibold text-brand hover:underline">
+        <Link href={`/signup${next !== "/dashboard" ? `?next=${encodeURIComponent(next)}` : ""}`} className="font-semibold text-brand-strong hover:underline">
           Create a free account
         </Link>
       </p>
@@ -155,8 +155,8 @@ export function SignupForm() {
   if (checkEmail) {
     return (
       <div className="text-center">
-        <Mail className="mx-auto size-8 text-brand" />
-        <h1 className="mt-4 text-[24px] font-[750] tracking-[-0.02em]">Confirm your email</h1>
+        <Mail className="mx-auto size-8 text-brand-strong" />
+        <h1 className="heading mt-4 text-[26px] font-[850] leading-tight">Confirm your email</h1>
         <p className="mt-2 text-[15px] text-muted">We sent a confirmation link to {email}. Open it on this device to finish.</p>
       </div>
     );
@@ -165,8 +165,8 @@ export function SignupForm() {
   return (
     <form onSubmit={onSubmit} className="grid gap-5" noValidate>
       <div>
-        <h1 className="text-[28px] font-[750] tracking-[-0.02em]">Create your account</h1>
-        <p className="mt-1.5 text-[15px] text-muted">Free forever for the Daily Challenge and sample questions.</p>
+        <h1 className="heading text-[30px] font-[850] leading-tight">Create your account</h1>
+        <p className="mt-1.5 text-[15px] text-muted">Free to start. No card needed.</p>
       </div>
       <Field label="Name" htmlFor="name" hint="Shown on leaderboards. You can change it later.">
         <Input id="name" autoComplete="name" required value={name} onChange={(e) => setName(e.target.value)} />
@@ -187,7 +187,7 @@ export function SignupForm() {
       </Button>
       <p className="text-center text-[14px] text-muted">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-brand hover:underline">
+        <Link href="/login" className="font-semibold text-brand-strong hover:underline">
           Log in
         </Link>
       </p>
@@ -213,16 +213,16 @@ export function ForgotPasswordForm() {
   if (sent)
     return (
       <div className="text-center">
-        <Mail className="mx-auto size-8 text-brand" />
-        <h1 className="mt-4 text-[24px] font-[750]">Check your inbox</h1>
+        <Mail className="mx-auto size-8 text-brand-strong" />
+        <h1 className="heading mt-4 text-[26px] font-[850] leading-tight">Check your inbox</h1>
         <p className="mt-2 text-[15px] text-muted">If an account exists for {email}, a reset link is on its way.</p>
       </div>
     );
   return (
     <form onSubmit={onSubmit} className="grid gap-5">
       <div>
-        <h1 className="text-[28px] font-[750] tracking-[-0.02em]">Reset your password</h1>
-        <p className="mt-1.5 text-[15px] text-muted">We will email you a secure link.</p>
+        <h1 className="heading text-[30px] font-[850] leading-tight">Reset your password</h1>
+        <p className="mt-1.5 text-[15px] text-muted">We&apos;ll email you a link to set a new one.</p>
       </div>
       <Field label="Email" htmlFor="email" error={error}>
         <Input id="email" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -251,7 +251,7 @@ export function ResetPasswordForm() {
   }
   return (
     <form onSubmit={onSubmit} className="grid gap-5">
-      <h1 className="text-[28px] font-[750] tracking-[-0.02em]">Choose a new password</h1>
+      <h1 className="heading text-[30px] font-[850] leading-tight">Choose a new password</h1>
       <Field label="New password" htmlFor="password" error={error}>
         <Input id="password" type="password" autoComplete="new-password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </Field>

@@ -72,7 +72,7 @@ function Labs() {
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search labs"
           autoFocus
-          className="h-9 w-full rounded-[6px] border border-border bg-surface pl-8 pr-3 text-[14px] focus:border-brand focus:outline-none"
+          className="h-9 w-full rounded-[6px] border border-border bg-surface pl-8 pr-3 text-[14px] focus:border-brand-strong focus:outline-none"
         />
       </div>
       {!q && (
@@ -144,7 +144,7 @@ function Calculator() {
             onClick={() => press(k)}
             className={cn(
               "h-11 rounded-[8px] text-[16px] font-semibold transition-colors",
-              k === "=" ? "bg-brand text-on-brand hover:bg-brand-strong" : /[+\-*/]/.test(k) ? "bg-brand-soft text-brand-strong hover:brightness-95" : "bg-panel text-text hover:bg-sunken",
+              k === "=" ? "bg-brand text-on-brand hover:bg-brand-hover" : /[+\-*/]/.test(k) ? "bg-brand-soft text-brand-strong hover:brightness-95" : "bg-panel text-text hover:bg-sunken",
             )}
           >
             {k}

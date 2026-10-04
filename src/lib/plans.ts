@@ -18,25 +18,25 @@ export const OFFERS = {
     name: "Full access",
     amountUsd: 48,
     mode: "payment",
-    tagline: "The whole bank and ARGO analytics. One payment, no subscription.",
+    tagline: "Everything, paid once. No subscription, no expiry date.",
     features: [
-      "Every question, tutor and timed modes",
-      "Explanations for every answer choice",
-      "The complete high-yield Library",
-      "ARGO adaptive sessions built from your weaknesses",
-      "Deep analytics: mastery map, error types, calibration, stamina",
-      "Confusion-pair drills, spaced retests, Nuggets, notebook and flashcards",
+      "Every question, in tutor or timed mode",
+      "Every answer choice explained",
+      "The full high-yield Library",
+      "ARGO sessions built around your weak spots",
+      "Full analytics: mastery map, error types, timing, retention",
+      "Nuggets, flashcards and a notebook",
     ],
   },
   writer: {
     name: "ARGO question writing",
     amountUsd: 4.99,
     mode: "subscription",
-    tagline: "New questions written for the concepts you keep missing.",
+    tagline: "New questions written for the topics you keep missing.",
     features: [
-      "Fresh questions when the bank runs short on a weakness",
-      "Built around the distractors you keep choosing",
-      "Each one solved blind and fact-checked before you see it",
+      "Fresh questions once you've used up a weak spot",
+      "Built around the wrong answers you keep picking",
+      "Every one checked before you see it",
       "Cancel anytime",
     ],
   },
@@ -45,10 +45,10 @@ export const OFFERS = {
 export type OfferKey = keyof typeof OFFERS;
 
 export const FREE_FEATURES = [
-  "Daily Challenge and global leaderboard",
-  "Free sample questions with full explanations",
+  "The Daily Challenge and leaderboard",
+  "Sample questions with full explanations",
   "Free Library chapters",
-  "Basic performance stats",
+  "Basic stats",
 ];
 
 export function planAllows(plan: PlanTier | null | undefined, min: PlanTier) {

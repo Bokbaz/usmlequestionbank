@@ -64,7 +64,7 @@ export default async function ResultsPage({ params }: PageProps<"/tests/[id]">) 
               <form action={startArgoSession}>
                 <input type="hidden" name="size" value="20" />
                 <Button type="submit">
-                  <ArgoMark className="size-4" /> Next ARGO session
+                  <ArgoMark className="size-4" apex="current" /> Next ARGO session
                 </Button>
               </form>
             ) : (
@@ -93,7 +93,7 @@ export default async function ResultsPage({ params }: PageProps<"/tests/[id]">) 
       {topErrors.length > 0 && (
         <Panel className="mb-6 p-5">
           <p className="flex items-center gap-2 text-[15px] font-[700]">
-            <ArgoMark className="size-4 text-brand" /> Why you missed
+            <ArgoMark className="size-4 text-brand-strong" /> Why you missed
           </p>
           <ul className="mt-3 grid gap-3 md:grid-cols-3">
             {topErrors.map(([t, n]) => (
@@ -107,7 +107,7 @@ export default async function ResultsPage({ params }: PageProps<"/tests/[id]">) 
           </ul>
           {!argo && (
             <p className="mt-3 text-[13px] text-muted">
-              ARGO turns these patterns into targeted sessions. <Link href="/pricing?from=results" className="font-semibold text-brand hover:underline">Unlock ARGO</Link>
+              ARGO turns these patterns into targeted sessions. <Link href="/pricing?from=results" className="font-semibold text-brand-strong hover:underline">Unlock ARGO</Link>
             </p>
           )}
         </Panel>
@@ -132,7 +132,7 @@ export default async function ResultsPage({ params }: PageProps<"/tests/[id]">) 
               return (
                 <tr key={it.position} className="border-b border-border last:border-0 hover:bg-panel/60">
                   <td className="tabular px-4 py-2.5">
-                    <Link href={`/test/${id}?q=${i + 1}`} className="font-semibold text-brand hover:underline">
+                    <Link href={`/test/${id}?q=${i + 1}`} className="font-semibold text-brand-strong hover:underline">
                       {i + 1}
                     </Link>
                     {it.state.marked && <Flag className="ml-1.5 inline size-3 fill-gold text-gold" />}

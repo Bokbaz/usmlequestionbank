@@ -55,7 +55,7 @@ export function OptionRow({
           : selected
             ? "border-brand bg-brand-soft"
             : "border-border bg-surface hover:border-border-strong hover:bg-panel",
-        !locked && "cursor-pointer focus-visible:ring-2 focus-visible:ring-brand",
+        !locked && "cursor-pointer focus-visible:ring-2 focus-visible:ring-brand-strong",
       )}
     >
       {revealed && peerPct != null && (

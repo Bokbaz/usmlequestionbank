@@ -14,25 +14,36 @@ export function PricingTable({ currentPlan, hasWriter = false }: { currentPlan?:
   const access = OFFERS.access;
   const writer = OFFERS.writer;
 
-  const freeCta: Cta = signedIn ? { label: unlocked ? "Included" : "Current plan", href: "/dashboard", disabled: true } : { label: "Start free", href: "/signup" };
-  const accessCta: Cta = unlocked ? { label: "Unlocked", href: "/settings/billing", disabled: true } : { label: `Unlock for ${formatUsd(access.amountUsd)}`, href: "/api/stripe/checkout?offer=access" };
+  const freeCta: Cta = signedIn
+    ? { label: unlocked ? "Included" : "Current plan", href: "/dashboard", disabled: true }
+    : { label: "Start free", href: "/signup" };
+  const accessCta: Cta = unlocked
+    ? { label: "Unlocked", href: "/settings/billing", disabled: true }
+    : { label: `Unlock for ${formatUsd(access.amountUsd)}`, href: "/api/stripe/checkout?offer=access" };
   const writerCta: Cta = hasWriter
     ? { label: "Active", href: "/settings/billing", disabled: true }
     : signedIn && !unlocked
-      ? { label: "Requires Full access", href: "/settings/billing", disabled: true }
+      ? { label: "Needs Full access first", href: "/settings/billing", disabled: true }
       : { label: `Add for ${formatUsd(writer.amountUsd)} a month`, href: "/api/stripe/checkout?offer=writer" };
 
   return (
     <div>
-      <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr_1fr]">
-        <Tier name="Free" tagline="Play the Daily Challenge and sample the bank." price="$0" per="forever" features={FREE_FEATURES} cta={freeCta} />
+      <div className="grid items-stretch gap-4 lg:grid-cols-[1fr_1.2fr_1fr]">
+        <Tier
+          name="Free"
+          tagline="Try it properly before you pay anything."
+          price="$0"
+          per="forever"
+          features={FREE_FEATURES}
+          cta={freeCta}
+        />
         <Tier
           featured
           name={access.name}
           tagline={access.tagline}
           price={formatUsd(access.amountUsd)}
-          per="one time"
-          note="No renewals. Access does not expire."
+          per="once"
+          note="Pay once. Keep it."
           features={access.features}
           cta={accessCta}
         />
@@ -41,13 +52,15 @@ export function PricingTable({ currentPlan, hasWriter = false }: { currentPlan?:
           name={writer.name}
           tagline={writer.tagline}
           price={formatUsd(writer.amountUsd)}
-          per="per month"
-          note="Optional add-on to Full access"
+          per="a month"
+          note="Optional, on top of Full access"
           features={writer.features}
           cta={writerCta}
         />
       </div>
-      <p className="mt-6 text-center text-[13px] text-muted">Prices in USD. Full access is a single payment; only the optional add-on renews monthly.</p>
+      <p className="mt-6 text-center text-[13.5px] text-muted">
+        Prices in USD. Full access is one payment; only the optional add-on renews monthly.
+      </p>
     </div>
   );
 }
@@ -76,25 +89,29 @@ function Tier({
   return (
     <div
       className={cn(
-        "relative flex flex-col rounded-[14px] border p-7",
-        featured ? "border-transparent bg-ink text-on-ink shadow-[0_40px_90px_-40px_oklch(0.2_0.08_266/0.6)]" : addon ? "border-dashed border-border-strong bg-panel" : "border-border bg-surface",
+        "relative flex flex-col rounded-[8px] p-7 md:p-8",
+        featured
+          ? "bg-ink text-on-ink shadow-[0_40px_90px_-40px_oklch(0.2_0.02_262/0.6)] lg:-my-4 lg:py-12"
+          : addon
+            ? "border border-dashed border-border-strong bg-panel"
+            : "border border-border bg-surface",
       )}
     >
       <div className="flex items-center gap-2">
         {featured && <ArgoMark className="size-4 text-on-ink" />}
-        {addon && <Plus className="size-4 text-brand" strokeWidth={2.5} />}
-        <h3 className="text-[18px] font-[750] tracking-[-0.01em]">{name}</h3>
+        {addon && <Plus className="size-4 text-brand-strong" strokeWidth={2.5} />}
+        <h3 className="eyebrow text-[12.5px]">{name}</h3>
       </div>
-      <p className={cn("mt-1.5 text-[14px] leading-snug", featured ? "text-on-ink-muted" : "text-muted")}>{tagline}</p>
-      <div className="mt-6 flex items-baseline gap-2">
-        <span className="text-[44px] font-[750] leading-none tracking-[-0.03em]">{price}</span>
-        <span className={cn("text-[14px]", featured ? "text-on-ink-muted" : "text-muted")}>{per}</span>
+      <div className="mt-6 flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+        <span className={cn("display text-[44px] font-[900] leading-none [font-stretch:125%] sm:text-[52px]", featured && "text-brand")}>{price}</span>
+        <span className={cn("whitespace-nowrap text-[15px] font-bold", featured ? "text-on-ink-muted" : "text-muted")}>{per}</span>
       </div>
-      <p className={cn("mt-2 min-h-5 text-[13px] font-semibold", featured ? "text-on-ink-muted" : "text-muted")}>{note}</p>
-      <ul className="mt-6 grid gap-2.5">
+      <p className={cn("mt-4 text-[15px] leading-snug", featured ? "text-on-ink" : "text-text")}>{tagline}</p>
+      {note && <p className={cn("mt-1 text-[13.5px] font-bold", featured ? "text-brand" : "text-muted")}>{note}</p>}
+      <ul className={cn("mt-7 grid gap-3 border-t pt-6", featured ? "border-on-ink/15" : "border-border")}>
         {features.map((f) => (
-          <li key={f} className="flex gap-2.5 text-[14px] leading-snug">
-            <Check className={cn("mt-0.5 size-4 shrink-0", featured ? "text-on-ink" : "text-brand")} strokeWidth={2.5} />
+          <li key={f} className="flex gap-2.5 text-[14.5px] leading-snug">
+            <Check className={cn("mt-0.5 size-4 shrink-0", featured ? "text-brand" : "text-brand-strong")} strokeWidth={3} />
             <span className={featured ? "text-on-ink/90" : "text-text"}>{f}</span>
           </li>
         ))}
@@ -105,7 +122,7 @@ function Tier({
             {cta.label}
           </Button>
         ) : (
-          <Button asChild variant={featured ? "ink" : addon ? "primary" : "secondary"} size="lg" className="w-full">
+          <Button asChild variant={featured ? "ink" : "secondary"} size="lg" className="w-full">
             {/* Checkout is a route handler that redirects to Stripe: use a full navigation. */}
             {cta.href.startsWith("/api/") ? (
               <a href={cta.href}>{cta.label}</a>

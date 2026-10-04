@@ -132,7 +132,7 @@ export function QuestionTable({ rows, total, argo }: { rows: AdminQuestionRow[];
                         type="button"
                         disabled={pending}
                         onClick={() => run(() => promoteQuestion(r.id), `${r.code} moved into the bank`)}
-                        className="ml-3 text-[12.5px] font-semibold text-brand hover:underline"
+                        className="ml-3 text-[12.5px] font-semibold text-brand-strong hover:underline"
                       >
                         Promote
                       </button>

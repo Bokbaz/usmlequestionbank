@@ -92,10 +92,10 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
     return () => clearTimeout(t);
   }, [state?.state, startedAt, limitMs, submit]);
 
-  if (!state) return <div className="h-96 animate-pulse rounded-[14px] bg-sunken" />;
+  if (!state) return <div className="h-96 animate-pulse rounded-[8px] bg-sunken" />;
   if (!state.available)
     return (
-      <div className="rounded-[14px] border border-border bg-surface p-10 text-center">
+      <div className="rounded-[8px] border border-border bg-surface p-10 text-center">
         <h2 className="text-[22px] font-[750]">No challenge scheduled today</h2>
         <p className="mt-2 text-muted">Check back tomorrow.</p>
       </div>
@@ -106,17 +106,21 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
   // ---------------------------------------------------------------- intro
   if (state.state === "none") {
     return (
-      <div className="overflow-hidden rounded-[14px] bg-ink text-on-ink">
+      <div className="overflow-hidden rounded-[8px] bg-ink text-on-ink">
         <div className="grid gap-10 p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
           <div>
             <p className="eyebrow flex items-center gap-2 text-on-ink-muted">
-              <Zap className="size-3.5 text-gold" /> Daily Challenge #{state.number}
+              <Zap className="size-3.5 text-brand" /> Daily Challenge #{state.number}
             </p>
-            <h1 className="display mt-4 text-[clamp(38px,5vw,64px)] font-[820]">One question. Two minutes.</h1>
+            <h1 className="display mt-5 text-[clamp(34px,3.2vw,46px)] font-[850] [font-stretch:118%]">
+              One question.
+              <br />
+              Two minutes.
+            </h1>
             <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-on-ink-muted">
-              Today&apos;s question is ultra hard and drawn from {state.system ?? "any system"}
-              {state.discipline ? ` (${state.discipline.toLowerCase()})` : ""}. The clock starts the moment you reveal it.
-              Correct answers are ranked by speed.
+              Today&apos;s question is a hard one, from {state.system ?? "any system"}
+              {state.discipline ? ` (${state.discipline.toLowerCase()})` : ""}. The clock starts when you reveal it. Right
+              answers are ranked by speed.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button variant="ink" size="xl" onClick={start} loading={busy}>
@@ -126,7 +130,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
                 <Link href="/daily/leaderboard">Leaderboard</Link>
               </Button>
             </div>
-            {signedIn === false && <p className="mt-4 text-[13px] text-on-ink-muted">Playing as a guest. Create an account afterwards to claim your rank.</p>}
+            {signedIn === false && <p className="mt-4 text-[13px] text-on-ink-muted">Playing as a guest. Sign up afterwards to claim your spot on the board.</p>}
           </div>
           <dl className="grid content-center gap-5 md:border-l md:border-on-ink/10 md:pl-10">
             {[
@@ -154,7 +158,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
   if (state.state === "started" && p) {
     const urgent = remainingMs < 20_000;
     return (
-      <div className="overflow-clip rounded-[14px] border border-border bg-surface">
+      <div className="overflow-clip rounded-[8px] border border-border bg-surface">
         <div className="sticky top-16 z-10 flex items-center justify-between gap-4 bg-ink px-5 py-3 text-on-ink">
           <p className="text-[14px] font-semibold">Daily Challenge #{state.number}</p>
           <div className="flex items-center gap-3">
@@ -214,7 +218,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
 
   return (
     <div className="grid gap-6">
-      <div className={cn("overflow-hidden rounded-[14px] p-8 md:p-10", r?.is_correct ? "bg-ink text-on-ink" : "border border-border bg-surface")}>
+      <div className={cn("overflow-hidden rounded-[8px] p-8 md:p-10", r?.is_correct ? "bg-ink text-on-ink" : "border border-border bg-surface")}>
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
             <p className={cn("eyebrow", r?.is_correct ? "text-on-ink-muted" : "text-faint")}>Daily Challenge #{state.number}</p>
@@ -272,7 +276,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
         )}
       </div>
       {item && review ? (
-        <div className="rounded-[14px] border border-border bg-surface px-5 py-7 md:px-10">
+        <div className="rounded-[8px] border border-border bg-surface px-5 py-7 md:px-10">
           <Stem text={item.stem} highlights={[]} onChange={() => {}} readOnly />
           <p className="mt-5 text-[17px] font-semibold">{item.lead_in}</p>
           <div className="mt-6 grid gap-2">

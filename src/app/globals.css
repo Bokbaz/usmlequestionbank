@@ -2,37 +2,40 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Tokens: see DESIGN.md. Neutrals are tinted toward hue 265; contrast verified AA. */
+/* Tokens: see DESIGN.md. Cool aluminium neutrals, carbon ink, one signal orange; contrast verified AA. */
 :root {
-  --bg: oklch(0.985 0.004 265);
-  --surface: oklch(0.997 0.002 265);
-  --panel: oklch(0.966 0.008 265);
-  --sunken: oklch(0.945 0.011 265);
-  --border: oklch(0.905 0.014 265);
-  --border-strong: oklch(0.84 0.02 265);
-  --text: oklch(0.225 0.035 265);
-  --muted: oklch(0.47 0.03 265);
-  --faint: oklch(0.56 0.022 265);
-  --brand: oklch(0.45 0.19 264);
-  --brand-strong: oklch(0.37 0.165 265);
-  --brand-soft: oklch(0.95 0.028 264);
-  --brand-ring: oklch(0.6 0.17 264 / 0.45);
-  --on-brand: oklch(0.985 0.004 265);
-  --ink: oklch(0.235 0.085 266);
-  --ink-2: oklch(0.29 0.1 266);
-  --on-ink: oklch(0.97 0.01 265);
-  --on-ink-muted: oklch(0.8 0.04 265);
-  --gold: oklch(0.8 0.155 80);
-  --gold-ink: oklch(0.5 0.105 68);
-  --gold-soft: oklch(0.965 0.045 92);
+  --bg: oklch(0.972 0.004 250);
+  --surface: oklch(0.994 0.002 250);
+  --panel: oklch(0.952 0.005 250);
+  --sunken: oklch(0.928 0.006 250);
+  --border: oklch(0.885 0.007 250);
+  --border-strong: oklch(0.8 0.01 250);
+  --text: oklch(0.19 0.02 262);
+  --muted: oklch(0.45 0.016 258);
+  --faint: oklch(0.54 0.014 258);
+  /* Signal orange: a fill, always carrying ink text. Text and icons use --brand-strong. */
+  --brand: oklch(0.68 0.19 45);
+  --brand-hover: oklch(0.64 0.185 43);
+  --brand-strong: oklch(0.52 0.15 40);
+  --brand-soft: oklch(0.955 0.024 55);
+  --brand-ring: oklch(0.68 0.19 45 / 0.55);
+  --on-brand: oklch(0.18 0.02 262);
+  --on-brand-muted: oklch(0.28 0.05 40);
+  --ink: oklch(0.18 0.02 262);
+  --ink-2: oklch(0.235 0.022 262);
+  --on-ink: oklch(0.97 0.004 250);
+  --on-ink-muted: oklch(0.76 0.012 255);
+  --gold: oklch(0.82 0.16 86);
+  --gold-ink: oklch(0.5 0.105 72);
+  --gold-soft: oklch(0.965 0.045 95);
   --correct: oklch(0.5 0.13 152);
   --correct-soft: oklch(0.962 0.035 152);
-  --incorrect: oklch(0.55 0.19 27);
-  --incorrect-soft: oklch(0.962 0.025 25);
+  --incorrect: oklch(0.53 0.19 22);
+  --incorrect-soft: oklch(0.96 0.018 18);
   --warning: oklch(0.6 0.13 70);
   --warning-soft: oklch(0.965 0.04 85);
   --highlight: oklch(0.93 0.12 100);
-  --shadow-float: 0 1px 2px oklch(0.2 0.04 265 / 0.06), 0 8px 24px oklch(0.2 0.04 265 / 0.08);
+  --shadow-float: 0 1px 2px oklch(0.2 0.02 262 / 0.08), 0 10px 28px oklch(0.2 0.02 262 / 0.1);
   /* Data viz: categorical series and sequential ramp (validated for both themes). */
   --viz-1: oklch(0.52 0.17 262);
   --viz-2: oklch(0.7 0.14 70);
@@ -50,31 +53,33 @@
 }
 
 .dark {
-  --bg: oklch(0.2 0.035 266);
-  --surface: oklch(0.235 0.038 266);
-  --panel: oklch(0.215 0.036 266);
-  --sunken: oklch(0.185 0.033 266);
-  --border: oklch(0.33 0.04 266);
-  --border-strong: oklch(0.42 0.045 266);
-  --text: oklch(0.94 0.012 265);
-  --muted: oklch(0.74 0.025 265);
-  --faint: oklch(0.64 0.028 265);
-  --brand: oklch(0.7 0.15 262);
-  --brand-strong: oklch(0.78 0.12 262);
-  --brand-soft: oklch(0.27 0.07 264);
-  --brand-ring: oklch(0.7 0.15 262 / 0.5);
-  --on-brand: oklch(0.2 0.035 266);
-  --ink: oklch(0.16 0.045 266);
-  --ink-2: oklch(0.22 0.06 266);
-  --on-ink: oklch(0.96 0.012 265);
-  --on-ink-muted: oklch(0.78 0.03 265);
-  --gold: oklch(0.82 0.15 82);
-  --gold-ink: oklch(0.85 0.13 85);
-  --gold-soft: oklch(0.28 0.06 80);
+  --bg: oklch(0.19 0.012 262);
+  --surface: oklch(0.225 0.014 262);
+  --panel: oklch(0.205 0.013 262);
+  --sunken: oklch(0.17 0.011 262);
+  --border: oklch(0.31 0.015 262);
+  --border-strong: oklch(0.4 0.017 262);
+  --text: oklch(0.95 0.004 250);
+  --muted: oklch(0.76 0.01 255);
+  --faint: oklch(0.66 0.012 255);
+  --brand: oklch(0.72 0.18 48);
+  --brand-hover: oklch(0.77 0.145 52);
+  --brand-strong: oklch(0.8 0.125 55);
+  --brand-soft: oklch(0.3 0.06 45);
+  --brand-ring: oklch(0.72 0.18 48 / 0.55);
+  --on-brand: oklch(0.17 0.02 262);
+  --on-brand-muted: oklch(0.27 0.05 40);
+  --ink: oklch(0.14 0.012 262);
+  --ink-2: oklch(0.205 0.015 262);
+  --on-ink: oklch(0.96 0.004 250);
+  --on-ink-muted: oklch(0.76 0.012 255);
+  --gold: oklch(0.83 0.15 86);
+  --gold-ink: oklch(0.86 0.13 88);
+  --gold-soft: oklch(0.3 0.06 82);
   --correct: oklch(0.74 0.15 152);
-  --correct-soft: oklch(0.26 0.05 152);
-  --incorrect: oklch(0.7 0.17 25);
-  --incorrect-soft: oklch(0.27 0.06 25);
+  --correct-soft: oklch(0.28 0.05 152);
+  --incorrect: oklch(0.7 0.17 22);
+  --incorrect-soft: oklch(0.29 0.06 20);
   --warning: oklch(0.8 0.13 80);
   --warning-soft: oklch(0.29 0.05 80);
   --highlight: oklch(0.45 0.1 100);
@@ -104,7 +109,9 @@
   --color-brand: var(--brand);
   --color-brand-strong: var(--brand-strong);
   --color-brand-soft: var(--brand-soft);
+  --color-brand-hover: var(--brand-hover);
   --color-on-brand: var(--on-brand);
+  --color-on-brand-muted: var(--on-brand-muted);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-on-ink: var(--on-ink);
@@ -129,12 +136,13 @@
   --color-series-2: var(--series-2);
   --color-series-3: var(--series-3);
 
-  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: var(--font-text), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-gothic), var(--font-text), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
 
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
 
   --shadow-float: var(--shadow-float);
 
@@ -162,11 +170,15 @@
     color: var(--brand-strong);
   }
   :focus-visible {
-    outline: 2px solid var(--brand);
+    outline: 2px solid var(--brand-strong);
     outline-offset: 2px;
   }
+  /* On signal-orange surfaces the ring switches to ink. */
+  .on-signal :focus-visible {
+    outline-color: var(--on-brand);
+  }
   h1, h2, h3, h4 {
-    letter-spacing: -0.015em;
+    letter-spacing: -0.01em;
     text-wrap: balance;
   }
   p {
@@ -181,20 +193,41 @@
   .tabular {
     font-variant-numeric: tabular-nums;
   }
-  .display {
-    font-stretch: 118%;
-    letter-spacing: -0.035em;
-    line-height: 0.98;
-  }
-  .eyebrow {
-    font-size: 11.5px;
-    font-weight: 650;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-  }
   .scrollbar-thin {
     scrollbar-width: thin;
     scrollbar-color: var(--border-strong) transparent;
+  }
+}
+
+/* Type styles live in the components layer so per-element utilities
+   (text-[..], leading-*, [font-stretch:..]) can override them. */
+@layer components {
+  /* Science Gothic, wide. Weight is set per use. */
+  .display {
+    font-family: var(--font-display);
+    font-stretch: 140%;
+    letter-spacing: -0.012em;
+    line-height: 0.94;
+  }
+  /* Forward lean for the loudest lines only (hero, closing call). */
+  .slant {
+    font-variation-settings: "slnt" -8;
+  }
+  /* Display face at a quieter width, for product headings. */
+  .heading {
+    font-family: var(--font-display);
+    font-stretch: 118%;
+    letter-spacing: -0.005em;
+  }
+  /* Timing-screen labels: short, uppercase, gothic. */
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 11.5px;
+    font-weight: 700;
+    font-stretch: 112%;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
   }
 }
 
@@ -307,4 +340,12 @@
 @keyframes collapse {
   from { height: var(--radix-accordion-content-height); opacity: 1; }
   to { height: 0; opacity: 0; }
+}
+
+/* Team-radio waveform on the marketing timing tower. */
+@keyframes radio {
+  0% { transform: scaleY(0.2); }
+  35% { transform: scaleY(1); }
+  70% { transform: scaleY(0.35); }
+  100% { transform: scaleY(0.25); }
 }

@@ -5,48 +5,54 @@ import { Plus } from "lucide-react";
 
 const QA = [
   {
-    q: "How is Argonaut different from other question banks?",
-    a: "The fundamentals match the best banks: exam-style vignettes, an exam-faithful interface, explanations for every answer choice, and analytics by system and discipline. The difference is ARGO. Instead of leaving you to decide what to do with your stats, it decides what you should practice next and builds the session for you.",
+    q: "How is this different from the big question banks?",
+    a: "The basics are the same: exam-style questions, a test-day interface, every answer choice explained. The difference is what happens after you answer. ARGO works out what you should practice next and builds that session for you. And it's $48 once, not hundreds.",
   },
   {
-    q: "What exactly does ARGO measure?",
-    a: "Correctness, time on each question, confidence, answer changes, the options you struck out, which distractor you chose, whether you opened lab values, where the question sat in the block, and how long since you last saw the concept. From that it estimates your mastery of every system, discipline, physician task, topic and Nugget, and classifies each miss as a knowledge gap, misconception, second-guess, rushed answer, distractor trap or memory lapse.",
+    q: "What does ARGO actually track?",
+    a: "Pretty much everything: what you got right, how long you took, how sure you were, what you changed your mind on, and which wrong answer pulled you in. You don't have to look at any of it to get better. It's all there if you want it.",
   },
   {
-    q: "What is a Nugget?",
-    a: "A Nugget is an ultra-high-yield concept. Every question is checked against an index of tens of thousands of high-yield concept lines; when the point a question tests matches one, the question carries a gold Nugget mark and the concept is added to your Nugget collection.",
+    q: "What's a Nugget?",
+    a: "A fact that comes up on the exam again and again. Questions that test one are marked gold, and you collect them as you go.",
   },
   {
     q: "Is the Daily Challenge really free?",
-    a: "Yes. Anyone can play without an account. Create a free account to appear on the leaderboard, keep a streak and review the full explanation later.",
+    a: "Yes, and you don't need an account to play. Sign up free if you want a spot on the leaderboard and a streak.",
   },
   {
-    q: "Which exams are covered?",
-    a: "Step 1 and Step 2 CK, tagged to the official USMLE content outline. Step 3 content is planned.",
+    q: "Which exams do you cover?",
+    a: "Step 1 and Step 2 CK, mapped to the official USMLE content outline. Step 3 is on the way.",
   },
   {
     q: "Is it a subscription?",
-    a: "No. Full access is one $48 payment that unlocks every question, the Library and ARGO analytics, with nothing to renew. The only recurring charge is the optional question-writing add-on at $4.99 a month, which you can cancel anytime from Settings.",
+    a: "No. $48 once gets you everything, and it doesn't expire. The only monthly charge is the optional question-writing add-on at $4.99, which you can cancel whenever you like.",
   },
   {
     q: "What does the question-writing add-on do?",
-    a: "When ARGO runs short of unseen questions on a concept you keep missing, it writes new ones built around the wrong answers you tend to choose. Every draft is answered blind and fact-checked by separate reviews before you see it, and drafts that fail are discarded.",
+    a: "If you've worked through every question on something you keep missing, ARGO writes new ones aimed at exactly that. Each one is checked before it reaches you.",
   },
 ];
 
 export function Faq() {
   return (
-    <Accordion.Root type="single" collapsible className="divide-y divide-border border-y border-border">
-      {QA.map((item) => (
-        <Accordion.Item key={item.q} value={item.q}>
+    <Accordion.Root type="single" collapsible className="border-t-2 border-text">
+      {QA.map((item, i) => (
+        <Accordion.Item key={item.q} value={item.q} className="border-b border-border">
           <Accordion.Header>
-            <Accordion.Trigger className="group flex w-full items-center justify-between gap-6 py-5 text-left text-[17px] font-semibold text-text">
-              {item.q}
-              <Plus className="size-5 shrink-0 text-muted transition-transform duration-300 ease-[var(--ease-out-quart)] group-data-[state=open]:rotate-45" />
+            <Accordion.Trigger className="group grid w-full grid-cols-[40px_1fr_auto] items-center gap-4 py-5 text-left">
+              <span className="font-display text-[13px] font-[800] text-faint tabular">{String(i + 1).padStart(2, "0")}</span>
+              <span className="text-[17.5px] font-bold text-text">{item.q}</span>
+              <span className="grid size-8 place-items-center rounded-[4px] bg-panel transition-colors duration-200 group-hover:bg-brand group-data-[state=open]:bg-brand">
+                <Plus
+                  className="size-4 text-text transition-transform duration-300 ease-[var(--ease-out-quart)] group-hover:text-on-brand group-data-[state=open]:rotate-45 group-data-[state=open]:text-on-brand"
+                  strokeWidth={2.5}
+                />
+              </span>
             </Accordion.Trigger>
           </Accordion.Header>
           <Accordion.Content className="overflow-hidden data-[state=closed]:animate-[collapse_220ms_var(--ease-out-quart)] data-[state=open]:animate-[expand_280ms_var(--ease-out-quart)]">
-            <p className="max-w-[70ch] pb-6 text-[15.5px] leading-relaxed text-muted">{item.a}</p>
+            <p className="max-w-[68ch] pb-6 pl-14 text-[16px] leading-relaxed text-muted">{item.a}</p>
           </Accordion.Content>
         </Accordion.Item>
       ))}

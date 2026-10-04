@@ -15,7 +15,7 @@ export default async function SettingsPage() {
         description={
           <>
             Signed in as {user.email}.{" "}
-            <Link href="/settings/billing" className="font-semibold text-brand hover:underline">
+            <Link href="/settings/billing" className="font-semibold text-brand-strong hover:underline">
               Plan and billing
             </Link>
           </>

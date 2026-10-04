@@ -86,7 +86,7 @@ export default async function DashboardPage() {
             <ul className="divide-y divide-border">
               {active && (
                 <TodayRow
-                  icon={<CirclePlay className="size-[18px] text-brand" />}
+                  icon={<CirclePlay className="size-[18px] text-brand-strong" />}
                   title={active.status === "suspended" ? "Resume your suspended block" : "Continue your block"}
                   body={`${active.name ?? (active.kind === "argo" ? "ARGO session" : "Custom block")} · ${active.question_count} questions · ${active.mode}`}
                   action={
@@ -115,7 +115,7 @@ export default async function DashboardPage() {
                 />
               )}
               <TodayRow
-                icon={<Brain className="size-[18px] text-brand" />}
+                icon={<Brain className="size-[18px] text-brand-strong" />}
                 title={isNew ? "ARGO is waiting for data" : insights.weaknesses[0] ? `Weakest right now: ${insights.weaknesses[0].name}` : "ARGO"}
                 body={
                   isNew
@@ -155,7 +155,7 @@ export default async function DashboardPage() {
 
           {isNew ? (
             <Panel className="p-6">
-              <p className="eyebrow text-brand">First block</p>
+              <p className="eyebrow text-brand-strong">First block</p>
               <h2 className="mt-2 text-[22px] font-[750] tracking-[-0.015em]">Start with ten questions in tutor mode</h2>
               <p className="mt-2 max-w-[60ch] text-[15px] text-muted">
                 Tutor mode shows the explanation after each answer. Every answer feeds ARGO, so your dashboard fills in as you go.
@@ -207,7 +207,7 @@ export default async function DashboardPage() {
           <Panel>
             <div className="flex items-center justify-between border-b border-border px-5 py-3.5">
               <h2 className="text-[15px] font-[700]">Recent tests</h2>
-              <Link href="/tests" className="text-[13px] font-semibold text-brand hover:underline">
+              <Link href="/tests" className="text-[13px] font-semibold text-brand-strong hover:underline">
                 All tests
               </Link>
             </div>

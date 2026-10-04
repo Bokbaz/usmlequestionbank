@@ -6,7 +6,7 @@ const NAV = Array.from({ length: 14 }, (_, i) => i + 1);
 // Static preview of the real test player (same layout and tokens).
 export function ExamDemo() {
   return (
-    <div className="overflow-hidden rounded-[14px] border border-border bg-surface shadow-[0_40px_90px_-40px_oklch(0.2_0.06_266/0.45)]">
+    <div className="overflow-hidden rounded-[8px] border border-border bg-surface shadow-[0_40px_90px_-40px_oklch(0.2_0.02_262/0.35)]">
       <div className="flex items-center gap-4 bg-ink px-4 py-2.5 text-on-ink">
         <span className="text-[13px] font-semibold">Item 12 of 40</span>
         <span className="hidden items-center gap-1.5 rounded-[5px] bg-on-ink/10 px-2 py-1 text-[12px] font-semibold text-on-ink sm:inline-flex">
@@ -36,8 +36,8 @@ export function ExamDemo() {
               )}
             >
               {n}
-              {n < 12 && n !== 7 && <span className="absolute right-1 top-1 size-1.5 rounded-full bg-brand/70" />}
-              {(n === 7 || n === 12) && <Flag className="absolute left-0.5 top-0.5 size-2.5 fill-gold text-gold" />}
+              {n < 12 && n !== 7 && <span className="absolute right-1 top-1 size-1.5 rounded-full bg-brand-strong" />}
+              {(n === 7 || n === 12) && <Flag className={cn("absolute left-0.5 top-0.5 size-2.5", n === 12 ? "fill-on-brand text-on-brand" : "fill-gold text-gold")} />}
             </li>
           ))}
         </ol>
@@ -62,8 +62,8 @@ export function ExamDemo() {
               <li
                 key={l as string}
                 className={cn(
-                  "flex items-center gap-2.5 rounded-[8px] border px-3 py-2",
-                  l === "C" ? "border-brand/50 bg-brand-soft" : "border-border",
+                  "flex items-center gap-2.5 rounded-[5px] border px-3 py-2",
+                  l === "C" ? "border-brand bg-brand-soft" : "border-border",
                 )}
               >
                 <span

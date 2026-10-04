@@ -6,7 +6,7 @@ export default function NotFound() {
       <div>
         <p className="eyebrow text-faint">Block not found</p>
         <h1 className="mt-2 text-[26px] font-[750]">This block doesn&apos;t exist or isn&apos;t yours.</h1>
-        <Link href="/tests" className="mt-4 inline-block font-semibold text-brand hover:underline">
+        <Link href="/tests" className="mt-4 inline-block font-semibold text-brand-strong hover:underline">
           Go to previous tests
         </Link>
       </div>

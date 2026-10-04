@@ -7,7 +7,7 @@ export const Input = React.forwardRef<HTMLInputElement, React.InputHTMLAttribute
       <input
         ref={ref}
         className={cn(
-          "h-10 w-full rounded-[6px] border border-border bg-surface px-3 text-[15px] text-text placeholder:text-faint transition-[border-color,box-shadow] duration-150 hover:border-border-strong focus:border-brand focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)] disabled:cursor-not-allowed disabled:bg-panel disabled:text-faint aria-[invalid=true]:border-incorrect",
+          "h-10 w-full rounded-[6px] border border-border bg-surface px-3 text-[15px] text-text placeholder:text-faint transition-[border-color,box-shadow] duration-150 hover:border-border-strong focus:border-brand-strong focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)] disabled:cursor-not-allowed disabled:bg-panel disabled:text-faint aria-[invalid=true]:border-incorrect",
           className,
         )}
         {...props}
@@ -22,7 +22,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, React.TextareaHTML
       <textarea
         ref={ref}
         className={cn(
-          "w-full rounded-[6px] border border-border bg-surface px-3 py-2 text-[15px] text-text placeholder:text-faint transition-[border-color,box-shadow] duration-150 hover:border-border-strong focus:border-brand focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)] disabled:cursor-not-allowed disabled:bg-panel",
+          "w-full rounded-[6px] border border-border bg-surface px-3 py-2 text-[15px] text-text placeholder:text-faint transition-[border-color,box-shadow] duration-150 hover:border-border-strong focus:border-brand-strong focus:outline-none focus:ring-3 focus:ring-[var(--brand-ring)] disabled:cursor-not-allowed disabled:bg-panel",
           className,
         )}
         {...props}

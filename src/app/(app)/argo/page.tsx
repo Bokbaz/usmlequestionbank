@@ -39,10 +39,10 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
   if (!unlocked) {
     return (
       <>
-        <PageHeader eyebrow={<span className="flex items-center gap-1.5"><ArgoMark className="size-3.5 text-brand" /> ARGO</span>} title="Your personal weakness-hunting engine" description="ARGO models how you answer, not just what you answer, and builds every session around what will move your score." />
+        <PageHeader eyebrow={<span className="flex items-center gap-1.5"><ArgoMark className="size-3.5 text-brand-strong" /> ARGO</span>} title="Your race engineer" description="ARGO finds where you're losing points and builds every session around fixing it." />
         <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
           <Panel className="p-6">
-            <p className="text-[15px] font-[700]">What ARGO already sees in your answers</p>
+            <p className="text-[15px] font-[700]">What ARGO can already see</p>
             {enough ? (
               <ul className="mt-4 grid gap-3">
                 {insights.weaknesses.slice(0, 3).map((w) => (
@@ -66,10 +66,10 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
               <Lock className="size-4" /> Unlock ARGO
             </p>
             <ul className="mt-4 grid gap-2 text-[14px] text-on-ink/90">
-              <li>Adaptive sessions built from your weakest concepts</li>
-              <li>Error taxonomy: gaps, misconceptions, second-guessing, traps, forgetting</li>
-              <li>Mastery map, calibration, pacing and stamina analytics</li>
-              <li>Confusion-pair drills and spaced retests</li>
+              <li>Sessions built around your weakest topics</li>
+              <li>Why you miss: gaps, mix-ups, second-guessing, traps, forgetting</li>
+              <li>Mastery map, timing, confidence and stamina</li>
+              <li>Drills for the things you keep mixing up, and retests before you forget</li>
             </ul>
             <Button asChild variant="ink" size="lg" className="mt-6">
               <Link href="/pricing?from=argo">
@@ -104,7 +104,7 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
   return (
     <>
       <PageHeader
-        eyebrow={<span className="flex items-center gap-1.5"><ArgoMark className="size-3.5 text-brand" /> ARGO</span>}
+        eyebrow={<span className="flex items-center gap-1.5"><ArgoMark className="size-3.5 text-brand-strong" /> ARGO</span>}
         title="Your model"
         description="Updated with every answer. Every number below links back to the answers that produced it."
         actions={
@@ -119,7 +119,7 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
               <option value="timed">Timed</option>
             </select>
             <Button type="submit">
-              <ArgoMark className="size-4" /> Start ARGO session
+              <ArgoMark className="size-4" apex="current" /> Start ARGO session
             </Button>
           </form>
         }
@@ -188,7 +188,7 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
               ) : (
                 preview.shortfall.length > 0 && (
                   <p className="mt-4 flex gap-2 rounded-[8px] bg-panel p-3 text-[13px] text-muted">
-                    <Sparkles className="mt-0.5 size-4 shrink-0 text-brand" />
+                    <Sparkles className="mt-0.5 size-4 shrink-0 text-brand-strong" />
                     Running low on unseen questions for {preview.shortfall.map((s) => s.name).slice(0, 2).join(" and ")}. ARGO fills the gap with spaced retests until new questions arrive.
                   </p>
                 )

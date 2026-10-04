@@ -72,7 +72,7 @@ export function ArgoWriter({ targets, remaining, subscribed }: { targets: Target
     return (
       <div className="mt-4 rounded-[8px] bg-panel p-4">
         <p className="flex items-start gap-2 text-[13.5px]">
-          <Sparkles className="mt-0.5 size-4 shrink-0 text-brand" />
+          <Sparkles className="mt-0.5 size-4 shrink-0 text-brand-strong" />
           <span>
             Running low on unseen questions for <strong>{target.name}</strong>. With question writing, ARGO writes new ones aimed at the answers you keep getting wrong, each solved blind and
             fact-checked before you see it.
@@ -90,7 +90,7 @@ export function ArgoWriter({ targets, remaining, subscribed }: { targets: Target
   return (
     <div className="mt-4 rounded-[8px] bg-panel p-4">
       <p className="flex items-start gap-2 text-[13.5px]">
-        <Sparkles className="mt-0.5 size-4 shrink-0 text-brand" />
+        <Sparkles className="mt-0.5 size-4 shrink-0 text-brand-strong" />
         <span>
           Running low on unseen questions for <strong>{target.name}</strong> ({target.available} left). ARGO can write new ones aimed at the answers you have been getting wrong. Each is solved blind and fact-checked
           before you see it.
@@ -116,7 +116,7 @@ export function ArgoWriter({ targets, remaining, subscribed }: { targets: Target
             <li key={i} className="flex items-start gap-2">
               {s.state === "writing" ? (
                 <>
-                  <Loader2 className="mt-0.5 size-3.5 animate-spin text-brand" /> <span className="text-muted">Writing and verifying (about two minutes)</span>
+                  <Loader2 className="mt-0.5 size-3.5 animate-spin text-brand-strong" /> <span className="text-muted">Writing and verifying (about two minutes)</span>
                 </>
               ) : s.state === "accepted" ? (
                 <>

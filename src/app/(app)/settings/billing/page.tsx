@@ -44,7 +44,7 @@ export default async function BillingPage({ searchParams }: PageProps<"/settings
 
   return (
     <>
-      <PageHeader title="Plan and billing" description={<Link href="/settings" className="font-semibold text-brand hover:underline">Back to settings</Link>} />
+      <PageHeader title="Plan and billing" description={<Link href="/settings" className="font-semibold text-brand-strong hover:underline">Back to settings</Link>} />
       {notice && (
         <p className={`mb-6 flex items-center gap-2 rounded-[8px] px-4 py-3 text-[14.5px] font-semibold ${notice.tone === "good" ? "bg-correct-soft text-correct" : "bg-panel text-text"}`}>
           {notice.tone === "good" && <CheckCircle2 className="size-5" />} {notice.text}
@@ -55,7 +55,7 @@ export default async function BillingPage({ searchParams }: PageProps<"/settings
         <section className="flex flex-wrap items-center justify-between gap-4 p-6">
           <div className="min-w-0">
             <p className="flex items-center gap-2 text-[13px] text-muted">
-              <ArgoMark className="size-3.5 text-brand" /> {OFFERS.access.name}
+              <ArgoMark className="size-3.5 text-brand-strong" /> {OFFERS.access.name}
             </p>
             <p className="mt-1 text-[20px] font-[750]">{profile.role === "admin" ? "Admin: everything unlocked" : unlocked ? "Unlocked" : plan === "core" ? "QBank only" : "Not unlocked"}</p>
             <p className="mt-1 text-[13.5px] text-muted">
@@ -76,7 +76,7 @@ export default async function BillingPage({ searchParams }: PageProps<"/settings
         <section className="flex flex-wrap items-center justify-between gap-4 p-6">
           <div className="min-w-0">
             <p className="flex items-center gap-2 text-[13px] text-muted">
-              <Plus className="size-3.5 text-brand" strokeWidth={2.5} /> {OFFERS.writer.name}
+              <Plus className="size-3.5 text-brand-strong" strokeWidth={2.5} /> {OFFERS.writer.name}
             </p>
             <p className="mt-1 flex items-center gap-2 text-[20px] font-[750]">
               {profile.role === "admin" ? "Included for admins" : writerLive ? "Active" : "Off"}

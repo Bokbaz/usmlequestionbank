@@ -191,7 +191,7 @@ export function CreateTestForm({
         <Section
           title="Systems"
           action={
-            <button type="button" onClick={() => setSystems(systems.length ? [] : sortedSystems.map((s) => s.id))} className="text-[13px] font-semibold text-brand hover:underline">
+            <button type="button" onClick={() => setSystems(systems.length ? [] : sortedSystems.map((s) => s.id))} className="text-[13px] font-semibold text-brand-strong hover:underline">
               {systems.length ? "Clear" : "Select all"}
             </button>
           }
@@ -207,7 +207,7 @@ export function CreateTestForm({
         <Section
           title="Disciplines"
           action={
-            <button type="button" onClick={() => setDisciplines(disciplines.length ? [] : taxonomy.disciplines.map((d) => d.id))} className="text-[13px] font-semibold text-brand hover:underline">
+            <button type="button" onClick={() => setDisciplines(disciplines.length ? [] : taxonomy.disciplines.map((d) => d.id))} className="text-[13px] font-semibold text-brand-strong hover:underline">
               {disciplines.length ? "Clear" : "Select all"}
             </button>
           }

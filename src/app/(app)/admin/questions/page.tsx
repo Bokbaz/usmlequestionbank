@@ -85,7 +85,7 @@ export default async function AdminQuestionsPage({ searchParams }: PageProps<"/a
           Filter
         </Button>
         {(filters.q || filters.system || filters.status || filters.source || filters.nuggets) && (
-          <Link href="/admin/questions" className="px-2 text-[13.5px] font-semibold text-brand hover:underline">
+          <Link href="/admin/questions" className="px-2 text-[13.5px] font-semibold text-brand-strong hover:underline">
             Clear
           </Link>
         )}

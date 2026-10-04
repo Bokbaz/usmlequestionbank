@@ -13,24 +13,29 @@ export default async function PricingPage() {
   const hasWriter = profile ? await writerAddonActive(await createClient(), profile.id) : false;
   return (
     <>
-      <SiteHeader overInk={false} />
+      <SiteHeader overHero={false} />
       <main className="bg-bg pt-16">
-        <section className="mx-auto max-w-[1240px] px-5 pb-24 pt-20 md:px-8">
-          <div className="mx-auto max-w-[760px] text-center">
-            <p className="eyebrow text-brand">Pricing</p>
-            <h1 className="display mt-5 text-[clamp(40px,5.4vw,76px)] font-[800]">Pay once. Prep with everything.</h1>
-            <p className="mx-auto mt-6 max-w-[54ch] text-[17px] leading-relaxed text-muted">
-              $48 unlocks every question, the full Library and ARGO&apos;s adaptive engine and analytics, with nothing to
-              renew. Add question writing for $4.99 a month when you want new questions built around your misses.
+        <section className="mx-auto max-w-[1320px] px-5 pb-24 pt-16 md:px-8 md:pt-20">
+          <div className="grid gap-6 border-b-2 border-text pb-10 lg:grid-cols-12 lg:items-end">
+            <div className="lg:col-span-8">
+              <p className="eyebrow text-brand-strong">Pricing</p>
+              <h1 className="display mt-6 text-[clamp(40px,5.6vw,84px)] font-[850]">Pay once. Get everything.</h1>
+            </div>
+            <p className="max-w-[40ch] text-[18px] leading-relaxed text-muted lg:col-span-4">
+              $48 unlocks every question, the full Library and all of ARGO. No subscription, no expiry date. Add question
+              writing for $4.99 a month if you want new questions built around your misses.
             </p>
           </div>
-          <div className="mt-14">
+          <div className="mt-16">
             <PricingTable currentPlan={profile ? effectivePlan(profile) : undefined} hasWriter={hasWriter} />
           </div>
         </section>
         <section className="border-t border-border bg-surface">
-          <div className="mx-auto max-w-[900px] px-5 py-20 md:px-8">
-            <Faq />
+          <div className="mx-auto grid max-w-[1320px] gap-12 px-5 py-24 md:px-8 lg:grid-cols-12">
+            <h2 className="display text-[clamp(32px,3.6vw,52px)] font-[850] lg:col-span-4">Straight answers.</h2>
+            <div className="lg:col-span-8">
+              <Faq />
+            </div>
           </div>
         </section>
       </main>

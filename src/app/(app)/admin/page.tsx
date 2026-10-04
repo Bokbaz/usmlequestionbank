@@ -84,7 +84,7 @@ export default async function AdminOverviewPage() {
                   <p className="text-[13px] text-muted">{c.detail}</p>
                 </div>
                 {c.href && (
-                  <Link href={c.href} className="flex shrink-0 items-center gap-1 text-[13px] font-semibold text-brand hover:underline">
+                  <Link href={c.href} className="flex shrink-0 items-center gap-1 text-[13px] font-semibold text-brand-strong hover:underline">
                     Open <ArrowRight className="size-3.5" />
                   </Link>
                 )}

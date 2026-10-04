@@ -552,10 +552,10 @@ function NavCell({ i, it, active, review, onClick, compact }: { i: number; it: P
       )}
     >
       {i + 1}
-      {it.state.marked && <Flag className={cn("absolute left-1 top-1 size-2.5 fill-gold text-gold", compact && "left-0.5 top-0.5")} />}
+      {it.state.marked && <Flag className={cn("absolute left-1 top-1 size-2.5", active ? "fill-on-brand text-on-brand" : "fill-gold text-gold", compact && "left-0.5 top-0.5")} />}
       {status === "correct" && !active && <span className="absolute bottom-1 right-1 size-1.5 rounded-full bg-correct" />}
       {status === "wrong" && !active && <span className="absolute bottom-1 right-1 size-1.5 rounded-full bg-incorrect" />}
-      {status === "answered" && !active && <span className="absolute bottom-1 right-1 size-1.5 rounded-full bg-brand/70" />}
+      {status === "answered" && !active && <span className="absolute bottom-1 right-1 size-1.5 rounded-full bg-brand-strong" />}
     </button>
   );
 }
@@ -603,7 +603,7 @@ function ReportDialog({ open, onOpenChange, questionId, code }: { open: boolean;
             onChange={(e) => setMessage(e.target.value)}
             rows={4}
             placeholder="What should we fix?"
-            className="mt-4 w-full rounded-[6px] border border-border bg-surface px-3 py-2 text-[14.5px] focus:border-brand focus:outline-none"
+            className="mt-4 w-full rounded-[6px] border border-border bg-surface px-3 py-2 text-[14.5px] focus:border-brand-strong focus:outline-none"
           />
           <div className="mt-4 flex justify-end gap-2">
             <Dialog.Close asChild>

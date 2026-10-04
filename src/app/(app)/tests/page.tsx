@@ -64,7 +64,7 @@ export default async function TestsPage() {
                     <td className="tabular px-4 py-3 text-right text-muted">{formatClock(t.elapsed_seconds)}</td>
                     <td className="tabular px-4 py-3 text-right font-[700]">{score != null ? `${score}%` : <Badge tone="neutral">{t.status === "suspended" ? "Suspended" : "Active"}</Badge>}</td>
                     <td className="px-4 py-3 text-right">
-                      <Link href={t.status === "completed" ? `/tests/${t.id}` : `/test/${t.id}`} className="text-[13.5px] font-semibold text-brand hover:underline">
+                      <Link href={t.status === "completed" ? `/tests/${t.id}` : `/test/${t.id}`} className="text-[13.5px] font-semibold text-brand-strong hover:underline">
                         {t.status === "completed" ? "Results" : "Resume"}
                       </Link>
                     </td>

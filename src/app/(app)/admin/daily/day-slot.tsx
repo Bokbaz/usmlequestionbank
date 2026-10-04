@@ -49,7 +49,7 @@ export function DaySlot({
       <div className="flex items-start gap-4">
         <p className="tabular w-28 shrink-0 text-[13.5px] font-semibold">
           {label}
-          {isToday && <span className="block text-[12px] font-normal text-brand">Today</span>}
+          {isToday && <span className="block text-[12px] font-normal text-brand-strong">Today</span>}
         </p>
         <div className="min-w-0 flex-1">
           {current ? (

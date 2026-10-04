@@ -44,7 +44,7 @@ export function NoteList({ notes: initial }: { notes: NoteRow[] }) {
     <div>
       <div className="relative max-w-[420px]">
         <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-faint" />
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search notes" className="h-10 w-full rounded-[8px] border border-border bg-surface pl-9 pr-3 text-[15px] focus:border-brand focus:outline-none" />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search notes" className="h-10 w-full rounded-[8px] border border-border bg-surface pl-9 pr-3 text-[15px] focus:border-brand-strong focus:outline-none" />
       </div>
       <ul className="mt-5 grid gap-3">
         {shown.map((n) => (
@@ -57,7 +57,7 @@ export function NoteList({ notes: initial }: { notes: NoteRow[] }) {
                     {n.questions.topics?.name ? ` · ${n.questions.topics.name}` : ""}
                   </>
                 ) : n.library_articles ? (
-                  <Link href={`/library/${n.library_articles.slug}`} className="font-semibold text-brand hover:underline">
+                  <Link href={`/library/${n.library_articles.slug}`} className="font-semibold text-brand-strong hover:underline">
                     {n.library_articles.title}
                   </Link>
                 ) : (

@@ -1,23 +1,25 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/logo";
-import { Constellation } from "@/components/marketing/constellation";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="grid min-h-svh lg:grid-cols-[1fr_1.05fr]">
-      <aside className="relative hidden overflow-hidden bg-ink text-on-ink lg:block">
-        <Constellation className="pointer-events-none absolute inset-0 h-full w-full text-on-ink/50" />
+      <aside className="on-signal relative hidden overflow-hidden bg-brand text-on-brand lg:block">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(to_right,currentColor_1px,transparent_1px)] [background-size:calc(100%/6)_100%]"
+        />
         <div className="relative flex h-full flex-col justify-between p-12">
           <Link href="/" aria-label="Argonaut USMLE home">
-            <Logo tone="inverse" />
+            <Logo tone="signal" />
           </Link>
-          <div className="max-w-[440px]">
-            <p className="display text-[52px] font-[800]">Every answer makes the next session smarter.</p>
-            <p className="mt-5 text-[16px] leading-relaxed text-on-ink-muted">
-              ARGO tracks how you answer, not just what you answer, and turns it into a plan you can act on today.
+          <div className="max-w-[520px] border-t-2 border-on-brand pt-8">
+            <p className="display slant text-[clamp(44px,4.6vw,68px)] font-[880]">Welcome to the team.</p>
+            <p className="mt-6 max-w-[40ch] text-[18px] font-semibold leading-relaxed">
+              Every answer you give makes the next session sharper. We&apos;ll do the math. You put in the reps.
             </p>
           </div>
-          <p className="text-[12.5px] text-on-ink-muted">Not affiliated with the FSMB or NBME.</p>
+          <p className="text-[13px] font-semibold text-on-brand-muted">Not affiliated with the FSMB or NBME.</p>
         </div>
       </aside>
       <main className="flex flex-col bg-surface">
