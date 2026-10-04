@@ -58,7 +58,7 @@ export default async function AdminQuestionsPage({ searchParams }: PageProps<"/a
       />
       <form className="mb-4 flex flex-wrap items-end gap-2" action="/admin/questions">
         <Input name="q" defaultValue={filters.q} placeholder="Search text or AQ-1234" className="h-9 w-64 text-[14px]" />
-        <select name="system" defaultValue={filters.system ?? ""} className="h-9 rounded-[6px] border border-border bg-surface px-2 text-[14px]" aria-label="System">
+        <select name="system" defaultValue={filters.system ?? ""} className="h-9 w-56 rounded-[6px] border border-border bg-surface px-2 text-[14px]" aria-label="System">
           <option value="">All systems</option>
           {(systems ?? []).map((s) => (
             <option key={s.id} value={s.id}>

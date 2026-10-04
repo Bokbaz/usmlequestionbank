@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Badge, NuggetGlyph } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/misc";
-import { cn } from "@/lib/utils";
+import { cn, plural } from "@/lib/utils";
 import { promoteQuestion, setQuestionFlags, setQuestionStatus } from "../actions";
 
 export type AdminQuestionRow = {
@@ -54,7 +54,7 @@ export function QuestionTable({ rows, total, argo }: { rows: AdminQuestionRow[];
     <div className="rounded-[10px] border border-border bg-surface">
       <div className="flex min-h-12 flex-wrap items-center gap-2 border-b border-border px-4 py-2">
         <p className="mr-auto text-[13.5px] text-muted">
-          {ids.length ? <span className="font-semibold text-text">{ids.length} selected</span> : `${total.toLocaleString()} questions`}
+          {ids.length ? <span className="font-semibold text-text">{ids.length} selected</span> : plural(total, "question")}
         </p>
         {ids.length > 0 && (
           <>

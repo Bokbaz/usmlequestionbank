@@ -175,7 +175,11 @@ export async function recomposeTopics(sb: SupabaseClient, topicIds: number[]) {
     if (qErr) throw qErr;
     for (const topic of topics ?? []) {
       const qs = ((questions ?? []) as unknown as TopicQuestion[]).filter((q) => q.topic_id === topic.id);
-      if (!qs.length) continue;
+      if (!qs.length) {
+        // Every question on the topic was retired or moved to draft: hide its chapter.
+        await sb.from("library_articles").update({ status: "draft" }).eq("topic_id", topic.id);
+        continue;
+      }
       const article = composeArticle(
         topic.name,
         qs.map((q) => ({

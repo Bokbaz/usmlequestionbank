@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/auth";
+import { recomposeTopics } from "@/lib/import/pipeline";
 import { createClient } from "@/lib/supabase/server";
 
 // Every action re-checks the caller: server actions are reachable without the page.
@@ -14,9 +15,18 @@ type Result = { error?: string };
 
 export async function setQuestionStatus(ids: string[], status: "published" | "draft" | "retired"): Promise<Result> {
   const sb = await admin();
-  const { error } = await sb.from("questions").update({ status }).in("id", ids.slice(0, 500));
+  const { data, error } = await sb.from("questions").update({ status }).in("id", ids.slice(0, 500)).select("topic_id");
+  if (error) return { error: error.message };
+  // Library chapters only include published questions, so rebuild the affected topics.
+  const topics = [...new Set((data ?? []).map((r) => r.topic_id).filter((t): t is number => t != null))];
+  try {
+    await recomposeTopics(sb, topics);
+  } catch (e) {
+    return { error: `Status saved, but the Library rebuild failed: ${e instanceof Error ? e.message : e}` };
+  }
   revalidatePath("/admin/questions");
-  return error ? { error: error.message } : {};
+  revalidatePath("/library");
+  return {};
 }
 
 export async function setQuestionFlags(ids: string[], flags: { is_free?: boolean; is_daily_eligible?: boolean }): Promise<Result> {

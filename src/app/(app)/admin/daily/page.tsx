@@ -50,7 +50,7 @@ export default async function AdminDailyPage() {
         title="Daily Challenge"
         description={`One ultra-hard question per UTC day. Empty days are filled automatically at midnight UTC from the eligible pool, never-used questions first. ${eligible.length} eligible, ${unused} never used.`}
       />
-      <div className="grid gap-6 lg:grid-cols-[1.5fr_1fr]">
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
         <Panel className="p-5">
           <SectionTitle>Next three weeks</SectionTitle>
           <ul className="divide-y divide-border">

@@ -380,7 +380,10 @@ export function Importer({ ai }: { ai: boolean }) {
                 </p>
               ) : (
                 <p className="flex items-center gap-2 text-[14px] text-muted">
-                  <CheckCircle2 className="size-4 text-correct" /> {plural(finished?.articles ?? 0, "Library chapter")} rebuilt from the imported explanations.
+                  <CheckCircle2 className="size-4 text-correct" />
+                  {finished?.articles
+                    ? `${plural(finished.articles, "Library chapter")} rebuilt from the imported explanations.`
+                    : "No Library chapters changed. Draft questions join the Library when they are published."}
                 </p>
               )}
               <div className="flex flex-wrap gap-2">
