@@ -40,7 +40,7 @@ const CONFIDENCE = [
 export function TestPlayer({ data, initialPosition, askConfidence = true }: { data: PlayerData; initialPosition?: number; askConfidence?: boolean }) {
   const router = useRouter();
   const supabase = useMemo(() => createClient(), []);
-  const [test, setTest] = useState(data.test);
+  const [test] = useState(data.test);
   const [items, setItems] = useState<PlayerItem[]>(data.items);
   const [pos, setPos] = useState(() => Math.min(Math.max(initialPosition ?? data.test.current_position ?? 0, 0), data.items.length - 1));
   const [panel, setPanel] = useState<PanelKind | null>(null);
@@ -58,9 +58,16 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
   const totalSeconds = test.question_count * test.seconds_per_question;
   const remaining = Math.max(0, totalSeconds - elapsed);
 
-  const activeSince = useRef(Date.now());
+  // When the current item became active; folded into its time_ms on navigation and submit.
+  const activeSince = useRef(0);
+  // Latest items for async persistence, synced after each render.
   const itemsRef = useRef(items);
-  itemsRef.current = items;
+  useEffect(() => {
+    itemsRef.current = items;
+  }, [items]);
+  useEffect(() => {
+    activeSince.current = Date.now();
+  }, []);
   const saveTimers = useRef<Record<number, ReturnType<typeof setTimeout>>>({});
   const autoEnded = useRef(false);
 

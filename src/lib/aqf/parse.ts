@@ -44,6 +44,12 @@ export type AqfQuestion = {
   nuggets: { title: string; body?: string }[];
   errors: string[];
   warnings: string[];
+  // Source text of the block, for AI repair in the importer.
+  raw?: string;
+  // Header keys present in the source (for example "system", "difficulty").
+  meta: string[];
+  // Fields filled in by AI in the importer, shown for review before committing.
+  ai?: { structured?: boolean; classified?: boolean };
 };
 
 export type AqfParseResult = { questions: AqfQuestion[]; fileErrors: string[] };
@@ -192,6 +198,8 @@ export function parseQuestionBlock(raw: string, index: number): AqfQuestion {
     nuggets: [],
     errors: [],
     warnings: [],
+    raw,
+    meta: [],
   };
 
   const buf: Record<string, string[]> = {
@@ -220,6 +228,7 @@ export function parseQuestionBlock(raw: string, index: number): AqfQuestion {
       // Metadata keys are honoured anywhere except inside the vignette and Library text.
       if (single && (section === "header" || (section !== "stem" && section !== "textbook"))) {
         const v = k.rest.trim();
+        if (!q.meta.includes(single)) q.meta.push(single);
         switch (single) {
           case "code":
             q.code = v || undefined;
@@ -380,7 +389,12 @@ export function parseQuestionBlock(raw: string, index: number): AqfQuestion {
     if (o) o.concept = concept;
   }
 
-  // Validation -----------------------------------------------------------------
+  return validateAqf(q);
+}
+
+// Checks a parsed question and fills in a guessed system when none was given. Appends to
+// q.errors and q.warnings; use revalidateAqf after editing a question.
+export function validateAqf(q: AqfQuestion): AqfQuestion {
   if (!q.stem) q.errors.push("Missing stem (vignette)");
   if (!q.leadIn) q.errors.push("Missing lead-in question");
   else if (!q.leadIn.trim().endsWith("?")) q.warnings.push("Lead-in does not end with a question mark");
@@ -413,6 +427,10 @@ export function parseQuestionBlock(raw: string, index: number): AqfQuestion {
   if (!q.topic) q.warnings.push("No topic (Library article will not be linked)");
   q.warnings = [...new Set(q.warnings)];
   return q;
+}
+
+export function revalidateAqf(q: AqfQuestion): AqfQuestion {
+  return validateAqf({ ...q, errors: [], warnings: [], systemGuessed: false, system: q.systemGuessed ? undefined : q.system });
 }
 
 export function parseAqf(text: string): AqfParseResult {

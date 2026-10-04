@@ -49,7 +49,7 @@ export function SidePanel({
         </button>
       </div>
       <div className="scrollbar-thin min-h-0 flex-1 overflow-y-auto">
-        {kind === "labs" ? <Labs /> : kind === "calc" ? <Calculator /> : <Notes questionId={questionId} />}
+        {kind === "labs" ? <Labs /> : kind === "calc" ? <Calculator /> : <Notes key={questionId} questionId={questionId} />}
       </div>
     </aside>
   );
@@ -163,7 +163,6 @@ function Notes({ questionId }: { questionId: string }) {
 
   useEffect(() => {
     let alive = true;
-    setLoading(true);
     createClient()
       .from("notes")
       .select("id, body")

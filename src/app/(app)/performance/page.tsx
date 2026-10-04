@@ -55,14 +55,7 @@ export default async function PerformancePage() {
     );
   }
 
-  // Cumulative accuracy by day.
-  let n = 0;
-  let c = 0;
-  const trend = o.daily.map((d) => {
-    n += d.n;
-    c += d.correct;
-    return { x: d.day, y: n ? (100 * c) / n : null };
-  });
+  const trend = cumulativeAccuracy(o.daily);
   const net = o.changes.i2c - o.changes.c2i;
 
   return (
@@ -114,4 +107,17 @@ export default async function PerformancePage() {
       </div>
     </>
   );
+}
+
+// Running first-attempt accuracy, one point per study day.
+function cumulativeAccuracy(daily: Overview["daily"]) {
+  const out: { x: string; y: number | null }[] = [];
+  let n = 0;
+  let c = 0;
+  for (const d of daily) {
+    n += d.n;
+    c += d.correct;
+    out.push({ x: d.day, y: n ? (100 * c) / n : null });
+  }
+  return out;
 }

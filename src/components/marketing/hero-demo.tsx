@@ -23,16 +23,16 @@ const TIMINGS = [1400, 1500, 1700, 1600, 3200];
 
 export function HeroDemo() {
   const reduce = useReducedMotion();
-  const [step, setStep] = useState(0);
+  const [cycle, setCycle] = useState(0);
 
   useEffect(() => {
-    if (reduce) {
-      setStep(4);
-      return;
-    }
-    const t = setTimeout(() => setStep((s) => (s + 1) % 5), TIMINGS[step]);
+    if (reduce) return;
+    const t = setTimeout(() => setCycle((s) => (s + 1) % 5), TIMINGS[cycle]);
     return () => clearTimeout(t);
-  }, [step, reduce]);
+  }, [cycle, reduce]);
+
+  // Reduced motion shows the finished state without cycling.
+  const step = reduce ? 4 : cycle;
 
   const revealed = step >= 2;
 

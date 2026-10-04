@@ -18,6 +18,9 @@ import { planAllows } from "@/lib/plans";
 import { createClient } from "@/lib/supabase/server";
 import { drillConcept, retestTopics, startArgoSession } from "@/app/actions/tests";
 import { pct } from "@/lib/utils";
+import { aiEnabled } from "@/lib/ai/client";
+import { weeklyWriteLimit, writesThisWeek } from "@/lib/argo/write";
+import { ArgoWriter } from "./argo-writer";
 
 export const metadata: Metadata = { title: "ARGO" };
 
@@ -89,6 +92,8 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
     size: 20,
     exam: profile?.target_exam ?? null,
   });
+  const canWrite = aiEnabled() && preview.shortfall.length > 0;
+  const writesLeft = canWrite && profile.role !== "admin" ? Math.max(0, weeklyWriteLimit() - (await writesThisWeek(supabase, profile.id))) : null;
   const mixEntries = (Object.entries(preview.mix) as [keyof typeof MIX_LABEL, number][]).filter(([, v]) => v > 0);
   const totalMix = mixEntries.reduce((s, [, v]) => s + v, 0);
   const errorParam = typeof sp.error === "string" ? sp.error : null;
@@ -175,11 +180,15 @@ export default async function ArgoPage({ searchParams }: PageProps<"/argo">) {
               ) : (
                 <p className="mt-2 text-[13.5px] text-muted">Calibration session: ARGO samples broadly until it has enough evidence to target.</p>
               )}
-              {preview.shortfall.length > 0 && (
-                <p className="mt-4 flex gap-2 rounded-[8px] bg-panel p-3 text-[13px] text-muted">
-                  <Sparkles className="mt-0.5 size-4 shrink-0 text-brand" />
-                  Running low on unseen questions for {preview.shortfall.map((s) => s.name).slice(0, 2).join(" and ")}. ARGO fills the gap with spaced retests and, when enabled, newly crafted questions.
-                </p>
+              {canWrite ? (
+                <ArgoWriter targets={preview.shortfall.slice(0, 3)} remaining={writesLeft} />
+              ) : (
+                preview.shortfall.length > 0 && (
+                  <p className="mt-4 flex gap-2 rounded-[8px] bg-panel p-3 text-[13px] text-muted">
+                    <Sparkles className="mt-0.5 size-4 shrink-0 text-brand" />
+                    Running low on unseen questions for {preview.shortfall.map((s) => s.name).slice(0, 2).join(" and ")}. ARGO fills the gap with spaced retests until new questions arrive.
+                  </p>
+                )
               )}
             </>
           )}

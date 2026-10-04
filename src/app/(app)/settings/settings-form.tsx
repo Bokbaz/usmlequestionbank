@@ -149,7 +149,10 @@ export function SettingsForm({ initial }: { initial: Initial }) {
                     if (res?.error) {
                       setDeleting(false);
                       toast.error(res.error);
-                    } else window.location.href = "/";
+                    } else {
+                      router.replace("/");
+                      router.refresh();
+                    }
                   }}
                 >
                   Delete permanently

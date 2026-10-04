@@ -1,0 +1,111 @@
+# Argonaut Question Format (AQF)
+
+AQF is the plain-text format the admin importer (`/admin/import`) reads. One file can hold any number of questions. The parser is lenient: loosely formatted text pasted from elsewhere ("Question 12", "A)", "Answer: C") is understood too, and the importer shows every problem before anything is saved.
+
+Re-importing a question with the same `ID` updates it in place. Answer history is kept when option labels survive the edit.
+
+## Block structure
+
+```
+### QUESTION
+ID: AQ-2001
+Exam: Step 1
+System: Renal
+Discipline: Physiology
+Competency: Causes & mechanisms
+Category: Acid-base disorders
+Topic: Renal tubular acidosis
+Difficulty: 3
+Tags: acidosis, potassium
+Free: no
+Daily: no
+Status: published
+
+Stem:
+A 34-year-old woman comes to the physician because of ...
+Her pulse is 84/min and blood pressure is 118/76 mm Hg.
+Serum:
+Na+ 140 mEq/L
+K+ 3.1 mEq/L
+
+Lead-in: Which of the following is the most likely cause of this patient's condition?
+
+A. First choice
+B. Second choice
+C. Third choice
+D. Fourth choice
+E. Fifth choice
+
+Answer: B
+Key concept: Distal (type 1) renal tubular acidosis
+
+Concepts:
+A = Proximal renal tubular acidosis
+B = Distal renal tubular acidosis
+
+Explanation:
+Why the answer is correct. Markdown is allowed: **bold**, lists, tables.
+
+Option explanations:
+A. Why A is wrong, and what finding would have made it right.
+B. Correct. Why B is right.
+C. ...
+
+Objective: One or two sentences stating the rule a student should remember.
+
+Textbook:
+A study note of 120 to 250 words written to stand alone. It becomes part of the
+Library chapter for this question's Topic. Tables and bullets are welcome.
+
+References:
+- Author. Title. Edition. Publisher; Year.
+
+Nuggets:
+- Card title :: One-sentence high-yield point in your own words
+### END
+```
+
+`### QUESTION` starts a block and `### END` closes it. `### END` is optional when the next block starts immediately. Lines such as `Question 12`, `Q12:` or a row of `====` also start a new block.
+
+## Fields
+
+| Field | Required | Notes |
+|---|---|---|
+| Stem | yes | The vignette. Paragraphs separated by a blank line; keep each vital sign or lab on its own line. |
+| Lead-in | yes | The question sentence. If omitted, the last sentence of the stem ending in `?` is used. |
+| Options | yes | 3 to 10 lines `A.` `B)` `(C)` or `D -`. Continuation lines join the option above. |
+| Answer | yes | The correct label. `Answer: C. Long rationale ...` keeps the rationale as the explanation. |
+| ID | recommended | Stable identifier such as `AQ-2001`. Without it a new ID is assigned on every import. |
+| System | recommended | Organ system from the USMLE content outline. If missing, the importer guesses from keywords, uses the fallback you pick, or AI classification fills it. |
+| Exam | no | `Step 1` (default), `Step 2 CK`, or `Step 3`. |
+| Discipline | no | Pathology, Physiology, Pharmacology, Microbiology, Biochemistry, ... and clinical disciplines (Medicine, Surgery, Pediatrics, ...). |
+| Competency | no | Physician task, for example `Formulating the diagnosis`, `Pharmacotherapy`, `Causes & mechanisms`. |
+| Category | no | Outline category within the system. |
+| Topic | strongly recommended | Library chapter the question belongs to. Questions sharing a topic build one chapter; ARGO tracks mastery per topic. |
+| Difficulty | no | 1 to 5, or words such as `easy`, `hard`, `ultra hard`. Default 3. |
+| Tags | no | Comma-separated. |
+| Free | no | `yes` makes the question available on the free plan. |
+| Daily | no | `yes` adds it to the Daily Challenge pool. Use only for very hard Step 1 items. |
+| Status | no | `published` (default) or `draft`. The importer can default everything to draft. |
+| Image | no | `Image: https://... alt text`, one line per image. |
+| Key concept | no | The single fact tested. Used for Nugget detection and analytics. |
+| Concepts | no | `A = concept` per option. Powers ARGO's confusion tracking (what students mistake for what). |
+| Explanation | recommended | Why the answer is right. |
+| Option explanations | recommended | One entry per option, including the correct one. |
+| Objective | recommended | The educational objective. |
+| Textbook | recommended | Library text for the topic. |
+| References | no | One per line, with or without a leading `-`. |
+| Nuggets | no | Hand-curated high-yield cards: `- Title :: body`. Without them, Nuggets are detected automatically by comparing the question with the private high-yield index. |
+
+Metadata lines (`System:`, `Difficulty:` ...) may appear anywhere outside the Stem and Textbook sections.
+
+## What happens on import
+
+1. The file is parsed in the browser. Each question is marked ready, ready with warnings, or blocked, with the reasons listed.
+2. Optional AI assist (requires `ANTHROPIC_API_KEY`): **Classify** fills missing system, discipline, competency, category, topic and key concept; **Repair** restructures blocks the parser could not read. Neither rewrites medical content.
+3. Questions are saved in chunks of 20. For each one the testing point is embedded and compared with the high-yield index: strong matches become Nuggets automatically, borderline ones go to `/admin/nuggets` for review.
+4. Library chapters are rebuilt for every topic touched by the import.
+
+## Exporting
+
+`/admin/questions` exports any filtered set as AQF. Edit the file and import it again to update those questions in place. Retired questions export with `Status: draft` so a round trip never republishes them.

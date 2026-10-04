@@ -7,8 +7,7 @@ const SEQ = ["--seq-1", "--seq-2", "--seq-3", "--seq-4", "--seq-5", "--seq-6", "
 export function ActivityCalendar({ days, title = "Study activity", subtitle, className }: { days: { day: string; n: number }[]; title?: string; subtitle?: React.ReactNode; className?: string }) {
   const max = Math.max(1, ...days.map((d) => d.n));
   const color = (n: number) => (n === 0 ? "var(--sunken)" : `var(${SEQ[Math.min(6, Math.floor((n / max) * 6.999))]})`);
-  const first = new Date(days[0]?.day ?? Date.now());
-  const offset = (first.getUTCDay() + 6) % 7;
+  const offset = days.length ? (new Date(days[0].day).getUTCDay() + 6) % 7 : 0;
   const cells = [...Array(offset).fill(null), ...days];
   const weeks: ({ day: string; n: number } | null)[][] = [];
   for (let i = 0; i < cells.length; i += 7) weeks.push(cells.slice(i, i + 7));

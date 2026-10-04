@@ -39,7 +39,7 @@ export function LineChart({
   const { x, y, path, ticks } = useMemo(() => {
     const dates = data.map((d) => new Date(d.x));
     const x = scaleTime()
-      .domain(dates.length > 1 ? [dates[0], dates[dates.length - 1]] : [new Date(Date.now() - 6 * 864e5), new Date()])
+      .domain(dates.length > 1 ? [dates[0], dates[dates.length - 1]] : dates.length === 1 ? [new Date(+dates[0] - 3 * 864e5), new Date(+dates[0] + 3 * 864e5)] : [new Date(0), new Date(6 * 864e5)])
       .range([pad.l, width - pad.r]);
     const y = scaleLinear().domain(yDomain).range([height - pad.b, pad.t]).nice();
     const path = d3line<{ x: string; y: number }>()

@@ -15,6 +15,7 @@ import { createClient } from "@/lib/supabase/client";
 import { getGuestToken, peekGuestToken } from "@/lib/daily/guest";
 import type { DailyState } from "@/lib/daily/types";
 import { cn, formatClock, formatSeconds } from "@/lib/utils";
+import { useNow } from "@/hooks/use-now";
 
 export function DailyGame({ initial }: { initial: DailyState | null }) {
   const supabase = useMemo(() => createClient(), []);
@@ -22,32 +23,35 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
-  const [now, setNow] = useState(() => Date.now());
-  const startedLocal = useRef<number | null>(null);
+  // Client clock origin for the running question: local receipt time minus server elapsed.
+  const [startedAt, setStartedAt] = useState<number | null>(null);
+  const now = useNow(250);
   const submittedRef = useRef(false);
+  const selectedRef = useRef<string | null>(null);
 
-  const load = useCallback(async () => {
-    const { data: session } = await supabase.auth.getSession();
-    const isUser = Boolean(session.session);
-    setSignedIn(isUser);
-    const guest = isUser ? null : peekGuestToken();
-    const { data } = await supabase.rpc("daily_today", { p_guest: guest });
-    setState(data as DailyState);
-  }, [supabase]);
+  const apply = useCallback((next: DailyState) => {
+    setState(next);
+    setStartedAt(next.state === "started" ? Date.now() - (next.payload?.elapsed_ms ?? 0) : null);
+  }, []);
 
   useEffect(() => {
-    load();
-  }, [load]);
-
-  useEffect(() => {
-    if (state?.state !== "started") return;
-    if (startedLocal.current == null) startedLocal.current = Date.now() - (state.payload?.elapsed_ms ?? 0);
-    const t = setInterval(() => setNow(Date.now()), 250);
-    return () => clearInterval(t);
-  }, [state]);
+    let alive = true;
+    (async () => {
+      const { data: session } = await supabase.auth.getSession();
+      const isUser = Boolean(session.session);
+      const guest = isUser ? null : peekGuestToken();
+      const { data } = await supabase.rpc("daily_today", { p_guest: guest });
+      if (!alive) return;
+      setSignedIn(isUser);
+      if (data) apply(data as DailyState);
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [supabase, apply]);
 
   const limitMs = (state?.time_limit_s ?? 120) * 1000;
-  const elapsedMs = state?.state === "started" && startedLocal.current != null ? now - startedLocal.current : 0;
+  const elapsedMs = state?.state === "started" && startedAt != null && now != null ? Math.max(0, now - startedAt) : 0;
   const remainingMs = Math.max(0, limitMs - elapsedMs);
 
   async function start() {
@@ -56,8 +60,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
     const { data, error } = await supabase.rpc("daily_start", { p_guest: guest });
     setBusy(false);
     if (error) return toast.error(error.message);
-    startedLocal.current = Date.now();
-    setState(data as DailyState);
+    apply(data as DailyState);
   }
 
   const submit = useCallback(
@@ -72,15 +75,22 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
         submittedRef.current = false;
         return toast.error(error.message);
       }
-      setState(data as DailyState);
+      apply(data as DailyState);
     },
-    [signedIn, supabase],
+    [signedIn, supabase, apply],
   );
 
-  // Out of time: submit whatever is selected.
+  const choose = (id: string) => {
+    selectedRef.current = id;
+    setSelected(id);
+  };
+
+  // Out of time: submit whatever is selected when the clock runs out.
   useEffect(() => {
-    if (state?.state === "started" && remainingMs <= 0) submit(selected);
-  }, [remainingMs, selected, state?.state, submit]);
+    if (state?.state !== "started" || startedAt == null) return;
+    const t = setTimeout(() => submit(selectedRef.current), Math.max(0, msUntil(startedAt + limitMs)));
+    return () => clearTimeout(t);
+  }, [state?.state, startedAt, limitMs, submit]);
 
   if (!state) return <div className="h-96 animate-pulse rounded-[14px] bg-sunken" />;
   if (!state.available)
@@ -159,7 +169,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
           <p className="mt-5 text-[17px] font-semibold">{p.lead_in}</p>
           <div className="mt-6 grid gap-2" role="radiogroup" aria-label="Answer choices">
             {p.options.map((o) => (
-              <OptionRow key={o.id} label={o.label} body={o.body} selected={selected === o.id} struck={false} locked={busy} onSelect={() => setSelected(o.id)} onStrike={() => {}} />
+              <OptionRow key={o.id} label={o.label} body={o.body} selected={selected === o.id} struck={false} locked={busy} onSelect={() => choose(o.id)} onStrike={() => {}} />
             ))}
           </div>
           <div className="mt-6 flex justify-end">
@@ -298,4 +308,8 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
       ) : null}
     </div>
   );
+}
+
+function msUntil(epochMs: number) {
+  return epochMs - Date.now();
 }

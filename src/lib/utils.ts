@@ -40,3 +40,8 @@ export function clamp(n: number, min: number, max: number) {
 }
 
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://argonaut-usmle.vercel.app";
+
+// Whole days from now until an ISO date (negative when past). Server-side helper.
+export function daysUntil(isoDate: string) {
+  return Math.ceil((new Date(isoDate).getTime() - Date.now()) / 86_400_000);
+}

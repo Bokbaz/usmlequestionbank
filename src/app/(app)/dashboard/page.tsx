@@ -14,7 +14,7 @@ import { getInsights } from "@/lib/argo/data";
 import { planAllows } from "@/lib/plans";
 import { quickStart, startArgoSession } from "@/app/actions/tests";
 import type { DailyState } from "@/lib/daily/types";
-import { formatSeconds, pct } from "@/lib/utils";
+import { daysUntil, formatSeconds, pct } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Dashboard" };
 
@@ -38,7 +38,7 @@ export default async function DashboardPage() {
   const daily = dailyRes.data as DailyState | null;
   const active = tests.find((t) => t.status !== "completed");
   const isNew = insights.totals.firstAttempts === 0;
-  const daysToExam = profile?.exam_date ? Math.ceil((new Date(profile.exam_date).getTime() - Date.now()) / 86_400_000) : null;
+  const daysToExam = profile?.exam_date ? daysUntil(profile.exam_date) : null;
   const name = profile?.display_name?.split(" ")[0] ?? "there";
   const examLabel = profile?.target_exam === "step2ck" ? "Step 2 CK" : profile?.target_exam === "step3" ? "Step 3" : "Step 1";
   const weakest = insights.systems

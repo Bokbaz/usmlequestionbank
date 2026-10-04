@@ -59,3 +59,12 @@ export async function requireAdmin() {
 export async function hasPlan(min: PlanTier) {
   return planAllows(effectivePlan(await getProfile()), min);
 }
+
+// Route handlers: returns the session client when the caller is an admin, else null.
+export async function getAdminClient() {
+  const user = await getUser();
+  if (!user) return null;
+  const profile = await getProfile();
+  if (profile?.role !== "admin") return null;
+  return { supabase: await createClient(), user };
+}
