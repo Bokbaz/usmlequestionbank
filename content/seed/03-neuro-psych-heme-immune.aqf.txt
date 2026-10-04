@@ -1,0 +1,700 @@
+### QUESTION
+ID: AQ-1021
+Exam: Step 1
+System: Nervous System
+Discipline: Microbiology
+Competency: Causes & mechanisms
+Category: Cranial & peripheral nerve disorders
+Topic: Guillain-Barre syndrome
+Difficulty: 2
+Tags: ascending paralysis, molecular mimicry, diarrhea
+Free: yes
+
+Stem:
+A 26-year-old man comes to the emergency department because of tingling in his feet and progressive weakness of his legs for 3 days; this morning he had difficulty climbing stairs. Three weeks ago, he had several days of abdominal cramps and bloody diarrhea after attending a barbecue. His temperature is 37°C (98.6°F), pulse is 92/min, respirations are 16/min, and blood pressure is 128/80 mm Hg. Muscle strength is 3/5 in the lower extremities and 4/5 in the upper extremities. Deep tendon reflexes are absent in the lower extremities and decreased in the upper extremities. Vibration sense is mildly decreased in the toes. Cerebrospinal fluid analysis shows a protein concentration of 160 mg/dL and a leukocyte count of 2/mm3.
+
+Lead-in: The infection that preceded this patient's neurologic illness was most likely caused by which of the following organisms?
+
+A. Campylobacter jejuni
+B. Clostridium botulinum
+C. Enterohemorrhagic Escherichia coli
+D. Shigella dysenteriae
+E. Vibrio parahaemolyticus
+
+Answer: A
+Key concept: Campylobacter-triggered Guillain-Barre syndrome
+
+Explanation:
+Rapidly **ascending, symmetric weakness with areflexia**, mild distal sensory symptoms, and **albuminocytologic dissociation** in the CSF (high protein, normal cell count) is **Guillain-Barre syndrome (GBS)**, an acute immune-mediated polyradiculoneuropathy.
+
+The most commonly identified trigger is **Campylobacter jejuni** enteritis, classically acquired from undercooked poultry (a barbecue fits) and causing bloody diarrhea. The mechanism is **molecular mimicry**: lipooligosaccharides on the C. jejuni surface resemble gangliosides (GM1, GD1a) on peripheral nerve myelin and axons. Antibodies and T cells raised against the bacterium cross-react with nerve roots, causing demyelination (or axonal injury in the acute motor axonal variant, which is especially linked to Campylobacter).
+
+Other triggers include cytomegalovirus, Epstein-Barr virus, Zika virus, Mycoplasma, and rarely vaccination.
+
+The main danger is **respiratory failure**: monitor forced vital capacity and negative inspiratory force, and watch for autonomic instability. Treatment is **IVIG or plasmapheresis**; corticosteroids are not effective.
+
+Option explanations:
+A. Correct. Campylobacter jejuni is the classic antecedent infection of GBS through molecular mimicry with peripheral nerve gangliosides.
+B. Botulism causes a descending flaccid paralysis that begins with cranial nerves (diplopia, ptosis, dysphagia) and dilated pupils, with normal sensation and normal CSF. The toxin blocks acetylcholine release at the neuromuscular junction.
+C. Enterohemorrhagic E. coli (O157:H7) causes bloody diarrhea that can progress to hemolytic uremic syndrome (anemia, thrombocytopenia, acute kidney injury), not demyelinating neuropathy.
+D. Shigella causes dysentery and can trigger reactive arthritis or HUS, but it is not a classic cause of GBS.
+E. Vibrio parahaemolyticus causes self-limited gastroenteritis after raw or undercooked seafood.
+
+Objective: Guillain-Barre syndrome most often follows Campylobacter jejuni enteritis; molecular mimicry between bacterial lipooligosaccharide and peripheral nerve gangliosides produces ascending areflexic weakness with albuminocytologic dissociation in the CSF.
+
+Textbook:
+**Guillain-Barre syndrome (GBS)** is the most common cause of acute flaccid paralysis in adults.
+
+- **Pathogenesis:** post-infectious autoimmunity against peripheral nerve myelin (acute inflammatory demyelinating polyradiculoneuropathy) or axons (acute motor axonal neuropathy). Endoneurial inflammation with macrophage-mediated segmental demyelination.
+- **Triggers:** Campylobacter jejuni (most common), CMV, EBV, Zika, influenza, Mycoplasma pneumoniae.
+- **Presentation:** symmetric ascending weakness over days to 4 weeks; areflexia; distal paresthesias; facial diplegia; autonomic dysfunction (arrhythmias, blood pressure lability); respiratory muscle failure.
+- **Variant:** Miller Fisher syndrome (ophthalmoplegia, ataxia, areflexia; anti-GQ1b antibodies).
+- **Diagnosis:** CSF albuminocytologic dissociation (may be normal in week 1); nerve conduction studies show slowed conduction and conduction block.
+- **Management:** admit and monitor vital capacity (intubate if FVC falls under about 20 mL/kg); IVIG or plasmapheresis (not both, no steroids); DVT prophylaxis; most patients recover over months.
+
+| Feature | Guillain-Barre | Botulism | Myasthenia gravis |
+|---|---|---|---|
+| Pattern | Ascending | Descending | Fatigable, ocular first |
+| Reflexes | Absent | Normal or decreased | Normal |
+| Sensation | Mild distal loss | Normal | Normal |
+| Pupils | Normal | Dilated, poorly reactive | Normal |
+| CSF | High protein, normal cells | Normal | Normal |
+
+References:
+- Shahrizaila N, Lehmann HC, Kuwabara S. Guillain-Barre syndrome. Lancet. 2021;397:1214-1228.
+
+Nuggets:
+- Diarrhea, then ascending paralysis: Campylobacter-triggered Guillain-Barre :: C. jejuni lipooligosaccharide mimics nerve gangliosides. Expect areflexia and high CSF protein with a normal cell count; treat with IVIG or plasmapheresis and watch vital capacity.
+
+### QUESTION
+ID: AQ-1022
+Exam: Step 1
+System: Nervous System
+Discipline: Gross Anatomy & Embryology
+Competency: History & physical examination
+Category: Cerebrovascular disease
+Topic: Brainstem stroke syndromes
+Difficulty: 5
+Tags: neuroanatomy, stroke localization, Horner syndrome
+Daily: yes
+
+Stem:
+A 62-year-old man is brought to the emergency department 2 hours after the sudden onset of vertigo, nausea, and unsteadiness that began while he was turning his head to reverse his car. He has hypertension and has smoked one pack of cigarettes daily for 35 years. His blood pressure is 172/96 mm Hg. Examination shows horizontal nystagmus, ptosis and miosis of the left eye, and decreased pain and temperature sensation over the left side of the face and the right side of the trunk and extremities. He has dysmetria on left finger-to-nose testing and falls to the left when he attempts to walk. A CT scan of the head shows no hemorrhage.
+
+Lead-in: Which of the following additional findings is most likely in this patient?
+
+A. Deviation of the tongue to the left on protrusion
+B. Dysphagia and hoarseness with a decreased left gag reflex
+C. Loss of vibration and position sense in the right arm and leg
+D. Paralysis of abduction of the left eye
+E. Weakness of the right arm and leg
+
+Answer: B
+Key concept: Lateral medullary (Wallenberg) syndrome
+
+Concepts:
+A = Medial medullary syndrome (hypoglossal nucleus)
+B = Lateral medullary syndrome (nucleus ambiguus)
+C = Medial medullary syndrome (medial lemniscus)
+D = Pontine abducens lesion
+E = Corticospinal tract lesion
+
+Explanation:
+Localize by building the lesion from its findings:
+
+| Finding | Structure | Side |
+|---|---|---|
+| Vertigo, nausea, nystagmus | Vestibular nuclei | Ipsilateral |
+| Ptosis and miosis (Horner) | Descending hypothalamospinal sympathetic fibers | Ipsilateral |
+| Loss of pain and temperature on the face | Spinal trigeminal nucleus and tract | Ipsilateral |
+| Loss of pain and temperature on the body | Spinothalamic tract (already crossed) | Contralateral |
+| Dysmetria, falling to the left | Inferior cerebellar peduncle | Ipsilateral |
+
+**Crossed pain-temperature loss** (ipsilateral face, contralateral body) plus ipsilateral Horner syndrome and ataxia localizes to the **left lateral medulla**: **lateral medullary (Wallenberg) syndrome**, from occlusion of the **posterior inferior cerebellar artery (PICA)** or, as is likely here after sudden head turning, the **vertebral artery** (dissection).
+
+The lateral medulla also contains the **nucleus ambiguus**, the motor nucleus for CN IX and X that supplies the pharynx, larynx, and palate. Its involvement causes **dysphagia, hoarseness, and a decreased gag reflex**, with the uvula deviating away from the lesion. These findings are what distinguish a lateral medullary lesion (PICA) from a lateral pontine lesion (AICA), which instead causes facial paralysis and hearing loss.
+
+Option explanations:
+A. Tongue deviation toward the lesion results from damage to the hypoglossal nucleus or nerve, which lies in the medial medulla (medial medullary syndrome, anterior spinal artery).
+B. Correct. Involvement of the nucleus ambiguus in the lateral medulla causes dysphagia, hoarseness, and a reduced gag reflex.
+C. Loss of contralateral vibration and position sense comes from the medial lemniscus, a medial medullary structure.
+D. Abducens (CN VI) palsy indicates a lesion of the caudal pons, not the medulla.
+E. Contralateral hemiparesis results from damage to the corticospinal tract in the medullary pyramid (medial medullary syndrome) or the basis pontis. Lateral medullary syndrome spares strength.
+
+Objective: Lateral medullary (Wallenberg) syndrome from PICA or vertebral artery occlusion produces crossed pain-temperature loss, ipsilateral Horner syndrome and ataxia, vertigo, and nucleus ambiguus dysfunction (dysphagia, hoarseness), which localizes the lesion to the medulla.
+
+Textbook:
+**Brainstem stroke syndromes** follow two rules: medial structures are supplied by paramedian branches (motor tracts, medial lemniscus, midline cranial nerve nuclei III, IV, VI, XII); lateral structures by circumferential branches (spinothalamic tract, sympathetics, trigeminal nucleus, vestibular nuclei, cerebellar peduncles, CN V, VII, VIII, IX, X).
+
+| Syndrome | Artery | Key findings |
+|---|---|---|
+| Medial medullary | Anterior spinal | Contralateral hemiparesis and loss of vibration/proprioception; tongue deviates toward lesion |
+| Lateral medullary (Wallenberg) | PICA or vertebral | Dysphagia, hoarseness (nucleus ambiguus); crossed pain-temperature loss; ipsilateral Horner; vertigo; ipsilateral ataxia |
+| Lateral pontine | AICA | Ipsilateral facial paralysis and hearing loss; crossed pain-temperature loss; Horner; vertigo; ataxia |
+| Medial pontine | Paramedian basilar branches | Contralateral hemiparesis; ipsilateral CN VI palsy |
+| Weber (medial midbrain) | PCA branches | Ipsilateral CN III palsy (down and out, dilated pupil); contralateral hemiparesis |
+| Locked-in syndrome | Basilar artery | Quadriplegia, anarthria; vertical eye movements and blinking preserved |
+
+References:
+- Blumenfeld H. Neuroanatomy Through Clinical Cases. 3rd ed. Sinauer; 2021. Chapter 14.
+
+Nuggets:
+- Horner syndrome is not only Pancoast: think lateral medullary syndrome :: PICA or vertebral occlusion interrupts descending sympathetic fibers in the lateral medulla, producing ipsilateral Horner syndrome alongside crossed pain-temperature loss and dysphagia or hoarseness.
+
+### QUESTION
+ID: AQ-1023
+Exam: Step 1
+System: Nervous System
+Discipline: Immunology
+Competency: Causes & mechanisms
+Category: Neuromuscular disorders
+Topic: Neuromuscular junction disorders
+Difficulty: 5
+Tags: paraneoplastic, small cell lung cancer, weakness
+Daily: yes
+
+Stem:
+A 63-year-old man comes to the office because of difficulty rising from a chair and climbing stairs, dry mouth, and erectile dysfunction for 3 months. He has smoked two packs of cigarettes daily for 40 years. Muscle strength is 4/5 in the proximal muscles of the upper and lower extremities. Eyelids and extraocular movements are normal. Deep tendon reflexes are hypoactive at rest; after 10 seconds of sustained maximal contraction of the quadriceps, the patellar reflex becomes brisker and quadriceps strength transiently improves. Repetitive nerve stimulation at 50 Hz shows a marked increase in compound muscle action potential amplitude.
+
+Lead-in: Which of the following is the most likely mechanism of this patient's weakness?
+
+A. Autoantibodies against muscle-specific kinase at the motor end plate
+B. Autoantibodies against postsynaptic nicotinic acetylcholine receptors
+C. Autoantibodies against presynaptic voltage-gated calcium channels
+D. Degeneration of upper and lower motor neurons
+E. Toxin-mediated cleavage of SNARE proteins in nerve terminals
+
+Answer: C
+Key concept: Lambert-Eaton myasthenic syndrome
+
+Concepts:
+A = MuSK myasthenia gravis
+B = Myasthenia gravis
+C = Lambert-Eaton myasthenic syndrome
+D = Amyotrophic lateral sclerosis
+E = Botulism
+
+Explanation:
+Proximal weakness, **hyporeflexia that improves after sustained contraction**, **autonomic symptoms** (dry mouth, erectile dysfunction), an **incremental response to high-frequency nerve stimulation**, and heavy smoking point to **Lambert-Eaton myasthenic syndrome (LEMS)**.
+
+LEMS is caused by **autoantibodies against P/Q-type voltage-gated calcium channels (VGCC) on the presynaptic nerve terminal**. Acetylcholine release depends on calcium influx through these channels when the action potential arrives; with fewer functional channels, fewer vesicles fuse and the end-plate potential often fails to reach threshold.
+
+Why strength improves with use: rapid repeated stimulation (or a few seconds of maximal contraction) lets **calcium accumulate in the nerve terminal**, so each subsequent impulse releases more acetylcholine. This is the opposite of myasthenia gravis, which fatigues with use.
+
+Why autonomic symptoms: the same calcium channels mediate acetylcholine release at autonomic synapses.
+
+About half of cases are **paraneoplastic, most often from small cell lung carcinoma**, a neuroendocrine tumor that expresses VGCCs and triggers the antibodies. This patient needs a CT of the chest. Treatment includes treating the tumor, amifampridine (3,4-diaminopyridine, a potassium channel blocker that prolongs depolarization and calcium entry), and immunotherapy.
+
+Option explanations:
+A. Anti-MuSK antibodies cause a seronegative-for-AChR form of myasthenia gravis with prominent bulbar and neck weakness; strength worsens, not improves, with repetition.
+B. Anti-acetylcholine receptor antibodies cause myasthenia gravis: fatigable ptosis and diplopia, decremental response to repetitive stimulation, normal reflexes, and an association with thymoma.
+C. Correct. Antibodies against presynaptic voltage-gated calcium channels reduce acetylcholine release; repetitive stimulation increases release, producing the incremental response.
+D. ALS causes combined upper and lower motor neuron signs (fasciculations, atrophy, hyperreflexia, spasticity) without autonomic symptoms or an incremental response.
+E. Botulinum toxin cleaves SNARE proteins and also produces an incremental response at high stimulation rates, but it causes acute descending paralysis beginning with cranial nerves and dilated pupils, not a 3-month proximal myopathy in a smoker.
+
+Objective: LEMS is caused by antibodies to presynaptic P/Q-type voltage-gated calcium channels; weakness and reflexes improve with repeated use, autonomic symptoms are common, and it is strongly associated with small cell lung carcinoma.
+
+Textbook:
+**Disorders of the neuromuscular junction**
+
+| Feature | Myasthenia gravis | Lambert-Eaton | Botulism |
+|---|---|---|---|
+| Target | Postsynaptic nicotinic AChR (or MuSK) | Presynaptic P/Q-type Ca2+ channel | SNARE proteins (presynaptic) |
+| Typical first symptoms | Ptosis, diplopia | Proximal leg weakness, dry mouth | Diplopia, dysphagia, descending paralysis |
+| With repeated effort | Worse (fatigue) | Better (facilitation) | Better at high rates |
+| Reflexes | Normal | Decreased, improve after exercise | Decreased |
+| Autonomic involvement | No | Yes | Yes (dilated pupils, constipation) |
+| Repetitive stimulation | Decrement | Increment at high rates | Increment at high rates |
+| Associations | Thymoma, thymic hyperplasia | Small cell lung carcinoma | Home-canned food, honey (infants), wounds |
+| Treatment | Pyridostigmine, steroids, thymectomy, IVIG | Treat tumor, amifampridine, IVIG | Antitoxin, supportive care |
+
+References:
+- Kesner VG, Oh SJ, Dimachkie MM, Barohn RJ. Lambert-Eaton Myasthenic Syndrome. Neurol Clin. 2018;36:379-394.
+
+Nuggets:
+- Weakness that improves with use: Lambert-Eaton, look for small cell carcinoma :: Antibodies block presynaptic voltage-gated Ca2+ channels. Repeated stimulation builds up calcium and transiently restores ACh release, unlike myasthenia gravis, which fatigues.
+
+### QUESTION
+ID: AQ-1024
+Exam: Step 2 CK
+System: Nervous System
+Discipline: Neurology
+Competency: Formulating the diagnosis
+Category: Degenerative disorders & dementia
+Topic: Normal pressure hydrocephalus
+Difficulty: 2
+Tags: dementia, gait, urinary incontinence
+
+Stem:
+A 72-year-old woman is brought to the office by her daughter because of progressive difficulty walking and forgetfulness for 6 months. She has had several episodes of urinary incontinence during the past 2 months. She has hypertension treated with amlodipine. Her blood pressure is 138/84 mm Hg supine and 134/82 mm Hg standing. She walks slowly with short steps on a wide base; her feet seem stuck to the floor when she starts walking and when she turns. Muscle tone and strength are normal, and there is no tremor. Her Mini-Mental State Examination score is 24/30, with deficits in attention and recall. An MRI of the brain shows enlargement of the lateral ventricles out of proportion to the cerebral sulci, with no mass lesion.
+
+Lead-in: Which of the following is the most likely diagnosis?
+
+A. Alzheimer disease
+B. Dementia with Lewy bodies
+C. Frontotemporal dementia
+D. Multiple system atrophy
+E. Normal pressure hydrocephalus
+
+Answer: E
+Key concept: Normal pressure hydrocephalus
+
+Explanation:
+The triad of **gait apraxia** (a slow, wide-based, "magnetic" gait in which the feet seem glued to the floor), **urinary incontinence**, and **cognitive decline**, with **ventricles enlarged out of proportion to the sulci** on MRI, is **normal pressure hydrocephalus (NPH)**. The classic mnemonic is "wet, wobbly, and wacky."
+
+NPH is a communicating hydrocephalus thought to result from impaired CSF absorption at the arachnoid granulations (sometimes after subarachnoid hemorrhage or meningitis, but usually idiopathic). Opening pressure is normal or intermittently elevated. Ventricular expansion stretches the periventricular corona radiata fibers that serve the legs and bladder (sacral motor fibers run closest to the ventricles), which explains why gait and continence are affected early.
+
+NPH matters because it is one of the few **treatable** dementias. A **high-volume lumbar puncture (tap test)** that improves gait predicts benefit from a **ventriculoperitoneal shunt**. Gait responds best; cognition responds least.
+
+Option explanations:
+A. Alzheimer disease begins with insidious memory loss; gait and continence are preserved until late. MRI shows hippocampal and diffuse cortical atrophy with ventricles enlarged in proportion to sulci (hydrocephalus ex vacuo).
+B. Dementia with Lewy bodies causes fluctuating cognition, recurrent visual hallucinations, parkinsonism, and REM sleep behavior disorder. This patient has no parkinsonian rigidity or tremor and no hallucinations.
+C. Frontotemporal dementia presents earlier (often in the 50s) with personality change, disinhibition, apathy, or language deficits, and frontal and temporal atrophy on imaging.
+D. Multiple system atrophy combines parkinsonism or cerebellar ataxia with prominent autonomic failure (orthostatic hypotension, urinary retention or incontinence). Her blood pressure does not fall on standing, and MRI shows hydrocephalus rather than brainstem or cerebellar atrophy.
+E. Correct. Gait apraxia, urinary incontinence, and dementia with disproportionate ventriculomegaly define NPH.
+
+Objective: NPH presents with gait apraxia (magnetic gait), urinary incontinence, and cognitive decline with ventriculomegaly out of proportion to atrophy; improvement after large-volume lumbar puncture predicts response to ventriculoperitoneal shunting.
+
+Textbook:
+**Normal pressure hydrocephalus (NPH)**
+
+- **Who:** usually adults over 60.
+- **Triad:** gait disturbance (earliest and most prominent), urinary urgency or incontinence, and cognitive impairment (slowed, inattentive, apathetic; subcortical pattern).
+- **Imaging:** ventriculomegaly (Evans index over 0.3) disproportionate to sulcal enlargement; may show a narrow callosal angle and crowding of high-convexity sulci.
+- **Testing:** large-volume lumbar puncture (30 to 50 mL) or lumbar drain with gait assessment before and after.
+- **Treatment:** ventriculoperitoneal shunt.
+
+| Dementia | Distinguishing clues |
+|---|---|
+| Alzheimer disease | Early episodic memory loss; amyloid plaques and tau tangles; hippocampal atrophy |
+| Vascular dementia | Stepwise decline, focal deficits, vascular risk factors, white matter infarcts |
+| Dementia with Lewy bodies | Visual hallucinations, fluctuations, parkinsonism, neuroleptic sensitivity |
+| Frontotemporal dementia | Early personality and behavior change or aphasia; frontal and temporal atrophy |
+| Normal pressure hydrocephalus | Magnetic gait, incontinence, dementia; disproportionate ventriculomegaly |
+| Creutzfeldt-Jakob disease | Rapid decline over weeks to months, myoclonus, periodic sharp waves on EEG |
+
+**Reversible causes to exclude in any dementia work-up:** hypothyroidism (TSH), vitamin B12 deficiency, neurosyphilis (in selected patients), depression, medication effects, NPH, subdural hematoma.
+
+References:
+- Williams MA, Malm J. Diagnosis and Treatment of Idiopathic Normal Pressure Hydrocephalus. Continuum (Minneap Minn). 2016;22:579-599.
+
+Nuggets:
+- Wet, wobbly, wacky: normal pressure hydrocephalus :: Urinary incontinence, magnetic gait and dementia with ventricles enlarged out of proportion to atrophy. A large-volume tap that improves gait predicts benefit from a ventriculoperitoneal shunt.
+
+### QUESTION
+ID: AQ-1025
+Exam: Step 1
+System: Behavioral Health
+Discipline: Pharmacology
+Competency: Causes & mechanisms
+Category: Mood disorders
+Topic: Lithium
+Difficulty: 3
+Tags: drug interaction, toxicity, bipolar disorder
+
+Stem:
+A 46-year-old woman with bipolar I disorder is brought to the emergency department by her husband because of confusion, unsteady gait, diarrhea, and coarse shaking of her hands for 3 days. Her mood has been stable for 4 years with lithium carbonate therapy at an unchanged dose. Three weeks ago, she was started on hydrochlorothiazide for hypertension. Her temperature is 37°C (98.6°F), pulse is 62/min, and blood pressure is 128/80 mm Hg. Examination shows a coarse tremor of the outstretched hands, dysarthria, ataxia, and hyperreflexia. Her serum lithium concentration is 2.8 mEq/L (therapeutic range 0.6-1.2 mEq/L).
+
+Lead-in: Hydrochlorothiazide most likely increased this patient's serum lithium concentration through which of the following mechanisms?
+
+A. Augmented proximal tubular reabsorption of lithium
+B. Decreased hepatic glucuronidation of lithium
+C. Displacement of lithium from plasma protein binding sites
+D. Inhibition of cytochrome P450 3A4-mediated lithium metabolism
+E. Reduced glomerular filtration from afferent arteriolar constriction
+
+Answer: A
+Key concept: Thiazides increase proximal lithium reabsorption
+
+Explanation:
+This patient has **lithium toxicity** (coarse tremor, ataxia, dysarthria, confusion, hyperreflexia, GI symptoms, level 2.8 mEq/L) that began after **hydrochlorothiazide** was added.
+
+To understand the interaction, remember how the body handles lithium: it is a small cation that is **not protein bound, not metabolized**, freely filtered by the glomerulus, and handled by the kidney **much like sodium**. About 80% of filtered lithium is reabsorbed in the **proximal tubule**, alongside sodium.
+
+Thiazides block the Na+-Cl- cotransporter in the distal convoluted tubule, causing natriuresis and **mild volume contraction**. The kidney responds by **increasing proximal tubular reabsorption of sodium, and lithium travels with it**. Lithium clearance falls by roughly 25% to 40%, and levels climb into the toxic range over days to weeks.
+
+Anything that makes the kidney avid for sodium does the same: dehydration, vomiting or diarrhea, a low-salt diet, and other diuretics. NSAIDs and ACE inhibitors also raise lithium levels.
+
+Option explanations:
+A. Correct. Thiazide-induced volume contraction increases proximal tubular reabsorption of sodium and lithium.
+B. Lithium is not metabolized by the liver; it is excreted unchanged by the kidneys.
+C. Lithium does not bind plasma proteins, so displacement interactions do not occur.
+D. Lithium is not a substrate of cytochrome P450 enzymes; CYP inhibition cannot raise its levels.
+E. Reduced glomerular filtration through afferent arteriolar constriction is how NSAIDs (which block vasodilatory prostaglandins) raise lithium levels, not thiazides.
+
+Objective: Lithium is reabsorbed with sodium in the proximal tubule; thiazides (and volume depletion, NSAIDs, and ACE inhibitors) raise lithium levels and can precipitate toxicity.
+
+Textbook:
+**Lithium**
+
+- **Uses:** first-line maintenance therapy for bipolar disorder; reduces suicide risk; augmentation in refractory depression.
+- **Mechanism:** not fully understood; inhibits inositol monophosphatase (depleting inositol and blunting phosphatidylinositol signaling) and glycogen synthase kinase-3.
+- **Pharmacokinetics:** narrow therapeutic index; renal excretion only; no protein binding or hepatic metabolism; requires level monitoring.
+- **Adverse effects (LMNOP: Lithium causes Movement disorder, Nephrogenic diabetes insipidus, hypOthyroidism, Pregnancy problems):** fine tremor at therapeutic levels; nephrogenic diabetes insipidus (downregulates collecting duct aquaporin-2; treat with amiloride); hypothyroidism and goiter (inhibits thyroid hormone release); Ebstein anomaly (apically displaced tricuspid leaflets) after first-trimester exposure. Also hyperparathyroidism with hypercalcemia, weight gain, acne, benign leukocytosis, and sinus node dysfunction.
+- **Toxicity:** acute toxicity starts with GI symptoms; chronic toxicity is mainly neurologic (coarse tremor, ataxia, confusion, hyperreflexia, seizures, coma). Hemodialysis for severe toxicity because lithium is small, unbound, and water soluble.
+
+| Drug or condition | Effect on lithium level | Mechanism |
+|---|---|---|
+| Thiazide diuretics | Increase | Volume contraction, more proximal reabsorption |
+| NSAIDs | Increase | Less prostaglandin-mediated renal blood flow |
+| ACE inhibitors, ARBs | Increase | Lower GFR and natriuresis |
+| Dehydration, low-salt diet | Increase | Sodium-avid kidney |
+| Pregnancy (higher GFR), high salt intake | Decrease | More filtration and excretion |
+
+References:
+- Malhi GS, et al. The science and practice of lithium therapy. Aust N Z J Psychiatry. 2012;46:192-211.
+- Katzung BG, Vanderah TW. Basic & Clinical Pharmacology. 15th ed. Chapter 29.
+
+### QUESTION
+ID: AQ-1026
+Exam: Step 2 CK
+System: Behavioral Health
+Discipline: Psychiatry
+Competency: Pharmacotherapy
+Category: Psychotic disorders
+Topic: Neuroleptic malignant syndrome
+Difficulty: 3
+Tags: antipsychotics, hyperthermia, rigidity
+
+Stem:
+A 28-year-old man with schizophrenia is brought to the emergency department because of confusion and fever for 1 day. Four days ago, he was admitted to a psychiatric unit for an acute psychotic episode and treated with intramuscular haloperidol. His temperature is 40.3°C (104.5°F), pulse is 126/min, and blood pressure fluctuates between 150/96 mm Hg and 182/110 mm Hg. He is diaphoretic and disoriented. Examination shows generalized "lead-pipe" rigidity of all extremities. Reflexes are normal, and there is no clonus. Pupils are 4 mm and reactive. Serum creatine kinase activity is 18,400 U/L. Haloperidol is discontinued, and cooling measures and intravenous fluids are started.
+
+Lead-in: Which of the following is the most appropriate additional pharmacotherapy?
+
+A. Cyproheptadine
+B. Dantrolene
+C. Diphenhydramine
+D. Physostigmine
+E. Propranolol
+
+Answer: B
+Key concept: Neuroleptic malignant syndrome
+
+Concepts:
+A = Serotonin syndrome
+B = Neuroleptic malignant syndrome
+C = Acute dystonia
+D = Anticholinergic toxicity
+E = Akathisia
+
+Explanation:
+Within days of starting **haloperidol**, this patient developed the four cardinal features of **neuroleptic malignant syndrome (NMS)**:
+1. **Hyperthermia** (40.3°C).
+2. **Lead-pipe rigidity** (diffuse, sustained muscle stiffness).
+3. **Autonomic instability** (tachycardia, labile blood pressure, diaphoresis).
+4. **Altered mental status**.
+
+Markedly elevated **creatine kinase** from rhabdomyolysis supports the diagnosis and warns of acute kidney injury from myoglobinuria.
+
+NMS reflects abrupt **dopamine D2 blockade** in the hypothalamus (impaired thermoregulation), nigrostriatal pathway (rigidity), and spinal cord. It can also occur when dopaminergic drugs are suddenly stopped in Parkinson disease.
+
+Management: stop the offending drug, provide aggressive supportive care (cooling, fluids, ICU monitoring), and, in moderate or severe cases, add **dantrolene**, which blocks the ryanodine receptor (RyR1) and stops calcium release from the sarcoplasmic reticulum of skeletal muscle, reducing rigidity and heat production. **Bromocriptine**, a D2 agonist, is an alternative or additional agent. Benzodiazepines help agitation.
+
+Option explanations:
+A. Cyproheptadine (a 5-HT2A antagonist) treats serotonin syndrome, which follows serotonergic drugs and causes clonus, hyperreflexia, mydriasis, and diarrhea rather than lead-pipe rigidity with normal reflexes.
+B. Correct. Dantrolene reduces skeletal muscle calcium release, rigidity, and heat production in NMS.
+C. Diphenhydramine (or benztropine) treats acute dystonia, a sustained involuntary contraction of the neck, jaw, or eyes within hours to days of an antipsychotic, without fever or delirium.
+D. Physostigmine reverses anticholinergic toxicity (hot, dry skin, flushing, mydriasis, urinary retention, delirium). This patient is diaphoretic with normal pupils and severe rigidity.
+E. Propranolol treats akathisia, a subjective inner restlessness caused by antipsychotics.
+
+Objective: Neuroleptic malignant syndrome (fever, lead-pipe rigidity, autonomic instability, delirium, high CK after a D2 antagonist) is treated by stopping the drug, supportive care, and dantrolene or bromocriptine.
+
+Textbook:
+**Drug-induced hyperthermic syndromes**
+
+| Feature | Neuroleptic malignant syndrome | Serotonin syndrome | Malignant hyperthermia | Anticholinergic toxicity |
+|---|---|---|---|---|
+| Trigger | D2 antagonists; withdrawal of dopaminergic drugs | Serotonergic drugs (SSRIs, MAOIs, linezolid, tramadol, triptans) | Inhaled anesthetics, succinylcholine (RYR1 mutation) | Antihistamines, TCAs, atropine, jimson weed |
+| Onset | Days | Hours | Minutes in the OR | Hours |
+| Muscle findings | Lead-pipe rigidity, bradyreflexia | Clonus, hyperreflexia, tremor | Masseter and generalized rigidity | Normal |
+| Skin, pupils, bowels | Diaphoresis; normal pupils | Diaphoresis, mydriasis, diarrhea | Diaphoresis | Dry, flushed; mydriasis; decreased bowel sounds |
+| Labs | Very high CK | Variable | Rising end-tidal CO2, high CK, hyperkalemia | Normal |
+| Treatment | Stop drug, cooling, dantrolene or bromocriptine | Stop drug, benzodiazepines, cyproheptadine | Stop anesthetic, dantrolene | Supportive; physostigmine |
+
+**Antipsychotic movement effects by timeline:** acute dystonia (hours to days; diphenhydramine or benztropine), akathisia (days to weeks; propranolol, lower dose), drug-induced parkinsonism (weeks; benztropine), tardive dyskinesia (months to years; switch to clozapine or use VMAT2 inhibitors such as valbenazine).
+
+References:
+- Simon LV, Hashmi MF, Callahan AL. Neuroleptic Malignant Syndrome. StatPearls; updated 2023.
+- Stahl SM. Stahl's Essential Psychopharmacology. 5th ed. Cambridge University Press; 2021.
+
+Nuggets:
+- Rigidity + fever after an antipsychotic = NMS :: Rigidity without fever suggests acute dystonia; add fever, autonomic instability and a very high CK and it is neuroleptic malignant syndrome. Stop the drug; give dantrolene or bromocriptine.
+
+### QUESTION
+ID: AQ-1027
+Exam: Step 1
+System: Hematology
+Discipline: Pathology
+Competency: Prognosis & outcome
+Category: Anemia, cytopenias & polycythemia
+Topic: Hereditary spherocytosis
+Difficulty: 2
+Tags: hemolysis, gallstones, splenomegaly
+Free: yes
+
+Stem:
+A 9-year-old boy is brought to the physician for a follow-up examination. He has had intermittent episodes of jaundice since infancy, particularly during viral illnesses. His mother had her spleen removed as a teenager. His pulse is 96/min. Examination shows mild scleral icterus and a spleen tip palpable 3 cm below the left costal margin. Laboratory studies show a hemoglobin concentration of 9.8 g/dL, mean corpuscular hemoglobin concentration of 38 g/dL (N=32-36), reticulocyte count of 8%, and increased serum indirect bilirubin concentration. A peripheral blood smear shows small, round erythrocytes that lack central pallor. A direct antiglobulin (Coombs) test is negative. Eosin-5-maleimide binding by flow cytometry is decreased.
+
+Lead-in: Without treatment, this patient is at greatest risk for which of the following complications?
+
+A. Acute chest syndrome
+B. Cholesterol gallstones
+C. Hemoglobinuria with hepatic vein thrombosis
+D. Iron deficiency from urinary iron loss
+E. Pigment gallstones
+
+Answer: E
+Key concept: Hereditary spherocytosis causes black pigment gallstones
+
+Concepts:
+A = Sickle cell disease
+B = Cholesterol cholelithiasis
+C = Paroxysmal nocturnal hemoglobinuria
+D = Chronic intravascular hemolysis
+E = Hereditary spherocytosis
+
+Explanation:
+Lifelong episodic jaundice, splenomegaly, a family history of splenectomy (autosomal dominant), **spherocytes**, **increased MCHC**, reticulocytosis, a **negative Coombs test** (not autoimmune), and **decreased eosin-5-maleimide (EMA) binding** confirm **hereditary spherocytosis (HS)**.
+
+Mutations in red cell cytoskeletal proteins (**ankyrin, spectrin, band 3, protein 4.2**) weaken the link between the membrane and the cytoskeleton. Red cells shed membrane, become small rigid spheres, and are trapped and destroyed by macrophages in the splenic cords: **chronic extravascular hemolysis**.
+
+Continuous breakdown of hemoglobin raises **unconjugated bilirubin**, which is excreted into bile in large amounts and precipitates with calcium as **black pigment (calcium bilirubinate) gallstones**. Gallstones develop in up to half of patients with HS, often in childhood or adolescence, and can cause biliary colic, cholecystitis, or choledocholithiasis.
+
+Splenectomy (usually after age 6, after vaccination against encapsulated organisms) removes the site of destruction, corrects the anemia, and reduces gallstone formation; cholecystectomy is added if stones are present.
+
+Option explanations:
+A. Acute chest syndrome is a complication of sickle cell disease, which shows sickled cells on smear and hemoglobin S on electrophoresis.
+B. Cholesterol stones are the most common gallstones overall (obesity, female sex, pregnancy, rapid weight loss), but chronic hemolysis specifically produces pigment stones.
+C. Hemoglobinuria with venous thrombosis in unusual sites (hepatic, cerebral, mesenteric veins) characterizes paroxysmal nocturnal hemoglobinuria, an acquired complement-mediated intravascular hemolysis (CD55/CD59 deficiency).
+D. Urinary iron loss from hemosiderinuria occurs with chronic intravascular hemolysis (PNH, mechanical heart valves). HS hemolysis is extravascular, so iron is recycled by macrophages.
+E. Correct. Chronic extravascular hemolysis raises unconjugated bilirubin and causes black pigment gallstones.
+
+Objective: Chronic extravascular hemolysis in hereditary spherocytosis raises unconjugated bilirubin and predisposes to black pigment (calcium bilirubinate) gallstones; splenectomy reduces hemolysis.
+
+Textbook:
+**Hereditary spherocytosis (HS)**
+
+- **Genetics:** usually autosomal dominant; defects in ankyrin (most common), spectrin, band 3, or protein 4.2.
+- **Lab features:** spherocytes; **increased MCHC** (the most useful index); increased RDW; reticulocytosis; negative direct Coombs test; **decreased EMA binding** (preferred test) or increased osmotic fragility.
+- **Complications:** pigment gallstones; **aplastic crisis** with parvovirus B19 (sudden drop in hemoglobin with reticulocytopenia); hemolytic crises with infection; splenomegaly; folate deficiency.
+- **Treatment:** folic acid; transfusion for crises; splenectomy for moderate to severe disease (Howell-Jolly bodies appear afterward; lifelong risk of overwhelming infection with encapsulated organisms, so vaccinate first).
+
+| Hemolysis | Site | Clues | Examples |
+|---|---|---|---|
+| Extravascular | Spleen and liver macrophages | Splenomegaly, jaundice, pigment stones | HS, autoimmune hemolytic anemia (warm), sickle cell disease |
+| Intravascular | Blood vessels | Hemoglobinuria, hemosiderinuria, very low haptoglobin, iron loss | PNH, G6PD deficiency crisis, mechanical valves, transfusion reaction, microangiopathies |
+
+References:
+- Kumar V, Abbas AK, Aster JC. Robbins & Cotran Pathologic Basis of Disease. 10th ed. Chapter 14.
+- Bolton-Maggs PHB, et al. Guidelines for the diagnosis and management of hereditary spherocytosis. Br J Haematol. 2012;156:37-49.
+
+Nuggets:
+- Pigment gallstones in a child: think chronic hemolysis :: Hereditary spherocytosis and sickle cell disease raise unconjugated bilirubin, producing black calcium-bilirubinate stones; splenectomy (sometimes with cholecystectomy) is the definitive fix in spherocytosis.
+
+### QUESTION
+ID: AQ-1028
+Exam: Step 2 CK
+System: Hematology
+Discipline: Internal Medicine
+Competency: Pharmacotherapy
+Category: Coagulation disorders
+Topic: Heparin-induced thrombocytopenia
+Difficulty: 3
+Tags: anticoagulation, thrombocytopenia, thrombosis
+
+Stem:
+A 67-year-old woman is evaluated in the hospital because of pain and swelling of her left leg. Eight days ago, she underwent right total knee arthroplasty, and she has since received subcutaneous unfractionated heparin for thromboprophylaxis. Her temperature is 37.2°C (99°F), pulse is 92/min, and blood pressure is 134/80 mm Hg. The left calf is swollen and tender. Her platelet count is 62,000/mm3; before surgery it was 248,000/mm3. Serum creatinine concentration is 1.0 mg/dL. Compression ultrasonography shows a thrombus in the left femoral vein. An immunoassay for antibodies against platelet factor 4-heparin complexes is strongly positive.
+
+Lead-in: In addition to discontinuing heparin, which of the following is the most appropriate next step in management?
+
+A. Begin an argatroban infusion
+B. Begin warfarin therapy
+C. Platelet transfusion
+D. Switch to subcutaneous enoxaparin
+E. Placement of an inferior vena cava filter
+
+Answer: A
+Key concept: Non-heparin anticoagulation for HIT
+
+Explanation:
+A **fall in platelet count of more than 50%** beginning **5 to 10 days after heparin exposure**, a **new thrombosis**, no other cause of thrombocytopenia, and a positive **anti-PF4-heparin antibody** test establish **heparin-induced thrombocytopenia (HIT)**.
+
+HIT is caused by **IgG antibodies against complexes of platelet factor 4 and heparin**. The immune complexes bind platelet Fc-gamma-IIa receptors and **activate** platelets, which release procoagulant microparticles and are cleared. The result is a paradox: low platelets but a **strongly prothrombotic state** (venous and arterial thrombosis, skin necrosis, limb ischemia).
+
+Management:
+1. **Stop all heparin**, including flushes and heparin-coated catheters.
+2. **Start a non-heparin anticoagulant immediately**, even without thrombosis, because thrombotic risk is very high. Options: **argatroban** (direct thrombin inhibitor, hepatically cleared), bivalirudin, fondaparinux, or a DOAC in stable patients.
+3. Delay warfarin until platelets recover (over 150,000/mm3), then overlap for at least 5 days.
+
+Option explanations:
+A. Correct. A non-heparin anticoagulant such as argatroban must be started immediately in HIT.
+B. Starting warfarin during acute HIT rapidly lowers protein C (short half-life) before the procoagulant factors fall, which can cause venous limb gangrene and warfarin skin necrosis. It is started only after platelet recovery and with an overlapping parenteral agent.
+C. Platelet transfusion can fuel thrombosis in HIT and is reserved for active bleeding or high-risk procedures.
+D. Low-molecular-weight heparin cross-reacts with HIT antibodies and is contraindicated.
+E. An IVC filter is used only when anticoagulation is impossible; it does not treat the systemic hypercoagulable state and may itself thrombose.
+
+Objective: HIT requires immediate cessation of all heparin and a non-heparin anticoagulant such as argatroban; warfarin alone is contraindicated until platelets recover, and low-molecular-weight heparin cross-reacts.
+
+Textbook:
+**Heparin-induced thrombocytopenia (HIT)**
+
+- **Mechanism:** IgG against PF4-heparin complexes activates platelets (type II HIT). A benign, non-immune early drop in platelets (type I) occurs in the first 2 days and resolves without stopping heparin.
+- **Timing:** platelets fall 5 to 10 days after starting heparin, or within 24 hours if heparin was given in the past 100 days.
+- **Risk:** higher with unfractionated than low-molecular-weight heparin, and with surgical (especially orthopedic and cardiac) patients.
+- **4Ts score** for pretest probability: Thrombocytopenia (degree), Timing, Thrombosis, other causes of Thrombocytopenia.
+- **Testing:** PF4-heparin immunoassay (sensitive); serotonin release assay (functional, specific).
+- **Treatment:** stop heparin; start argatroban, bivalirudin, fondaparinux, or a DOAC; transition to warfarin or a DOAC after platelet recovery; anticoagulate 3 months with thrombosis, about 4 weeks without; document heparin allergy.
+
+| Anticoagulant | Mechanism | Use in HIT |
+|---|---|---|
+| Unfractionated heparin, LMWH | Activate antithrombin | Contraindicated |
+| Argatroban, bivalirudin | Direct thrombin inhibitors | Yes (argatroban in renal failure; bivalirudin in liver failure or PCI) |
+| Fondaparinux | Factor Xa via antithrombin (too small to bind PF4) | Yes |
+| Warfarin | Vitamin K antagonist | Only after platelet recovery, with overlap |
+
+References:
+- Cuker A, et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: heparin-induced thrombocytopenia. Blood Adv. 2018;2:3360-3392.
+
+### QUESTION
+ID: AQ-1029
+Exam: Step 1
+System: Hematology
+Discipline: Biochemistry & Nutrition
+Competency: Laboratory & diagnostic studies
+Category: Anemia, cytopenias & polycythemia
+Topic: Vitamin B12 deficiency
+Difficulty: 3
+Tags: megaloblastic anemia, pernicious anemia, neuropathy
+
+Stem:
+A 58-year-old woman comes to the office because of fatigue, tingling in her feet, and unsteadiness that is worse in the dark for 4 months. She has autoimmune hypothyroidism treated with levothyroxine. She eats a varied diet that includes meat and dairy products. Examination shows pallor and a smooth, beefy-red tongue. Vibration and position sense are decreased in both lower extremities, and Romberg sign is present. Her hemoglobin concentration is 9.4 g/dL, and mean corpuscular volume is 114 μm3. A peripheral blood smear shows macro-ovalocytes and hypersegmented neutrophils.
+
+Lead-in: Which of the following sets of serum findings is most likely in this patient?
+
+A. Increased methylmalonic acid, increased homocysteine
+B. Increased methylmalonic acid, normal homocysteine
+C. Normal methylmalonic acid, increased homocysteine
+D. Normal methylmalonic acid, normal homocysteine
+E. Decreased methylmalonic acid, decreased homocysteine
+
+Answer: A
+Key concept: B12 deficiency raises both methylmalonic acid and homocysteine
+
+Concepts:
+A = Vitamin B12 deficiency
+B = Isolated methylmalonyl-CoA mutase defect
+C = Folate deficiency
+D = Non-megaloblastic macrocytosis
+E = Not a recognized pattern
+
+Explanation:
+Megaloblastic anemia (MCV 114, hypersegmented neutrophils), glossitis, and **dorsal column dysfunction** (impaired vibration and proprioception, positive Romberg) in a woman with another autoimmune disease is **vitamin B12 deficiency from pernicious anemia** (autoantibodies against parietal cells and intrinsic factor).
+
+Vitamin B12 is a cofactor for only two human enzymes, and both explain the labs:
+
+1. **Methionine synthase** (in the cytoplasm) transfers a methyl group from N5-methyltetrahydrofolate to **homocysteine**, forming methionine. B12 deficiency stalls this step, so **homocysteine rises**, and folate is trapped as methyl-THF (the "folate trap"), impairing DNA synthesis and causing megaloblastic anemia.
+2. **Methylmalonyl-CoA mutase** (in mitochondria) converts methylmalonyl-CoA to succinyl-CoA. B12 deficiency causes **methylmalonic acid (MMA) to rise**. Abnormal fatty acid incorporation into myelin is thought to contribute to **subacute combined degeneration** of the dorsal columns and lateral corticospinal tracts.
+
+Folate is needed only for the first reaction, so folate deficiency raises homocysteine but leaves MMA normal. **Elevated MMA is the distinguishing marker of B12 deficiency.**
+
+Option explanations:
+A. Correct. B12 deficiency blocks both methionine synthase and methylmalonyl-CoA mutase, raising both homocysteine and methylmalonic acid.
+B. Elevated MMA with normal homocysteine would fit an isolated defect of methylmalonyl-CoA mutase (methylmalonic acidemia), not nutritional B12 deficiency.
+C. Elevated homocysteine with normal MMA is the pattern of folate deficiency, which causes megaloblastic anemia without neurologic deficits.
+D. Normal levels of both suggest a non-megaloblastic macrocytosis (alcohol use, liver disease, hypothyroidism, reticulocytosis), which does not cause hypersegmented neutrophils.
+E. Decreased levels of both metabolites do not occur in vitamin deficiency.
+
+Objective: Vitamin B12 deficiency raises both methylmalonic acid and homocysteine (folate deficiency raises only homocysteine); B12 deficiency also damages the dorsal columns and corticospinal tracts (subacute combined degeneration).
+
+Textbook:
+**Megaloblastic anemia: vitamin B12 versus folate**
+
+| Feature | Vitamin B12 (cobalamin) deficiency | Folate deficiency |
+|---|---|---|
+| Common causes | Pernicious anemia, gastrectomy, ileal resection or Crohn disease, metformin, vegan diet, Diphyllobothrium latum | Poor diet (alcohol use), pregnancy, methotrexate, trimethoprim, phenytoin |
+| Time to develop | Years (large liver stores) | Months |
+| Homocysteine | Increased | Increased |
+| Methylmalonic acid | Increased | Normal |
+| Neurologic deficits | Yes: subacute combined degeneration, peripheral neuropathy, dementia | No |
+
+- **Pernicious anemia:** autoimmune gastritis of the body and fundus; anti-intrinsic factor (specific) and anti-parietal cell antibodies; achlorhydria; increased gastrin; increased risk of gastric adenocarcinoma and carcinoid tumors; associated with other autoimmune diseases (Hashimoto thyroiditis, type 1 diabetes, vitiligo).
+- **Treatment:** intramuscular B12 (high-dose oral B12 also works). Never treat presumed B12 deficiency with folate alone: folate corrects the anemia but allows neurologic damage to progress.
+
+References:
+- Stabler SP. Vitamin B12 Deficiency. N Engl J Med. 2013;368:149-160.
+
+Nuggets:
+- Methylmalonic acid separates B12 from folate deficiency :: Both deficiencies raise homocysteine and cause megaloblastic anemia, but only B12 deficiency raises methylmalonic acid and damages the dorsal columns and corticospinal tracts.
+
+### QUESTION
+ID: AQ-1030
+Exam: Step 1
+System: Immune System
+Discipline: Gross Anatomy & Embryology
+Competency: Causes & mechanisms
+Category: Immunodeficiency disorders
+Topic: DiGeorge syndrome
+Difficulty: 2
+Tags: 22q11.2 deletion, hypocalcemia, T-cell deficiency
+Free: yes
+
+Stem:
+A 2-day-old boy in the newborn nursery has had two episodes of generalized jerking movements of the extremities during the past 6 hours. He was born at term after an uncomplicated pregnancy. Examination shows a short philtrum, wide-set eyes, low-set ears, and a small mandible. A grade 3/6 harsh systolic murmur is heard along the left sternal border, and there is mild cyanosis of the lips. His serum calcium concentration is 6.1 mg/dL. A chest x-ray shows a boot-shaped heart and absence of the thymic shadow.
+
+Lead-in: Abnormal development of which of the following embryologic structures is most likely responsible for this patient's seizures?
+
+A. First pharyngeal arch
+B. First pharyngeal pouch
+C. Second pharyngeal pouch
+D. Third and fourth pharyngeal pouches
+E. Thyroglossal duct
+
+Answer: D
+Key concept: DiGeorge syndrome (third and fourth pharyngeal pouches)
+
+Explanation:
+Neonatal seizures with **hypocalcemia**, **absent thymic shadow**, characteristic facies (short philtrum, hypertelorism, low-set ears, micrognathia), and a **conotruncal heart defect** (tetralogy of Fallot: boot-shaped heart, cyanosis, systolic murmur) define **DiGeorge syndrome**, usually caused by a **22q11.2 microdeletion** (TBX1 is a key gene).
+
+The defect is abnormal development of the **third and fourth pharyngeal pouches** (with neural crest migration problems):
+- **Third pouch:** thymus and **inferior parathyroid glands**.
+- **Fourth pouch:** **superior parathyroid glands** (and the ultimobranchial body, which forms thyroid C cells).
+
+Without parathyroid glands, PTH is absent, so the newborn develops **hypocalcemia** with tetany and seizures, typically in the first days of life once maternal calcium supply ends. Thymic hypoplasia causes **T-cell deficiency** and susceptibility to viral, fungal, and Pneumocystis infections.
+
+Mnemonic **CATCH-22**: Cardiac defects, Abnormal facies, Thymic hypoplasia, Cleft palate, Hypocalcemia, chromosome 22.
+
+Option explanations:
+A. The first pharyngeal arch forms the muscles of mastication, the mandible and maxilla, and the malleus and incus; defects cause Treacher Collins syndrome or Pierre Robin sequence, not hypoparathyroidism.
+B. The first pharyngeal pouch forms the middle ear cavity, eustachian tube, and mastoid air cells.
+C. The second pharyngeal pouch forms the epithelial lining of the palatine tonsils.
+D. Correct. Failure of the third and fourth pharyngeal pouches leaves the infant without parathyroid glands (hypocalcemic seizures) and a thymus (T-cell deficiency).
+E. Persistence of the thyroglossal duct causes a midline neck cyst that moves with swallowing or tongue protrusion; it does not affect calcium.
+
+Objective: DiGeorge syndrome (22q11.2 deletion) results from abnormal development of the third and fourth pharyngeal pouches, causing thymic hypoplasia (T-cell deficiency) and parathyroid hypoplasia (hypocalcemic seizures), often with conotruncal heart defects.
+
+Textbook:
+**Pharyngeal (branchial) apparatus:** arches are mesoderm and neural crest (muscles, cartilage, nerves), pouches are endoderm (glands and linings), clefts are ectoderm (external ear).
+
+| Pouch | Derivatives |
+|---|---|
+| 1st | Middle ear cavity, eustachian tube, mastoid air cells |
+| 2nd | Epithelial lining of the palatine tonsils |
+| 3rd | Thymus (ventral wing) and inferior parathyroids (dorsal wing) |
+| 4th | Superior parathyroids; ultimobranchial body (parafollicular C cells) |
+
+| Arch | Nerve | Key derivatives |
+|---|---|---|
+| 1st | CN V3 | Muscles of mastication, malleus, incus, mandible |
+| 2nd | CN VII | Muscles of facial expression, stapes, styloid process |
+| 3rd | CN IX | Stylopharyngeus, greater horn of hyoid |
+| 4th and 6th | CN X | Laryngeal and pharyngeal muscles, laryngeal cartilages |
+
+**DiGeorge syndrome:** 22q11.2 deletion; hypocalcemia (absent PTH), recurrent viral and fungal infections (T-cell deficiency), conotruncal anomalies (truncus arteriosus, tetralogy of Fallot, interrupted aortic arch), cleft palate, and later psychiatric illness (schizophrenia risk). Treatment: calcium and calcitriol; thymus transplantation for complete DiGeorge; irradiated blood products only.
+
+References:
+- Sadler TW. Langman's Medical Embryology. 15th ed. Wolters Kluwer; 2023. Chapter 17.
+- McDonald-McGinn DM, et al. 22q11.2 deletion syndrome. Nat Rev Dis Primers. 2015;1:15071.
+
+Nuggets:
+- Neonatal hypocalcemia + absent thymus + heart defect = DiGeorge :: A 22q11.2 deletion disrupts the third and fourth pharyngeal pouches: no parathyroids (tetany, seizures) and no thymus (T-cell deficiency), often with truncus arteriosus or tetralogy of Fallot.
+### END

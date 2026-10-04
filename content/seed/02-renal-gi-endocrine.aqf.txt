@@ -1,0 +1,737 @@
+### QUESTION
+ID: AQ-1011
+Exam: Step 1
+System: Renal
+Discipline: Physiology
+Competency: Causes & mechanisms
+Category: Metabolic & regulatory disorders
+Topic: Renal tubular acidosis
+Difficulty: 5
+Tags: acid-base, hyperkalemia, diabetes
+Daily: yes
+
+Stem:
+A 67-year-old man with a 20-year history of type 2 diabetes mellitus comes to the office for a follow-up examination. He has diabetic retinopathy and peripheral neuropathy. His medications are metformin, insulin glargine, and atorvastatin; he does not take potassium supplements, diuretics, or NSAIDs. His blood pressure is 142/86 mm Hg. Laboratory studies show:
+
+Serum Na+: 138 mEq/L
+Serum Cl-: 111 mEq/L
+Serum K+: 6.0 mEq/L
+Serum HCO3-: 17 mEq/L
+Serum urea nitrogen: 28 mg/dL
+Serum creatinine: 1.6 mg/dL
+Serum glucose: 162 mg/dL
+Urine pH: 5.1
+
+Plasma renin activity and serum aldosterone concentration are both decreased.
+
+Lead-in: Which of the following is the most likely primary cause of this patient's acid-base disorder?
+
+A. Accumulation of lactate from metformin therapy
+B. Decreased renal ammonium production and excretion
+C. Decreased H+ secretion by alpha-intercalated cells
+D. Defective proximal tubule bicarbonate reabsorption
+E. Gastrointestinal loss of bicarbonate
+
+Answer: B
+Key concept: Type 4 (hyperkalemic) renal tubular acidosis
+
+Concepts:
+A = Lactic acidosis
+B = Type 4 renal tubular acidosis
+C = Type 1 (distal) renal tubular acidosis
+D = Type 2 (proximal) renal tubular acidosis
+E = Diarrhea-associated acidosis
+
+Explanation:
+Start with the numbers. Bicarbonate is 17 mEq/L, so there is a metabolic acidosis. The anion gap is 138 - (111 + 17) = **10, a normal anion gap**. Add **hyperkalemia** and **low renin with low aldosterone** in a man with long-standing diabetic nephropathy, and the diagnosis is **type 4 renal tubular acidosis (hyporeninemic hypoaldosteronism)**.
+
+Diabetic injury to the juxtaglomerular apparatus lowers renin, so aldosterone falls. The acidosis then develops through two linked steps:
+
+1. **Low aldosterone** reduces potassium and hydrogen secretion in the collecting duct, so potassium rises.
+2. **Hyperkalemia suppresses ammoniagenesis** from glutamine in the proximal tubule. Ammonia is the main urinary buffer: each NH4+ excreted carries one H+ out of the body and returns one new bicarbonate to the blood. **Less ammonium means the kidney cannot excrete the daily acid load.**
+
+The key distinction from distal (type 1) RTA: the alpha-intercalated cells still work, so the urine can be acidified (pH 5.1 here). The problem is the **quantity of buffered acid**, not the ability to lower urine pH. Correcting the potassium (low-potassium diet, loop or thiazide diuretics, potassium binders, fludrocortisone in selected patients) restores ammoniagenesis and often improves the acidosis.
+
+Option explanations:
+A. Metformin-associated lactic acidosis produces a high anion gap acidosis. This patient's anion gap is normal.
+B. Correct. Hypoaldosteronism causes hyperkalemia, and hyperkalemia suppresses proximal ammonia production, so the kidney cannot excrete acid as NH4+ even though the urine can still be acidified.
+C. Impaired alpha-intercalated cell H+ secretion is distal (type 1) RTA: the urine pH cannot fall below 5.5, potassium is low, and calcium phosphate stones are common.
+D. Defective proximal bicarbonate reabsorption is proximal (type 2) RTA (Fanconi syndrome, acetazolamide, multiple myeloma). It typically causes hypokalemia.
+E. Diarrhea causes a normal anion gap acidosis with hypokalemia, and the kidney responds by increasing ammonium excretion (negative urine anion gap).
+
+Objective: Normal anion gap metabolic acidosis with hyperkalemia and low renin and aldosterone in diabetic kidney disease is type 4 RTA; hyperkalemia suppresses proximal ammoniagenesis, so acid cannot be excreted as NH4+ even though the urine can be acidified.
+
+Textbook:
+**Renal tubular acidoses (RTA)** are normal anion gap (hyperchloremic) metabolic acidoses caused by a renal defect in acid excretion or bicarbonate reclamation.
+
+| Feature | Type 1 (distal) | Type 2 (proximal) | Type 4 (hyperkalemic) |
+|---|---|---|---|
+| Defect | Alpha-intercalated cells cannot secrete H+ | Proximal tubule cannot reclaim HCO3- | Low aldosterone or aldosterone resistance; less NH4+ |
+| Serum K+ | Low | Low | High |
+| Urine pH | Over 5.5 | Under 5.5 once HCO3- falls below threshold | Under 5.5 |
+| Associations | Amphotericin B, Sjogren syndrome, SLE, ifosfamide | Fanconi syndrome, acetazolamide, multiple myeloma, Wilson disease, lead | Diabetic nephropathy, ACE inhibitors and ARBs, spironolactone, trimethoprim, heparin, NSAIDs |
+| Complication | Calcium phosphate stones | Rickets or osteomalacia | Hyperkalemia |
+
+**Urine anion gap** (Na+ + K+ - Cl-) estimates urinary ammonium. In diarrhea it is negative (the kidney excretes plenty of NH4+). In RTA it is positive (NH4+ excretion is inadequate).
+
+**Approach to metabolic acidosis:** calculate the anion gap; if normal, think diarrhea, RTA, early renal failure, saline infusion, or acetazolamide; then use serum potassium and urine pH to separate the RTA types.
+
+References:
+- Palmer BF, Kelepouris E, Clegg DJ. Renal Tubular Acidosis and Management Strategies: A Narrative Review. Adv Ther. 2021;38:949-968.
+- Costanzo LS. Physiology. 7th ed. Chapter 7.
+
+### QUESTION
+ID: AQ-1012
+Exam: Step 1
+System: Gastrointestinal
+Discipline: Pathology
+Competency: Laboratory & diagnostic studies
+Category: Infectious & inflammatory disorders
+Topic: Inflammatory bowel disease
+Difficulty: 2
+Tags: Crohn disease, ulcerative colitis, fistula
+Free: yes
+
+Stem:
+A 24-year-old man comes to the office because of intermittent crampy right lower quadrant abdominal pain, nonbloody diarrhea, and a 6-kg (13-lb) weight loss over the past 4 months. He also has had painful ulcers in his mouth. He has smoked one pack of cigarettes daily for 6 years. His temperature is 37.8°C (100°F). Examination shows tenderness and a vague fullness in the right lower quadrant and a perianal fistula draining a small amount of pus. Hemoglobin concentration is 11.2 g/dL, and serum C-reactive protein concentration is increased. Colonoscopy shows patchy ulcerations of the terminal ileum and ascending colon separated by normal-appearing mucosa; the rectum is spared.
+
+Lead-in: Microscopic examination of biopsy specimens from the affected areas is most likely to show which of the following?
+
+A. Crypt abscesses with inflammation limited to the mucosa and submucosa
+B. Foamy macrophages containing PAS-positive material in the lamina propria
+C. Noncaseating granulomas with transmural inflammation
+D. Pseudomembranes of fibrin, mucus, and neutrophils erupting from crypts
+E. Villous atrophy with increased intraepithelial lymphocytes
+
+Answer: C
+Key concept: Crohn disease
+
+Concepts:
+A = Ulcerative colitis
+B = Whipple disease
+C = Crohn disease
+D = Clostridioides difficile colitis
+E = Celiac disease
+
+Explanation:
+A young adult with right lower quadrant pain, diarrhea, weight loss, oral aphthous ulcers, a **perianal fistula**, and colonoscopy showing **skip lesions in the terminal ileum with rectal sparing** has **Crohn disease**. Smoking increases the risk of Crohn disease (whereas it is paradoxically protective in ulcerative colitis).
+
+Crohn disease is a **transmural** granulomatous inflammation that can affect any part of the GI tract from mouth to anus, most often the terminal ileum. Because inflammation extends through the full thickness of the wall, it produces the complications that define the disease: **fistulas** (to skin, bladder, vagina, or other bowel loops), **strictures** with obstruction, and abscesses. **Noncaseating granulomas** are found in about a third of biopsies and are highly suggestive when present.
+
+Other gross clues: cobblestone mucosa, linear (knife-like) ulcers, and creeping fat wrapping the serosa.
+
+Option explanations:
+A. Crypt abscesses with inflammation confined to the mucosa and submucosa are typical of ulcerative colitis, which begins in the rectum, extends continuously proximally, and causes bloody diarrhea. It does not cause fistulas or skip lesions.
+B. PAS-positive foamy macrophages in the lamina propria indicate Whipple disease (Tropheryma whipplei), which presents with malabsorption, arthralgias, and neurologic signs, usually in older men.
+C. Correct. Transmural inflammation with noncaseating granulomas is characteristic of Crohn disease and explains the fistula.
+D. Volcano-like pseudomembranes are Clostridioides difficile colitis after antibiotic exposure; the colon, not the terminal ileum with skip lesions, is involved.
+E. Villous atrophy with intraepithelial lymphocytosis is celiac disease, which affects the duodenum and jejunum and does not cause fistulas.
+
+Objective: Crohn disease causes skip lesions anywhere from mouth to anus (classically the terminal ileum with rectal sparing), transmural inflammation that produces fistulas and strictures, and noncaseating granulomas.
+
+Textbook:
+**Inflammatory bowel disease** comprises Crohn disease and ulcerative colitis.
+
+| Feature | Crohn disease | Ulcerative colitis |
+|---|---|---|
+| Location | Mouth to anus, terminal ileum most common, rectal sparing | Rectum, extending continuously proximally |
+| Distribution | Skip lesions | Continuous |
+| Depth | Transmural | Mucosa and submucosa |
+| Gross | Cobblestone mucosa, linear ulcers, creeping fat, strictures | Pseudopolyps, friable mucosa, loss of haustra (lead pipe) |
+| Microscopy | Noncaseating granulomas, lymphoid aggregates | Crypt abscesses, crypt distortion |
+| Complications | Fistulas, strictures, abscesses, malabsorption (B12, bile acids), calcium oxalate stones, gallstones | Toxic megacolon, colorectal carcinoma, primary sclerosing cholangitis |
+| Smoking | Worsens | Protective |
+| Serology | ASCA | p-ANCA |
+
+**Shared extraintestinal features:** erythema nodosum, pyoderma gangrenosum, anterior uveitis or episcleritis, seronegative arthritis (including ankylosing spondylitis), aphthous ulcers.
+
+**Treatment:** 5-aminosalicylates (mainly UC), corticosteroids for flares, thiopurines and methotrexate, anti-TNF agents (infliximab, adalimumab), anti-integrin (vedolizumab), anti-IL-12/23 (ustekinumab), JAK inhibitors. Colectomy is curative for UC but not for Crohn disease.
+
+**Cancer screening:** colonoscopy surveillance beginning 8 years after diagnosis of extensive colitis (immediately if PSC is present).
+
+References:
+- Kumar V, Abbas AK, Aster JC. Robbins & Cotran Pathologic Basis of Disease. 10th ed. Chapter 17.
+- Lichtenstein GR, et al. ACG Clinical Guideline: Management of Crohn's Disease in Adults. Am J Gastroenterol. 2018;113:481-517.
+
+### QUESTION
+ID: AQ-1013
+Exam: Step 2 CK
+System: Gastrointestinal
+Discipline: Internal Medicine
+Competency: Pharmacotherapy
+Category: Infectious & inflammatory disorders
+Topic: Clostridioides difficile infection
+Difficulty: 2
+Tags: diarrhea, antibiotics, hospital-acquired
+
+Stem:
+A 72-year-old woman is evaluated in the hospital because of watery diarrhea with 7 to 8 bowel movements daily and crampy lower abdominal pain for 3 days. Ten days ago, she was admitted for pyelonephritis and treated with intravenous ceftriaxone, which was changed to oral cefpodoxime 4 days ago. Her temperature is 38.1°C (100.6°F), pulse is 96/min, and blood pressure is 128/76 mm Hg. The abdomen is soft and mildly tender in both lower quadrants without distention or rebound tenderness. Bowel sounds are present. Leukocyte count is 13,800/mm3, and serum creatinine concentration is 0.9 mg/dL (baseline 0.8 mg/dL). A stool nucleic acid amplification test for toxigenic Clostridioides difficile is positive. Cefpodoxime is discontinued.
+
+Lead-in: Which of the following is the most appropriate pharmacotherapy?
+
+A. Intravenous vancomycin
+B. Oral metronidazole
+C. Oral vancomycin
+D. Probiotic therapy with Saccharomyces boulardii
+E. Rifaximin
+
+Answer: C
+Key concept: Oral vancomycin or fidaxomicin for C. difficile
+
+Explanation:
+Diarrhea (three or more unformed stools in 24 hours) after cephalosporin therapy in a hospitalized older adult, with a positive toxigenic C. difficile test, is **Clostridioides difficile infection**. Her leukocyte count is under 15,000/mm3 and her creatinine is under 1.5 mg/dL, so this is a **nonsevere initial episode**. There are no fulminant features (no hypotension, shock, ileus, or megacolon).
+
+Current IDSA/SHEA guidance for an initial episode, nonsevere or severe:
+- **Fidaxomicin** 200 mg twice daily for 10 days (preferred where available because it lowers recurrence), or
+- **Oral vancomycin** 125 mg four times daily for 10 days.
+
+Of the choices offered, **oral vancomycin** is correct. The route matters: vancomycin is a large glycopeptide that is **not absorbed from the gut**, which is exactly why it works orally (it stays in the colon at high concentration), and why intravenous vancomycin fails (it is not secreted into the bowel lumen).
+
+Stopping the inciting antibiotic, as was done here, is also part of treatment.
+
+Option explanations:
+A. Intravenous vancomycin does not reach the colonic lumen and has no role in treating C. difficile infection.
+B. Oral metronidazole is no longer first-line because of higher failure and recurrence rates; it is reserved for nonsevere disease when fidaxomicin and vancomycin are unavailable.
+C. Correct. Oral vancomycin (or fidaxomicin) is first-line for an initial episode of C. difficile infection.
+D. Probiotics have not been shown to treat active C. difficile infection and are not recommended as therapy.
+E. Rifaximin is occasionally used as a "chaser" after vancomycin for multiply recurrent disease, not as initial therapy.
+
+Objective: An initial episode of Clostridioides difficile infection is treated with oral fidaxomicin or oral vancomycin; intravenous vancomycin does not reach the colon, and metronidazole is no longer first-line.
+
+Textbook:
+**Clostridioides difficile** is a gram-positive, spore-forming, anaerobic rod. Toxin A (enterotoxin) and toxin B (cytotoxin) disrupt the actin cytoskeleton and cause colitis with pseudomembranes.
+
+- **Risk factors:** antibiotics (clindamycin, fluoroquinolones, cephalosporins, broad-spectrum penicillins), hospitalization or long-term care, age over 65, proton pump inhibitors, immunosuppression.
+- **Presentation:** watery diarrhea, lower abdominal cramps, fever, leukocytosis (sometimes very high). Fulminant disease: hypotension, ileus, toxic megacolon.
+- **Testing:** test only unformed stool from patients with three or more unformed stools in 24 hours; NAAT or a multistep algorithm with toxin enzyme immunoassay. Do not perform a test of cure.
+
+| Episode | Treatment |
+|---|---|
+| Initial, nonsevere or severe (WBC over 15,000 or creatinine over 1.5 mg/dL) | Fidaxomicin, or oral vancomycin, for 10 days |
+| Fulminant (hypotension, shock, ileus, megacolon) | Oral vancomycin 500 mg four times daily plus IV metronidazole; rectal vancomycin if ileus; surgical consultation |
+| First recurrence | Fidaxomicin, or vancomycin tapered and pulsed; consider bezlotoxumab |
+| Multiple recurrences | Fecal microbiota transplantation |
+
+- **Infection control:** contact precautions; wash hands with **soap and water** (alcohol does not kill spores); clean surfaces with sporicidal agents.
+
+References:
+- Johnson S, et al. Clinical Practice Guideline by IDSA and SHEA: 2021 Focused Update Guidelines on Management of Clostridioides difficile Infection in Adults. Clin Infect Dis. 2021;73:e1029-e1044.
+
+Nuggets:
+- C. difficile: oral vancomycin or fidaxomicin, not metronidazole :: Current guidelines dropped metronidazole as first-line. Vancomycin must be given orally because intravenous vancomycin is not secreted into the colon.
+
+### QUESTION
+ID: AQ-1014
+Exam: Step 1
+System: Gastrointestinal
+Discipline: Pathology
+Competency: Laboratory & diagnostic studies
+Category: Liver & biliary system
+Topic: Hereditary hemochromatosis
+Difficulty: 3
+Tags: iron overload, cirrhosis, diabetes
+
+Stem:
+A 52-year-old man comes to the office because of fatigue, pain in both hands, and decreased libido for 1 year. He drinks one glass of wine per week. Examination shows diffuse bronze-gray skin pigmentation, hepatomegaly, and small, firm testes. The second and third metacarpophalangeal joints of both hands are tender and swollen. His fasting serum glucose concentration is 168 mg/dL, and serum alanine aminotransferase activity is mildly increased.
+
+Lead-in: Which of the following sets of serum findings is most likely in this patient?
+
+A. Decreased ferritin, decreased transferrin saturation, increased total iron-binding capacity
+B. Increased ferritin, decreased transferrin saturation, decreased total iron-binding capacity
+C. Increased ferritin, increased transferrin saturation, decreased total iron-binding capacity
+D. Increased ferritin, normal transferrin saturation, normal total iron-binding capacity
+E. Normal ferritin, normal transferrin saturation, normal total iron-binding capacity
+
+Answer: C
+Key concept: Iron studies in hereditary hemochromatosis
+
+Concepts:
+A = Iron deficiency anemia
+B = Anemia of chronic disease
+C = Hereditary hemochromatosis
+D = Hyperferritinemia of inflammation or metabolic syndrome
+E = Normal iron stores
+
+Explanation:
+Liver disease, **diabetes**, **bronze skin**, **hypogonadism**, and arthropathy of the **second and third MCP joints** in a middle-aged man is the classic picture of **hereditary hemochromatosis** ("bronze diabetes").
+
+Most cases are caused by **homozygous HFE C282Y mutations** (autosomal recessive, chromosome 6). HFE normally helps the liver sense body iron and produce **hepcidin**. With low hepcidin, ferroportin on duodenal enterocytes and macrophages stays active, so the gut keeps absorbing iron no matter how full the stores are.
+
+That produces the iron-overload profile:
+- **Transferrin saturation increased** (usually over 45%): the earliest and most sensitive screening abnormality.
+- **Ferritin increased**: reflects total body iron stores.
+- **TIBC decreased**: the liver makes less transferrin when iron is plentiful.
+- Serum iron increased.
+
+Iron deposits in the liver (cirrhosis, hepatocellular carcinoma risk), pancreatic islets (diabetes), skin (melanin plus hemosiderin), pituitary gonadotrophs (secondary hypogonadism), heart (restrictive then dilated cardiomyopathy), and joints (calcium pyrophosphate arthropathy). Women present later because menstruation and pregnancy remove iron.
+
+Option explanations:
+A. Low ferritin and saturation with high TIBC is iron deficiency anemia.
+B. High ferritin with low saturation and low TIBC is anemia of chronic disease, where hepcidin is high and iron is trapped inside macrophages.
+C. Correct. Hereditary hemochromatosis raises ferritin and transferrin saturation and lowers TIBC.
+D. High ferritin with normal transferrin saturation suggests inflammation, liver injury, or metabolic hyperferritinemia rather than true iron overload, because ferritin is an acute phase reactant.
+E. Normal iron studies would not explain this patient's multiorgan disease.
+
+Objective: Hereditary hemochromatosis (usually HFE C282Y, low hepcidin) causes iron overload with increased transferrin saturation and ferritin and decreased TIBC; classic features are cirrhosis, diabetes, skin bronzing, hypogonadism, and second and third MCP arthropathy.
+
+Textbook:
+**Hereditary hemochromatosis**
+
+- **Genetics:** autosomal recessive; HFE C282Y homozygosity in most cases (chromosome 6, HLA-A3 association).
+- **Mechanism:** low hepcidin, unchecked ferroportin activity, increased duodenal iron absorption.
+- **Presentation:** fatigue, arthralgia (second and third MCP joints, chondrocalcinosis), cirrhosis, diabetes, skin bronzing, hypogonadism, cardiomyopathy and arrhythmias. Infections with siderophilic organisms (Vibrio vulnificus, Yersinia, Listeria).
+- **Diagnosis:** transferrin saturation and ferritin, then HFE genotyping; liver biopsy (Prussian blue stain) or MRI to grade iron load.
+- **Treatment:** serial phlebotomy to a ferritin of about 50 to 100 ng/mL; deferoxamine or deferasirox if phlebotomy is not possible. Avoid vitamin C supplements and raw shellfish.
+- **Complication:** hepatocellular carcinoma, especially once cirrhosis develops.
+
+| Condition | Ferritin | Transferrin saturation | TIBC | Serum iron |
+|---|---|---|---|---|
+| Iron deficiency | Low | Low | High | Low |
+| Anemia of chronic disease | High | Low | Low | Low |
+| Hemochromatosis | High | High | Low | High |
+| Pregnancy, oral contraceptives | Normal | Normal or low | High | Normal |
+
+References:
+- Kowdley KV, et al. ACG Clinical Guideline: Hereditary Hemochromatosis. Am J Gastroenterol. 2019;114:1202-1218.
+
+Nuggets:
+- Bronze diabetes: hereditary hemochromatosis :: Autosomal recessive HFE mutations lower hepcidin and increase duodenal iron absorption; iron deposits in liver, pancreas, skin, gonads, heart and joints. Ferritin and transferrin saturation rise while TIBC falls; treat with phlebotomy.
+
+### QUESTION
+ID: AQ-1015
+Exam: Step 1
+System: Gastrointestinal
+Discipline: Pathology
+Competency: Causes & mechanisms
+Category: Oral cavity & esophagus
+Topic: Achalasia
+Difficulty: 3
+Tags: dysphagia, esophagus, motility
+
+Stem:
+A 41-year-old woman comes to the office because of difficulty swallowing both solids and liquids for 9 months. She often regurgitates undigested food when she lies down at night, and she has lost 5 kg (11 lb). She has learned to drink water and raise her arms above her head to help food pass. She has never traveled outside the United States. Examination shows no abnormalities. A barium swallow shows a dilated esophagus that tapers smoothly to a narrow "bird's beak" at the gastroesophageal junction. Esophageal manometry shows absent peristalsis in the distal esophagus and incomplete relaxation of the lower esophageal sphincter, which has an increased resting pressure. Upper endoscopy shows no mass.
+
+Lead-in: Which of the following is the most likely underlying cause of this patient's condition?
+
+A. Excessive acetylcholine release from vagal efferent fibers
+B. Loss of inhibitory neurons in the myenteric plexus
+C. Mucosal herniation through a weak area above the cricopharyngeus muscle
+D. Neoplastic infiltration of the gastroesophageal junction
+E. Smooth muscle atrophy and fibrosis of the esophageal wall
+
+Answer: B
+Key concept: Achalasia
+
+Concepts:
+A = Cholinergic excess
+B = Achalasia
+C = Zenker diverticulum
+D = Pseudoachalasia from cancer
+E = Systemic sclerosis esophagus
+
+Explanation:
+Dysphagia to **solids and liquids from the onset**, regurgitation of undigested food, weight loss, a **bird's-beak** barium study, and manometry showing **aperistalsis with a lower esophageal sphincter (LES) that fails to relax** is **primary achalasia**.
+
+Swallowing normally triggers a wave of contraction (cholinergic excitatory neurons) followed by relaxation of the LES, which is mediated by **inhibitory neurons in the myenteric (Auerbach) plexus that release nitric oxide and vasoactive intestinal peptide**. In achalasia these inhibitory neurons are lost, probably from autoimmune inflammation, so the LES cannot relax and the coordinated peristaltic wave disappears. Food and liquid pool above a closed sphincter.
+
+Because the problem is motility rather than a fixed narrowing, dysphagia involves liquids as well as solids from the start (mechanical obstruction from a tumor or stricture begins with solids and progresses to liquids).
+
+Endoscopy is mandatory to exclude pseudoachalasia from a tumor at the gastroesophageal junction, and it was negative here.
+
+Option explanations:
+A. Excess cholinergic tone is not the mechanism. The defect is loss of the inhibitory (NO/VIP) neurons; excitatory cholinergic innervation is relatively preserved.
+B. Correct. Loss of nitric oxide and VIP-releasing inhibitory neurons in the myenteric plexus prevents LES relaxation and abolishes distal peristalsis.
+C. Herniation through Killian triangle above the cricopharyngeus is a Zenker diverticulum: oropharyngeal dysphagia, halitosis, gurgling, and regurgitation of old food, usually in older adults; barium shows a posterior pouch.
+D. Gastroesophageal junction adenocarcinoma can mimic achalasia (pseudoachalasia), but it usually occurs in older patients with rapid weight loss, and endoscopy here shows no mass.
+E. Smooth muscle atrophy and fibrosis occur in systemic sclerosis, which causes aperistalsis with a weak, incompetent LES (low pressure) and severe reflux, the opposite of this patient's high-pressure sphincter.
+
+Objective: Achalasia results from loss of nitric oxide and VIP-releasing inhibitory neurons in the myenteric plexus, causing failed LES relaxation, absent distal peristalsis, and dysphagia to both solids and liquids from the start.
+
+Textbook:
+**Achalasia**
+
+- **Pathophysiology:** loss of inhibitory ganglion cells in the myenteric plexus; LES has high resting tone and fails to relax; distal peristalsis is absent.
+- **Secondary achalasia:** Chagas disease (Trypanosoma cruzi destroys myenteric neurons; look for travel to Latin America, cardiomyopathy, megacolon).
+- **Presentation:** progressive dysphagia to solids and liquids, regurgitation, chest pain, weight loss, aspiration.
+- **Diagnosis:** barium swallow (bird's beak), high-resolution manometry (confirms), endoscopy to exclude malignancy.
+- **Treatment:** pneumatic dilation, laparoscopic Heller myotomy, or peroral endoscopic myotomy (POEM); botulinum toxin injection for poor surgical candidates; calcium channel blockers or nitrates as temporizing therapy.
+- **Complication:** increased risk of esophageal squamous cell carcinoma.
+
+| Disorder | Dysphagia | Key finding |
+|---|---|---|
+| Achalasia | Solids and liquids from onset | Bird's beak; high LES pressure, no relaxation |
+| Systemic sclerosis | Solids and liquids, with reflux | Aperistalsis, low LES pressure |
+| Diffuse esophageal spasm | Intermittent, with chest pain | Corkscrew esophagus |
+| Peptic stricture, carcinoma | Solids, then liquids | Fixed narrowing; mass on endoscopy |
+| Zenker diverticulum | Oropharyngeal, halitosis | Posterior pharyngeal pouch |
+
+References:
+- Vaezi MF, et al. ACG Clinical Guidelines: Diagnosis and Management of Achalasia. Am J Gastroenterol. 2020;115:1393-1411.
+
+### QUESTION
+ID: AQ-1016
+Exam: Step 1
+System: Endocrine
+Discipline: Physiology
+Competency: Laboratory & diagnostic studies
+Category: Adrenal disorders
+Topic: Primary hyperaldosteronism
+Difficulty: 3
+Tags: hypertension, hypokalemia, renin
+Free: yes
+
+Stem:
+A 44-year-old woman comes to the office for evaluation of hypertension that has remained uncontrolled for 2 years despite maximum doses of amlodipine and hydralazine. She reports muscle weakness and cramps in her legs. Her blood pressure is 168/102 mm Hg. Examination shows no edema. Serum studies show:
+
+Na+: 144 mEq/L
+K+: 2.9 mEq/L
+Cl-: 101 mEq/L
+HCO3-: 31 mEq/L
+Creatinine: 0.8 mg/dL
+
+Lead-in: Which of the following sets of findings is most likely in this patient?
+
+A. Decreased plasma renin activity, decreased serum aldosterone
+B. Decreased plasma renin activity, increased serum aldosterone
+C. Increased plasma renin activity, decreased serum aldosterone
+D. Increased plasma renin activity, increased serum aldosterone
+E. Normal plasma renin activity, normal serum aldosterone
+
+Answer: B
+Key concept: Primary hyperaldosteronism
+
+Concepts:
+A = Mineralocorticoid excess other than aldosterone
+B = Primary hyperaldosteronism
+C = Primary adrenal insufficiency
+D = Secondary hyperaldosteronism
+E = Essential hypertension
+
+Explanation:
+**Resistant hypertension with spontaneous hypokalemia, metabolic alkalosis, high-normal sodium, and no edema** is the signature of **primary hyperaldosteronism**, most often from an aldosterone-producing adrenal adenoma (Conn syndrome) or bilateral adrenal hyperplasia.
+
+Autonomous aldosterone acts on principal cells of the collecting duct:
+- **Increases ENaC-mediated sodium reabsorption**: volume expansion and hypertension.
+- **Increases potassium secretion**: hypokalemia (weakness, cramps).
+- **Increases H+ secretion by intercalated cells**: metabolic alkalosis.
+
+The volume expansion suppresses the juxtaglomerular cells, so **renin is low while aldosterone is high**, the reverse of the normal relationship. That is why the screening test is the **plasma aldosterone concentration to plasma renin activity ratio**.
+
+Why no edema: after a few kilograms of volume expansion, pressure natriuresis and atrial natriuretic peptide increase sodium excretion despite aldosterone ("aldosterone escape"). Potassium and hydrogen losses do not escape, so hypokalemia persists.
+
+Option explanations:
+A. Low renin and low aldosterone means another mineralocorticoid is driving sodium retention: Cushing syndrome, 11-beta- or 17-alpha-hydroxylase deficiency, Liddle syndrome, apparent mineralocorticoid excess, or licorice ingestion.
+B. Correct. Primary hyperaldosteronism suppresses renin while aldosterone remains high.
+C. High renin with low aldosterone is primary adrenal insufficiency (Addison disease), which causes hypotension and hyperkalemia.
+D. High renin and high aldosterone is secondary hyperaldosteronism: renal artery stenosis, renin-secreting tumors, diuretics, heart failure, or cirrhosis.
+E. Normal values would not explain spontaneous hypokalemia with metabolic alkalosis.
+
+Objective: Primary hyperaldosteronism causes hypertension, hypokalemia, and metabolic alkalosis with high aldosterone and suppressed renin; edema is absent because of aldosterone escape.
+
+Textbook:
+**Primary hyperaldosteronism** is the most common cause of secondary hypertension in adults.
+
+- **Causes:** bilateral idiopathic adrenal hyperplasia (most common), aldosterone-producing adenoma (Conn syndrome), rarely carcinoma or familial forms (glucocorticoid-remediable aldosteronism).
+- **Clues:** resistant hypertension, hypertension with spontaneous or diuretic-provoked hypokalemia, adrenal incidentaloma, early-onset hypertension.
+- **Screening:** aldosterone-to-renin ratio (correct hypokalemia first; mineralocorticoid antagonists, ACE inhibitors, ARBs, and diuretics raise renin and can produce false negatives; beta-blockers lower renin and can produce false positives).
+- **Confirmation:** failure to suppress aldosterone with oral or intravenous sodium loading.
+- **Subtype:** adrenal CT, then adrenal vein sampling before surgery.
+- **Treatment:** unilateral adenoma: laparoscopic adrenalectomy. Bilateral hyperplasia: spironolactone or eplerenone.
+
+| Condition | Renin | Aldosterone |
+|---|---|---|
+| Primary hyperaldosteronism | Low | High |
+| Secondary hyperaldosteronism (renal artery stenosis, renin tumor) | High | High |
+| Other mineralocorticoid excess (Cushing, CAH, Liddle, licorice) | Low | Low |
+| Primary adrenal insufficiency | High | Low |
+
+References:
+- Funder JW, et al. The Management of Primary Aldosteronism: Case Detection, Diagnosis, and Treatment. An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2016;101:1889-1916.
+
+Nuggets:
+- Resistant hypertension + low potassium: screen for primary hyperaldosteronism :: Autonomous aldosterone increases Na+ reabsorption and K+ and H+ secretion: hypertension, hypokalemia and metabolic alkalosis with suppressed renin and no edema (aldosterone escape).
+
+### QUESTION
+ID: AQ-1017
+Exam: Step 1
+System: Endocrine
+Discipline: Genetics
+Competency: Causes & mechanisms
+Category: Multiple endocrine neoplasia
+Topic: Multiple endocrine neoplasia type 2
+Difficulty: 3
+Tags: medullary thyroid carcinoma, pheochromocytoma, RET
+
+Stem:
+A 31-year-old man comes to the office because of episodic headaches, palpitations, and sweating for 3 months. His father died of thyroid cancer at the age of 45 years. His pulse is 104/min, and blood pressure is 176/108 mm Hg. A firm, nontender, 2-cm nodule is palpated in the right lobe of the thyroid gland. Laboratory studies show increased plasma free metanephrine concentrations, a serum calcium concentration of 11.2 mg/dL, and a markedly increased serum calcitonin concentration. Fine-needle aspiration of the thyroid nodule shows spindle-shaped tumor cells in an amorphous extracellular matrix that stains with Congo red.
+
+Lead-in: A germline mutation in which of the following genes is most likely in this patient?
+
+A. MEN1
+B. NF1
+C. RET
+D. SDHB
+E. VHL
+
+Answer: C
+Key concept: MEN2A (RET proto-oncogene)
+
+Explanation:
+Three tumors define this family syndrome:
+1. **Medullary thyroid carcinoma**: thyroid nodule, very high **calcitonin** (from parafollicular C cells), and Congo red-positive **amyloid** formed from calcitonin.
+2. **Pheochromocytoma**: episodic headaches, palpitations, sweating, hypertension, and increased metanephrines.
+3. **Primary hyperparathyroidism** (parathyroid hyperplasia): hypercalcemia.
+
+Together they are **multiple endocrine neoplasia type 2A (MEN2A)**, an autosomal dominant syndrome caused by a **gain-of-function germline mutation in the RET proto-oncogene**, which encodes a receptor tyrosine kinase.
+
+Two clinical rules follow from the diagnosis:
+- **Treat the pheochromocytoma first.** Before any thyroid surgery, give alpha-blockade (phenoxybenzamine or doxazosin) followed by beta-blockade, then perform adrenalectomy; operating on the thyroid first risks a hypertensive crisis.
+- **Test the family.** RET carriers undergo prophylactic total thyroidectomy in childhood, timed by the specific codon.
+
+Option explanations:
+A. MEN1 (menin, a tumor suppressor) causes MEN1: parathyroid, pituitary, and pancreatic neuroendocrine tumors. It does not cause medullary thyroid carcinoma or pheochromocytoma.
+B. NF1 (neurofibromin) mutations cause neurofibromatosis type 1, which can include pheochromocytoma, but with cafe-au-lait macules, neurofibromas, and Lisch nodules, not medullary thyroid carcinoma.
+C. Correct. Activating RET mutations cause MEN2A: medullary thyroid carcinoma, pheochromocytoma, and parathyroid hyperplasia.
+D. SDHB (succinate dehydrogenase) mutations cause hereditary paragangliomas and pheochromocytomas with a high malignant potential, but not medullary thyroid carcinoma or hyperparathyroidism.
+E. VHL mutations cause von Hippel-Lindau disease: pheochromocytoma, hemangioblastomas, renal cell carcinoma, and pancreatic cysts.
+
+Objective: Medullary thyroid carcinoma, pheochromocytoma, and parathyroid hyperplasia indicate MEN2A, caused by an activating germline RET mutation; the pheochromocytoma must be treated before thyroid surgery.
+
+Textbook:
+**Multiple endocrine neoplasia (MEN)** syndromes are autosomal dominant.
+
+| Syndrome | Gene | Tumors |
+|---|---|---|
+| MEN1 (Wermer) | MEN1 (menin, tumor suppressor) | Parathyroid hyperplasia, pituitary adenoma (prolactinoma), pancreatic NETs (gastrinoma with Zollinger-Ellison, insulinoma) |
+| MEN2A (Sipple) | RET (proto-oncogene) | Medullary thyroid carcinoma, pheochromocytoma, parathyroid hyperplasia |
+| MEN2B | RET | Medullary thyroid carcinoma, pheochromocytoma, mucosal neuromas, marfanoid habitus, intestinal ganglioneuromatosis |
+
+**Memory aid:** MEN1 = 3 Ps (pituitary, parathyroid, pancreas); MEN2A = 2 Ps (parathyroid, pheochromocytoma) + thyroid; MEN2B = 1 P (pheochromocytoma) + thyroid + neuromas.
+
+**Medullary thyroid carcinoma:** arises from parafollicular C cells; secretes calcitonin (tumor marker) and sometimes CEA; amyloid stroma; spreads to cervical nodes early. Calcitonin does not cause clinically significant hypocalcemia.
+
+**Pheochromocytoma management:** plasma free or urine fractionated metanephrines, adrenal imaging, alpha-blockade before beta-blockade (unopposed alpha stimulation causes hypertensive crisis), then adrenalectomy.
+
+References:
+- Wells SA Jr, et al. Revised American Thyroid Association Guidelines for the Management of Medullary Thyroid Carcinoma. Thyroid. 2015;25:567-610.
+
+Nuggets:
+- MEN2A: medullary thyroid cancer + pheochromocytoma + parathyroid hyperplasia (RET) :: An activating RET mutation drives all three tumors. Remove the pheochromocytoma (after alpha- then beta-blockade) before operating on the thyroid.
+
+### QUESTION
+ID: AQ-1018
+Exam: Step 2 CK
+System: Endocrine
+Discipline: Internal Medicine
+Competency: Mixed management
+Category: Diabetes mellitus & endocrine pancreas
+Topic: Diabetic ketoacidosis
+Difficulty: 4
+Tags: DKA, potassium, insulin
+
+Stem:
+A 19-year-old woman with type 1 diabetes mellitus is brought to the emergency department because of nausea, vomiting, abdominal pain, and increased thirst for 2 days. She ran out of insulin 4 days ago. Her pulse is 124/min, respirations are 30/min and deep, and blood pressure is 98/62 mm Hg. Her mucous membranes are dry. Laboratory studies show:
+
+Serum Na+: 131 mEq/L
+Serum K+: 3.0 mEq/L
+Serum Cl-: 96 mEq/L
+Serum HCO3-: 9 mEq/L
+Serum glucose: 520 mg/dL
+Serum creatinine: 1.4 mg/dL
+Serum beta-hydroxybutyrate: markedly increased
+Arterial pH: 7.08
+
+An ECG shows flattened T waves and prominent U waves. An intravenous infusion of 0.9% saline is started.
+
+Lead-in: Which of the following is the most appropriate next step in management?
+
+A. Begin a continuous intravenous infusion of regular insulin
+B. Begin intravenous potassium chloride and delay insulin until serum potassium is at least 3.3 mEq/L
+C. Give intravenous sodium bicarbonate
+D. Give subcutaneous insulin glargine
+E. Switch the intravenous fluid to 5% dextrose in 0.45% saline
+
+Answer: B
+Key concept: Replace potassium before insulin when K+ is under 3.3 in DKA
+
+Explanation:
+This patient has **diabetic ketoacidosis**: glucose 520 mg/dL, anion gap 131 - (96 + 9) = 26, pH 7.08, and strongly positive ketones. Fluids have been started, which is always first.
+
+The next decision hinges on **potassium**. In DKA, **total-body potassium is severely depleted** (osmotic diuresis, vomiting, and secondary hyperaldosteronism waste it), even though the serum value is often normal or high at presentation because insulin deficiency and hyperosmolality shift potassium out of cells.
+
+**Insulin drives potassium back into cells** by stimulating the Na+/K+-ATPase. Starting insulin when the serum potassium is already **3.0 mEq/L** (with U waves on the ECG) would push it dangerously lower and risk ventricular arrhythmias, respiratory muscle weakness, and cardiac arrest.
+
+Guideline rule:
+- **K+ under 3.3 mEq/L: hold insulin and give potassium (about 20 to 40 mEq/h) until K+ reaches 3.3 or more.**
+- K+ 3.3 to 5.2: give insulin and add potassium to the fluids.
+- K+ over 5.2: give insulin, recheck potassium every 2 hours, no supplementation yet.
+
+Option explanations:
+A. Insulin is essential to close the anion gap, but starting it at a potassium of 3.0 mEq/L can precipitate life-threatening hypokalemia.
+B. Correct. When potassium is under 3.3 mEq/L, replace potassium first and delay insulin.
+C. Bicarbonate is not indicated unless pH is below about 6.9; it can worsen hypokalemia and has not been shown to improve outcomes.
+D. Subcutaneous basal insulin is started near the end of treatment, overlapping the drip by 1 to 2 hours once the anion gap closes; it is not initial therapy for DKA.
+E. Dextrose is added when glucose falls to about 200 to 250 mg/dL so that insulin can continue until ketosis resolves. Glucose here is 520 mg/dL.
+
+Objective: In diabetic ketoacidosis, total-body potassium is depleted; if serum potassium is below 3.3 mEq/L, replace potassium and delay insulin, which would otherwise shift potassium into cells and precipitate arrhythmias.
+
+Textbook:
+**Diabetic ketoacidosis (DKA)** results from absolute or relative insulin deficiency plus counter-regulatory hormone excess (glucagon, cortisol, catecholamines).
+
+- **Pathophysiology:** unrestrained lipolysis delivers fatty acids to the liver, where glucagon-driven beta-oxidation produces ketone bodies (beta-hydroxybutyrate, acetoacetate), causing an anion gap acidosis. Hyperglycemia causes osmotic diuresis and volume depletion.
+- **Triggers:** missed insulin, infection, myocardial infarction, pancreatitis, new-onset type 1 diabetes, SGLT2 inhibitors (euglycemic DKA).
+- **Presentation:** polyuria, polydipsia, nausea, vomiting, abdominal pain, Kussmaul respirations, fruity breath, altered mental status.
+- **Labs:** glucose usually over 250 mg/dL, pH under 7.3, bicarbonate under 18, anion gap over 12, ketones. Correct sodium for hyperglycemia (add about 1.6 to 2.4 mEq/L per 100 mg/dL of glucose above 100).
+
+**Management sequence:**
+1. Isotonic saline (1 to 1.5 L in the first hour).
+2. Check potassium **before** insulin (see rule above).
+3. Regular insulin infusion (0.1 units/kg/h).
+4. Add dextrose when glucose reaches about 200 mg/dL; continue insulin until the anion gap closes.
+5. Overlap subcutaneous basal insulin 1 to 2 hours before stopping the infusion.
+6. Monitor phosphate and magnesium; treat the precipitating cause.
+
+**Complications:** hypokalemia, hypoglycemia, cerebral edema (especially in children, from overly rapid correction of osmolality), mucormycosis.
+
+| Feature | DKA | Hyperosmolar hyperglycemic state |
+|---|---|---|
+| Typical patient | Type 1 diabetes, younger | Type 2 diabetes, older |
+| Glucose | Usually 250 to 600 | Often over 600 |
+| Ketones, pH | Positive, acidotic | Minimal, pH over 7.3 |
+| Osmolality | Variable | Over 320 mOsm/kg, often with coma |
+
+References:
+- Umpierrez GE, et al. Hyperglycemic Crises in Adults With Diabetes: A Consensus Report. Diabetes Care. 2024;47:1257-1275.
+
+Nuggets:
+- DKA depletes total-body potassium even when the serum level looks normal :: Insulin deficiency shifts K+ out of cells while osmotic diuresis wastes it. Once insulin starts, potassium plunges, so replace K+ first if it is below 3.3 mEq/L.
+
+### QUESTION
+ID: AQ-1019
+Exam: Step 1
+System: Endocrine
+Discipline: Pathology
+Competency: Laboratory & diagnostic studies
+Category: Thyroid disorders
+Topic: Thyroiditis
+Difficulty: 3
+Tags: thyrotoxicosis, radioactive iodine uptake, viral illness
+
+Stem:
+A 36-year-old woman comes to the office because of anterior neck pain radiating to her jaw and ears, palpitations, and heat intolerance for 1 week. Three weeks ago, she had a sore throat and runny nose that resolved without treatment. Her temperature is 37.9°C (100.2°F), pulse is 108/min, and blood pressure is 134/72 mm Hg. The thyroid gland is mildly enlarged and exquisitely tender to palpation. There is no exophthalmos. Serum studies show a TSH concentration of 0.02 μU/mL and an increased free thyroxine concentration. Erythrocyte sedimentation rate is 82 mm/h.
+
+Lead-in: Which of the following patterns of 24-hour radioactive iodine uptake is most likely in this patient?
+
+A. Diffusely increased uptake
+B. Diffusely decreased uptake
+C. Increased uptake in a single nodule with suppression of the remaining gland
+D. Multiple areas of increased and decreased uptake
+E. Normal uptake
+
+Answer: B
+Key concept: Subacute granulomatous thyroiditis has low uptake
+
+Concepts:
+A = Graves disease
+B = Thyroiditis (destructive thyrotoxicosis)
+C = Toxic adenoma
+D = Toxic multinodular goiter
+E = Euthyroid gland
+
+Explanation:
+A **painful, tender thyroid** with fever, a **very high ESR**, and **thyrotoxicosis** a few weeks after a **viral upper respiratory infection** is **subacute granulomatous (de Quervain) thyroiditis**.
+
+The key concept is **where the excess hormone comes from**. Inflammation destroys follicles, and stored, preformed thyroid hormone **leaks** into the circulation. The gland is not making new hormone: damaged follicular cells cannot trap iodide, and the high T4 suppresses TSH. Radioactive iodine uptake is therefore **diffusely low**, even though the patient is thyrotoxic.
+
+This distinction drives treatment. Thionamides (methimazole, propylthiouracil) block synthesis and are useless here. Treatment is symptomatic: **NSAIDs** for pain (glucocorticoids if severe) and **beta-blockers** for adrenergic symptoms. The course is often triphasic: thyrotoxic, then hypothyroid as stores are exhausted, then usually back to normal.
+
+Option explanations:
+A. Diffusely increased uptake is Graves disease, in which TSH receptor-stimulating antibodies drive synthesis. The gland is typically painless, and exophthalmos or pretibial myxedema may be present.
+B. Correct. Destructive thyroiditis releases preformed hormone, so uptake is diffusely low.
+C. A single "hot" nodule with suppression of the rest of the gland is a toxic adenoma (autonomous nodule).
+D. Patchy hot and cold areas are a toxic multinodular goiter, usually in older patients with a long-standing goiter.
+E. Normal uptake would not accompany suppressed TSH and thyrotoxicosis from active synthesis or from leakage.
+
+Objective: Thyrotoxicosis with a painful, tender thyroid after a viral illness and a high ESR is subacute granulomatous thyroiditis; uptake is low because follicles are releasing preformed hormone rather than synthesizing new hormone.
+
+Textbook:
+**Thyroiditis** comprises inflammatory disorders of the thyroid.
+
+| Type | Key features | Pain | Uptake in thyrotoxic phase |
+|---|---|---|---|
+| Hashimoto (chronic lymphocytic) | Anti-TPO antibodies; hypothyroidism; lymphocytic infiltrate with germinal centers and Hurthle cells; MALT lymphoma risk | No | Not applicable (usually hypothyroid) |
+| Subacute granulomatous (de Quervain) | Post-viral; fever; very high ESR; granulomas with multinucleated giant cells | Yes | Low |
+| Painless (silent) and postpartum | Autoimmune; anti-TPO positive; within 1 year of delivery | No | Low |
+| Riedel | Fibrosis extending beyond the gland; IgG4-related; rock-hard, fixed | No | Variable |
+| Acute suppurative | Bacterial; fever; fluctuant mass | Yes | Normal |
+
+**Causes of thyrotoxicosis with low uptake:** subacute, painless, and postpartum thyroiditis; amiodarone-induced type 2 thyroiditis; exogenous (factitious) thyroid hormone (low thyroglobulin distinguishes it); iodine load; struma ovarii.
+
+References:
+- Ross DS, et al. 2016 American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis. Thyroid. 2016;26:1343-1421.
+
+Nuggets:
+- Thyrotoxicosis + low radioiodine uptake = leakage, not production :: Subacute (de Quervain), painless and postpartum thyroiditis, plus exogenous thyroid hormone, all give low uptake. Thionamides do not help; treat symptoms with beta-blockers.
+
+### QUESTION
+ID: AQ-1020
+Exam: Step 1
+System: Endocrine
+Discipline: Biochemistry & Nutrition
+Competency: Causes & mechanisms
+Category: Congenital disorders
+Topic: Congenital adrenal hyperplasia
+Difficulty: 5
+Tags: steroidogenesis, virilization, hypertension
+Daily: yes
+
+Stem:
+A 4-year-old girl is brought to the physician because of pubic hair growth and body odor for 6 months. She was born at term after an uncomplicated pregnancy; mild clitoral enlargement was noted at birth but was not evaluated. Her height is at the 97th percentile, and a radiograph shows a bone age of 7 years. Her blood pressure is 128/86 mm Hg (above the 99th percentile for age and height). Examination shows Tanner stage 2 pubic hair, clitoromegaly, and Tanner stage 1 breast development. Serum potassium concentration is 3.2 mEq/L, and plasma renin activity is suppressed.
+
+Lead-in: An increased serum concentration of which of the following steroids is most directly responsible for this patient's hypertension?
+
+A. 11-Deoxycorticosterone
+B. 17-Hydroxyprogesterone
+C. Aldosterone
+D. Corticosterone
+E. Cortisol
+
+Answer: A
+Key concept: 11-beta-hydroxylase deficiency
+
+Explanation:
+Peripheral precocious puberty with **virilization** (clitoromegaly at birth, pubic hair, accelerated growth and bone age) points to **excess adrenal androgens**: congenital adrenal hyperplasia (CAH). The deciding clue is **low-renin hypertension with hypokalemia**, which identifies **11-beta-hydroxylase deficiency**.
+
+Follow the blocked step. 11-beta-hydroxylase performs the last step in two zona fasciculata pathways:
+- 11-deoxycortisol to **cortisol**
+- **11-deoxycorticosterone (DOC)** to corticosterone
+
+With cortisol low, ACTH rises and drives the adrenal cortex hard. Precursors upstream of the block accumulate and are shunted toward androgens. **DOC is a potent mineralocorticoid**: it activates renal mineralocorticoid receptors, causing sodium retention, hypertension, hypokalemia, and **suppression of renin, and therefore of aldosterone**.
+
+Treatment with glucocorticoids suppresses ACTH, lowering both DOC and adrenal androgens.
+
+Option explanations:
+A. Correct. Accumulated 11-deoxycorticosterone acts as a mineralocorticoid, causing low-renin hypertension and hypokalemia.
+B. 17-Hydroxyprogesterone is the diagnostic marker of 21-hydroxylase deficiency (it can be mildly elevated in 11-beta-hydroxylase deficiency too), but it has no mineralocorticoid activity. Classic 21-hydroxylase deficiency causes salt wasting with hypotension and hyperkalemia.
+C. Aldosterone is low: the expanded volume suppresses renin, and aldosterone synthesis also requires the downstream steps of the mineralocorticoid pathway.
+D. Corticosterone lies downstream of the 11-beta-hydroxylase block, so it is low. It is elevated (along with DOC) in 17-alpha-hydroxylase deficiency, which causes hypertension without virilization.
+E. Cortisol is decreased; its deficiency is what raises ACTH and drives precursor accumulation.
+
+Objective: 11-beta-hydroxylase deficiency combines virilization (excess adrenal androgens) with low-renin hypertension and hypokalemia caused by accumulated 11-deoxycorticosterone, a potent mineralocorticoid.
+
+Textbook:
+**Congenital adrenal hyperplasia (CAH)** is an autosomal recessive defect in cortisol synthesis. Low cortisol raises ACTH, causing adrenal hyperplasia and shunting of precursors.
+
+| Enzyme deficiency | Mineralocorticoids | Cortisol | Sex hormones | Blood pressure and K+ | Typical presentation |
+|---|---|---|---|---|---|
+| 21-hydroxylase (about 95%) | Low aldosterone (salt-wasting form) | Low | High androgens | Hypotension, hyperkalemia | Ambiguous genitalia in 46,XX; salt-wasting crisis in newborns; high 17-hydroxyprogesterone |
+| 11-beta-hydroxylase | High DOC, low aldosterone | Low | High androgens | Hypertension, hypokalemia | Virilization with hypertension |
+| 17-alpha-hydroxylase | High DOC and corticosterone | Low (corticosterone compensates) | Low | Hypertension, hypokalemia | 46,XY with female or ambiguous genitalia; 46,XX with absent puberty |
+
+- **Diagnosis:** newborn screening with 17-hydroxyprogesterone; ACTH stimulation testing.
+- **Treatment:** glucocorticoids (hydrocortisone in children) to suppress ACTH; fludrocortisone for salt-wasting 21-hydroxylase deficiency.
+
+References:
+- Speiser PW, et al. Congenital Adrenal Hyperplasia Due to Steroid 21-Hydroxylase Deficiency: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab. 2018;103:4043-4088.
+- Melmed S, et al. Williams Textbook of Endocrinology. 14th ed. Elsevier; 2020.
+### END

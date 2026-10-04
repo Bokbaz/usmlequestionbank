@@ -1,0 +1,730 @@
+### QUESTION
+ID: AQ-1041
+Exam: Step 1
+System: Multisystem
+Discipline: Pharmacology
+Competency: Applying foundational science concepts
+Category: Toxins & environmental injury
+Topic: Acetaminophen toxicity
+Difficulty: 2
+Tags: overdose, antidotes, hepatotoxicity
+
+Stem:
+A 19-year-old woman is brought to the emergency department 6 hours after she ingested approximately 40 tablets of an over-the-counter analgesic in a suicide attempt. She has had nausea and has vomited twice. Her pulse is 96/min, and blood pressure is 118/72 mm Hg. She is alert and oriented. The abdomen is soft, with mild right upper quadrant tenderness. Serum aminotransferase activities are within normal limits. The serum concentration of the ingested drug, measured 6 hours after ingestion, is 220 μg/mL, which is above the treatment line on the standard nomogram. An antidote is administered intravenously.
+
+Lead-in: The antidote is most likely to prevent liver injury through which of the following mechanisms?
+
+A. Increased renal excretion of the drug by urine alkalinization
+B. Inhibition of alcohol dehydrogenase
+C. Reactivation of acetylcholinesterase
+D. Reduction of methemoglobin to hemoglobin
+E. Replenishment of glutathione to detoxify a reactive metabolite
+
+Answer: E
+Key concept: N-acetylcysteine regenerates glutathione
+
+Concepts:
+A = Sodium bicarbonate for salicylate toxicity
+B = Fomepizole for toxic alcohols
+C = Pralidoxime for organophosphates
+D = Methylene blue for methemoglobinemia
+E = N-acetylcysteine for acetaminophen
+
+Explanation:
+A large ingestion of an over-the-counter analgesic, few early symptoms, normal transaminases at 6 hours, and a drug level plotted on a **nomogram** describes **acetaminophen overdose** assessed with the **Rumack-Matthew nomogram**. The antidote is **N-acetylcysteine (NAC)**.
+
+How acetaminophen injures the liver:
+1. At therapeutic doses, most acetaminophen is made harmless by **glucuronidation and sulfation**. A small fraction (about 5% to 10%) is oxidized by **CYP2E1** to **NAPQI**, a highly reactive electrophile that is immediately neutralized by **glutathione**.
+2. In overdose, the conjugation pathways saturate, more drug is shunted to CYP2E1, and NAPQI production overwhelms the hepatic **glutathione** supply.
+3. Once glutathione falls below about 30% of normal, NAPQI binds covalently to cellular proteins and causes oxidative injury, producing **centrilobular (zone 3) necrosis**, where CYP2E1 is most concentrated.
+
+**NAC is a precursor of cysteine, the rate-limiting amino acid for glutathione synthesis**, so it **replenishes glutathione** and restores NAPQI detoxification. It also acts as a glutathione substitute and supports sulfation. It is nearly completely protective when given within **8 hours** of ingestion and still helps later, even in established liver failure.
+
+Option explanations:
+A. Urine alkalinization with sodium bicarbonate enhances excretion of salicylates (ion trapping of the weak acid) and treats tricyclic cardiotoxicity; it does not prevent acetaminophen hepatotoxicity.
+B. Alcohol dehydrogenase inhibition is how fomepizole treats methanol and ethylene glycol poisoning.
+C. Pralidoxime regenerates acetylcholinesterase after organophosphate poisoning if given before "aging" of the enzyme.
+D. Methylene blue reduces methemoglobin to hemoglobin through NADPH-methemoglobin reductase.
+E. Correct. N-acetylcysteine replenishes glutathione, which conjugates and detoxifies NAPQI.
+
+Objective: N-acetylcysteine prevents acetaminophen hepatotoxicity by replenishing glutathione, which detoxifies the CYP2E1-generated metabolite NAPQI; it is most effective within 8 hours of ingestion.
+
+Textbook:
+**Acetaminophen toxicity**
+
+- **Toxic dose:** over 150 mg/kg or over 7.5 to 10 g in adults; lower thresholds with chronic alcohol use (CYP2E1 induction plus low glutathione), malnutrition, and fasting.
+- **Stages:** (1) first 24 h: nausea, vomiting, or no symptoms; (2) 24 to 72 h: right upper quadrant pain, rising AST and ALT; (3) 72 to 96 h: peak hepatotoxicity, with fulminant hepatic failure, coagulopathy, encephalopathy, and possible acute kidney injury; (4) recovery or death.
+- **Assessment:** serum level at 4 hours or later, plotted on the Rumack-Matthew nomogram for a single acute ingestion; treat if above the line or if the timing is unknown and the level is detectable or transaminases are elevated.
+- **Treatment:** N-acetylcysteine (IV or oral); activated charcoal if within 1 to 2 hours; liver transplant evaluation for fulminant failure (King's College criteria).
+
+| Poison | Antidote | Mechanism |
+|---|---|---|
+| Acetaminophen | N-acetylcysteine | Replenishes glutathione |
+| Methanol, ethylene glycol | Fomepizole | Inhibits alcohol dehydrogenase |
+| Organophosphates | Atropine + pralidoxime | Muscarinic blockade; regenerates AChE |
+| Opioids | Naloxone | Opioid receptor antagonist |
+| Benzodiazepines | Flumazenil | GABA-A benzodiazepine-site antagonist |
+| Methemoglobinemia | Methylene blue | Reduces Fe3+ to Fe2+ |
+| Cyanide | Hydroxocobalamin; nitrites + thiosulfate | Binds cyanide; forms methemoglobin to trap cyanide; makes thiocyanate |
+| Iron | Deferoxamine | Chelation |
+| Lead | Succimer, dimercaprol, EDTA | Chelation |
+| Digoxin | Digoxin immune Fab | Binds digoxin |
+| Warfarin | Vitamin K, prothrombin complex concentrate | Restores clotting factors |
+| Heparin | Protamine sulfate | Binds heparin |
+| Salicylates | Sodium bicarbonate | Alkalinizes urine |
+| Anticholinergics | Physostigmine | Acetylcholinesterase inhibitor |
+
+References:
+- Heard KJ. Acetylcysteine for Acetaminophen Poisoning. N Engl J Med. 2008;359:285-292.
+
+### QUESTION
+ID: AQ-1042
+Exam: Step 1
+System: Multisystem
+Discipline: Genetics
+Competency: Causes & mechanisms
+Category: Genetic & metabolic disorders
+Topic: Marfan syndrome
+Difficulty: 2
+Tags: connective tissue, aortic root, lens subluxation
+Free: yes
+
+Stem:
+A 19-year-old man comes to the office for a preparticipation physical examination before joining his college rowing team. He is 198 cm (6 ft 6 in) tall, and his arm span is 208 cm (6 ft 10 in). He wears thick glasses for severe myopia. Examination shows pectus excavatum, long thin fingers, and hypermobile joints. When he wraps one hand around the opposite wrist, the thumb and fifth finger overlap. A slit-lamp examination shows upward and outward displacement of both lenses. Echocardiography shows dilation of the aortic root.
+
+Lead-in: A mutation in the gene encoding which of the following proteins is the most likely cause of this patient's condition?
+
+A. Collagen type I
+B. Collagen type III
+C. Cystathionine beta-synthase
+D. Elastin
+E. Fibrillin-1
+
+Answer: E
+Key concept: Marfan syndrome (FBN1)
+
+Concepts:
+A = Osteogenesis imperfecta
+B = Vascular Ehlers-Danlos syndrome
+C = Homocystinuria
+D = Williams syndrome
+E = Marfan syndrome
+
+Explanation:
+Tall stature with **arm span exceeding height**, arachnodactyly (positive wrist sign), pectus excavatum, joint hypermobility, severe myopia, **upward lens subluxation (ectopia lentis)**, and **aortic root dilation** are the classic findings of **Marfan syndrome**.
+
+Marfan syndrome is an **autosomal dominant** disorder caused by mutations in **FBN1** on chromosome 15, which encodes **fibrillin-1**. Fibrillin-1 forms microfibrils that act as a scaffold for elastin in elastic fibers and anchor structures such as the **ciliary zonules** that hold the lens. Defective fibrillin also fails to sequester **TGF-beta**, and excess TGF-beta signaling drives much of the aortic and skeletal pathology.
+
+The life-threatening complication is the aorta: cystic medial degeneration causes progressive **aortic root dilation**, which leads to **aortic dissection** and **aortic regurgitation**. Mitral valve prolapse is also common.
+
+Option explanations:
+A. Type I collagen mutations cause osteogenesis imperfecta: multiple fractures with minimal trauma, blue sclerae, hearing loss, and dentinogenesis imperfecta.
+B. Type III collagen (COL3A1) mutations cause vascular Ehlers-Danlos syndrome: arterial, bowel, and uterine rupture with thin, translucent skin, but not tall stature or lens dislocation.
+C. Cystathionine beta-synthase deficiency (homocystinuria) also causes a marfanoid habitus and lens dislocation, but the lens dislocates downward and inward, and patients have intellectual disability and thrombosis; it is autosomal recessive.
+D. Elastin gene deletion (as part of the 7q11.23 deletion in Williams syndrome) causes supravalvular aortic stenosis, elfin facies, hypercalcemia, and a very friendly personality.
+E. Correct. FBN1 mutations affecting fibrillin-1 cause Marfan syndrome.
+
+Objective: Marfan syndrome is caused by autosomal dominant FBN1 mutations affecting fibrillin-1; key features are tall stature with long limbs, upward lens subluxation, and aortic root dilation predisposing to dissection.
+
+Textbook:
+**Marfan syndrome**
+
+- **Genetics:** autosomal dominant FBN1 (fibrillin-1) mutations; variable expressivity; about 25% are new mutations.
+- **Skeletal:** tall stature, arm span greater than height, arachnodactyly (thumb and wrist signs), pectus excavatum or carinatum, scoliosis, joint hypermobility.
+- **Ocular:** ectopia lentis (upward), severe myopia, retinal detachment.
+- **Cardiovascular:** aortic root dilation, aortic dissection, aortic regurgitation, mitral valve prolapse.
+- **Other:** spontaneous pneumothorax (apical blebs), dural ectasia, striae.
+- **Management:** beta-blockers or losartan to slow aortic dilation; annual echocardiography; avoid contact and isometric sports; prophylactic aortic root replacement at about 5.0 cm (earlier with rapid growth or family history of dissection).
+
+| Disorder | Defect | Key distinguishing features |
+|---|---|---|
+| Marfan syndrome | Fibrillin-1 (FBN1), AD | Upward lens dislocation, aortic root dilation |
+| Homocystinuria | Cystathionine beta-synthase, AR | Downward lens dislocation, intellectual disability, thrombosis |
+| Classic Ehlers-Danlos | Type V collagen | Hyperextensible skin, joint hypermobility, atrophic scars |
+| Vascular Ehlers-Danlos | Type III collagen | Arterial, bowel, uterine rupture |
+| Loeys-Dietz syndrome | TGF-beta receptor | Aggressive aneurysms, bifid uvula, hypertelorism |
+| Osteogenesis imperfecta | Type I collagen | Fractures, blue sclerae, hearing loss |
+
+References:
+- Loeys BL, et al. The revised Ghent nosology for the Marfan syndrome. J Med Genet. 2010;47:476-485.
+
+Nuggets:
+- Marfan syndrome: fibrillin-1, upward lens, aortic root :: Autosomal dominant FBN1 mutations weaken elastic fibers and lens zonules; the dangerous complication is aortic root dilation with dissection. Homocystinuria dislocates the lens downward.
+
+### QUESTION
+ID: AQ-1043
+Exam: Step 1
+System: General Principles
+Discipline: Biochemistry & Nutrition
+Competency: Causes & mechanisms
+Category: Biochemistry & molecular biology
+Topic: Urea cycle disorders
+Difficulty: 5
+Tags: hyperammonemia, orotic acid, neonate
+Daily: yes
+
+Stem:
+A 4-day-old boy is brought to the emergency department because of poor feeding, vomiting, and increasing lethargy for 1 day. He was born at term after an uncomplicated pregnancy and was breastfeeding well until yesterday. His older brother died at 1 week of age of an unknown illness. His respirations are 64/min. He is lethargic and hypotonic. Laboratory studies show:
+
+Plasma ammonia: 820 μmol/L (N<100)
+Serum glucose: 82 mg/dL
+Serum urea nitrogen: 2 mg/dL
+Arterial pH: 7.48
+Arterial PCO2: 28 mm Hg
+Plasma citrulline: decreased
+Urine orotic acid: markedly increased
+Urine ketones: negative
+Hemoglobin: 16.8 g/dL, with normal erythrocyte indices
+
+Lead-in: A deficiency of which of the following enzymes is most likely?
+
+A. Carbamoyl phosphate synthetase I
+B. Ornithine transcarbamylase
+C. Propionyl-CoA carboxylase
+D. Pyruvate carboxylase
+E. Uridine monophosphate synthase
+
+Answer: B
+Key concept: Ornithine transcarbamylase deficiency
+
+Concepts:
+A = Carbamoyl phosphate synthetase I deficiency
+B = Ornithine transcarbamylase deficiency
+C = Propionic acidemia
+D = Pyruvate carboxylase deficiency
+E = Hereditary orotic aciduria
+
+Explanation:
+Severe **hyperammonemia** in a newborn who was well for the first days of life (until protein feeding), with **respiratory alkalosis** (ammonia stimulates the respiratory center), **very low BUN**, no ketosis or metabolic acidosis, and a **male sibling who died in the neonatal period** points to a **urea cycle disorder**, most likely X-linked.
+
+Two labs locate the block precisely:
+- **Low citrulline**: the block is before citrulline is formed, at either carbamoyl phosphate synthetase I (CPS I) or ornithine transcarbamylase (OTC).
+- **High orotic acid**: carbamoyl phosphate is being **made** (CPS I works) but cannot enter the urea cycle. It leaks from the mitochondrion into the cytosol, where it enters the **pyrimidine synthesis pathway** (bypassing CPS II) and is converted to orotic acid.
+
+So the deficient enzyme is **ornithine transcarbamylase**, which combines carbamoyl phosphate with ornithine to form citrulline. OTC deficiency is the **most common urea cycle disorder** and the only common one that is **X-linked recessive**, which fits an affected brother. Heterozygous females can present later with episodic hyperammonemia after protein loads.
+
+Acute treatment: stop protein, give high-calorie glucose, ammonia scavengers (sodium benzoate, sodium phenylacetate/phenylbutyrate), arginine, and hemodialysis for very high ammonia.
+
+Option explanations:
+A. CPS I deficiency also causes hyperammonemia with low citrulline, but carbamoyl phosphate is not formed, so orotic acid is normal or low.
+B. Correct. OTC deficiency blocks citrulline formation; accumulated carbamoyl phosphate is diverted to orotic acid.
+C. Propionyl-CoA carboxylase deficiency (propionic acidemia) can cause hyperammonemia, but with a severe high anion gap metabolic acidosis and ketosis, not respiratory alkalosis.
+D. Pyruvate carboxylase deficiency causes lactic acidosis, hypoglycemia, and neurologic disease, not isolated hyperammonemia with orotic aciduria.
+E. Uridine monophosphate synthase deficiency (hereditary orotic aciduria) causes increased orotic acid with megaloblastic anemia that does not respond to B12 or folate, but no hyperammonemia, because the urea cycle is intact.
+
+Objective: Neonatal hyperammonemia with respiratory alkalosis, low BUN, low citrulline, and high orotic acid (without megaloblastic anemia) indicates ornithine transcarbamylase deficiency, the most common and X-linked urea cycle disorder.
+
+Textbook:
+**Urea cycle:** converts toxic ammonia into urea in hepatocytes. The first two steps are mitochondrial; the rest are cytosolic.
+
+1. **CPS I** (mitochondria): NH3 + CO2 + 2 ATP form carbamoyl phosphate. Requires the allosteric activator **N-acetylglutamate** (made by NAGS; arginine stimulates NAGS).
+2. **OTC** (mitochondria): carbamoyl phosphate + ornithine form citrulline.
+3. **Argininosuccinate synthetase**: citrulline + aspartate form argininosuccinate.
+4. **Argininosuccinate lyase**: releases fumarate (links to the TCA cycle) and arginine.
+5. **Arginase**: arginine forms urea + ornithine.
+
+| Deficiency | Ammonia | Citrulline | Orotic acid | Other |
+|---|---|---|---|---|
+| NAGS or CPS I | High | Low | Normal or low | Autosomal recessive |
+| OTC | High | Low | High | X-linked; most common |
+| Argininosuccinate synthetase (citrullinemia) | High | Very high | Mildly high | Autosomal recessive |
+| Argininosuccinate lyase | High | High | Mildly high | Trichorrhexis nodosa (brittle hair) |
+| Arginase | Mild | Normal | Mildly high | Progressive spastic diplegia, high arginine |
+| UMP synthase (pyrimidine pathway) | Normal | Normal | High | Megaloblastic anemia; treat with uridine |
+
+**Hyperammonemia features:** vomiting, lethargy, respiratory alkalosis, cerebral edema, asterixis; ammonia depletes alpha-ketoglutarate (inhibiting the TCA cycle) and raises brain glutamine.
+
+References:
+- Haberle J, et al. Suggested guidelines for the diagnosis and management of urea cycle disorders: First revision. J Inherit Metab Dis. 2019;42:1192-1230.
+
+Nuggets:
+- Orotic acid + hyperammonemia = OTC deficiency :: Carbamoyl phosphate that cannot enter the urea cycle spills into pyrimidine synthesis and raises orotic acid. Hereditary orotic aciduria (UMP synthase) has megaloblastic anemia but normal ammonia.
+
+### QUESTION
+ID: AQ-1044
+Exam: Step 1
+System: General Principles
+Discipline: Pharmacology
+Competency: Causes & mechanisms
+Category: Pharmacokinetics & pharmacodynamics
+Topic: Drug interactions and cytochrome P450
+Difficulty: 5
+Tags: theophylline, narrow therapeutic index, CYP1A2
+Daily: yes
+
+Stem:
+A 71-year-old man with severe COPD is brought to the emergency department after a generalized tonic-clonic seizure at home. For 2 days, he has had nausea, vomiting, palpitations, and tremor. His COPD has been stable for years with inhaled tiotropium and oral sustained-release theophylline at an unchanged dose. He quit smoking 10 years ago. Five days ago, he began a course of ciprofloxacin for an acute exacerbation with increased sputum purulence. His pulse is 142/min and irregular, and blood pressure is 104/62 mm Hg. Serum potassium concentration is 2.9 mEq/L, glucose concentration is 214 mg/dL, and theophylline concentration is 46 μg/mL (therapeutic range 10-20 μg/mL). An ECG shows multifocal atrial tachycardia.
+
+Lead-in: Ciprofloxacin most likely precipitated this patient's condition through which of the following mechanisms?
+
+A. Displacement of theophylline from albumin binding sites
+B. Induction of cytochrome P450 3A4
+C. Inhibition of cytochrome P450 1A2
+D. Inhibition of P-glycoprotein-mediated efflux
+E. Inhibition of renal tubular secretion of theophylline
+
+Answer: C
+Key concept: Ciprofloxacin inhibits CYP1A2, raising theophylline levels
+
+Explanation:
+The patient has **theophylline toxicity**: vomiting, tremor, tachyarrhythmia (multifocal atrial tachycardia), **seizure**, **hypokalemia**, and **hyperglycemia**, with a level of 46 μg/mL after years of stable dosing. The only new variable is **ciprofloxacin**.
+
+Theophylline is a narrow therapeutic index drug cleared mainly by **hepatic CYP1A2**. **Ciprofloxacin is a potent CYP1A2 inhibitor**, so theophylline clearance falls sharply and levels can double within days, pushing the patient from therapeutic into toxic range.
+
+Why the specific toxic features appear:
+- **Seizures:** theophylline antagonizes adenosine receptors; adenosine is an endogenous anticonvulsant. Theophylline-induced seizures are often refractory.
+- **Tachyarrhythmias, tremor, vomiting:** phosphodiesterase inhibition (more cAMP) and catecholamine release.
+- **Hypokalemia and hyperglycemia:** beta-2 adrenergic stimulation drives potassium into cells and promotes glycogenolysis.
+
+Management includes stopping the drug, multiple-dose activated charcoal, treating seizures with benzodiazepines (phenytoin is ineffective), and **hemodialysis** for seizures, life-threatening arrhythmias, or very high levels.
+
+Option explanations:
+A. Theophylline is only moderately protein bound, and displacement interactions rarely matter clinically because free drug is quickly redistributed and cleared. Ciprofloxacin does not act this way.
+B. Induction of CYP enzymes would increase theophylline metabolism and lower its level. Ciprofloxacin is an inhibitor, not an inducer.
+C. Correct. Ciprofloxacin inhibits CYP1A2, the main enzyme that metabolizes theophylline, causing accumulation and toxicity.
+D. P-glycoprotein inhibition is important for drugs such as digoxin and dabigatran, not theophylline.
+E. Theophylline is eliminated mainly by hepatic metabolism, not renal tubular secretion.
+
+Objective: Theophylline has a narrow therapeutic index and is metabolized by CYP1A2; inhibitors such as ciprofloxacin (and fluvoxamine and cimetidine) raise its level, causing vomiting, tachyarrhythmias, hypokalemia, hyperglycemia, and seizures.
+
+Textbook:
+**Cytochrome P450 interactions**
+
+| Enzyme | Important substrates | Inhibitors (raise substrate levels) | Inducers (lower substrate levels) |
+|---|---|---|---|
+| CYP1A2 | Theophylline, clozapine, caffeine, tizanidine | Ciprofloxacin, fluvoxamine, cimetidine | Cigarette smoke, charred meat, omeprazole |
+| CYP2C9 | Warfarin (S-enantiomer), phenytoin | Amiodarone, fluconazole, metronidazole, TMP-SMX | Rifampin |
+| CYP2C19 | Clopidogrel (activation), omeprazole | Omeprazole, fluvoxamine | Rifampin |
+| CYP2D6 | Codeine (activation), tamoxifen (activation), metoprolol, TCAs | Fluoxetine, paroxetine, bupropion, quinidine | Not readily inducible |
+| CYP3A4 | Statins (simvastatin), calcium channel blockers, cyclosporine, tacrolimus, many others | Macrolides (not azithromycin), azole antifungals, HIV protease inhibitors, grapefruit juice | Rifampin, carbamazepine, phenytoin, St. John's wort, chronic alcohol |
+
+**Smoking:** polycyclic hydrocarbons induce CYP1A2, so quitting smoking can raise theophylline and clozapine levels.
+
+**Theophylline:** methylxanthine bronchodilator; mechanisms are PDE inhibition and adenosine receptor antagonism; narrow therapeutic index; toxicity causes nausea and vomiting, tachyarrhythmias, seizures, hypokalemia, hyperglycemia, and metabolic acidosis.
+
+References:
+- Katzung BG, Vanderah TW. Basic & Clinical Pharmacology. 15th ed. Chapters 4 and 20.
+
+### QUESTION
+ID: AQ-1045
+Exam: Step 1
+System: General Principles
+Discipline: Genetics
+Competency: Causes & mechanisms
+Category: Genetics
+Topic: Mitochondrial inheritance
+Difficulty: 3
+Tags: MELAS, maternal inheritance, lactic acidosis
+
+Stem:
+A 15-year-old girl is brought to the physician because of episodic headaches with vomiting, poor exercise tolerance, and two episodes of transient right-sided weakness and difficulty speaking during the past year. Her mother has hearing loss and diabetes mellitus; her maternal uncle has only mild exercise intolerance. Her father and his relatives are healthy. Serum lactate concentration is increased. MRI of the brain shows cortical lesions that do not conform to a single vascular territory. A muscle biopsy specimen shows irregular, red-staining aggregates beneath the sarcolemma with modified Gomori trichrome stain.
+
+Lead-in: Which of the following best explains the variable severity of disease among this patient's affected relatives?
+
+A. Anticipation
+B. Genomic imprinting
+C. Locus heterogeneity
+D. Uniparental disomy
+E. Variable proportions of mutant mitochondrial DNA among cells (heteroplasmy)
+
+Answer: E
+Key concept: Heteroplasmy in mitochondrial disease
+
+Explanation:
+Stroke-like episodes not confined to one vascular territory, migraine-like headaches with vomiting, exercise intolerance, **lactic acidosis**, and **ragged red fibers** (subsarcolemmal accumulations of abnormal mitochondria seen with Gomori trichrome) indicate **MELAS** (mitochondrial encephalomyopathy, lactic acidosis, and stroke-like episodes), most often caused by the m.3243A>G mutation in a mitochondrial tRNA gene.
+
+The family shows **maternal inheritance**: affected mother and maternal uncle, healthy paternal side. Mitochondria (and their DNA) come almost entirely from the oocyte, so an affected mother can pass the disease to all her children, while an affected father passes it to none.
+
+Variable severity is explained by **heteroplasmy**. Each cell contains hundreds to thousands of mitochondrial genomes, and in an affected person these are a **mixture of normal and mutant mtDNA**. During oocyte formation and cell division, mitochondria segregate randomly, so the **proportion of mutant mtDNA differs among siblings and among tissues** in the same person. Disease appears in a tissue only when its mutant fraction exceeds a **threshold**, and tissues with high energy demand (brain, muscle, retina, cochlea, pancreatic beta cells) cross it first. That is why the mother has hearing loss and diabetes, the uncle has only mild exercise intolerance, and the patient has severe neurologic disease.
+
+Option explanations:
+A. Anticipation (earlier onset and greater severity in successive generations) results from expansion of trinucleotide repeats, as in Huntington disease, myotonic dystrophy, and fragile X syndrome.
+B. Genomic imprinting (parent-of-origin gene silencing) explains Prader-Willi and Angelman syndromes, which follow Mendelian or chromosomal patterns, not maternal-only transmission of a mitochondrial phenotype.
+C. Locus heterogeneity means mutations at different genes cause the same phenotype; it does not explain variable severity of a single maternally inherited mutation.
+D. Uniparental disomy (both copies of a chromosome from one parent) causes some cases of Prader-Willi and Angelman syndromes.
+E. Correct. Heteroplasmy, with differing fractions of mutant mtDNA among cells and individuals, explains the variable expression of mitochondrial disease.
+
+Objective: Mitochondrial disorders are maternally inherited, and heteroplasmy (varying proportions of mutant mtDNA among cells and tissues) explains the wide variation in severity among affected relatives.
+
+Textbook:
+**Mitochondrial disorders** affect oxidative phosphorylation, so high-energy tissues are hit hardest. Common clues are lactic acidosis and ragged red fibers.
+
+| Disorder | Key features |
+|---|---|
+| MELAS | Stroke-like episodes, lactic acidosis, seizures, migraine, diabetes, hearing loss |
+| MERRF | Myoclonic epilepsy with ragged red fibers, ataxia |
+| Leber hereditary optic neuropathy | Bilateral painless subacute vision loss in young men |
+| Kearns-Sayre syndrome | Ophthalmoplegia, pigmentary retinopathy, heart block before age 20 (usually a sporadic mtDNA deletion) |
+
+**Inheritance patterns and key mechanisms**
+
+| Concept | Meaning | Example |
+|---|---|---|
+| Mitochondrial inheritance | Transmitted only through the mother | MELAS, MERRF, LHON |
+| Heteroplasmy | Mixture of normal and mutant mtDNA; threshold effect | Variable severity in mitochondrial disease |
+| Anticipation | Worsening across generations from repeat expansion | Huntington disease, myotonic dystrophy, fragile X |
+| Imprinting | Parent-of-origin silencing | Prader-Willi (paternal loss), Angelman (maternal loss) |
+| Variable expressivity | Same genotype, different severity | Neurofibromatosis type 1 |
+| Incomplete penetrance | Not all carriers express the phenotype | BRCA1 |
+| Locus heterogeneity | Different genes, same phenotype | Albinism, retinitis pigmentosa |
+| Allelic heterogeneity | Different mutations in one gene, varying phenotypes | Beta-thalassemia |
+
+References:
+- Gorman GS, et al. Mitochondrial diseases. Nat Rev Dis Primers. 2016;2:16080.
+- Nussbaum RL, McInnes RR, Willard HF. Thompson & Thompson Genetics and Genomics in Medicine. 9th ed. Elsevier; 2023.
+
+Nuggets:
+- Ragged red fibers + maternal inheritance = mitochondrial disease :: Affected mothers pass it to all children; fathers to none. Heteroplasmy, the mix of normal and mutant mtDNA, explains why relatives can be mildly or severely affected.
+
+### QUESTION
+ID: AQ-1046
+Exam: Step 1
+System: General Principles
+Discipline: Histology & Cell Biology
+Competency: Causes & mechanisms
+Category: Cell biology & histology
+Topic: Protein trafficking and lysosomal storage
+Difficulty: 5
+Tags: lysosome, Golgi apparatus, mannose-6-phosphate
+Daily: yes
+
+Stem:
+A 14-month-old girl is brought to the physician because of developmental delay. She was born at term. She sat without support at 11 months of age and cannot yet crawl. Her length is below the 3rd percentile. Examination shows coarse facial features, gingival hyperplasia, restricted movement of the shoulders and hips, kyphosis, and hepatosplenomegaly. The corneas are clear. A grade 2/6 systolic murmur is heard at the apex. Plasma activities of multiple lysosomal hydrolases are 10 to 20 times greater than normal, whereas the activities of the same enzymes in her cultured skin fibroblasts are markedly decreased. Urinary glycosaminoglycan excretion is within normal limits.
+
+Lead-in: The primary defect in this patient's condition most likely occurs in which of the following cellular locations?
+
+A. Cis-Golgi network
+B. Lysosomal lumen
+C. Mitochondrial matrix
+D. Peroxisome
+E. Rough endoplasmic reticulum
+
+Answer: A
+Key concept: I-cell disease (mucolipidosis II)
+
+Explanation:
+Coarse facies, gingival hyperplasia, joint restriction, skeletal abnormalities, and organomegaly suggest a lysosomal storage disorder. The key paradox is in the enzymes: **lysosomal hydrolases are extremely high in plasma but deficient inside the cells**. The enzymes are being made, but they are going to the **wrong place**: out of the cell instead of into lysosomes. This is **I-cell disease (mucolipidosis type II)**.
+
+How lysosomal enzymes normally find the lysosome:
+1. They are synthesized on the **rough ER** and glycosylated with mannose-rich oligosaccharides.
+2. In the **cis-Golgi**, **N-acetylglucosamine-1-phosphotransferase** adds GlcNAc-1-phosphate to mannose residues.
+3. In the trans-Golgi, an "uncovering" enzyme removes the GlcNAc, exposing the **mannose-6-phosphate (M6P)** tag.
+4. M6P receptors in the trans-Golgi network capture tagged enzymes and deliver them to lysosomes.
+
+In I-cell disease, the **cis-Golgi phosphotransferase** is deficient, so no M6P tag is added. The untagged hydrolases follow the default secretory pathway and are **released into the blood**, while lysosomes lack enzymes and fill with undigested material, forming the dense **inclusion bodies** that give the disease its name. Unlike Hurler syndrome, the corneas are often clear and urinary glycosaminoglycans are typically not elevated.
+
+Option explanations:
+A. Correct. The defective enzyme, N-acetylglucosamine-1-phosphotransferase, acts in the cis-Golgi to begin the mannose-6-phosphate tag.
+B. Defects of individual hydrolases within the lysosomal lumen cause classic storage disorders (Tay-Sachs, Gaucher, Hurler), in which the specific enzyme is low everywhere, including plasma.
+C. Defects in the mitochondrial matrix (TCA cycle, beta-oxidation, urea cycle enzymes) cause lactic acidosis, hypoketotic hypoglycemia, or hyperammonemia.
+D. Peroxisomal disorders (Zellweger syndrome, X-linked adrenoleukodystrophy, Refsum disease) cause accumulation of very-long-chain or branched-chain fatty acids.
+E. The enzymes are synthesized and initially glycosylated normally in the rough ER; misfolding disorders there (such as alpha-1 antitrypsin deficiency) cause retention, not secretion.
+
+Objective: In I-cell disease, failure of cis-Golgi N-acetylglucosamine-1-phosphotransferase to start the mannose-6-phosphate tag sends lysosomal enzymes out of the cell, so plasma enzyme levels are high while lysosomes lack enzymes and fill with undigested material.
+
+Textbook:
+**Protein sorting signals**
+
+| Signal | Destination |
+|---|---|
+| N-terminal signal peptide (SRP recognition) | Rough ER, then secretion or membranes |
+| Mannose-6-phosphate | Lysosome |
+| KDEL sequence | Retained in (returned to) the ER |
+| Nuclear localization signal | Nucleus |
+| SKL (C-terminal) | Peroxisome |
+| N-terminal amphipathic helix | Mitochondria |
+
+**Vesicle coats:** COPII moves cargo from ER to cis-Golgi (anterograde); COPI moves cargo from Golgi back to ER (retrograde) and between Golgi cisternae; clathrin moves cargo from trans-Golgi to lysosomes and from the plasma membrane to endosomes (receptor-mediated endocytosis).
+
+**Lysosomal storage disease clues:** Tay-Sachs (hexosaminidase A; cherry-red macula, no hepatosplenomegaly); Niemann-Pick (sphingomyelinase; cherry-red macula with hepatosplenomegaly); Gaucher (glucocerebrosidase; crumpled tissue-paper macrophages, bone crises); Fabry (alpha-galactosidase A, X-linked; angiokeratomas, painful neuropathy, kidney disease); Hurler (alpha-L-iduronidase; corneal clouding); Hunter (iduronate-2-sulfatase, X-linked; no corneal clouding, aggressive behavior); Pompe (acid maltase; cardiomegaly).
+
+References:
+- Alberts B, et al. Molecular Biology of the Cell. 7th ed. W.W. Norton; 2022. Chapter 13.
+
+Nuggets:
+- High plasma lysosomal enzymes: I-cell disease (Golgi mannose-6-phosphate defect) :: Without the mannose-6-phosphate tag started in the cis-Golgi, hydrolases are secreted instead of reaching lysosomes; children have coarse facies, gingival hyperplasia and restricted joints.
+
+### QUESTION
+ID: AQ-1047
+Exam: Step 1
+System: Biostatistics
+Discipline: Biostatistics & Epidemiology
+Competency: Evidence-based medicine & study interpretation
+Category: Testing & screening
+Topic: Sensitivity, specificity and predictive values
+Difficulty: 2
+Tags: 2x2 table, diagnostic testing, calculation
+Free: yes
+
+Stem:
+A new rapid antigen test for influenza A is evaluated in 400 patients with influenza-like illness who present to an urgent care clinic. Results are compared with reverse transcription PCR, which is used as the reference standard. PCR is positive in 200 patients. The rapid test is positive in 160 of the PCR-positive patients and in 20 of the PCR-negative patients.
+
+Lead-in: Which of the following is the specificity of the rapid antigen test?
+
+A. 10%
+B. 80%
+C. 82%
+D. 89%
+E. 90%
+
+Answer: E
+Key concept: Specificity = TN / (TN + FP)
+
+Concepts:
+A = False-positive rate
+B = Sensitivity
+C = Negative predictive value
+D = Positive predictive value
+E = Specificity
+
+Explanation:
+Build the 2 x 2 table from the reference standard (PCR) before calculating anything:
+
+| | PCR positive (disease) | PCR negative (no disease) | Total |
+|---|---|---|---|
+| Rapid test positive | TP = 160 | FP = 20 | 180 |
+| Rapid test negative | FN = 40 | TN = 180 | 220 |
+| Total | 200 | 200 | 400 |
+
+**Specificity** is the proportion of people **without** the disease who test **negative**:
+
+Specificity = TN / (TN + FP) = 180 / (180 + 20) = 180/200 = **90%**.
+
+The other options are the other cells of the same table, which is exactly how this question tries to catch you:
+- Sensitivity = TP / (TP + FN) = 160/200 = 80%
+- Positive predictive value = TP / (TP + FP) = 160/180 ≈ 89%
+- Negative predictive value = TN / (TN + FN) = 180/220 ≈ 82%
+- False-positive rate = FP / (FP + TN) = 20/200 = 10% (that is, 1 - specificity)
+
+Sensitivity and specificity are properties of the test (they read **down the columns**, conditioned on true disease status). Predictive values read **across the rows** and change with disease prevalence.
+
+Option explanations:
+A. 10% is the false-positive rate (1 - specificity).
+B. 80% is the sensitivity: true positives among those with influenza.
+C. 82% is the negative predictive value: true negatives among those who test negative.
+D. 89% is the positive predictive value: true positives among those who test positive.
+E. Correct. Specificity is 180/200 = 90%.
+
+Objective: Specificity is the proportion of people without disease who test negative, TN / (TN + FP); construct the 2 x 2 table from the reference standard before calculating.
+
+Textbook:
+**Diagnostic test metrics**
+
+| Metric | Formula | Meaning | Prevalence-dependent? |
+|---|---|---|---|
+| Sensitivity | TP / (TP + FN) | Probability of a positive test if diseased | No |
+| Specificity | TN / (TN + FP) | Probability of a negative test if not diseased | No |
+| Positive predictive value | TP / (TP + FP) | Probability of disease if the test is positive | Yes (rises with prevalence) |
+| Negative predictive value | TN / (TN + FN) | Probability of no disease if the test is negative | Yes (falls with prevalence) |
+| Positive likelihood ratio | Sensitivity / (1 - specificity) | How much a positive result raises the odds | No |
+| Negative likelihood ratio | (1 - sensitivity) / specificity | How much a negative result lowers the odds | No |
+
+- **SnNout:** a highly **s**ensitive test, when **n**egative, rules **out** disease (good screening tests).
+- **SpPin:** a highly **s**pecific test, when **p**ositive, rules **in** disease (good confirmatory tests).
+- **Moving the cutoff:** lowering the threshold for a positive result increases sensitivity and decreases specificity (more true positives, more false positives); raising it does the opposite.
+
+References:
+- Gordis L, Celentano DD, Szklo M. Gordis Epidemiology. 6th ed. Elsevier; 2019. Chapter 5.
+
+### QUESTION
+ID: AQ-1048
+Exam: Step 1
+System: Biostatistics
+Discipline: Biostatistics & Epidemiology
+Competency: Evidence-based medicine & study interpretation
+Category: Study interpretation, bias & validity
+Topic: Bias in screening studies
+Difficulty: 3
+Tags: screening, survival, bias
+
+Stem:
+Investigators evaluate a new blood test that detects pancreatic adenocarcinoma at an asymptomatic stage. Patients whose cancer was detected by screening survived a median of 3.1 years from diagnosis, compared with 1.2 years for patients whose cancer was diagnosed after symptoms developed. However, the mean age at death was 71 years in both groups, and the pancreatic cancer mortality rate in the screened population did not change after the screening program began.
+
+Lead-in: Which of the following best explains the apparent survival benefit in the screened group?
+
+A. Confounding by age
+B. Lead-time bias
+C. Length-time bias
+D. Overdiagnosis bias
+E. Selection bias
+
+Answer: B
+Key concept: Lead-time bias
+
+Explanation:
+Survival was measured **from the date of diagnosis**. Screening found the cancer earlier, so the clock started earlier, but **death occurred at the same age (71 years) in both groups** and **mortality did not change**. The patients did not live longer; they only knew about their disease longer. That is **lead-time bias**: the extra 1.9 years of "survival" is simply the lead time between screen detection and symptomatic diagnosis.
+
+The fingerprint of lead-time bias is **longer survival from diagnosis without a delay in time of death**. The way to avoid it is to compare **disease-specific mortality** between randomized screened and unscreened populations, rather than survival measured from diagnosis.
+
+Option explanations:
+A. Confounding by age requires age to differ between groups and affect the outcome; the groups died at the same mean age, and age does not explain why diagnosis-to-death time differed while death itself did not.
+B. Correct. Earlier diagnosis lengthens measured survival without postponing death.
+C. Length-time bias occurs because screening preferentially detects slow-growing, less aggressive tumors that have a long preclinical phase, making screen-detected cases look more favorable. Those patients would tend to die later, not at the same age.
+D. Overdiagnosis bias occurs when screening detects indolent disease that would never have caused symptoms or death (for example, some prostate cancers), inflating apparent survival. Pancreatic adenocarcinoma is rarely indolent, and the deaths here occurred on schedule.
+E. Selection (volunteer) bias occurs when people who choose screening are healthier or more health-conscious than those who do not; this would usually produce real differences in mortality or age at death.
+
+Objective: Lead-time bias inflates survival measured from diagnosis when screening only moves the diagnosis earlier without delaying death; disease-specific mortality, not survival time, is the correct endpoint.
+
+Textbook:
+**Common biases in clinical studies**
+
+| Bias | What happens | How to reduce it |
+|---|---|---|
+| Lead-time bias | Earlier detection lengthens measured survival without delaying death | Compare mortality; adjust for lead time |
+| Length-time bias | Screening detects slow-growing disease preferentially | Randomized controlled trials; compare mortality |
+| Overdiagnosis | Detects disease that would never cause harm | Mortality endpoints; careful thresholds |
+| Selection (sampling) bias | Study sample is not representative (volunteer, Berkson, attrition) | Randomization; representative sampling |
+| Recall bias | Cases remember exposures differently than controls (case-control studies) | Use records; confirm exposures objectively |
+| Measurement (information) bias | Systematic error in measuring exposure or outcome | Standardized, validated instruments; blinding |
+| Observer-expectancy (Pygmalion) bias | Investigator's expectations influence outcomes | Blinding |
+| Hawthorne effect | Subjects change behavior because they are observed | Comparison group equally observed |
+| Confounding | A third variable related to both exposure and outcome distorts association | Randomization, matching, stratification, multivariable adjustment |
+
+References:
+- Gordis L, Celentano DD, Szklo M. Gordis Epidemiology. 6th ed. Chapter 18.
+
+Nuggets:
+- Survival up, mortality unchanged: lead-time bias :: Screening that only diagnoses earlier lengthens survival measured from diagnosis without delaying death. Compare mortality rates, ideally in a randomized trial.
+
+### QUESTION
+ID: AQ-1049
+Exam: Step 1
+System: Social Sciences
+Discipline: Ethics & Communication
+Competency: Professionalism, legal & ethical issues
+Category: Medical ethics & jurisprudence
+Topic: Informed refusal and decision-making capacity
+Difficulty: 2
+Tags: autonomy, Jehovah's Witness, transfusion
+Free: yes
+
+Stem:
+A 42-year-old woman is admitted to the hospital with upper gastrointestinal bleeding from a duodenal ulcer. After endoscopic therapy stops the bleeding, her hemoglobin concentration is 6.4 g/dL. She is fatigued but alert and fully oriented. Her pulse is 108/min, and blood pressure is 102/64 mm Hg. The physician recommends transfusion of packed red blood cells and explains that she could die without it. The patient states that she is a Jehovah's Witness and refuses any blood transfusion, even if it means she might die. She accurately describes the risks of refusing, and her decision has been consistent since admission. Her husband, who is not a Jehovah's Witness, asks the physician to transfuse her.
+
+Lead-in: Which of the following is the most appropriate next step in management?
+
+A. Obtain a court order to administer a transfusion
+B. Request a psychiatric consultation to assess her decision-making capacity
+C. Respect her refusal and offer blood-sparing alternatives
+D. Transfuse her based on her husband's consent
+E. Transfuse her if she loses consciousness
+
+Answer: C
+Key concept: A competent adult may refuse life-saving treatment
+
+Explanation:
+This patient is an adult who demonstrates **decision-making capacity**: she understands the information, appreciates how it applies to her (she could die), reasons consistently with her values, and **communicates a stable choice**. A capacitated adult has the right to **refuse any treatment, including life-saving blood transfusion**. Respecting her refusal honors the principle of **autonomy**, which outweighs the physician's beneficence-based wish to transfuse.
+
+The right response is to document the informed refusal and **offer every acceptable alternative**: intravenous iron, erythropoiesis-stimulating agents, folate and B12, minimizing phlebotomy (pediatric tubes), tranexamic acid, and asking specifically which fractions or techniques she accepts (many Jehovah's Witnesses accept albumin, clotting factor concentrates, or cell salvage; individual choices vary).
+
+Her **prior competent refusal remains valid if she later loses consciousness**. It functions like an advance directive, and her husband cannot override it.
+
+Option explanations:
+A. Courts are sometimes involved when a minor's life is at risk or when capacity is genuinely uncertain, but a capacitated adult's refusal does not require or justify a court order.
+B. Capacity is a clinical determination that any physician can make. She clearly has capacity; disagreeing with a physician's recommendation is not evidence of incapacity, so a psychiatric consultation is unnecessary and could be perceived as coercive.
+C. Correct. Respect the informed refusal of a capacitated adult and offer blood-sparing alternatives.
+D. A spouse acts as surrogate only when the patient lacks capacity, and even then must follow the patient's known wishes. The husband cannot override her competent decision.
+E. Loss of consciousness does not cancel a prior informed refusal; transfusing her then would violate her explicit wishes.
+
+Objective: An adult with decision-making capacity may refuse life-saving treatment, including blood products; the refusal must be respected even if she later loses consciousness, and family members cannot override it.
+
+Textbook:
+**Decision-making capacity** is assessed by the treating physician for a specific decision. The patient must be able to:
+1. **Communicate** a clear and consistent choice.
+2. **Understand** the relevant information.
+3. **Appreciate** the situation and its consequences.
+4. **Reason** about treatment options in light of personal values.
+
+Competence is a legal determination made by a court; capacity is clinical and can fluctuate (delirium, intoxication).
+
+**Key principles**
+- A capacitated adult may refuse any treatment, even if refusal leads to death. Document the discussion and the alternatives offered.
+- Valid informed consent requires disclosure (diagnosis, nature and purpose of treatment, risks, benefits, alternatives including no treatment), understanding, capacity, and voluntariness.
+- **Surrogate hierarchy** when a patient lacks capacity and has no advance directive or health care proxy: spouse, adult children, parents, adult siblings, other relatives (varies by state). Surrogates use substituted judgment (what the patient would want), not their own preferences.
+- **Minors:** in an emergency, transfuse a child of Jehovah's Witness parents to prevent death or serious harm; seek a court order when time allows for non-emergency care.
+- **Emergency exception:** treat without consent when a patient lacks capacity, delay would cause serious harm, and there is no known refusal.
+
+References:
+- American Medical Association. Code of Medical Ethics, Opinions 2.1.1 (Informed Consent) and 2.1.2 (Decisions for Adult Patients Who Lack Capacity).
+- Appelbaum PS. Assessment of Patients' Competence to Consent to Treatment. N Engl J Med. 2007;357:1834-1840.
+
+Nuggets:
+- A competent adult Jehovah's Witness may refuse blood, even to death :: Confirm capacity, document the informed refusal and offer blood-sparing alternatives. The refusal stands if she later becomes unconscious. For a minor in an emergency, transfuse.
+
+### QUESTION
+ID: AQ-1050
+Exam: Step 1
+System: Hematology
+Discipline: Pharmacology
+Competency: Pharmacotherapy
+Category: Adverse effects of drugs on blood
+Topic: Methemoglobinemia
+Difficulty: 5
+Tags: cyanosis, pulse oximetry, oxidizing drugs
+Daily: yes
+
+Stem:
+A 34-year-old man undergoes transesophageal echocardiography under moderate sedation; his oropharynx is anesthetized with multiple sprays of topical benzocaine. Twenty minutes after the procedure, he reports headache, light-headedness, and shortness of breath. His pulse is 108/min, respirations are 24/min, and blood pressure is 128/78 mm Hg. His lips and fingertips are gray-blue. Pulse oximetry shows an oxygen saturation of 85% that does not change after he receives 100% oxygen through a nonrebreather mask. The lungs are clear to auscultation. Arterial blood gas analysis on 100% oxygen shows a PaO2 of 480 mm Hg; the arterial blood is chocolate-brown and does not turn red when exposed to air. He has no personal or family history of hemolytic anemia.
+
+Lead-in: Which of the following is the most appropriate pharmacotherapy?
+
+A. Hydroxocobalamin
+B. Methylene blue
+C. Naloxone
+D. Physostigmine
+E. Sodium thiosulfate
+
+Answer: B
+Key concept: Drug-induced methemoglobinemia treated with methylene blue
+
+Concepts:
+A = Cyanide poisoning
+B = Methemoglobinemia
+C = Opioid overdose
+D = Anticholinergic toxicity
+E = Cyanide poisoning (thiosulfate)
+
+Explanation:
+Cyanosis that **does not improve with 100% oxygen**, a pulse oximetry reading stuck near **85%** despite a **very high PaO2**, and **chocolate-brown blood** after exposure to **benzocaine** (a classic oxidizing agent) is **acquired methemoglobinemia**.
+
+What goes wrong:
+- Oxidizing drugs convert hemoglobin iron from the ferrous (**Fe2+**) to the ferric (**Fe3+**) state, forming methemoglobin, which **cannot carry oxygen**.
+- The remaining normal heme groups in the same tetramer bind oxygen more tightly (**left shift** of the dissociation curve), so they release less oxygen to tissues.
+- The **PaO2 is normal or high** because the lungs and dissolved oxygen are unaffected; only hemoglobin's carrying capacity is impaired. This "saturation gap" between the calculated saturation (from PaO2) and the oximeter reading is the clue.
+- Pulse oximeters read about 85% with significant methemoglobin regardless of the true level, because methemoglobin absorbs both wavelengths equally. **Co-oximetry** measures the methemoglobin fraction directly.
+
+**Methylene blue** is the antidote for symptomatic patients or levels over about 20% to 30%. It is reduced by **NADPH-dependent methemoglobin reductase** to leukomethylene blue, which then reduces Fe3+ back to Fe2+.
+
+Two important cautions: methylene blue needs NADPH from the pentose phosphate pathway, so it is **ineffective and can cause hemolysis in G6PD deficiency** (use ascorbic acid, exchange transfusion, or hyperbaric oxygen instead), and it inhibits MAO-A, so it can precipitate **serotonin syndrome** in patients taking serotonergic drugs.
+
+Option explanations:
+A. Hydroxocobalamin binds cyanide to form cyanocobalamin. Cyanide poisoning (smoke inhalation, nitroprusside) causes lactic acidosis and a high venous oxygen saturation (tissues cannot use oxygen) but does not cause chocolate-brown blood.
+B. Correct. Methylene blue reduces methemoglobin back to functional hemoglobin.
+C. Naloxone reverses opioid toxicity, which causes hypoventilation with hypercapnia and a low PaO2 that improve with oxygen and ventilation.
+D. Physostigmine treats anticholinergic toxicity (hyperthermia, flushing, dry skin, mydriasis, delirium), which does not cause cyanosis.
+E. Sodium thiosulfate donates sulfur so that rhodanese can convert cyanide to thiocyanate; it treats cyanide poisoning, not methemoglobinemia.
+
+Objective: Drug-induced methemoglobinemia causes cyanosis with SpO2 near 85%, a normal PaO2, and chocolate-brown blood that does not respond to oxygen; treat with methylene blue unless G6PD deficiency is present.
+
+Textbook:
+**Methemoglobinemia**
+
+- **Causes, acquired:** topical anesthetics (benzocaine, lidocaine, prilocaine), dapsone, nitrates and nitrites (including well water in infants), primaquine, sulfonamides, rasburicase, nitric oxide, aniline dyes.
+- **Causes, congenital:** cytochrome b5 reductase deficiency (lifelong cyanosis with normal cardiopulmonary findings), hemoglobin M variants.
+- **Symptoms by level:** about 10% to 20% cyanosis only; 20% to 50% headache, dyspnea, fatigue; 50% to 70% acidosis, arrhythmias, seizures, coma; over 70% often fatal.
+- **Treatment:** stop the offending agent; supplemental oxygen; methylene blue; ascorbic acid or exchange transfusion if G6PD deficient or refractory.
+
+| Condition | PaO2 | SpO2 (pulse oximetry) | Blood color | Treatment |
+|---|---|---|---|---|
+| Methemoglobinemia | Normal | About 85% regardless of level | Chocolate brown | Methylene blue |
+| Carbon monoxide poisoning | Normal | Falsely normal (reads carboxyhemoglobin as oxyhemoglobin) | Cherry red (classic, unreliable) | 100% oxygen, hyperbaric oxygen |
+| Cyanide poisoning | Normal | Normal | Bright red venous blood | Hydroxocobalamin; nitrites + thiosulfate |
+| Hypoventilation (opioids) | Low | Low, improves with oxygen | Normal | Ventilation, naloxone |
+
+References:
+- Ludlow JT, Wilkerson RG, Nappe TM. Methemoglobinemia. StatPearls; updated 2023.
+- Wright RO, Lewander WJ, Woolf AD. Methemoglobinemia: etiology, pharmacology, and clinical management. Ann Emerg Med. 1999;34:646-656.
+
+Nuggets:
+- Cyanosis that oxygen cannot fix + SpO2 near 85% = methemoglobinemia :: Oxidizing drugs (benzocaine, dapsone, nitrites, primaquine) make heme iron ferric. PaO2 stays normal and blood looks chocolate-brown; give methylene blue, except in G6PD deficiency.
+### END
