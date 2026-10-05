@@ -17,9 +17,9 @@ export function DailyTeaser({ daily, leaders }: { daily: DailyState | null; lead
     <section id="daily" className="relative overflow-hidden bg-ink text-on-ink">
       <div className="mx-auto max-w-[1320px] px-5 py-28 md:px-8 md:py-36">
         <Reveal>
-          <p className="eyebrow text-brand">Daily Challenge{daily?.available ? ` · #${daily.number}` : ""}</p>
-          <h2 className="display mt-6 text-[clamp(40px,7vw,96px)] font-[850]">
-            One question. Two minutes. <span className="text-brand">Everyone.</span>
+          <p className="eyebrow text-signal">Daily Challenge{daily?.available ? ` · #${daily.number}` : ""}</p>
+          <h2 className="display mt-6 text-[clamp(40px,7vw,96px)] font-bold">
+            One question. Two minutes. <span className="text-signal">Everyone.</span>
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-14 lg:grid-cols-[1fr_1.05fr] lg:gap-20">
@@ -45,11 +45,11 @@ export function DailyTeaser({ daily, leaders }: { daily: DailyState | null; lead
                 </div>
                 <div>
                   <dt className="eyebrow text-on-ink-muted">Played</dt>
-                  <dd className="mt-2 font-display text-[18px] font-[800] tabular">{daily.players.toLocaleString()}</dd>
+                  <dd className="mt-2 font-display text-[18px] font-bold tabular">{daily.players.toLocaleString()}</dd>
                 </div>
                 <div>
                   <dt className="eyebrow text-on-ink-muted">Next in</dt>
-                  <dd className="mt-2 font-display text-[18px] font-[800] tabular">
+                  <dd className="mt-2 font-display text-[18px] font-bold tabular">
                     <Countdown to={daily.next_reset} />
                   </dd>
                 </div>
@@ -75,12 +75,12 @@ export function DailyTeaser({ daily, leaders }: { daily: DailyState | null; lead
                         i % 2 ? "bg-on-ink/[0.035]" : "",
                       )}
                     >
-                      <span className={cn("font-display text-[15px] font-[850] tabular", r.rank === 1 ? "text-gold" : "text-on-ink-muted")}>
+                      <span className={cn("font-display text-[15px] font-bold tabular", r.rank === 1 ? "text-gold" : "text-on-ink-muted")}>
                         {r.rank}
                       </span>
                       <span className="truncate text-[15px] font-bold">{r.display_name || r.username}</span>
                       <span className="text-[13px] text-on-ink-muted tabular">{formatSeconds(r.time_ms)}</span>
-                      <span className={cn("text-right text-[13px] font-bold tabular", r.rank === 1 ? "text-brand" : "text-on-ink")}>
+                      <span className={cn("text-right text-[13px] font-bold tabular", r.rank === 1 ? "text-signal" : "text-on-ink")}>
                         {gap(r.time_ms, leaderMs)}
                       </span>
                     </li>
@@ -88,7 +88,7 @@ export function DailyTeaser({ daily, leaders }: { daily: DailyState | null; lead
                 </ol>
               ) : (
                 <div className="px-5 py-14">
-                  <p className="display text-[28px] font-[850]">Pole position is open.</p>
+                  <p className="display text-[28px] font-bold">Pole position is open.</p>
                   <p className="mt-2 text-[15px] text-on-ink-muted">
                     Nobody&apos;s on the board yet. Get it right, get it fast, and it&apos;s yours.
                   </p>

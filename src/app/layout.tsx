@@ -1,22 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible_Next, Science_Gothic, Source_Serif_4 } from "next/font/google";
+import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import { Providers } from "@/components/providers";
 import { SITE_URL } from "@/lib/utils";
 import "./globals.css";
 
-// Display: Science Gothic, a variable gothic with width and slant axes.
-const gothic = Science_Gothic({
-  subsets: ["latin"],
-  axes: ["wdth", "slnt"],
-  variable: "--font-gothic",
+// Geist: a sharp neo-grotesque in the San Francisco mould, for display and text alike.
+const geist = Geist({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-geist",
   display: "swap",
 });
 
-// Text: Atkinson Hyperlegible Next, built for legibility (slashed zero for lab values).
-const text = Atkinson_Hyperlegible_Next({
+// Geist Mono: telemetry readouts only (codes, timings, deltas).
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-text",
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -31,31 +29,31 @@ const sourceSerif = Source_Serif_4({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Argonaut USMLE: a question bank that runs like an F1 team",
+    default: "Argonaut USMLE: the USMLE Qbank that studies you",
     template: "%s · Argonaut USMLE",
   },
   description:
-    "USMLE Step 1 and Step 2 CK questions with every answer choice explained, and analytics deep enough to show exactly where you're losing points. $48, once.",
+    "USMLE Step 1 and Step 2 CK questions written like the real exam. ARGO learns your weak spots and builds your questions around them. $48 for lifetime access.",
   applicationName: "Argonaut USMLE",
   openGraph: {
     type: "website",
     siteName: "Argonaut USMLE",
     title: "Argonaut USMLE",
-    description: "A USMLE question bank that runs like an F1 team. Big-bank quality for $48, once.",
+    description: "The USMLE Qbank that studies you. $48 for lifetime access, never a subscription.",
   },
   twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f6f8" },
-    { media: "(prefers-color-scheme: dark)", color: "#111419" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f7f8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1214" },
   ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${gothic.variable} ${text.variable} ${sourceSerif.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geist.variable} ${geistMono.variable} ${sourceSerif.variable}`}>
       <body>
         <Providers>{children}</Providers>
       </body>

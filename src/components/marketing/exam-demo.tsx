@@ -6,7 +6,7 @@ const NAV = Array.from({ length: 14 }, (_, i) => i + 1);
 // Static preview of the real test player (same layout and tokens).
 export function ExamDemo() {
   return (
-    <div className="overflow-hidden rounded-[8px] border border-border bg-surface shadow-[0_40px_90px_-40px_oklch(0.2_0.02_262/0.35)]">
+    <div className="overflow-hidden rounded-[8px] border border-border bg-surface shadow-[0_40px_90px_-40px_oklch(0.2_0.025_215/0.35)]">
       <div className="flex items-center gap-4 bg-ink px-4 py-2.5 text-on-ink">
         <span className="text-[13px] font-semibold">Item 12 of 40</span>
         <span className="hidden items-center gap-1.5 rounded-[5px] bg-on-ink/10 px-2 py-1 text-[12px] font-semibold text-on-ink sm:inline-flex">

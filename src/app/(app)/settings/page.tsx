@@ -28,6 +28,7 @@ export default async function SettingsPage() {
           country: profile.country,
           target_exam: profile.target_exam,
           exam_date: profile.exam_date,
+          school: profile.school_name ? { id: profile.school_id, name: profile.school_name } : null,
           confidence_prompt: (profile.settings?.confidence_prompt as boolean | undefined) ?? true,
         }}
       />

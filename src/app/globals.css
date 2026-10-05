@@ -2,40 +2,42 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Tokens: see DESIGN.md. Cool aluminium neutrals, carbon ink, one signal orange; contrast verified AA. */
+/* Tokens: see DESIGN.md. Deep teal brand, teal-tinted aluminium neutrals, carbon ink; contrast verified AA. */
 :root {
-  --bg: oklch(0.972 0.004 250);
-  --surface: oklch(0.994 0.002 250);
-  --panel: oklch(0.952 0.005 250);
-  --sunken: oklch(0.928 0.006 250);
-  --border: oklch(0.885 0.007 250);
-  --border-strong: oklch(0.8 0.01 250);
-  --text: oklch(0.19 0.02 262);
-  --muted: oklch(0.45 0.016 258);
-  --faint: oklch(0.54 0.014 258);
-  /* Signal orange: a fill, always carrying ink text. Text and icons use --brand-strong. */
-  --brand: oklch(0.68 0.19 45);
-  --brand-hover: oklch(0.64 0.185 43);
-  --brand-strong: oklch(0.52 0.15 40);
-  --brand-soft: oklch(0.955 0.024 55);
-  --brand-ring: oklch(0.68 0.19 45 / 0.55);
-  --on-brand: oklch(0.18 0.02 262);
-  --on-brand-muted: oklch(0.28 0.05 40);
-  --ink: oklch(0.18 0.02 262);
-  --ink-2: oklch(0.235 0.022 262);
-  --on-ink: oklch(0.97 0.004 250);
-  --on-ink-muted: oklch(0.76 0.012 255);
+  --bg: oklch(0.975 0.004 215);
+  --surface: oklch(0.995 0.002 215);
+  --panel: oklch(0.955 0.006 215);
+  --sunken: oklch(0.93 0.007 215);
+  --border: oklch(0.89 0.008 215);
+  --border-strong: oklch(0.8 0.012 215);
+  --text: oklch(0.2 0.022 220);
+  --muted: oklch(0.45 0.018 220);
+  --faint: oklch(0.54 0.016 220);
+  /* Deep teal: a fill carrying light text (--on-brand), and the colour for links and icons on light surfaces. */
+  --brand: oklch(0.43 0.074 202);
+  --brand-hover: oklch(0.38 0.068 202);
+  --brand-strong: oklch(0.43 0.074 202);
+  --brand-soft: oklch(0.955 0.024 200);
+  --brand-ring: oklch(0.43 0.074 202 / 0.45);
+  --on-brand: oklch(0.985 0.005 200);
+  --on-brand-muted: oklch(0.86 0.04 200);
+  /* Telemetry aqua: only on teal and carbon surfaces (traces, live markers, key numbers). Never on light. */
+  --signal: oklch(0.87 0.13 180);
+  --ink: oklch(0.2 0.025 215);
+  --ink-2: oklch(0.25 0.028 215);
+  --on-ink: oklch(0.975 0.004 215);
+  --on-ink-muted: oklch(0.78 0.015 215);
   --gold: oklch(0.82 0.16 86);
   --gold-ink: oklch(0.5 0.105 72);
   --gold-soft: oklch(0.965 0.045 95);
-  --correct: oklch(0.5 0.13 152);
-  --correct-soft: oklch(0.962 0.035 152);
+  --correct: oklch(0.5 0.13 150);
+  --correct-soft: oklch(0.962 0.035 150);
   --incorrect: oklch(0.53 0.19 22);
   --incorrect-soft: oklch(0.96 0.018 18);
   --warning: oklch(0.6 0.13 70);
   --warning-soft: oklch(0.965 0.04 85);
   --highlight: oklch(0.93 0.12 100);
-  --shadow-float: 0 1px 2px oklch(0.2 0.02 262 / 0.08), 0 10px 28px oklch(0.2 0.02 262 / 0.1);
+  --shadow-float: 0 1px 2px oklch(0.2 0.025 215 / 0.08), 0 10px 28px oklch(0.2 0.025 215 / 0.1);
   /* Data viz: categorical series and sequential ramp (validated for both themes). */
   --viz-1: oklch(0.52 0.17 262);
   --viz-2: oklch(0.7 0.14 70);
@@ -53,31 +55,32 @@
 }
 
 .dark {
-  --bg: oklch(0.19 0.012 262);
-  --surface: oklch(0.225 0.014 262);
-  --panel: oklch(0.205 0.013 262);
-  --sunken: oklch(0.17 0.011 262);
-  --border: oklch(0.31 0.015 262);
-  --border-strong: oklch(0.4 0.017 262);
-  --text: oklch(0.95 0.004 250);
-  --muted: oklch(0.76 0.01 255);
-  --faint: oklch(0.66 0.012 255);
-  --brand: oklch(0.72 0.18 48);
-  --brand-hover: oklch(0.77 0.145 52);
-  --brand-strong: oklch(0.8 0.125 55);
-  --brand-soft: oklch(0.3 0.06 45);
-  --brand-ring: oklch(0.72 0.18 48 / 0.55);
-  --on-brand: oklch(0.17 0.02 262);
-  --on-brand-muted: oklch(0.27 0.05 40);
-  --ink: oklch(0.14 0.012 262);
-  --ink-2: oklch(0.205 0.015 262);
-  --on-ink: oklch(0.96 0.004 250);
-  --on-ink-muted: oklch(0.76 0.012 255);
+  --bg: oklch(0.175 0.013 215);
+  --surface: oklch(0.21 0.015 215);
+  --panel: oklch(0.19 0.014 215);
+  --sunken: oklch(0.16 0.012 215);
+  --border: oklch(0.3 0.016 215);
+  --border-strong: oklch(0.39 0.018 215);
+  --text: oklch(0.95 0.004 215);
+  --muted: oklch(0.77 0.012 215);
+  --faint: oklch(0.66 0.013 215);
+  --brand: oklch(0.45 0.076 202);
+  --brand-hover: oklch(0.43 0.074 202);
+  --brand-strong: oklch(0.8 0.11 192);
+  --brand-soft: oklch(0.29 0.05 200);
+  --brand-ring: oklch(0.8 0.11 192 / 0.5);
+  --on-brand: oklch(0.99 0.004 200);
+  --on-brand-muted: oklch(0.88 0.035 200);
+  --signal: oklch(0.87 0.13 180);
+  --ink: oklch(0.135 0.014 215);
+  --ink-2: oklch(0.19 0.017 215);
+  --on-ink: oklch(0.96 0.004 215);
+  --on-ink-muted: oklch(0.77 0.013 215);
   --gold: oklch(0.83 0.15 86);
   --gold-ink: oklch(0.86 0.13 88);
   --gold-soft: oklch(0.3 0.06 82);
-  --correct: oklch(0.74 0.15 152);
-  --correct-soft: oklch(0.28 0.05 152);
+  --correct: oklch(0.74 0.15 150);
+  --correct-soft: oklch(0.28 0.05 150);
   --incorrect: oklch(0.7 0.17 22);
   --incorrect-soft: oklch(0.29 0.06 20);
   --warning: oklch(0.8 0.13 80);
@@ -112,6 +115,7 @@
   --color-brand-hover: var(--brand-hover);
   --color-on-brand: var(--on-brand);
   --color-on-brand-muted: var(--on-brand-muted);
+  --color-signal: var(--signal);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-on-ink: var(--on-ink);
@@ -136,8 +140,9 @@
   --color-series-2: var(--series-2);
   --color-series-3: var(--series-3);
 
-  --font-sans: var(--font-text), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: var(--font-gothic), var(--font-text), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), -apple-system, BlinkMacSystemFont, ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-display: var(--font-sans);
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, monospace;
   --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
 
   --radius-sm: 4px;
@@ -173,12 +178,12 @@
     outline: 2px solid var(--brand-strong);
     outline-offset: 2px;
   }
-  /* On signal-orange surfaces the ring switches to ink. */
+  /* On teal surfaces the ring switches to the light on-brand colour. */
   .on-signal :focus-visible {
     outline-color: var(--on-brand);
   }
   h1, h2, h3, h4 {
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     text-wrap: balance;
   }
   p {
@@ -200,34 +205,33 @@
 }
 
 /* Type styles live in the components layer so per-element utilities
-   (text-[..], leading-*, [font-stretch:..]) can override them. */
+   (text-[..], leading-*, tracking-*) can override them. */
 @layer components {
-  /* Science Gothic, wide. Weight is set per use. */
+  /* Geist, tight like Apple display type. Weight is set per use. */
   .display {
     font-family: var(--font-display);
-    font-stretch: 140%;
-    letter-spacing: -0.012em;
-    line-height: 0.94;
+    letter-spacing: -0.045em;
+    line-height: 0.96;
   }
-  /* Forward lean for the loudest lines only (hero, closing call). */
-  .slant {
-    font-variation-settings: "slnt" -8;
-  }
-  /* Display face at a quieter width, for product headings. */
+  /* Product page titles. */
   .heading {
     font-family: var(--font-display);
-    font-stretch: 118%;
-    letter-spacing: -0.005em;
+    letter-spacing: -0.03em;
   }
-  /* Timing-screen labels: short, uppercase, gothic. */
+  /* Timing-screen labels: short, uppercase, tracked. */
   .eyebrow {
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: 11.5px;
-    font-weight: 700;
-    font-stretch: 112%;
-    letter-spacing: 0.08em;
+    font-weight: 600;
+    letter-spacing: 0.09em;
     line-height: 1.2;
     text-transform: uppercase;
+  }
+  /* Telemetry readouts: codes, deltas, timings. Data only, never prose. */
+  .readout {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums slashed-zero;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -348,4 +352,67 @@
   35% { transform: scaleY(1); }
   70% { transform: scaleY(0.35); }
   100% { transform: scaleY(0.25); }
+}
+
+/* Marketing: headline lines rise out of a mask on first paint (CSS, so it runs before hydration). */
+@keyframes rise {
+  from { transform: translateY(104%); }
+  to { transform: translateY(0); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Hero scanner: a hairline sweeping the telemetry grid. */
+@keyframes scan {
+  0% { transform: translateX(-10vw); opacity: 0; }
+  8% { opacity: 1; }
+  92% { opacity: 1; }
+  100% { transform: translateX(110vw); opacity: 0; }
+}
+@keyframes draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+/* Answer trace: a channel cell lighting as ARGO logs it. */
+@keyframes cell-on {
+  0% { opacity: 0.25; transform: translateY(4px); }
+  60% { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes cell-flash {
+  0% { background-color: var(--signal); }
+  100% { background-color: transparent; }
+}
+
+/* Correct answer: the option's check chip punches in, a ring expands, the row sweeps. */
+@keyframes chip-pop {
+  0% { transform: scale(0.6) rotate(-12deg); }
+  55% { transform: scale(1.12) rotate(0deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+@keyframes ring-out {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.1); opacity: 0; }
+}
+@keyframes sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+@keyframes check-draw {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes spark {
+  0% { transform: rotate(var(--a)) translateY(-13px) scaleY(1); opacity: 1; }
+  100% { transform: rotate(var(--a)) translateY(-27px) scaleY(0.2); opacity: 0; }
+}
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  30% { transform: translateX(-5px); }
+  60% { transform: translateX(4px); }
+}
+@keyframes count-up {
+  0% { transform: translateY(70%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }

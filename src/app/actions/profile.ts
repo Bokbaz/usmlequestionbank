@@ -9,6 +9,8 @@ export type ProfileInput = {
   country?: string | null;
   target_exam?: "step1" | "step2ck" | "step3";
   exam_date?: string | null;
+  /** A listed school (id), or a typed name when the school isn't listed (id null). */
+  school?: { id: number | null; name: string } | null;
   onboarded?: boolean;
   settings?: Record<string, unknown>;
 };
@@ -31,6 +33,22 @@ export async function updateProfile(input: ProfileInput): Promise<{ error?: stri
   if (input.country !== undefined) patch.country = input.country ? input.country.toUpperCase().slice(0, 2) : null;
   if (input.target_exam !== undefined) patch.target_exam = input.target_exam;
   if (input.exam_date !== undefined) patch.exam_date = input.exam_date || null;
+  if (input.school !== undefined) {
+    if (!input.school) {
+      patch.school_id = null;
+      patch.school_name = null;
+    } else if (input.school.id != null) {
+      const { data: school } = await supabase.from("medical_schools").select("id, name").eq("id", input.school.id).maybeSingle();
+      if (!school) return { error: "We couldn't find that school. Pick it from the list again." };
+      patch.school_id = school.id;
+      patch.school_name = school.name;
+    } else {
+      const n = input.school.name.trim().replace(/\s+/g, " ");
+      if (n.length < 2 || n.length > 200) return { error: "School name must be 2 to 200 characters." };
+      patch.school_id = null;
+      patch.school_name = n;
+    }
+  }
   if (input.onboarded !== undefined) patch.onboarded = input.onboarded;
   if (input.settings !== undefined) {
     const { data: current } = await supabase.from("profiles").select("settings").eq("id", auth.user.id).single();

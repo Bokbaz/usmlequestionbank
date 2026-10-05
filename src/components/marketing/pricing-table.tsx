@@ -91,27 +91,27 @@ function Tier({
       className={cn(
         "relative flex flex-col rounded-[8px] p-7 md:p-8",
         featured
-          ? "bg-ink text-on-ink shadow-[0_40px_90px_-40px_oklch(0.2_0.02_262/0.6)] lg:-my-4 lg:py-12"
+          ? "bg-ink text-on-ink shadow-[0_40px_90px_-40px_oklch(0.2_0.025_215/0.6)] lg:-my-4 lg:py-12"
           : addon
             ? "border border-dashed border-border-strong bg-panel"
             : "border border-border bg-surface",
       )}
     >
       <div className="flex items-center gap-2">
-        {featured && <ArgoMark className="size-4 text-on-ink" />}
+        {featured && <ArgoMark className="size-4 text-on-ink" apex="signal" />}
         {addon && <Plus className="size-4 text-brand-strong" strokeWidth={2.5} />}
         <h3 className="eyebrow text-[12.5px]">{name}</h3>
       </div>
       <div className="mt-6 flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
-        <span className={cn("display text-[44px] font-[900] leading-none [font-stretch:125%] sm:text-[52px]", featured && "text-brand")}>{price}</span>
+        <span className={cn("display text-[44px] font-bold leading-none sm:text-[52px]", featured && "text-signal")}>{price}</span>
         <span className={cn("whitespace-nowrap text-[15px] font-bold", featured ? "text-on-ink-muted" : "text-muted")}>{per}</span>
       </div>
       <p className={cn("mt-4 text-[15px] leading-snug", featured ? "text-on-ink" : "text-text")}>{tagline}</p>
-      {note && <p className={cn("mt-1 text-[13.5px] font-bold", featured ? "text-brand" : "text-muted")}>{note}</p>}
+      {note && <p className={cn("mt-1 text-[13.5px] font-bold", featured ? "text-signal" : "text-muted")}>{note}</p>}
       <ul className={cn("mt-7 grid gap-3 border-t pt-6", featured ? "border-on-ink/15" : "border-border")}>
         {features.map((f) => (
           <li key={f} className="flex gap-2.5 text-[14.5px] leading-snug">
-            <Check className={cn("mt-0.5 size-4 shrink-0", featured ? "text-brand" : "text-brand-strong")} strokeWidth={3} />
+            <Check className={cn("mt-0.5 size-4 shrink-0", featured ? "text-signal" : "text-brand-strong")} strokeWidth={3} />
             <span className={featured ? "text-on-ink/90" : "text-text"}>{f}</span>
           </li>
         ))}

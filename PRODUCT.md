@@ -24,6 +24,10 @@ Success looks like: students trust the questions, feel measurably sharper week o
 
 Ambitious, sharp, competitive. Elite training, not a classroom. Never cute, never hype. Every claim is backed by a number the student can inspect.
 
+Headline: **The USMLE Qbank that studies you.** Powered by ARGO, which learns a student's weak spots over time and tailors their questions to fix them.
+
+Three selling points, made straight after the hero and repeated through the funnel: (1) questions that are accurate to the real exam, (2) ARGO measures 16 data points on every answer to find the exact weak spots and adapt (numbers don't lie), (3) $48 for lifetime access, because education should be affordable and should never be a subscription.
+
 Motto: **a question bank that runs like a hyper-efficient Formula 1 team.** The analytics go so deep that not improving is practically a mathematical impossibility. The F1 team is the organising metaphor (telemetry, timing, pit stops, race engineer); use it with a light touch so students who don't follow F1 still understand every line.
 
 Two missions, stated plainly on the site:
@@ -35,7 +39,7 @@ Voice: to the point and down to earth. Short sentences, plain words, no corporat
 ## Anti-references
 
 - Generic AI SaaS: purple gradients, glowing blobs, glassmorphism, gradient text, identical icon-card grids.
-- Gamified or childish: cartoon mascots, confetti everywhere, bouncy Duolingo motion.
+- Gamified or childish: cartoon mascots, confetti everywhere, bouncy Duolingo motion. (Getting a question right should still feel great: one sharp, fast reveal, not a party.)
 - Dark neon "tech": black backgrounds, neon accents, terminal costume.
 - Dated QBank UI: grey 2010-era test screens, cramped tables, clip-art icons.
 
@@ -45,7 +49,7 @@ Voice: to the point and down to earth. Short sentences, plain words, no corporat
 2. Show the evidence. Every insight ARGO gives is traceable to the attempts behind it; no black-box scores without the why.
 3. Earn every pixel. Concise copy, dense where data demands it, generous where reading demands it.
 4. Competitive by design. Ranks, percentiles, streaks and timing are first-class, presented with precision rather than celebration.
-5. Calm in the block, alive at the edges. Motion and colour live on marketing and transitions; the testing surface stays still.
+5. Calm in the block, alive at the edges. Motion and colour live on marketing and transitions; the testing surface stays still, except for one fast, satisfying reveal when a student gets a question right in tutor mode. That moment should be addictive.
 
 ## Accessibility & Inclusion
 

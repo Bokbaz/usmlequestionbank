@@ -29,7 +29,7 @@ export default async function LeaderboardPage({ searchParams }: PageProps<"/dail
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="eyebrow text-faint">Daily Challenge{number ? ` #${number}` : ""}</p>
-          <h1 className="mt-2 text-[34px] font-[800] tracking-[-0.02em]">Leaderboard</h1>
+          <h1 className="mt-2 text-[34px] font-bold tracking-[-0.02em]">Leaderboard</h1>
           <p className="mt-1 text-[15px] text-muted">Correct answers ranked by speed. Resets at 00:00 UTC.</p>
         </div>
         <Button asChild>

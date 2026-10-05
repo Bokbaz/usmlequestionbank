@@ -14,10 +14,14 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             <Logo tone="signal" />
           </Link>
           <div className="max-w-[520px] border-t-2 border-on-brand pt-8">
-            <p className="display slant text-[clamp(44px,4.6vw,68px)] font-[880]">Welcome to the team.</p>
-            <p className="mt-6 max-w-[40ch] text-[18px] font-semibold leading-relaxed">
-              Every answer you give makes the next session sharper. We&apos;ll do the math. You put in the reps.
+            <p className="display text-[clamp(44px,4.6vw,68px)] font-bold">
+              The Qbank that <span className="text-signal">studies&nbsp;you.</span>
             </p>
+            <p className="mt-6 max-w-[40ch] text-[18px] font-medium leading-relaxed">
+              ARGO logs 16 data points on every answer and builds your next session around your weakest spot. We do the math. You put in
+              the reps.
+            </p>
+            <p className="readout mt-8 text-[13px] text-on-brand-muted">$48 · once · lifetime access</p>
           </div>
           <p className="text-[13px] font-semibold text-on-brand-muted">Not affiliated with the FSMB or NBME.</p>
         </div>

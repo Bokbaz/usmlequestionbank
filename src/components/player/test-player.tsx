@@ -50,6 +50,9 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
   const [ending, setEnding] = useState(false);
   const [confirmEnd, setConfirmEnd] = useState(false);
   const [reportOpen, setReportOpen] = useState(false);
+  // The item whose answer was just revealed (plays the reveal once) and the live run of correct answers.
+  const [justSubmitted, setJustSubmitted] = useState<number | null>(null);
+  const [streak, setStreak] = useState(0);
 
   const review = test.status === "completed";
   const item = items[pos];
@@ -126,6 +129,7 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
         supabase.rpc("save_progress", { p_test: test.id, p_position: next, p_elapsed: Math.round(elapsed) });
       }
       setPos(next);
+      setJustSubmitted(null);
       activeSince.current = Date.now();
       document.getElementById("question-scroll")?.scrollTo({ top: 0 });
     },
@@ -211,6 +215,9 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
     const r = res as { is_correct: boolean; error_type: ErrorType | null; review: ReviewPayload };
     setItems((prev) => prev.map((it, i) => (i === pos ? { ...it, review: r.review, state: { ...it.state, submitted: true, is_correct: r.is_correct } } : it)));
     setErrorTypes((m) => ({ ...m, [pos]: r.error_type }));
+    setJustSubmitted(pos);
+    setStreak((n) => (r.is_correct ? n + 1 : 0));
+    if (r.is_correct && typeof navigator !== "undefined" && "vibrate" in navigator) navigator.vibrate?.(12);
   }
 
   const endBlock = useCallback(async () => {
@@ -316,7 +323,7 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
         </button>
         {test.kind === "argo" && (
           <span className="ml-1 hidden items-center gap-1.5 rounded-full bg-on-ink/10 px-2.5 py-1 text-[11.5px] font-semibold md:flex">
-            <ArgoMark className="size-3.5 text-on-ink" /> ARGO
+            <ArgoMark className="size-3.5 text-on-ink" apex="signal" /> ARGO
           </span>
         )}
         <div className="ml-auto flex items-center gap-0.5">
@@ -391,6 +398,7 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
                     correct={r ? o.id === r.correct_option_id : undefined}
                     wrongPick={r ? o.id === item.state.selected_option_id && o.id !== r.correct_option_id : undefined}
                     peerPct={r?.peer && r.peer.n > 0 ? (r.peer.option_pct?.[o.label] ?? 0) : null}
+                    celebrate={justSubmitted === pos}
                     onSelect={() => select(o.id)}
                     onStrike={() => strike(o.label)}
                   />
@@ -433,7 +441,15 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
               </p>
             )}
 
-            {item.review && <Explanation item={item} review={item.review} errorType={errorTypes[pos]} />}
+            {item.review && (
+              <Explanation
+                item={item}
+                review={item.review}
+                errorType={errorTypes[pos]}
+                celebrate={justSubmitted === pos}
+                streak={justSubmitted === pos ? streak : 0}
+              />
+            )}
           </div>
         </main>
 

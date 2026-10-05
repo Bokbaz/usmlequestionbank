@@ -62,7 +62,7 @@ export function Telemetry({ className }: { className?: string }) {
         <span className="eyebrow text-on-ink">Telemetry · last 16 blocks</span>
         <span className="ml-auto flex items-center gap-2 text-[12.5px] text-on-ink-muted">
           <svg width="18" height="10" aria-hidden>
-            <line x1="1" x2="17" y1="5" y2="5" stroke="var(--brand)" strokeWidth="2" strokeDasharray="3 3" />
+            <line x1="1" x2="17" y1="5" y2="5" stroke="var(--signal)" strokeWidth="2" strokeDasharray="3 3" />
           </svg>
           ARGO session
         </span>
@@ -81,7 +81,7 @@ export function Telemetry({ className }: { className?: string }) {
               <span className="text-[13px] font-semibold text-on-ink-muted md:text-on-ink">{c.label}</span>
               <span className="row-span-2 text-right md:order-last md:row-span-1">
                 <span
-                  className={cn("block font-display text-[20px] font-[800] leading-none tabular", c.primary ? "text-brand" : "text-on-ink")}
+                  className={cn("block font-display text-[20px] font-bold leading-none tabular", c.primary ? "text-signal" : "text-on-ink")}
                 >
                   {c.value}
                 </span>
@@ -96,7 +96,7 @@ export function Telemetry({ className }: { className?: string }) {
                       x2={(x(p - 1) + x(p)) / 2}
                       y1={-14}
                       y2={H + 14}
-                      stroke="var(--brand)"
+                      stroke="var(--signal)"
                       strokeWidth="1.5"
                       strokeDasharray="3 4"
                       opacity="0.8"
@@ -105,7 +105,7 @@ export function Telemetry({ className }: { className?: string }) {
                   {c.primary && (
                     <motion.path
                       d={`${d} L${x(BLOCKS - 1)},${H} L${x(0)},${H} Z`}
-                      fill="var(--brand)"
+                      fill="var(--signal)"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 0.14 }}
                       viewport={{ once: true }}
@@ -115,7 +115,7 @@ export function Telemetry({ className }: { className?: string }) {
                   <motion.path
                     d={d}
                     fill="none"
-                    stroke={c.primary ? "var(--brand)" : "var(--on-ink)"}
+                    stroke={c.primary ? "var(--signal)" : "var(--on-ink)"}
                     strokeOpacity={c.primary ? 1 : 0.85}
                     strokeWidth={c.primary ? 3 : 2}
                     strokeLinejoin="round"
@@ -129,7 +129,7 @@ export function Telemetry({ className }: { className?: string }) {
                     cx={x(BLOCKS - 1)}
                     cy={y(c.data[BLOCKS - 1])}
                     r={c.primary ? 4.5 : 3.5}
-                    fill={c.primary ? "var(--brand)" : "var(--on-ink)"}
+                    fill={c.primary ? "var(--signal)" : "var(--on-ink)"}
                   />
                 </svg>
               </div>

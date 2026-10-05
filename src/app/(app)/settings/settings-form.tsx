@@ -9,6 +9,7 @@ import { AlertDialog } from "radix-ui";
 import { Button } from "@/components/ui/button";
 import { Field, Input } from "@/components/ui/input";
 import { Segmented } from "@/components/ui/segmented";
+import { SchoolSearch, type SchoolValue } from "@/components/ui/school-search";
 import { Switch } from "@/components/ui/misc";
 import { updateProfile } from "@/app/actions/profile";
 import { deleteAccount } from "./actions";
@@ -20,6 +21,7 @@ type Initial = {
   country: string | null;
   target_exam: "step1" | "step2ck" | "step3";
   exam_date: string | null;
+  school: SchoolValue | null;
   confidence_prompt: boolean;
 };
 
@@ -38,6 +40,7 @@ export function SettingsForm({ initial }: { initial: Initial }) {
         country: form.country,
         target_exam: form.target_exam,
         exam_date: form.exam_date,
+        school: form.school ? { id: form.school.id, name: form.school.name } : null,
         settings: { confidence_prompt: form.confidence_prompt },
       });
       if (res.error) toast.error(res.error);
@@ -78,6 +81,9 @@ export function SettingsForm({ initial }: { initial: Initial }) {
             <Input id="ed" type="date" value={form.exam_date ?? ""} onChange={(e) => setForm({ ...form, exam_date: e.target.value || null })} />
           </Field>
         </div>
+        <Field label="Medical school" htmlFor="school" className="mt-5">
+          <SchoolSearch id="school" value={form.school} onChange={(school) => setForm({ ...form, school })} />
+        </Field>
         <Field label="Target exam" className="mt-5">
           <Segmented
             value={form.target_exam}

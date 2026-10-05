@@ -40,7 +40,7 @@ export default async function ArticlePage({ params }: PageProps<"/library/[slug]
         <Link href={`/library#${meta.system_slug}`} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-muted hover:text-text">
           <ArrowLeft className="size-4" /> {meta.system_name}
         </Link>
-        <h1 className="heading mt-4 text-[38px] font-[850] leading-[1.05]">{meta.title}</h1>
+        <h1 className="heading mt-4 text-[38px] font-bold leading-[1.05]">{meta.title}</h1>
         <p className="mt-3 flex flex-wrap items-center gap-x-3 text-[13px] text-faint">
           <span>{meta.reading_minutes} min read</span>
           <span>{meta.question_count} linked {meta.question_count === 1 ? "question" : "questions"}</span>

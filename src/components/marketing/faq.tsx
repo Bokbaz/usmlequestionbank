@@ -41,7 +41,7 @@ export function Faq() {
         <Accordion.Item key={item.q} value={item.q} className="border-b border-border">
           <Accordion.Header>
             <Accordion.Trigger className="group grid w-full grid-cols-[40px_1fr_auto] items-center gap-4 py-5 text-left">
-              <span className="font-display text-[13px] font-[800] text-faint tabular">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-[13px] font-bold text-faint tabular">{String(i + 1).padStart(2, "0")}</span>
               <span className="text-[17.5px] font-bold text-text">{item.q}</span>
               <span className="grid size-8 place-items-center rounded-[4px] bg-panel transition-colors duration-200 group-hover:bg-brand group-data-[state=open]:bg-brand">
                 <Plus

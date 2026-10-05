@@ -9,12 +9,12 @@ const variants = {
     "bg-surface text-text border border-border hover:border-border-strong hover:bg-panel active:bg-sunken disabled:text-faint",
   ghost: "text-muted hover:text-text hover:bg-panel active:bg-sunken disabled:text-faint",
   danger: "bg-incorrect text-surface hover:brightness-95 active:translate-y-px",
-  // The call to action on carbon (ink) surfaces: signal orange.
-  ink: "bg-brand text-on-brand hover:bg-brand-hover active:translate-y-px",
+  // The call to action on carbon (ink) surfaces: telemetry aqua with ink text.
+  ink: "bg-signal text-ink hover:brightness-110 active:translate-y-px",
   "ink-outline": "border border-on-ink/30 text-on-ink hover:bg-on-ink/10 active:bg-on-ink/15",
-  // For signal-orange surfaces: carbon fill and carbon outline.
+  // For teal surfaces: carbon fill and a light outline.
   carbon: "bg-ink text-on-ink hover:bg-ink-2 active:translate-y-px",
-  "carbon-outline": "border-2 border-on-brand text-on-brand hover:bg-on-brand/10 active:bg-on-brand/15",
+  "carbon-outline": "border border-on-brand/50 text-on-brand hover:border-on-brand hover:bg-on-brand/10 active:bg-on-brand/15",
   gold: "bg-gold text-[oklch(0.25_0.06_70)] hover:brightness-105 active:translate-y-px",
 } as const;
 

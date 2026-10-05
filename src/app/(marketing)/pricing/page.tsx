@@ -19,7 +19,7 @@ export default async function PricingPage() {
           <div className="grid gap-6 border-b-2 border-text pb-10 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-8">
               <p className="eyebrow text-brand-strong">Pricing</p>
-              <h1 className="display mt-6 text-[clamp(40px,5.6vw,84px)] font-[850]">Pay once. Get everything.</h1>
+              <h1 className="display mt-6 text-[clamp(40px,5.6vw,84px)] font-bold">Pay once. Get everything.</h1>
             </div>
             <p className="max-w-[40ch] text-[18px] leading-relaxed text-muted lg:col-span-4">
               $48 unlocks every question, the full Library and all of ARGO. No subscription, no expiry date. Add question
@@ -32,7 +32,7 @@ export default async function PricingPage() {
         </section>
         <section className="border-t border-border bg-surface">
           <div className="mx-auto grid max-w-[1320px] gap-12 px-5 py-24 md:px-8 lg:grid-cols-12">
-            <h2 className="display text-[clamp(32px,3.6vw,52px)] font-[850] lg:col-span-4">Straight answers.</h2>
+            <h2 className="display text-[clamp(32px,3.6vw,52px)] font-bold lg:col-span-4">Straight answers.</h2>
             <div className="lg:col-span-8">
               <Faq />
             </div>

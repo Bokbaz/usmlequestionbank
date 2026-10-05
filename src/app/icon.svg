@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <style>
+    .ink { stroke: #0a181d; fill: #0a181d; }
+    .star { fill: #015c61; }
+    @media (prefers-color-scheme: dark) {
+      .ink { stroke: #eceff0; fill: #eceff0; }
+      .star { fill: #5ef0d7; }
+    }
+  </style>
+  <g class="ink" fill="none" stroke-width="20" stroke-linecap="square" stroke-linejoin="miter">
+    <path fill="none" d="M48 214 L128 42 L208 214"/>
+    <path fill="none" d="M83 147 H173"/>
+  </g>
+  <g class="ink" stroke="none">
+    <rect x="34" y="200" width="28" height="28" rx="2"/>
+    <rect x="194" y="200" width="28" height="28" rx="2"/>
+    <rect x="70" y="134" width="26" height="26" rx="2"/>
+    <rect x="160" y="134" width="26" height="26" rx="2"/>
+  </g>
+  <path class="star" d="M128 12 L136.5 33.5 L158 42 L136.5 50.5 L128 72 L119.5 50.5 L98 42 L119.5 33.5 Z"/>
+</svg>

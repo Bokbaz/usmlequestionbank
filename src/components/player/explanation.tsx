@@ -18,11 +18,17 @@ export function Explanation({
   review,
   errorType,
   showArticleLink = true,
+  celebrate = false,
+  streak = 0,
 }: {
   item: PlayerItem;
   review: ReviewPayload;
   errorType?: ErrorType | null;
   showArticleLink?: boolean;
+  /** Answer was revealed just now: animate the verdict in. */
+  celebrate?: boolean;
+  /** Correct answers in a row, counting this one. Shown from 2. */
+  streak?: number;
 }) {
   const selected = item.options.find((o) => o.id === item.state.selected_option_id);
   const isCorrect = selected?.id === review.correct_option_id;
@@ -61,6 +67,7 @@ export function Explanation({
         className={cn(
           "flex flex-wrap items-center gap-x-6 gap-y-2 rounded-[10px] px-4 py-3",
           isCorrect ? "bg-correct-soft" : "bg-incorrect-soft",
+          celebrate && "motion-safe:animate-[fade-up_420ms_var(--ease-out-expo)_both]",
         )}
       >
         <p className={cn("flex items-center gap-2 text-[16px] font-[700]", isCorrect ? "text-correct" : "text-incorrect")}>
@@ -68,6 +75,16 @@ export function Explanation({
           {isCorrect ? "Correct" : omitted ? "Omitted" : "Incorrect"}
           <span className="font-semibold text-text">· answer {review.correct_label}</span>
         </p>
+        {isCorrect && streak >= 2 && (
+          <span className="flex items-center gap-1.5 rounded-full bg-correct px-2.5 py-0.5 text-[13px] font-bold text-surface" aria-live="polite">
+            <span className="inline-block overflow-hidden">
+              <span key={streak} className="readout inline-block motion-safe:animate-[count-up_380ms_var(--ease-out-expo)_both]">
+                {streak}
+              </span>
+            </span>
+            in a row
+          </span>
+        )}
         {review.peer && review.peer.n > 0 && (
           <span className="flex items-center gap-1.5 text-[13.5px] text-muted">
             <Users className="size-4" /> {review.peer.pct_correct}% answered correctly

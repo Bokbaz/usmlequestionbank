@@ -23,6 +23,8 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // Set when the answer is revealed in this visit, so the reveal animates once (not on a later reload).
+  const [justAnswered, setJustAnswered] = useState(false);
   // Client clock origin for the running question: local receipt time minus server elapsed.
   const [startedAt, setStartedAt] = useState<number | null>(null);
   const now = useNow(250);
@@ -75,6 +77,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
         submittedRef.current = false;
         return toast.error(error.message);
       }
+      setJustAnswered(true);
       apply(data as DailyState);
     },
     [signedIn, supabase, apply],
@@ -110,9 +113,9 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
         <div className="grid gap-10 p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
           <div>
             <p className="eyebrow flex items-center gap-2 text-on-ink-muted">
-              <Zap className="size-3.5 text-brand" /> Daily Challenge #{state.number}
+              <Zap className="size-3.5 text-signal" /> Daily Challenge #{state.number}
             </p>
-            <h1 className="display mt-5 text-[clamp(34px,3.2vw,46px)] font-[850] [font-stretch:118%]">
+            <h1 className="display mt-5 text-[clamp(34px,3.2vw,46px)] font-bold">
               One question.
               <br />
               Two minutes.
@@ -222,7 +225,7 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
             <p className={cn("eyebrow", r?.is_correct ? "text-on-ink-muted" : "text-faint")}>Daily Challenge #{state.number}</p>
-            <h1 className="mt-3 flex items-center gap-3 text-[34px] font-[800] tracking-[-0.02em]">
+            <h1 className="mt-3 flex items-center gap-3 text-[34px] font-bold tracking-[-0.02em]">
               {r?.is_correct ? <Check className="size-8 text-correct" strokeWidth={3} /> : <X className="size-8 text-incorrect" strokeWidth={3} />}
               {r?.is_correct ? (r.score > 0 ? `Correct in ${formatSeconds(r.time_ms)}` : "Correct") : r?.timed_out ? "Out of time" : "Not today"}
             </h1>
@@ -290,13 +293,14 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
                 locked
                 correct={o.id === review.correct_option_id}
                 wrongPick={o.id === item.state.selected_option_id && o.id !== review.correct_option_id}
+                celebrate={justAnswered}
                 onSelect={() => {}}
                 onStrike={() => {}}
               />
             ))}
           </div>
           {signedIn ? (
-            <Explanation item={item} review={review} showArticleLink />
+            <Explanation item={item} review={review} showArticleLink celebrate={justAnswered} />
           ) : (
             <div className="mt-8 border-t border-border pt-7">
               <Markdown>{review.explanation.split("\n\n").slice(0, 2).join("\n\n")}</Markdown>

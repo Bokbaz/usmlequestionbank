@@ -7,11 +7,11 @@ export const metadata: Metadata = { title: "Welcome" };
 export default async function WelcomePage() {
   const { profile } = await requireUser("/welcome");
   return (
-    <div className="max-w-[640px]">
+    <div className="max-w-[720px]">
       <p className="eyebrow text-brand-strong">Welcome to the team</p>
-      <h1 className="heading mt-3 text-[34px] font-[850] leading-tight">Two quick things</h1>
-      <p className="mt-2 text-[15.5px] text-muted">So ARGO can pace your prep around your exam. You can change these anytime.</p>
-      <div className="mt-8 rounded-[8px] border border-border bg-surface p-6 md:p-8">
+      <h1 className="display mt-4 text-[clamp(34px,4vw,48px)] font-bold">Set up your race plan.</h1>
+      <p className="mt-3 max-w-[52ch] text-[16px] text-muted">Thirty seconds, and ARGO knows what to aim at. You can change any of this later in Settings.</p>
+      <div className="mt-10">
         <WelcomeForm
           initial={{
             display_name: profile.display_name ?? "",
@@ -19,6 +19,7 @@ export default async function WelcomePage() {
             country: profile.country,
             target_exam: profile.target_exam,
             exam_date: profile.exam_date,
+            school: profile.school_name ? { id: profile.school_id, name: profile.school_name } : null,
           }}
         />
       </div>

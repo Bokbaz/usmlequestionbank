@@ -25,7 +25,7 @@ function NavLink({ href, label, icon: Icon, pro, locked, onNavigate }: { href: s
         active ? "bg-ink text-on-ink dark:ring-1 dark:ring-border-strong" : "text-muted hover:bg-sunken hover:text-text",
       )}
     >
-      <Icon className={cn("size-[17px] shrink-0", active ? "text-brand" : "text-faint group-hover:text-muted")} />
+      <Icon className={cn("size-[17px] shrink-0", active ? "text-signal" : "text-faint group-hover:text-muted")} />
       <span className="truncate">{label}</span>
       {pro && locked && <span className="eyebrow ml-auto rounded-[3px] bg-brand px-1.5 py-0.5 text-[9.5px] text-on-brand">Pro</span>}
     </Link>
@@ -58,7 +58,7 @@ function SidebarBody({ user, onNavigate }: { user: ShellUser; onNavigate?: () =>
       </nav>
       {user.plan === "free" && (
         <div className="mx-3 mb-3 rounded-[6px] bg-ink p-3.5 text-on-ink">
-          <p className="heading text-[15px] font-[850]">Unlock everything</p>
+          <p className="heading text-[15px] font-bold">Unlock everything</p>
           <p className="mt-1 text-[12.5px] leading-snug text-on-ink-muted">Every question, the Library and all of ARGO. $48 once, no subscription.</p>
           <Link href="/pricing" onClick={onNavigate} className="mt-3 inline-flex h-8 items-center rounded-[4px] bg-brand px-3 text-[12.5px] font-bold text-on-brand hover:bg-brand-hover">
             Unlock for $48

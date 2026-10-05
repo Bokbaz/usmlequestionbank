@@ -2,7 +2,7 @@ import { NuggetBadge, NuggetGlyph } from "@/components/ui/badge";
 
 export function NuggetDemo() {
   return (
-    <div className="rounded-[8px] border border-border bg-surface p-6 shadow-[0_40px_90px_-45px_oklch(0.2_0.02_262/0.35)] md:p-7">
+    <div className="rounded-[8px] border border-border bg-surface p-6 shadow-[0_40px_90px_-45px_oklch(0.2_0.025_215/0.35)] md:p-7">
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-[13px] font-semibold text-muted">AQ-1035 · Endocrine · Physiology</span>
         <NuggetBadge className="ml-auto" />

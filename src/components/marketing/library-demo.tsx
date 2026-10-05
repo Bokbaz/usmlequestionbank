@@ -2,7 +2,7 @@ import { BookOpen, Play } from "lucide-react";
 
 export function LibraryDemo() {
   return (
-    <div className="overflow-hidden rounded-[8px] border border-border bg-surface shadow-[0_40px_90px_-45px_oklch(0.2_0.02_262/0.35)]">
+    <div className="overflow-hidden rounded-[8px] border border-border bg-surface shadow-[0_40px_90px_-45px_oklch(0.2_0.025_215/0.35)]">
       <div className="flex items-center gap-2 border-b border-border px-6 py-3 text-[13px] text-muted">
         <BookOpen className="size-4" /> Library · Cardiovascular · 4 min read
       </div>

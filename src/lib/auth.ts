@@ -11,6 +11,8 @@ export type Profile = {
   country: string | null;
   target_exam: "step1" | "step2ck" | "step3";
   exam_date: string | null;
+  school_id: number | null;
+  school_name: string | null;
   role: "user" | "admin";
   plan: PlanTier;
   plan_expires_at: string | null;

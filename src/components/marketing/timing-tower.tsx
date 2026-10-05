@@ -91,7 +91,7 @@ export function TimingTower({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-[8px] bg-ink text-on-ink shadow-[0_40px_80px_-30px_oklch(0.2_0.06_40/0.55)] ring-1 ring-on-ink/10",
+        "overflow-hidden rounded-[8px] bg-ink text-on-ink shadow-[0_40px_80px_-30px_oklch(0.15_0.04_215/0.6)] ring-1 ring-on-ink/10",
         className,
       )}
       role="img"
@@ -99,8 +99,8 @@ export function TimingTower({ className }: { className?: string }) {
     >
       <div className="flex items-center gap-3 border-b border-on-ink/10 px-5 py-3.5">
         <span className="relative flex size-2">
-          <span className="absolute inline-flex size-full rounded-full bg-brand opacity-60 motion-safe:animate-ping" />
-          <span className="relative inline-flex size-2 rounded-full bg-brand" />
+          <span className="absolute inline-flex size-full rounded-full bg-signal opacity-60 motion-safe:animate-ping" />
+          <span className="relative inline-flex size-2 rounded-full bg-signal" />
         </span>
         <span className="eyebrow text-on-ink">Live timing</span>
         <span className="eyebrow ml-auto text-on-ink-muted">
@@ -129,12 +129,12 @@ export function TimingTower({ className }: { className?: string }) {
                   focus ? "bg-brand text-on-brand" : i % 2 ? "bg-on-ink/[0.035]" : "",
                 )}
               >
-                <span className={cn("font-display text-[14px] font-[800] tabular", focus ? "" : "text-on-ink-muted")}>{i + 1}</span>
+                <span className={cn("font-display text-[14px] font-bold tabular", focus ? "" : "text-on-ink-muted")}>{i + 1}</span>
                 <span className="flex min-w-0 items-center gap-2">
                   <span className="truncate text-[14px] font-bold">{r.system}</span>
                   {focus && <span className="eyebrow hidden shrink-0 text-[9.5px] sm:inline">Focus</span>}
                 </span>
-                <span className="text-right font-display text-[15px] font-[800] tabular">{r.acc}%</span>
+                <span className="text-right font-display text-[15px] font-bold tabular">{r.acc}%</span>
                 <Trend value={r.trend} onSignal={focus} />
               </motion.li>
             );
@@ -144,7 +144,7 @@ export function TimingTower({ className }: { className?: string }) {
 
       <div className="border-t border-on-ink/10 bg-ink-2 px-5 py-4">
         <div className="flex items-center gap-2">
-          <ArgoMark className="size-3.5 text-on-ink" />
+          <ArgoMark className="size-3.5 text-on-ink" apex="signal" />
           <span className="eyebrow text-on-ink-muted">Team radio · ARGO</span>
           <Waveform key={lap} />
         </div>
@@ -173,7 +173,7 @@ function Trend({ value, onSignal }: { value: number; onSignal: boolean }) {
     <span
       className={cn(
         "text-right text-[13px] font-bold tabular",
-        onSignal ? "" : up ? "text-[oklch(0.8_0.14_152)]" : "text-[oklch(0.74_0.15_22)]",
+        onSignal ? "" : up ? "text-[oklch(0.82_0.15_150)]" : "text-[oklch(0.74_0.15_22)]",
       )}
     >
       {up ? "▲" : "▼"} {up ? "+" : "−"}
@@ -191,7 +191,7 @@ function Waveform() {
       {BARS.map((h, i) => (
         <span
           key={i}
-          className="w-[2px] origin-center rounded-full bg-brand motion-safe:animate-[radio_1.4s_var(--ease-out-expo)_both]"
+          className="w-[2px] origin-center rounded-full bg-signal motion-safe:animate-[radio_1.4s_var(--ease-out-expo)_both]"
           style={{ height: h, animationDelay: `${i * 30}ms` }}
         />
       ))}

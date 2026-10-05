@@ -10,12 +10,20 @@ USMLE question bank with ARGO, an adaptive analytics engine. Next.js 16 (App Rou
 - `src/lib/nuggets/match.ts` Nugget detection against the private high-yield index (gte-small embeddings via the `embed` Edge Function).
 - `supabase/migrations` schema, RLS and RPCs. `supabase/functions/embed` embedding function.
 - `content/seed` the launch question set in AQF. `scripts/seed.ts` imports it.
+- `content/schools/medical-schools.json` the medical school list for onboarding (open data: Wikidata CC0 + Hipo university list MIT). `scripts/seed-schools.ts` loads it, or the official WDOMS `School.csv` export with `--wdoms`.
+- `supabase/templates` auth emails (confirm, magic link, reset), mirrored in `supabase/config.toml`.
 - `src/app/(app)/admin` admin area: importer, question browser and AQF export, Nugget review, item analysis, Daily scheduler, users, feedback.
 - `src/lib/ai/` optional Claude features (need `ANTHROPIC_API_KEY`): importer classify/repair and ARGO question writing (write, then blind solve and keyed audit).
 
 ## Environment
 
 See `.env.example`. Secrets live in Vercel project settings and the gitignored `.env.local`.
+
+## Auth emails
+
+Sign-up requires email confirmation. Email links use `token_hash` (not PKCE codes), so they work on any device: `/auth/callback` verifies the token, sets the session and sends the user on (new accounts land on `/welcome`). The templates build links as `{{ .RedirectTo }}&token_hash=…`, so the app must always pass a redirect URL that already has a query string (it does: `/auth/callback?next=…`), and that URL's origin must be in the Supabase redirect allow list.
+
+Supabase's built-in mailer only delivers to members of the Supabase organisation and is heavily rate-limited. Before launch, add custom SMTP (for example Resend) under Authentication → SMTP in the Supabase dashboard.
 
 ## Billing
 
@@ -31,6 +39,8 @@ Stripe setup: set `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Vercel, ena
 ```bash
 npx tsx scripts/validate-aqf.ts content/seed/*.aqf.txt   # check question files
 npx tsx scripts/seed.ts                                  # (re)seed questions, Library, Nuggets, daily schedule
+npx tsx scripts/seed-schools.ts                          # load the medical school list (idempotent)
+npx tsx scripts/seed-schools.ts --wdoms School.csv       # add schools from the official WDOMS export
 supabase db push --linked                                # apply migrations
 ```
 
