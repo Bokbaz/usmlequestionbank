@@ -1,0 +1,630 @@
+{
+ "f127738d-2255-4dc1-9704-bd8240bb7cbd": {
+  "condition": "Constitutional growth delay",
+  "duplicate_of": "e24297d3-54c0-45ba-a248-e63348042d8b"
+ },
+ "18c6fadd-9e74-4242-8aa1-2aaf3ec651ec": {
+  "condition": "Black widow spider envenomation (latrodectism)",
+  "duplicate_of": "574ef3b3-adc2-4720-9c7e-ee9be45a980a"
+ },
+ "cf5c27bf-81a1-4e8a-9c13-81929c9d02fe": {
+  "condition": "Glucocorticoid-induced adrenal suppression during perioperative care",
+  "duplicate_of": "d60751a7-04f0-4673-b33c-208fdea50a9c"
+ },
+ "758462a8-197e-41ef-8bb0-19e36041016a": {
+  "condition": "Life-threatening warfarin-associated gross hematuria",
+  "duplicate_of": "3a94053f-3cfb-4101-b864-029d3a517589"
+ },
+ "c1dde4e1-ff7a-4322-b791-5aa838d2797d": {
+  "condition": "Maternal Tdap immunization during pregnancy",
+  "duplicate_of": "54e7b107-0d97-4d09-8538-fa8f3959a55c"
+ },
+ "034c4295-1f00-4194-973a-84ada9f25568": {
+  "condition": "Asymptomatic bacteriuria in pregnancy",
+  "duplicate_of": "28bb57f9-f8f5-46ed-bcb4-71fdf4cd9f8f"
+ },
+ "a023aada-12f5-44a5-934e-8e9a4f021774": {
+  "condition": "Suspected group A streptococcal pharyngitis in a child",
+  "duplicate_of": "da6d86dc-8aff-473d-9ee4-9c8e111dae32"
+ },
+ "5154c65d-3058-49f9-939d-f14a90bf54a3": {
+  "condition": "Antiphospholipid syndrome with lupus anticoagulant–associated venous thrombosis",
+  "duplicate_of": "AQ-1355"
+ },
+ "aeb24cd9-77e7-4078-9025-0f5cfa6cd9a7": {
+  "condition": "Carbon monoxide poisoning",
+  "duplicate_of": "AQ-1294"
+ },
+ "e32dfc4a-34be-4b56-865e-3583c717aff1": {
+  "condition": "Secondary hyperparathyroidism of chronic kidney disease",
+  "duplicate_of": "AQ-1227"
+ },
+ "a01f7948-ac3d-4665-9f8e-b5df7e425312": {
+  "condition": "Acute rheumatic carditis following group A streptococcal pharyngitis",
+  "duplicate_of": "AQ-1164"
+ },
+ "930c9afe-2d1c-4476-8ce2-aac0f5add9c3": {
+  "condition": "Thrombotic thrombocytopenic purpura due to severe ADAMTS13 deficiency",
+  "duplicate_of": "AQ-1124"
+ },
+ "365870e1-8e88-40b9-84d9-a884243ee13e": {
+  "condition": "Folate deficiency anemia",
+  "duplicate_of": "AQ-1134"
+ },
+ "6375a179-f329-4637-aded-d235401081a6": {
+  "condition": "High-anion-gap metabolic acidosis with concurrent respiratory acidosis",
+  "duplicate_of": "AQ-1325"
+ },
+ "89829e04-13a9-4196-8732-8f17f3d683b7": {
+  "condition": "Tachycardia-induced cardiomyopathy",
+  "duplicate_of": "a931ea6c-4196-4a9b-89d7-19eb56ac7923"
+ },
+ "865d8bfd-2c84-405b-9914-66890627719b": {
+  "condition": "Achondroplasia",
+  "duplicate_of": "AQ-1385"
+ },
+ "383032ef-a613-45b1-87f2-51f003dab19e": {
+  "condition": "VACTERL association in the differential diagnosis of diabetic embryopathy",
+  "duplicate_of": "536385aa-71fc-4bd8-b7f0-f315f84df239"
+ },
+ "9d5d5eaf-8429-4d4e-9490-637bf9963646": {
+  "condition": "Primary malignant bone sarcoma with pulmonary metastasis",
+  "duplicate_of": "0d024632-976e-42f5-8fbf-acc106571f09"
+ },
+ "2b26ee31-7ddc-48c8-98fe-4da8ce346e37": {
+  "condition": "Aplastic anemia",
+  "duplicate_of": "AQ-1121"
+ },
+ "ab457c50-f1b2-46c9-a951-17cfa8e6baa3": {
+  "condition": "Rituximab-associated infusion reaction",
+  "duplicate_of": "32cd64be-b02b-4c1d-b48c-043294c48e64"
+ },
+ "a5957145-ec49-4999-9a9f-c14cc4315dbc": {
+  "condition": "Thrombotic thrombocytopenic purpura (TTP)",
+  "duplicate_of": "AQ-1124"
+ },
+ "6c7a2ae2-6157-4854-83a9-216674246355": {
+  "condition": "Chronic granulomatous disease due to NADPH oxidase deficiency",
+  "duplicate_of": "AQ-1272"
+ },
+ "7a49fc64-b265-4d9d-b369-19f979777e94": {
+  "condition": "Age-related diminished ovarian reserve",
+  "duplicate_of": "8f7da208-1ca0-4517-b0b3-e13abc7f9429"
+ },
+ "50877475-dbca-49db-894e-9108e8fa570d": {
+  "condition": "White-coat hypertension",
+  "duplicate_of": "7c569545-46b0-45c0-bf72-c013a36afe42"
+ },
+ "2233fb81-685f-4b1d-9600-14c3cc622c98": {
+  "condition": "Spontaneous bacterial peritonitis complicating cirrhotic ascites",
+  "duplicate_of": "00abb7f0-6979-4b49-ba81-3acc623a63dd"
+ },
+ "01cbb39e-a73a-4488-a900-56b3a69e1560": {
+  "condition": "Tachycardia-induced cardiomyopathy",
+  "duplicate_of": "a931ea6c-4196-4a9b-89d7-19eb56ac7923"
+ },
+ "5a27c037-3900-4cec-8879-4536cbf2ed0a": {
+  "condition": "HIV-1 replication; inhibition of proviral integration",
+  "duplicate_of": "AQ-1403"
+ },
+ "088b8669-16e1-4f98-a62a-bb540483eaae": {
+  "condition": "Polycythemia vera with clonal panmyelosis",
+  "duplicate_of": "AQ-1202"
+ },
+ "b73ea9d9-e0e2-44bb-be73-85b3bb9ca24d": {
+  "condition": "Crohn disease",
+  "duplicate_of": "AQ-1256"
+ },
+ "8671bfa4-6b59-410e-92d3-8c93a9668d06": {
+  "condition": "Cardiac amyloidosis",
+  "duplicate_of": "AQ-1102"
+ },
+ "5b36d5f6-1756-4a65-85a1-33291a3ecf16": {
+  "condition": "Nasal septal hematoma after blunt trauma",
+  "duplicate_of": "AQ-1086"
+ },
+ "a176ed67-2070-4405-bcc1-0eb42e8ce39e": {
+  "condition": "Nonadherence and crossover in a randomized controlled trial",
+  "duplicate_of": "a26918ec-a92a-4a05-8c7b-f44b57432a8f"
+ },
+ "e3fa7f0d-b98a-434c-9439-daaf5bd030ea": {
+  "condition": "Ischemic hepatic injury (shock liver)",
+  "duplicate_of": "65ae8d0c-e9d6-4c7e-9cf6-e334f8463d44"
+ },
+ "5f9eb686-20e1-4002-943c-f0a3f84c7896": {
+  "condition": "Postoperative chylothorax due to thoracic duct disruption",
+  "duplicate_of": "df6677d8-1537-4803-9b9a-b49cbf3e7877"
+ },
+ "8e2c0114-da85-4c47-b8a5-da6f591f54b1": {
+  "condition": "Kwashiorkor due to protein deficiency despite relatively preserved caloric intake",
+  "duplicate_of": "47ef7b39-9b87-4c13-ac61-b5b4854a071a"
+ },
+ "0e23cfe0-d149-4eff-ba26-faf66febb6c2": {
+  "condition": "Acute carbon monoxide exposure from tobacco smoke",
+  "duplicate_of": "AQ-1294"
+ },
+ "b6ca8adc-f257-4b60-9ff4-124dc7a83a3e": {
+  "condition": "Low ventilation-perfusion (V/Q) mismatch",
+  "duplicate_of": "1fe36917-98a2-407d-8ccc-5be2f76b1987"
+ },
+ "d6d4b311-3a32-4cb6-9658-435040f9b653": {
+  "condition": "Diabetic ketoacidosis with elevated serum potassium despite total-body potassium depletion",
+  "duplicate_of": "AQ-1162"
+ },
+ "08acc5d0-ce3c-4cd8-90f0-c7da2f77fab7": {
+  "condition": "Pemphigus vulgaris",
+  "duplicate_of": "AQ-1230"
+ },
+ "353d12c3-9416-4460-97f4-cfe20e77ddf2": {
+  "condition": "Atrial flutter",
+  "duplicate_of": "87b71c60-3173-42a2-b541-5419232933e5"
+ },
+ "9b8ac246-a889-49c8-9ddf-49a9aff2ac71": {
+  "condition": "Ischemic hepatitis (shock liver)",
+  "duplicate_of": "65ae8d0c-e9d6-4c7e-9cf6-e334f8463d44"
+ },
+ "356e5c8e-d3ad-47b9-9763-a4d97e6dae30": {
+  "condition": "Pemphigus vulgaris",
+  "duplicate_of": "AQ-1230"
+ },
+ "c1c91541-aea1-48d2-82a2-6c666550da2b": {
+  "condition": "Vulvar malignancy",
+  "duplicate_of": "7604f6b6-e1f3-4d8c-bf51-3b6f8c77fec8"
+ },
+ "6f15ed29-51c7-4959-ab6d-66521968f5b0": {
+  "condition": "Sickle cell disease with acute splenic sequestration",
+  "duplicate_of": "AQ-1323"
+ },
+ "a56e1803-ec75-49b6-a0cd-ffe1c6218075": {
+  "condition": "Androgenetic alopecia",
+  "duplicate_of": "c330c50a-3196-497f-9e80-1db9617aaddd"
+ },
+ "78db6605-2146-4b10-8cf2-8739ca7c0c2e": {
+  "condition": "Bronchogenic cyst",
+  "duplicate_of": "21ef0049-f929-417f-9c86-5484775b959a"
+ },
+ "59831185-9d47-487a-8824-9ee5d246cf56": {
+  "condition": "Chronic paronychia",
+  "duplicate_of": "AQ-1180"
+ },
+ "3ae63f93-6b62-4619-9d8e-f7a1b15ea352": {
+  "condition": "Suspected child physical abuse",
+  "duplicate_of": "8d6a6905-7eb0-4132-b184-fb0fc66567c9"
+ },
+ "dca1e4ae-02d9-4b36-976e-8fb1b2eae227": {
+  "condition": "Brown recluse spider envenomation (loxoscelism)",
+  "duplicate_of": "49b2b853-c8ef-486a-9644-a17934799439"
+ },
+ "9fb7c23c-2ad6-42fe-b1e6-92b61ec05622": {
+  "condition": "Essential tremor versus Parkinson disease",
+  "duplicate_of": "16bbafcc-bbf7-48f7-89f4-3191af8df7fe"
+ },
+ "c1780b8e-f585-4519-9900-fd0670400634": {
+  "condition": "Androgenetic alopecia",
+  "duplicate_of": "c330c50a-3196-497f-9e80-1db9617aaddd"
+ },
+ "1e316428-acf5-4caf-9df7-2d1258b1e816": {
+  "condition": "Adult coarctation of the aorta with collateral circulation",
+  "duplicate_of": "AQ-1398"
+ },
+ "fb1d453f-e0be-4086-8c30-733f4ec315cf": {
+  "condition": "Internal hemorrhoids",
+  "duplicate_of": "01723f2d-d5f7-44f7-ae75-28583a548e46"
+ },
+ "33471cf3-c48a-452b-910a-9bbf6f282b4f": {
+  "condition": "Age-related decline in ovarian reserve",
+  "duplicate_of": "8f7da208-1ca0-4517-b0b3-e13abc7f9429"
+ },
+ "27a6638c-c25a-4989-81a7-a260c038537e": {
+  "condition": "Postinfarction posteromedial papillary muscle rupture causing acute mitral regurgitation",
+  "duplicate_of": "AQ-1072"
+ },
+ "7a050bcd-b8fd-4ea9-b905-6eefaaad9a16": {
+  "condition": "Sildenafil–nitrate interaction causing acute hypotension",
+  "duplicate_of": "ff04373b-d421-455c-a0a9-9f9a9d689dc9"
+ },
+ "054e6f0d-5832-4678-87c7-4167d16497e5": {
+  "condition": "Testicular germ cell tumor with a nonseminomatous component",
+  "duplicate_of": "66b68bbc-4533-4c0f-a7e4-647a7c90470f"
+ },
+ "4a54f865-2307-41ec-948b-72b451c97e80": {
+  "condition": "Poststreptococcal glomerulonephritis",
+  "duplicate_of": "AQ-1306"
+ },
+ "95dbb2c1-257e-43e6-ae02-0a96afca2bde": {
+  "condition": "Graft-versus-host disease after HLA-matched allogeneic hematopoietic cell transplantation",
+  "duplicate_of": "3eb0999f-6db7-4a29-a108-7e15b2184985"
+ },
+ "10525164-6dd7-4c4c-9faa-14e70f21e2a9": {
+  "condition": "Loss of splenic filtration function after splenectomy",
+  "duplicate_of": "70d2eeb3-64fd-4b99-b5fa-ff4ba081d799"
+ },
+ "102d7fcd-3185-480b-a999-0971ef24c720": {
+  "condition": "Sheehan syndrome (postpartum ischemic anterior hypopituitarism)",
+  "duplicate_of": "AQ-1299"
+ },
+ "f1ba6a81-2b2c-4555-a6e6-4b3ab6de1415": {
+  "condition": "Fetal alcohol syndrome",
+  "duplicate_of": "eb6395a8-00a8-4b1e-9c20-c56575d3f64a"
+ },
+ "efd9c1a9-b127-48b9-a415-f49a99485210": {
+  "condition": "Schizoaffective disorder",
+  "duplicate_of": "354362fc-1889-4bcb-af70-3b83e4faed9a"
+ },
+ "e6c64c07-8288-4363-ba99-099efa14ddc1": {
+  "condition": "Hypertensive emergency",
+  "duplicate_of": "1a4b1c63-5dc8-4d6d-8d56-eec4b7490fc2"
+ },
+ "3676986c-5c8b-431b-83f9-b2604dd0f76a": {
+  "condition": "Oral candidiasis associated with inhaled corticosteroid use",
+  "duplicate_of": "AQ-1309"
+ },
+ "efb7c480-dc07-4fde-a073-f0efa6485a5b": {
+  "condition": "Aortocaval compression in supine pregnancy",
+  "duplicate_of": "AQ-1315"
+ },
+ "af21dc3d-0c59-4f66-a73c-3c9e28d7838a": {
+  "condition": "Anorexia nervosa with adaptive thyroid hormone changes during caloric restriction",
+  "duplicate_of": "3fe985b4-cfc0-4812-ba91-e5e7b0c7950e"
+ },
+ "c84d4761-29a2-4fa4-a265-70abceab7acc": {
+  "condition": "Calcium pyrophosphate deposition disease (pseudogout)",
+  "duplicate_of": "AQ-1360"
+ },
+ "2486cc1e-6a24-4cd8-a4c7-6c20d2590c0c": {
+  "condition": "Functional neurologic symptom disorder presenting as unilateral leg weakness",
+  "duplicate_of": "AQ-1132"
+ },
+ "9a646be9-7632-4d73-8217-e0b23335caa3": {
+  "condition": "X-linked adrenoleukodystrophy",
+  "duplicate_of": "e44771d2-2523-447a-9063-83dc5f360781"
+ },
+ "a8014918-80d1-4128-8ede-7a8ae076dae1": {
+  "condition": "Lithium-induced nephrogenic diabetes insipidus",
+  "duplicate_of": "AQ-1327"
+ },
+ "a53cb49d-5e7c-4ae4-9cd0-8ac7c234078e": {
+  "condition": "Physiologic anemia of pregnancy",
+  "duplicate_of": "AQ-1353"
+ },
+ "1fce2846-5dd1-42a8-a27d-56f6e7644b2b": {
+  "condition": "Panic disorder with acute hyperventilation",
+  "duplicate_of": "AQ-1065"
+ },
+ "26d51f84-201d-47d9-9880-aa50eb6a009b": {
+  "condition": "Postpartum uterine atony",
+  "duplicate_of": "AQ-1304"
+ },
+ "5eebb4e3-3c88-4b9e-8f3a-117f032e75e2": {
+  "condition": "Autoimmune gastritis causing intrinsic-factor deficiency and vitamin B12 deficiency",
+  "duplicate_of": "AQ-1333"
+ },
+ "6200b2e0-aeba-4807-bb51-1d2222619e46": {
+  "condition": "Cisplatin-induced ototoxicity",
+  "duplicate_of": "aecf2da8-0c83-4c86-96c7-31a08933c9c4"
+ },
+ "1e633a62-6db8-4760-ac7e-c6ed3446b508": {
+  "condition": "Population attributable fraction of an exposure-outcome association",
+  "duplicate_of": "3b044ca1-42e9-46f2-9ffd-a829d5d11d8f"
+ },
+ "46ae1c62-c2ae-4fa2-a842-ab098f76422d": {
+  "condition": "Abdominal aortic aneurysm",
+  "duplicate_of": "c4b00560-e915-4d0e-8723-58cc2847a337"
+ },
+ "2a65ff1c-c14b-4d26-bc77-6d20fdf0219b": {
+  "condition": "Carbon monoxide poisoning",
+  "duplicate_of": "AQ-1294"
+ },
+ "c3aee582-9327-4340-857d-0974e3ef4b98": {
+  "condition": "Opioid-induced alveolar hypoventilation",
+  "duplicate_of": "AQ-1059"
+ },
+ "fa95a722-ad83-415e-a3d6-f9f7900e0c85": {
+  "condition": "Otosclerosis",
+  "duplicate_of": "ab3dffc8-376a-49eb-b9ae-4464eda783ce"
+ },
+ "123a361e-c19f-408a-8d0b-45fc07ff3d74": {
+  "condition": "SGLT2 inhibitor–associated euglycemic diabetic ketoacidosis",
+  "duplicate_of": "AQ-1265"
+ },
+ "18ca2d65-4b42-472b-9066-fcd8100e1a58": {
+  "condition": "Atrial flutter with 2:1 atrioventricular conduction",
+  "duplicate_of": "87b71c60-3173-42a2-b541-5419232933e5"
+ },
+ "1a092ca3-9093-45ed-9a72-c5589e0b440f": {
+  "condition": "Ductal carcinoma in situ (DCIS)",
+  "duplicate_of": "AQ-1410"
+ },
+ "16d90539-b7c4-483b-8d93-80587c2a988c": {
+  "condition": "Central diabetes insipidus (arginine vasopressin deficiency)",
+  "duplicate_of": "AQ-1376"
+ },
+ "1f17e729-315d-4066-b27c-49eacc3ee3a9": {
+  "condition": "Acute splenic sequestration crisis in a young child with sickle cell disease",
+  "duplicate_of": "AQ-1323"
+ },
+ "16b170ac-8347-4e3d-ad3c-1800ee61198a": {
+  "condition": "Fat embolism syndrome after long-bone fracture",
+  "duplicate_of": "AQ-1399"
+ },
+ "bcfbd7e4-5cd5-4eef-98f5-0618b48af0f5": {
+  "condition": "Dyssynergic defecation (pelvic floor dyssynergia)",
+  "duplicate_of": "d6ecf4eb-c72a-412a-acd9-3f73519c5564"
+ },
+ "3de87837-5143-44f9-8408-c67e92f63c0a": {
+  "condition": "Furosemide-induced ototoxicity",
+  "duplicate_of": "543f497b-8322-4906-a265-391b7b06249f"
+ },
+ "8f6d90d3-0aa3-4604-8345-5b713704cf71": {
+  "condition": "Measles",
+  "duplicate_of": "3a180c3d-f656-4db7-9f49-a718f66dc5b4"
+ },
+ "8195181a-f52a-4574-a473-35f2ad831dfe": {
+  "condition": "Suspected measles in a previously vaccinated patient",
+  "duplicate_of": "3a180c3d-f656-4db7-9f49-a718f66dc5b4"
+ },
+ "1b80e098-09bc-4ffe-852d-81f891898e5e": {
+  "condition": "Relative erythrocytosis due to plasma-volume contraction",
+  "duplicate_of": "AQ-1246"
+ },
+ "35851ebd-0546-4f3c-b92e-587ce3ef741e": {
+  "condition": "Standardized mortality ratio (SMR)",
+  "duplicate_of": "12825a4e-7a92-4170-8aa1-3eef7b0551a8"
+ },
+ "4e0ab859-f5d1-4198-80fa-5a4644c06283": {
+  "condition": "Polycythemia vera",
+  "duplicate_of": "AQ-1202"
+ },
+ "35a15cf4-4d8b-4e17-b041-96fd53b0526c": {
+  "condition": "Population attributable fraction of preventable disease burden",
+  "duplicate_of": "3b044ca1-42e9-46f2-9ffd-a829d5d11d8f"
+ },
+ "6057c4c0-676f-43d4-89a8-56de3b653072": {
+  "condition": "Heparin-induced thrombocytopenia",
+  "duplicate_of": "AQ-1203"
+ },
+ "60339490-2ede-486a-8cce-70354c0f1db7": {
+  "condition": "Benign paroxysmal positional vertigo (BPPV)",
+  "duplicate_of": "665ea25e-7eb8-4711-ab16-25a399368f57"
+ },
+ "81a1ee3b-3c61-4579-96e3-b662f78a0d58": {
+  "condition": "Physiologic anemia of pregnancy",
+  "duplicate_of": "AQ-1353"
+ },
+ "7f259f64-6996-492f-b982-f91932c75710": {
+  "condition": "REM sleep behavior disorder",
+  "duplicate_of": "AQ-1079"
+ },
+ "8baa3900-3b7d-4ffb-8d43-5248f89f4ebb": {
+  "condition": "Hereditary elliptocytosis",
+  "duplicate_of": "f9fecdd2-e788-45c4-9825-4e0e3d660eb6"
+ },
+ "5fd8c6eb-7347-4fb3-8720-141012cee1ca": {
+  "condition": "Chronic limb-threatening ischemia due to peripheral arterial disease",
+  "duplicate_of": "43d9b155-d0dc-4956-9393-5609699c35d0"
+ },
+ "b242bb1c-a2e4-4748-810a-a0b9ef346a4e": {
+  "condition": "Abdominal aortic aneurysm",
+  "duplicate_of": "c4b00560-e915-4d0e-8723-58cc2847a337"
+ },
+ "e2c00dd5-a5ee-433e-b03d-f1df240e7d8e": {
+  "condition": "Interim futility analysis in a randomized clinical trial",
+  "duplicate_of": "5407034e-cdc7-417a-a623-4862c75a5ece"
+ },
+ "903f5a2f-51cd-4c4a-9a31-9527658b805d": {
+  "condition": "Acute pulmonary embolism",
+  "duplicate_of": "7493f701-1de5-4f20-b5cb-520c5d6c659b"
+ },
+ "c048d221-2bad-4a79-9871-094f543e2720": {
+  "condition": "Euglycemic diabetic ketoacidosis associated with SGLT2 inhibitor use",
+  "duplicate_of": "AQ-1265"
+ },
+ "6e5f4886-06ea-4fce-beaa-63aca90b5485": {
+  "condition": "Opioid-induced hyperalgesia in palliative cancer pain",
+  "duplicate_of": "AQ-1179"
+ },
+ "d29588ca-5e0a-42df-9e83-72cbef9ee873": {
+  "condition": "SGLT2 inhibitor-associated euglycemic diabetic ketoacidosis",
+  "duplicate_of": "AQ-1265"
+ },
+ "13e920e3-e9df-45fc-b833-b7c177875a31": {
+  "condition": "Cancer-associated cachexia",
+  "duplicate_of": "AQ-1345"
+ },
+ "8cf20c38-1668-4350-bbf7-cddeb5d008ef": {
+  "condition": "Euglycemic diabetic ketoacidosis precipitated by an SGLT2 inhibitor and reduced caloric intake",
+  "duplicate_of": "AQ-1265"
+ },
+ "554ee198-54dc-417a-8631-b6e5cd6aae70": {
+  "condition": "Poststreptococcal glomerulonephritis",
+  "duplicate_of": "AQ-1196"
+ },
+ "5b111150-d679-4712-b1cc-601325fd05b3": {
+  "condition": "Autoimmune orchitis causing primary testicular hypogonadism",
+  "duplicate_of": "bce6fb92-7da4-43a6-9d09-a9b197638cb2"
+ },
+ "6ecfbe40-8984-48c9-b03e-95ba5b73fb63": {
+  "condition": "Antiphospholipid syndrome with lupus anticoagulant",
+  "duplicate_of": "AQ-1339"
+ },
+ "1c314839-d957-442c-acc8-49105d84aa44": {
+  "condition": "Bacterial vaginosis",
+  "duplicate_of": "AQ-1328"
+ },
+ "bb2f4d88-fb21-4c25-bc7a-d51d7471e997": {
+  "condition": "Antiphospholipid syndrome",
+  "duplicate_of": "AQ-1339"
+ },
+ "6377b31f-fb19-4d93-b581-edcd71707113": {
+  "condition": "Invasive lobular carcinoma of the breast",
+  "duplicate_of": "AQ-1126"
+ },
+ "a9350a28-5a30-497e-99d1-c27dda7fdeb0": {
+  "condition": "Dopamine antagonist–induced hyperprolactinemia",
+  "duplicate_of": "AQ-1155"
+ },
+ "9730bd0a-cd9b-43cc-bba3-562713968866": {
+  "condition": "Pregnancy-associated lymphocytic hypophysitis",
+  "duplicate_of": "d89c3fa6-ae0c-49da-9f34-2d30eb69bf74"
+ },
+ "ccf84159-7054-4ad2-9f52-d20dfdfa87c7": {
+  "condition": "Endometrioid endometrial adenocarcinoma",
+  "duplicate_of": "ff322b3a-401b-445b-a069-09320d145df1"
+ },
+ "b76350bd-61f6-471e-89c5-62741841cfc8": {
+  "condition": "Autoimmune lymphocytic hypophysitis",
+  "duplicate_of": "6faad043-fa4b-4c28-9328-cbdde683f7a8"
+ },
+ "900460b4-6305-4e1c-b99d-5bd53f8a9bd8": {
+  "condition": "HFE-related hereditary hemochromatosis",
+  "duplicate_of": "7735ea27-0bc9-46b6-ba00-f753ac25da27"
+ },
+ "5bd79447-1fe9-43fb-be5a-d6b750040c03": {
+  "condition": "Müllerian agenesis with preserved ovarian function",
+  "duplicate_of": "AQ-1334"
+ },
+ "9e213a0d-1070-43c3-b091-8a35908a988c": {
+  "condition": "Medication-induced hyperprolactinemia with hypogonadotropic hypoestrogenism",
+  "duplicate_of": "AQ-1155"
+ },
+ "7e577306-1e93-4fbe-93bd-afada3bcf91a": {
+  "condition": "Antiphospholipid syndrome",
+  "duplicate_of": "AQ-1355"
+ },
+ "ef756262-1361-4a44-9a7d-73ebf3fda93e": {
+  "condition": "Cancer-associated cachexia",
+  "duplicate_of": "AQ-1345"
+ },
+ "44aa812f-524a-4901-affd-bea7e289fdec": {
+  "condition": "Septate uterus",
+  "duplicate_of": "AQ-1373"
+ },
+ "463ffcc3-c41e-44e3-bccd-01a65d057920": {
+  "condition": "Disseminated gonococcal infection (arthritis-dermatitis syndrome)",
+  "duplicate_of": "61329b7e-d000-4cb1-9168-fb94ce5e70ee"
+ },
+ "46618b20-5f8f-4cb8-85d3-3da80cc62a0c": {
+  "condition": "Acute intermittent porphyria",
+  "duplicate_of": "AQ-1057"
+ },
+ "8dfc1d82-d476-4279-b1a8-4b8df138aeda": {
+  "condition": "Fitz-Hugh-Curtis syndrome (perihepatitis associated with pelvic inflammatory disease)",
+  "duplicate_of": "AQ-1157"
+ },
+ "fcf07816-c495-4ceb-92e7-34216f45a5b1": {
+  "condition": "Asherman syndrome",
+  "duplicate_of": "563f84fa-988b-4619-a5b6-5b55aaa28bb5"
+ },
+ "bbc33f6c-4574-4625-a1be-5baae8448ab1": {
+  "condition": "Medium-chain acyl-CoA dehydrogenase deficiency",
+  "duplicate_of": "ab3d131a-9045-4d22-a0fb-f37b9ead6c67"
+ },
+ "4ae594f2-ab10-4ccc-8146-c6d3b12aac4d": {
+  "condition": "Locked-in syndrome",
+  "duplicate_of": "AQ-1344"
+ },
+ "4149efeb-7b2a-47d1-bcc9-1ca0d0ac8aec": {
+  "condition": "Risperidone-induced hyperprolactinemia causing secondary hypogonadism",
+  "duplicate_of": "500bdf54-a9a8-46fd-9120-70f2b09c3d8f"
+ },
+ "4715eb83-2d78-4cf9-b149-c57140327340": {
+  "condition": "Septate uterus",
+  "duplicate_of": "AQ-1373"
+ },
+ "196cb962-7031-4136-8465-f5b2959ff8c7": {
+  "condition": "Septate uterus",
+  "duplicate_of": "AQ-1373"
+ },
+ "60fb3e9f-708c-4348-b637-b09a9f74e1bb": {
+  "condition": "Ovarian torsion",
+  "duplicate_of": "AQ-1336"
+ },
+ "7a47bb0a-6274-4db4-8c07-55bf05c3364d": {
+  "condition": "Poststreptococcal glomerulonephritis",
+  "duplicate_of": "AQ-1196"
+ },
+ "86421834-3d9e-4503-8af8-c89c025ff36a": {
+  "condition": "Hereditary fructose intolerance",
+  "duplicate_of": "9d12fac5-b2c1-4b73-9ae6-81a563d99c73"
+ },
+ "a9c77f19-91e4-40be-96ea-43516b09f44f": {
+  "condition": "Perimenopausal anovulatory abnormal uterine bleeding",
+  "duplicate_of": "daeccfbf-1836-42e2-816a-cfe1d6bce14b"
+ },
+ "ae7933cf-8eb1-4077-9928-a84979bb7fbd": {
+  "condition": "Prolonged grief disorder",
+  "duplicate_of": "f849243c-2380-4f18-8ba1-2bf12b9df6d3"
+ },
+ "6d5c43db-ce34-49b7-b236-589cbacc77e5": {
+  "condition": "Spinal cord infarction",
+  "duplicate_of": "AQ-1253"
+ },
+ "7a0897d1-44cf-427e-9062-c56619bffc86": {
+  "condition": "Autoimmune metaplastic atrophic gastritis",
+  "duplicate_of": "AQ-1113"
+ },
+ "2cb042a9-a69f-4395-bfe4-c1efde1498e9": {
+  "condition": "Ovarian hyperstimulation syndrome",
+  "duplicate_of": "a9f49656-03f0-4685-bfbf-2fb092bb33c8"
+ },
+ "9318ed97-47e4-4e16-b5fe-7cbc56ecdb80": {
+  "condition": "Ovarian hyperstimulation syndrome",
+  "duplicate_of": "a9f49656-03f0-4685-bfbf-2fb092bb33c8"
+ },
+ "226daa9e-70fc-4f44-b0ec-4f880cde6207": {
+  "condition": "Carbon monoxide poisoning",
+  "duplicate_of": "dedb0a39-0403-4ff3-be3d-e023545f0f86"
+ },
+ "c97caa1a-85ee-48c1-a28b-9bd395b66ec1": {
+  "condition": "Systemic sclerosis–associated esophageal dysmotility",
+  "duplicate_of": "80ce736d-83d4-4791-a5b6-6c1723b441fd"
+ },
+ "4fe2348e-11fc-4c13-859a-92bac57bcb51": {
+  "condition": "Menstrual Staphylococcus aureus toxic shock syndrome",
+  "duplicate_of": "7bda7ce9-1d15-4948-aacc-dcc2670f5e21"
+ },
+ "03440726-8276-453a-a868-e9f0f520e7fc": {
+  "condition": "Neurofibromatosis type 1 with benign neurofibromas",
+  "duplicate_of": "AQ-1401"
+ },
+ "81ed7798-c226-4fd1-9fa3-5e88758ed82b": {
+  "condition": "Intraperitoneal bladder rupture",
+  "duplicate_of": "AQ-1263"
+ },
+ "5fb1442d-e57f-46c9-addc-947105a2520f": {
+  "condition": "Fitz-Hugh-Curtis syndrome",
+  "duplicate_of": "AQ-1157"
+ },
+ "fff336b3-b301-4297-8654-d3934b06bea0": {
+  "condition": "Invasive lobular carcinoma of the breast",
+  "duplicate_of": "AQ-1126"
+ },
+ "e98c240c-02f3-481b-8207-4a8e233eb08d": {
+  "condition": "Congenital adrenal hyperplasia due to 11β-hydroxylase deficiency",
+  "duplicate_of": "AQ-1292"
+ },
+ "70b091d3-acd5-4d81-a0a6-81075d6ae4d3": {
+  "condition": "Osmotic demyelination syndrome",
+  "duplicate_of": "536f1261-e937-43df-b7fc-c1efe73fc8d7"
+ },
+ "147585ac-35dd-4087-af7b-77d52d39deda": {
+  "condition": "Breast fat necrosis with dystrophic calcification",
+  "duplicate_of": "ddc77623-b963-461e-b7a2-ed6da7820c03"
+ },
+ "4c695297-a6ce-4775-b8c7-b0081b00180c": {
+  "condition": "Gastric mucosa-associated lymphoid tissue (MALT) lymphoma",
+  "duplicate_of": "AQ-1271"
+ },
+ "54ea2500-7efb-4704-b4d9-b36513a02577": {
+  "condition": "Breast fat necrosis with dystrophic calcification",
+  "duplicate_of": "ddc77623-b963-461e-b7a2-ed6da7820c03"
+ },
+ "e33f77d4-d6d5-40ce-830f-13f01648f630": {
+  "condition": "Breast fat necrosis",
+  "duplicate_of": "ddc77623-b963-461e-b7a2-ed6da7820c03"
+ },
+ "37c9926a-15a6-4670-b6da-5b3b6c13ad6b": {
+  "condition": "Juvenile hamartomatous colorectal polyp",
+  "duplicate_of": "48744daa-b047-43bd-899b-d70c369c6b8f"
+ }
+}

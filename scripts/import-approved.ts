@@ -1,7 +1,7 @@
 // Imports an approved-question batch exported by the question authoring pipeline
-// ("Approved Questions/approved_*.json": an array of APPROVED items with question_id,
-// exam_target, system, category, condition, difficulty, physician_task, stem, lead_in,
-// choices, correct_choice, explanations, tags, sources ...).
+// ("Approved Questions/approved_*.json" array or *.jsonl, one item per line: APPROVED items
+// with question_id, exam_target, system, category, condition, difficulty, physician_task,
+// stem, lead_in, choices, correct_choice, explanations, tags, sources ...).
 //
 // Placement (organ system, Library topic, key concept, free sample) comes from
 // content/approved/placements.json, keyed by question_id, because the pipeline's systems
@@ -118,8 +118,14 @@ async function main() {
   const file = process.argv.slice(2).find((a) => !a.startsWith("--"));
   const dryRun = process.argv.includes("--dry-run");
   if (!file) throw new Error("Usage: import-approved.ts <approved.json> [--dry-run]");
-  const items = (JSON.parse(fs.readFileSync(path.resolve(file), "utf8")) as Approved[]).filter((q) => q.status === "APPROVED");
+  const raw = fs.readFileSync(path.resolve(file), "utf8");
+  const parsed = (file.endsWith(".jsonl") ? raw.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l)) : JSON.parse(raw)) as Approved[];
   const placements = JSON.parse(fs.readFileSync(path.join(root, "content/approved/placements.json"), "utf8")) as Record<string, Placement>;
+  // Questions that repeat one already in the bank (same exam and testing point) are listed
+  // in skipped.json with what they duplicate, and are never imported.
+  const skipped = JSON.parse(fs.readFileSync(path.join(root, "content/approved/skipped.json"), "utf8")) as Record<string, { duplicate_of: string }>;
+  const items = parsed.filter((q) => q.status === "APPROVED" && !skipped[q.question_id]);
+  if (parsed.length > items.length) console.log(`Skipping ${parsed.length - items.length} (not approved or listed in skipped.json)`);
 
   const missing = items.filter((q) => !placements[q.question_id]);
   if (missing.length) {
