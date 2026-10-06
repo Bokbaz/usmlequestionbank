@@ -40,6 +40,8 @@ export const UpsertPayload = z.object({
   nuggets: z.array(z.object({ title: z.string().min(1).max(200), body: z.string().max(4_000).optional() })).max(10).optional(),
   batch_id: z.string().uuid().nullable().optional(),
   source: z.enum(["import", "admin"]).optional(),
+  // The authoring pipeline's question_id; re-imports match on it (scripts/import-approved.ts).
+  source_ref: z.string().max(80).optional(),
 });
 export type UpsertPayload = z.infer<typeof UpsertPayload>;
 

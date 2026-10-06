@@ -1,7 +1,7 @@
 // Seeds the question bank from content/seed/*.aqf.txt using the same RPCs as the
 // in-app importer. Idempotent: questions upsert by ID, articles upsert by topic slug.
 //
-//   npx tsx scripts/seed.ts            # import + embeddings + nuggets + library + daily
+//   npx tsx scripts/seed.ts            # import + embeddings + nuggets + library
 //   npx tsx scripts/seed.ts --calibrate  # also print auto-matcher scores per question
 //
 // Requires NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY (legacy JWT) in .env.local.
@@ -26,9 +26,6 @@ const serviceKey = env.SUPABASE_SERVICE_ROLE_KEY;
 if (!url || !serviceKey) throw new Error("Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY");
 const sb = createClient(url, serviceKey, { auth: { persistSession: false } });
 const calibrate = process.argv.includes("--calibrate");
-
-// Curated Daily Challenge order for launch week (ultra-hard Step 1 items).
-const DAILY_ORDER = ["AQ-1050", "AQ-1043", "AQ-1022", "AQ-1035", "AQ-1005", "AQ-1046", "AQ-1023", "AQ-1011", "AQ-1020", "AQ-1044"];
 
 async function main() {
   const dir = path.join(root, "content/seed");
@@ -146,20 +143,6 @@ async function main() {
   }
   console.log(`Composed ${byTopic.size} Library articles`);
 
-  // 5. Daily Challenge schedule ------------------------------------------------------------
-  const { data: existing } = await sb.from("daily_challenges").select("day").order("day");
-  if (!existing?.length) {
-    const today = new Date();
-    const utcDay = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-    for (let i = 0; i < DAILY_ORDER.length; i++) {
-      const day = new Date(utcDay.getTime() + i * 86400000).toISOString().slice(0, 10);
-      const { error } = await sb.rpc("admin_schedule_daily", { p_day: day, p_question: ids.get(DAILY_ORDER[i]), p_time_limit: 120 });
-      if (error) throw new Error(`daily ${day}: ${error.message}`);
-    }
-    console.log(`Scheduled ${DAILY_ORDER.length} Daily Challenges starting ${utcDay.toISOString().slice(0, 10)}`);
-  } else {
-    console.log(`Daily Challenges already scheduled (${existing.length}); left unchanged`);
-  }
   console.log("Seed complete.");
 }
 

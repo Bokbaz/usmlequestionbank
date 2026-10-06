@@ -1,0 +1,2220 @@
+{
+ "7be42208-4a06-4b70-ab06-5b4a470bf3b3": {
+  "condition": "Alcohol withdrawal",
+  "system": "behavioral-health",
+  "topic": "Alcohol use and withdrawal",
+  "key_concept": "Alcohol withdrawal: autonomic hyperactivity after reduced intake"
+ },
+ "6482e9c8-ab66-4878-bda1-5d87707c890f": {
+  "condition": "Transference",
+  "system": "behavioral-health",
+  "topic": "Ego defenses and psychodynamics",
+  "key_concept": "Transference: reacting to clinician as a past figure",
+  "free": true
+ },
+ "eae6910a-a10c-49b9-8442-5ee2be7c07d6": {
+  "condition": "Transference in the therapeutic relationship",
+  "system": "behavioral-health",
+  "topic": "Ego defenses and psychodynamics",
+  "key_concept": "Transference versus countertransference"
+ },
+ "ac9b2020-75c2-4147-8a4b-28a8e981ea85": {
+  "condition": "Factitious disorder imposed on another",
+  "system": "behavioral-health",
+  "topic": "Factitious disorders",
+  "key_concept": "Factitious disorder imposed on another (caregiver induces illness)"
+ },
+ "566b13fe-0d20-4046-a67a-c54be25d762c": {
+  "condition": "Specific learning disorder with impairment in reading (developmental dyslexia)",
+  "system": "behavioral-health",
+  "topic": "Neurodevelopmental disorders",
+  "key_concept": "Dyslexia is a phonological decoding deficit"
+ },
+ "e2e150b4-d4c0-4e1e-ab9d-363a3dbd76be": {
+  "condition": "Obsessive-compulsive personality disorder",
+  "system": "behavioral-health",
+  "topic": "Personality disorders",
+  "key_concept": "OCPD is ego-syntonic, without true obsessions or compulsions"
+ },
+ "b0214394-24c0-4e8b-a017-f26b7221f9d6": {
+  "condition": "Obsessive-compulsive personality disorder",
+  "system": "behavioral-health",
+  "topic": "Personality disorders",
+  "key_concept": "OCPD: pervasive ego-syntonic perfectionism and rigidity"
+ },
+ "b11de1f2-f521-4bcb-8637-1b9dfbf4f059": {
+  "condition": "Functional neurologic symptom disorder presenting as functional leg weakness",
+  "system": "behavioral-health",
+  "topic": "Somatic symptom disorders",
+  "key_concept": "Positive Hoover sign in functional neurologic disorder",
+  "free": true
+ },
+ "98c5ee4a-6842-4d6e-8e46-5281146f4c69": {
+  "condition": "Somatic symptom disorder",
+  "system": "behavioral-health",
+  "topic": "Somatic symptom disorders",
+  "key_concept": "Somatic symptom disorder: disproportionate health-related distress"
+ },
+ "cc86eeb3-1d12-4cfb-bfe7-1bcde473274d": {
+  "condition": "Lead-time bias",
+  "system": "biostatistics",
+  "topic": "Bias in screening studies",
+  "key_concept": "Lead-time bias"
+ },
+ "f4076efc-0ccc-4df0-8bf8-be1bef13dbe9": {
+  "condition": "Lead-time bias in cancer screening",
+  "system": "biostatistics",
+  "topic": "Bias in screening studies",
+  "key_concept": "Lead-time bias inflates survival without lowering mortality"
+ },
+ "2065bf92-8735-4b88-bec3-480e772ec32c": {
+  "condition": "Association between antibiotic exposure and Clostridioides difficile infection",
+  "system": "biostatistics",
+  "topic": "Measures of risk",
+  "key_concept": "Relative risk from cumulative incidence",
+  "free": true
+ },
+ "8e90dcf6-3f07-4123-9a14-feb7a48b3f20": {
+  "condition": "Heterogeneity in a meta-analysis",
+  "system": "biostatistics",
+  "topic": "Meta-analysis",
+  "key_concept": "High I-squared indicates between-study heterogeneity"
+ },
+ "d5c77d31-9b85-4e05-a14f-2271b2b22aa6": {
+  "condition": "Research informed consent",
+  "system": "biostatistics",
+  "topic": "Research ethics",
+  "key_concept": "Large research payments: undue influence, not coercion"
+ },
+ "43337505-b65f-4413-b17c-ea53ab16e7c6": {
+  "condition": "Acute pancreatitis",
+  "system": "biostatistics",
+  "topic": "Selection bias",
+  "key_concept": "Referral bias in tertiary-center case series"
+ },
+ "456f0c81-9269-4a9a-b858-d4e0adaa40aa": {
+  "condition": "Prevalence-incidence (Neyman) bias",
+  "system": "biostatistics",
+  "topic": "Selection bias",
+  "key_concept": "Neyman (prevalence-incidence) bias"
+ },
+ "be6a470c-f7da-48d0-8daf-31b6e38b4323": {
+  "condition": "Prevalence-incidence bias (Neyman bias) in a community survey",
+  "system": "biostatistics",
+  "topic": "Selection bias",
+  "key_concept": "Neyman bias in cross-sectional prevalence surveys"
+ },
+ "b4c25cd6-eee4-4cb5-800f-e5fdbd2552a2": {
+  "condition": "Healthy worker effect (employment-related selection bias)",
+  "system": "biostatistics",
+  "topic": "Selection bias",
+  "key_concept": "Healthy worker effect"
+ },
+ "8442a79f-0c20-4995-a7b9-9a6db6c3d908": {
+  "condition": "Colorectal cancer",
+  "system": "biostatistics",
+  "topic": "Sensitivity, specificity and predictive values",
+  "key_concept": "Specificity = TN / (TN + FP)"
+ },
+ "86562e39-01e8-4367-9996-d0a8395f9a2e": {
+  "condition": "Colorectal cancer screened with a fecal immunochemical test",
+  "system": "biostatistics",
+  "topic": "Sensitivity, specificity and predictive values",
+  "key_concept": "Spectrum bias inflates sensitivity in symptomatic cohorts"
+ },
+ "639920be-a494-4267-80ce-07c0fff567f2": {
+  "condition": "Colorectal cancer screening",
+  "system": "biostatistics",
+  "topic": "Sensitivity, specificity and predictive values",
+  "key_concept": "Sensitivity = TP / (TP + FN)"
+ },
+ "6081ea5f-36f6-48af-b9cf-04b69ff999b2": {
+  "condition": "Type 2 diabetes mellitus",
+  "system": "biostatistics",
+  "topic": "Statistical vs clinical significance",
+  "key_concept": "Statistical significance is not clinical significance",
+  "free": true
+ },
+ "4b34b5ad-6fcf-4907-8eb4-f5c81569f1e8": {
+  "condition": "Cross-sectional study",
+  "system": "biostatistics",
+  "topic": "Study design",
+  "key_concept": "Cross-sectional studies cannot establish temporality"
+ },
+ "320aa6e5-6bb3-48ca-8ac8-bd49336b5055": {
+  "condition": "Outcome-sampled case-control study of an exposure and clinical outcome",
+  "system": "biostatistics",
+  "topic": "Study design",
+  "key_concept": "Case-control studies cannot estimate incidence"
+ },
+ "47a883fc-8c12-4ea7-bcc2-7840ac853662": {
+  "condition": "Retrospective cohort study",
+  "system": "biostatistics",
+  "topic": "Study design",
+  "key_concept": "Retrospective cohort: grouped by past exposure"
+ },
+ "0c4fd178-e691-40c7-b5eb-37bc81463c3e": {
+  "condition": "Retrospective cohort study",
+  "system": "biostatistics",
+  "topic": "Study design",
+  "key_concept": "Retrospective cohorts can estimate risk ratios"
+ },
+ "9c1f0baf-5557-458c-862f-badd468d6575": {
+  "condition": "Single-patient case report",
+  "system": "biostatistics",
+  "topic": "Study design",
+  "key_concept": "Case report describes a single patient"
+ },
+ "e13dca5c-572e-401a-bc26-3b127f1c239e": {
+  "condition": "Ecological fallacy in population-level epidemiologic studies",
+  "system": "biostatistics",
+  "topic": "Study design",
+  "key_concept": "Ecological fallacy"
+ },
+ "0d77094d-a7de-4f95-ab3c-ddd7be0dc06d": {
+  "condition": "Time-to-event clinical trial",
+  "system": "biostatistics",
+  "topic": "Survival analysis",
+  "key_concept": "Censored participants in Kaplan-Meier analysis"
+ },
+ "a87b6b26-0fea-42fb-b486-10d0d9a4c09d": {
+  "condition": "Nominal categorical data",
+  "system": "biostatistics",
+  "topic": "Types of data",
+  "key_concept": "Numeric codes for nominal data have no quantitative meaning"
+ },
+ "7883313a-4133-4edc-8637-25fb161c347f": {
+  "condition": "Nominal categorical data with arbitrary numeric coding",
+  "system": "biostatistics",
+  "topic": "Types of data",
+  "key_concept": "Mean of nominal category codes is meaningless"
+ },
+ "c66257ec-bfc5-4951-b127-c393a97ecbb3": {
+  "condition": "Antiphospholipid syndrome with lupus anticoagulant",
+  "system": "blood-lymph",
+  "topic": "Antiphospholipid syndrome",
+  "key_concept": "Lupus anticoagulant prolongs aPTT but causes thrombosis"
+ },
+ "422fd1bd-3189-4b5c-b645-b4bceeab8cfb": {
+  "condition": "Antiphospholipid syndrome",
+  "system": "blood-lymph",
+  "topic": "Antiphospholipid syndrome",
+  "key_concept": "Antiphospholipid syndrome causes recurrent pregnancy loss and thrombosis"
+ },
+ "ca81af62-15c6-47b3-a2e5-0f4f0ce7a63e": {
+  "condition": "Aplastic anemia",
+  "system": "blood-lymph",
+  "topic": "Aplastic anemia",
+  "key_concept": "Aplastic anemia: hypocellular marrow from stem-cell failure"
+ },
+ "8023267e-80a6-4d6c-b485-947b03d9649f": {
+  "condition": "Acquired hemophilia A (factor VIII autoantibody)",
+  "system": "blood-lymph",
+  "topic": "Coagulation disorders",
+  "key_concept": "Factor VIII inhibitor: mixing study fails after incubation"
+ },
+ "1008eb36-8176-4a82-97eb-260e468bddad": {
+  "condition": "Disseminated intravascular coagulation (DIC)",
+  "system": "blood-lymph",
+  "topic": "Coagulation disorders",
+  "key_concept": "DIC: consumptive coagulopathy causes thrombosis and bleeding"
+ },
+ "fd0abbfa-b064-43bd-a3a7-07493599cc38": {
+  "condition": "Fanconi anemia presenting with a VACTERL-like congenital anomaly pattern",
+  "system": "blood-lymph",
+  "topic": "Fanconi anemia",
+  "key_concept": "Fanconi anemia: chromosome breaks with cross-linking agents"
+ },
+ "19d1420a-8a39-4279-bfba-2446f6b10ff8": {
+  "condition": "Pyruvate kinase deficiency",
+  "system": "blood-lymph",
+  "topic": "Hemolytic anemias",
+  "key_concept": "Pyruvate kinase deficiency lowers red-cell ATP"
+ },
+ "2c901a6f-0d17-4ceb-b798-a34e18fbea19": {
+  "condition": "Warm autoimmune hemolytic anemia",
+  "system": "blood-lymph",
+  "topic": "Hemolytic anemias",
+  "key_concept": "Warm AIHA: IgG-coated red cells cleared by splenic macrophages",
+  "free": true
+ },
+ "4ef99826-e893-4889-886c-b0d3ae757688": {
+  "condition": "Mechanical intravascular hemolytic anemia due to a prosthetic heart valve",
+  "system": "blood-lymph",
+  "topic": "Hemolytic anemias",
+  "key_concept": "Prosthetic valve causes mechanical intravascular hemolysis"
+ },
+ "ceb32032-eb1d-4cf9-8e0a-7058165e5a6d": {
+  "condition": "Heparin-induced thrombocytopenia",
+  "system": "blood-lymph",
+  "topic": "Heparin-induced thrombocytopenia",
+  "key_concept": "HIT: anti-PF4/heparin antibodies activate platelets"
+ },
+ "8f2057d0-4ee9-4c9e-b5ce-edb2ad7ddbc9": {
+  "condition": "Inherited antithrombin deficiency",
+  "system": "blood-lymph",
+  "topic": "Inherited thrombophilias",
+  "key_concept": "Antithrombin deficiency causes heparin resistance",
+  "free": true
+ },
+ "56c46711-fb10-460e-a66b-50d26e3fd59c": {
+  "condition": "Prothrombin G20210A-associated inherited thrombophilia",
+  "system": "blood-lymph",
+  "topic": "Inherited thrombophilias",
+  "key_concept": "Prothrombin G20210A raises prothrombin levels"
+ },
+ "5f1f269f-a7b4-49aa-bfd8-d9a091501c9d": {
+  "condition": "Folate deficiency anemia",
+  "system": "blood-lymph",
+  "topic": "Megaloblastic anemia",
+  "key_concept": "Folate deficiency: high homocysteine, normal methylmalonic acid"
+ },
+ "da171b60-c6ec-49f5-a39b-207c2cbf51a4": {
+  "condition": "Vitamin B12 deficiency",
+  "system": "blood-lymph",
+  "topic": "Megaloblastic anemia",
+  "key_concept": "B12 deficiency raises methylmalonic acid; folate deficiency does not"
+ },
+ "c84576ef-dcf9-4e09-8a4d-506fc433c54c": {
+  "condition": "Acquired methemoglobinemia caused by an oxidizing medication",
+  "system": "blood-lymph",
+  "topic": "Methemoglobinemia",
+  "key_concept": "Methemoglobin lowers O2 content and left-shifts the curve"
+ },
+ "babedfc2-70ab-40fc-9697-c9fe57bda45f": {
+  "condition": "Polycythemia vera",
+  "system": "blood-lymph",
+  "topic": "Myeloproliferative neoplasms",
+  "key_concept": "Polycythemia vera: JAK2 mutation, low erythropoietin"
+ },
+ "42a1f5a1-5a0a-473c-a21f-c2ad6ed69d6c": {
+  "condition": "Iron-deficiency anemia causing exertional dyspnea",
+  "system": "blood-lymph",
+  "topic": "Oxygen content and delivery",
+  "key_concept": "Anemia lowers oxygen content with normal PaO2 and SaO2"
+ },
+ "61189d9c-9105-4021-a115-98020abbd798": {
+  "condition": "Multiple myeloma with monoclonal free light-chain proteinuria",
+  "system": "blood-lymph",
+  "topic": "Plasma cell neoplasms",
+  "key_concept": "Light-chain proteinuria is missed by urine dipstick"
+ },
+ "64697d4c-0599-40c9-81ad-f494fa43de23": {
+  "condition": "Relative erythrocytosis (hemoconcentration) from plasma-volume contraction",
+  "system": "blood-lymph",
+  "topic": "Polycythemia",
+  "key_concept": "Relative polycythemia: normal red-cell mass, low plasma volume"
+ },
+ "93669d65-e83b-41b7-b814-4951748ea8ae": {
+  "condition": "Acute splenic sequestration crisis in sickle cell disease",
+  "system": "blood-lymph",
+  "topic": "Sickle cell disease",
+  "key_concept": "Acute splenic sequestration crisis"
+ },
+ "27b0c37a-22a8-4a89-b4f6-c821041a81ed": {
+  "condition": "Beta-thalassemia trait in prospective parents",
+  "system": "blood-lymph",
+  "topic": "Thalassemias",
+  "key_concept": "Beta-thalassemia trait: microcytosis with elevated HbA2"
+ },
+ "074236f7-5fa9-48af-af69-bf822b7ada8b": {
+  "condition": "Immune-mediated thrombotic thrombocytopenic purpura",
+  "system": "blood-lymph",
+  "topic": "Thrombotic microangiopathies",
+  "key_concept": "Low ADAMTS13 activity in immune TTP"
+ },
+ "06d78d80-fc6e-4a15-a23a-0580b4bcf6fa": {
+  "condition": "Shiga toxin–associated hemolytic uremic syndrome",
+  "system": "blood-lymph",
+  "topic": "Thrombotic microangiopathies",
+  "key_concept": "Shiga toxin-associated hemolytic uremic syndrome"
+ },
+ "9257a568-179a-4375-93d5-43efdd0fe1e7": {
+  "condition": "Transfusion-associated circulatory overload (TACO)",
+  "system": "blood-lymph",
+  "topic": "Transfusion reactions",
+  "key_concept": "TACO: hydrostatic pulmonary edema from volume overload"
+ },
+ "a0dcfab2-ce12-4233-acbd-a5a56e7fad7d": {
+  "condition": "Transfusion-related acute lung injury (TRALI)",
+  "system": "blood-lymph",
+  "topic": "Transfusion reactions",
+  "key_concept": "TRALI: donor antibodies activate recipient neutrophils"
+ },
+ "0f3a01b3-8b63-4ac7-9335-08c24f37dac0": {
+  "condition": "Peripheral edema caused by a dihydropyridine calcium channel blocker",
+  "system": "cardiovascular",
+  "topic": "Antihypertensive drugs",
+  "key_concept": "Dihydropyridine edema from precapillary arteriolar dilation"
+ },
+ "af625520-0a7a-401f-87ab-ed459e35dbbd": {
+  "condition": "Angiotensin-converting enzyme inhibitor–induced cough",
+  "system": "cardiovascular",
+  "topic": "Antihypertensive drugs",
+  "key_concept": "ACE inhibitor cough from bradykinin accumulation"
+ },
+ "c82fbf0a-8fcc-4025-9abe-ffefb54746b2": {
+  "condition": "Loeys-Dietz syndrome",
+  "system": "cardiovascular",
+  "topic": "Aortic aneurysm and dissection",
+  "key_concept": "Loeys-Dietz syndrome: TGF-beta receptor mutations"
+ },
+ "97313915-165a-4f82-9a09-3aabaaf75bcf": {
+  "condition": "Chronic severe aortic regurgitation with preserved left ventricular ejection fraction",
+  "system": "cardiovascular",
+  "topic": "Aortic regurgitation",
+  "key_concept": "Regurgitant volume = total stroke volume minus forward flow"
+ },
+ "d5433195-e9ce-407e-8465-74b3739613c1": {
+  "condition": "Atrial flutter",
+  "system": "cardiovascular",
+  "topic": "Arrhythmias",
+  "key_concept": "Atrial flutter with 2:1 block unmasked by adenosine"
+ },
+ "f073f33f-21dd-4d78-9f26-e89f214cd657": {
+  "condition": "Orthostatic hypotension caused by α1-adrenergic receptor blockade",
+  "system": "cardiovascular",
+  "topic": "Autonomic drugs",
+  "key_concept": "Alpha-1 blockers cause orthostatic hypotension"
+ },
+ "85a50934-d092-481e-9aa3-3ea98cf23a55": {
+  "condition": "Cardiac myxoma",
+  "system": "cardiovascular",
+  "topic": "Cardiac tumors",
+  "key_concept": "Atrial myxoma constitutional symptoms from interleukin-6"
+ },
+ "4f2fafc1-5a7a-42bf-a9c3-150c909e064e": {
+  "condition": "Doxorubicin (Adriamycin)-induced cardiomyopathy",
+  "system": "cardiovascular",
+  "topic": "Cardiomyopathies",
+  "key_concept": "Doxorubicin cardiotoxicity is cumulative and dose-dependent",
+  "free": true
+ },
+ "44a2fb86-a006-44a3-814b-c8a57debc8dd": {
+  "condition": "Cardiac amyloidosis",
+  "system": "cardiovascular",
+  "topic": "Cardiomyopathies",
+  "key_concept": "Cardiac amyloidosis: thick walls with low ECG voltage"
+ },
+ "97d1dba3-ffca-4a7a-8a28-abb59f6bd3e6": {
+  "condition": "Coarctation of the aorta",
+  "system": "cardiovascular",
+  "topic": "Coarctation of the aorta",
+  "key_concept": "Coarctation: arm-leg pressure gradient and rib notching"
+ },
+ "cd992002-5e09-442b-a23b-b9c91fcc17e2": {
+  "condition": "Congenital coarctation of the aorta",
+  "system": "cardiovascular",
+  "topic": "Coarctation of the aorta",
+  "key_concept": "Rib notching from enlarged intercostal collateral arteries"
+ },
+ "bc7618c2-b271-453c-b9bf-2456956b77f2": {
+  "condition": "Postinfarction papillary muscle rupture causing acute mitral regurgitation",
+  "system": "cardiovascular",
+  "topic": "Complications of myocardial infarction",
+  "key_concept": "Papillary muscle rupture causes acute mitral regurgitation"
+ },
+ "04684eda-0ac1-4e60-af16-be76b2955e7d": {
+  "condition": "Right ventricular myocardial infarction",
+  "system": "cardiovascular",
+  "topic": "Complications of myocardial infarction",
+  "key_concept": "Right ventricular infarct: hypotension, high JVP, clear lungs"
+ },
+ "e93a104d-688d-4592-98e0-9bfb9a5fd256": {
+  "condition": "Acute myocardial infarction complicated by papillary muscle rupture",
+  "system": "cardiovascular",
+  "topic": "Complications of myocardial infarction",
+  "key_concept": "Posteromedial papillary muscle has a single blood supply",
+  "free": true
+ },
+ "52635c98-6d06-40e0-b343-ad4eba36e3a1": {
+  "condition": "Familial chylomicronemia due to apolipoprotein C-II deficiency",
+  "system": "cardiovascular",
+  "topic": "Dyslipidemias",
+  "key_concept": "ApoC-II deficiency: lipoprotein lipase lacks its cofactor"
+ },
+ "624812c8-78d1-446c-8fae-c522cfda40e9": {
+  "condition": "Familial lipoprotein lipase deficiency",
+  "system": "cardiovascular",
+  "topic": "Dyslipidemias",
+  "key_concept": "Fibrates need lipoprotein lipase to lower triglycerides"
+ },
+ "9b4e92ab-e312-4805-98a9-3e35f3b4e539": {
+  "condition": "Heterozygous familial hypercholesterolemia",
+  "system": "cardiovascular",
+  "topic": "Dyslipidemias",
+  "key_concept": "Familial hypercholesterolemia: defective LDL receptor"
+ },
+ "47710c9a-b216-483b-b9c9-ff3fd78b2bf3": {
+  "condition": "Heart failure with preserved ejection fraction due to impaired left ventricular relaxation and reduced compliance",
+  "system": "cardiovascular",
+  "topic": "Heart failure",
+  "key_concept": "HFpEF: impaired relaxation and reduced compliance"
+ },
+ "a106c55f-ffba-4741-98f8-04406fb658b2": {
+  "condition": "Orthopnea due to left-sided heart failure",
+  "system": "cardiovascular",
+  "topic": "Heart failure",
+  "key_concept": "Orthopnea from increased venous return when supine"
+ },
+ "b998b5c0-164e-40cf-a967-d59da8f151f4": {
+  "condition": "Acute severe mitral regurgitation",
+  "system": "cardiovascular",
+  "topic": "Mitral regurgitation",
+  "key_concept": "Mitral regurgitation lowers forward output despite normal EF"
+ },
+ "612de17c-7603-4768-bc45-4a4277a54a4b": {
+  "condition": "Postviral myocarditis sustained by T-cell cross-reactivity through molecular mimicry",
+  "system": "cardiovascular",
+  "topic": "Myocarditis",
+  "key_concept": "Postviral myocarditis via T-cell molecular mimicry"
+ },
+ "49646358-17a7-454f-8d64-8d96bfdb3a85": {
+  "condition": "Chronic constrictive pericarditis",
+  "system": "cardiovascular",
+  "topic": "Pericardial disease",
+  "key_concept": "Kussmaul sign in constrictive pericarditis"
+ },
+ "76c15b30-4ab6-426f-a0d2-e47d2b89e5f7": {
+  "condition": "Dressler syndrome",
+  "system": "cardiovascular",
+  "topic": "Pericardial disease",
+  "key_concept": "Dressler syndrome is autoimmune pericarditis after MI"
+ },
+ "f5e3e21c-c8c6-4916-88cb-542a85c42a8e": {
+  "condition": "Dressler syndrome (postmyocardial infarction syndrome)",
+  "system": "cardiovascular",
+  "topic": "Pericardial disease",
+  "key_concept": "Dressler syndrome: delayed immune-mediated pericarditis"
+ },
+ "0f871804-0dba-4228-8fdc-29edda3011b0": {
+  "condition": "Traumatic cardiac tamponade",
+  "system": "cardiovascular",
+  "topic": "Pericardial disease",
+  "key_concept": "Cardiac tamponade limits ventricular filling"
+ },
+ "ee0070cd-bfb3-4b82-8cf4-538eaed03394": {
+  "condition": "Renal and cervicocephalic fibromuscular dysplasia",
+  "system": "cardiovascular",
+  "topic": "Renovascular hypertension",
+  "key_concept": "Fibromuscular dysplasia: string-of-beads mid-distal arteries"
+ },
+ "05e8a62e-6a40-498b-9581-935dd67b7445": {
+  "condition": "Acute rheumatic fever with carditis",
+  "system": "cardiovascular",
+  "topic": "Rheumatic fever",
+  "key_concept": "Rheumatic carditis follows group A strep pharyngitis"
+ },
+ "4390b379-acb0-4636-835d-690676b2273d": {
+  "condition": "Acute rheumatic fever",
+  "system": "cardiovascular",
+  "topic": "Rheumatic fever",
+  "key_concept": "Rheumatic valvulitis from M protein molecular mimicry"
+ },
+ "4a3550f8-80f9-4d44-8775-2aee25d4e86b": {
+  "condition": "Acute rheumatic fever",
+  "system": "cardiovascular",
+  "topic": "Rheumatic fever",
+  "key_concept": "Rheumatic fever from antibody cross-reactivity (molecular mimicry)"
+ },
+ "ee8852bf-df7a-4a41-8daf-e568e6eb1cb5": {
+  "condition": "acute rheumatic fever",
+  "system": "cardiovascular",
+  "topic": "Rheumatic fever",
+  "key_concept": "Rheumatic fever from cross-reactive adaptive immunity"
+ },
+ "b8457999-5fe9-476c-b22e-b53a81357e34": {
+  "condition": "Acute rheumatic fever following group A streptococcal pharyngitis",
+  "system": "cardiovascular",
+  "topic": "Rheumatic fever",
+  "key_concept": "Rheumatic carditis is immune cross-reactivity, not ongoing infection"
+ },
+ "ba0a667e-4b0a-4102-acaa-29bbed812a1c": {
+  "condition": "Primary adrenal insufficiency",
+  "system": "endocrine",
+  "topic": "Adrenal insufficiency",
+  "key_concept": "High ACTH causes hyperpigmentation in Addison disease"
+ },
+ "8ede4bb7-0e2e-4e8e-bc2c-2c54be160673": {
+  "condition": "Primary adrenal insufficiency (Addison disease)",
+  "system": "endocrine",
+  "topic": "Adrenal insufficiency",
+  "key_concept": "Primary adrenal insufficiency: high ACTH, blunted cosyntropin response"
+ },
+ "ca6188da-f782-4010-8310-e73472ce2e41": {
+  "condition": "Primary adrenal insufficiency due to adrenal cortical failure",
+  "system": "endocrine",
+  "topic": "Adrenal insufficiency",
+  "key_concept": "Mineralocorticoid deficiency localizes adrenal insufficiency to the cortex"
+ },
+ "678277d2-0910-4608-8e03-eac11c9801c6": {
+  "condition": "11β-hydroxylase deficiency",
+  "system": "endocrine",
+  "topic": "Congenital adrenal hyperplasia",
+  "key_concept": "11-beta-hydroxylase deficiency: deoxycorticosterone causes hypertension"
+ },
+ "0a984983-e76b-4460-a2b6-b40cb2464d69": {
+  "condition": "11β-hydroxylase deficiency",
+  "system": "endocrine",
+  "topic": "Congenital adrenal hyperplasia",
+  "key_concept": "11-beta-hydroxylase deficiency: virilization with hypertension",
+  "free": true
+ },
+ "70d0076a-0c39-49aa-8d79-89634a682a26": {
+  "condition": "Central diabetes insipidus",
+  "system": "endocrine",
+  "topic": "Diabetes insipidus",
+  "key_concept": "Central DI: urine concentrates after desmopressin"
+ },
+ "c31d249c-804e-4815-9a96-7a23f358b969": {
+  "condition": "Diabetic ketoacidosis",
+  "system": "endocrine",
+  "topic": "Diabetic ketoacidosis",
+  "key_concept": "DKA: high serum potassium despite total-body depletion"
+ },
+ "8c7a2e9e-fd0f-47c1-ac1b-bf6674d0e740": {
+  "condition": "Euglycemic diabetic ketoacidosis associated with an SGLT2 inhibitor",
+  "system": "endocrine",
+  "topic": "Diabetic ketoacidosis",
+  "key_concept": "SGLT2 inhibitors cause euglycemic DKA"
+ },
+ "bf2fa77d-8b49-4090-bc37-a78dcefcb17a": {
+  "condition": "Familial hypocalciuric hypercalcemia",
+  "system": "endocrine",
+  "topic": "Familial hypocalciuric hypercalcemia",
+  "key_concept": "FHH: low urinary calcium with nonsuppressed PTH"
+ },
+ "c56e3c43-0a25-4660-89b2-ff4d116082ac": {
+  "condition": "Familial hypocalciuric hypercalcemia",
+  "system": "endocrine",
+  "topic": "Familial hypocalciuric hypercalcemia",
+  "key_concept": "FHH: inactivating CaSR mutation"
+ },
+ "8469b54d-e255-4e42-a605-65c83fa8b85c": {
+  "condition": "Risperidone-induced hyperprolactinemia",
+  "system": "endocrine",
+  "topic": "Hyperprolactinemia",
+  "key_concept": "Risperidone causes hyperprolactinemia via D2 blockade"
+ },
+ "fc0638c4-2e92-4f84-8308-db39953b875a": {
+  "condition": "Antipsychotic-induced hyperprolactinemia",
+  "system": "endocrine",
+  "topic": "Hyperprolactinemia",
+  "key_concept": "Tuberoinfundibular D2 blockade causes galactorrhea",
+  "free": true
+ },
+ "54b11dba-fe91-481a-ad26-be9c76a2fecc": {
+  "condition": "Immune checkpoint inhibitor–induced hypophysitis",
+  "system": "endocrine",
+  "topic": "Hypophysitis",
+  "key_concept": "Anti-CTLA-4 therapy causes autoimmune hypophysitis"
+ },
+ "d53364a2-72ba-40b4-bb6a-8bcd45d2539a": {
+  "condition": "Insulinoma",
+  "system": "endocrine",
+  "topic": "Insulinoma",
+  "key_concept": "Insulinoma: high insulin, C-peptide and proinsulin when hypoglycemic"
+ },
+ "975bbf9a-3a06-4319-a8ed-3d4985a88191": {
+  "condition": "Insulinoma",
+  "system": "endocrine",
+  "topic": "Insulinoma",
+  "key_concept": "Insulinoma: autonomous endogenous insulin secretion"
+ },
+ "1b27c016-c8a4-4feb-bcbd-60c9e08a5c56": {
+  "condition": "Insulinoma causing fasting hypoglycemia",
+  "system": "endocrine",
+  "topic": "Insulinoma",
+  "key_concept": "Negative sulfonylurea screen distinguishes insulinoma"
+ },
+ "fbffe8fe-e844-42d2-884d-0b72f1bd79d9": {
+  "condition": "Nonthyroidal illness syndrome",
+  "system": "endocrine",
+  "topic": "Thyroid function tests",
+  "key_concept": "Euthyroid sick syndrome: low T3, high reverse T3"
+ },
+ "2374cf7e-628d-4ab1-be7b-d52c942038bb": {
+  "condition": "Functional hypothalamic amenorrhea associated with low energy availability",
+  "system": "female-reproductive",
+  "topic": "Amenorrhea",
+  "key_concept": "Low energy availability suppresses GnRH pulsatility",
+  "category": "Menstrual & endocrine disorders"
+ },
+ "9646f911-86e3-40a5-a91b-800b7e09a818": {
+  "condition": "Breast fat necrosis",
+  "system": "female-reproductive",
+  "topic": "Benign breast disease",
+  "key_concept": "Breast fat necrosis after trauma is benign"
+ },
+ "6a45806b-735a-4509-8e23-7012c7732389": {
+  "condition": "Breast fat necrosis",
+  "system": "female-reproductive",
+  "topic": "Benign breast disease",
+  "key_concept": "Fat necrosis can mimic breast cancer on imaging"
+ },
+ "384b0c74-b443-4a05-9d01-594efb3c5407": {
+  "condition": "Intraductal papilloma",
+  "system": "female-reproductive",
+  "topic": "Benign breast disease",
+  "key_concept": "Intraductal papilloma causes bloody nipple discharge"
+ },
+ "b331e825-abad-4c52-b034-fb7aead10c89": {
+  "condition": "Ductal carcinoma in situ (DCIS)",
+  "system": "female-reproductive",
+  "topic": "Breast cancer",
+  "key_concept": "DCIS: malignant cells confined by intact basement membrane"
+ },
+ "9a8620c1-4489-4730-bb83-70b65e2b030d": {
+  "condition": "Invasive lobular carcinoma of the breast",
+  "system": "female-reproductive",
+  "topic": "Breast cancer",
+  "key_concept": "Invasive lobular carcinoma: E-cadherin loss, single-file cells"
+ },
+ "2bb21e78-3a07-4d7f-8dbf-f7796899a547": {
+  "condition": "Lactational bacterial mastitis",
+  "system": "female-reproductive",
+  "topic": "Mastitis",
+  "key_concept": "Lactational mastitis from Staphylococcus aureus via nipple fissure"
+ },
+ "4afdce9b-8c4d-42cb-925d-ab6c26cabbe9": {
+  "condition": "Periductal mastitis (nonpuerperal subareolar abscess)",
+  "system": "female-reproductive",
+  "topic": "Mastitis",
+  "key_concept": "Periductal mastitis: squamous metaplasia in smokers"
+ },
+ "d8305cc5-05f2-4321-be37-2500a460d0d9": {
+  "condition": "Natural menopause",
+  "system": "female-reproductive",
+  "topic": "Menopause",
+  "key_concept": "Postmenopausal estrone from adipose aromatization",
+  "category": "Fertility, contraception & menopause"
+ },
+ "020bf94f-2466-4325-84f0-695dbcbe7eac": {
+  "condition": "Müllerian agenesis",
+  "system": "female-reproductive",
+  "topic": "Mullerian anomalies",
+  "key_concept": "Mullerian agenesis: absent uterus, normal ovaries"
+ },
+ "6cb727d6-b032-40a7-bb67-33f535b279ba": {
+  "condition": "Imperforate hymen",
+  "system": "female-reproductive",
+  "topic": "Mullerian anomalies",
+  "key_concept": "Imperforate hymen: cyclic pain with primary amenorrhea",
+  "category": "Structural & congenital disorders"
+ },
+ "13847379-0019-4abc-85c9-8fe03f0d24e4": {
+  "condition": "Müllerian agenesis (Mayer-Rokitansky-Küster-Hauser syndrome)",
+  "system": "female-reproductive",
+  "topic": "Mullerian anomalies",
+  "key_concept": "MRKH syndrome: failed paramesonephric duct development",
+  "category": "Structural & congenital disorders"
+ },
+ "989d5325-97fd-4873-989a-761acdc25a25": {
+  "condition": "Septate uterus",
+  "system": "female-reproductive",
+  "topic": "Mullerian anomalies",
+  "key_concept": "Septate uterus: failed septal resorption",
+  "category": "Structural & congenital disorders"
+ },
+ "e74f9783-d574-4647-b57b-330bee481e2e": {
+  "condition": "Ovarian epithelial carcinoma",
+  "system": "female-reproductive",
+  "topic": "Ovarian neoplasms",
+  "key_concept": "Oral contraceptives lower ovarian cancer risk by suppressing ovulation",
+  "free": true,
+  "category": "Neoplasms"
+ },
+ "33574f97-3b77-4f42-a605-c572216953dc": {
+  "condition": "Ovarian torsion",
+  "system": "female-reproductive",
+  "topic": "Ovarian torsion",
+  "key_concept": "Ovarian torsion obstructs venous outflow first"
+ },
+ "95bf9927-de91-405e-93f2-726bd689580f": {
+  "condition": "Fitz-Hugh-Curtis syndrome due to pelvic inflammatory disease",
+  "system": "female-reproductive",
+  "topic": "Pelvic inflammatory disease",
+  "key_concept": "Fitz-Hugh-Curtis syndrome: perihepatitis from PID",
+  "category": "Infectious & inflammatory disorders"
+ },
+ "af3dcfd4-ff03-4b2e-a379-ed828afd2497": {
+  "condition": "Stress urinary incontinence",
+  "system": "female-reproductive",
+  "topic": "Urinary incontinence",
+  "key_concept": "Stress incontinence from urethral hypermobility",
+  "free": true
+ },
+ "ebe57b8e-8773-4f9e-85f6-f4718345a799": {
+  "condition": "Bacterial vaginosis",
+  "system": "female-reproductive",
+  "topic": "Vaginitis",
+  "key_concept": "Bacterial vaginosis: clue cells, loss of lactobacilli",
+  "category": "Infectious & inflammatory disorders"
+ },
+ "dd999c78-9cb5-4a17-919a-3b5ea9b0ef56": {
+  "condition": "Celiac disease with selective IgA deficiency",
+  "system": "gastrointestinal",
+  "topic": "Celiac disease",
+  "key_concept": "IgA deficiency causes false-negative IgA tTG serology"
+ },
+ "ebc3d121-7cdd-4057-b7ef-01dae3e2ecea": {
+  "condition": "Sporadic mismatch-repair-deficient colorectal adenocarcinoma due to MLH1 promoter hypermethylation",
+  "system": "gastrointestinal",
+  "topic": "Colorectal cancer",
+  "key_concept": "MLH1 hypermethylation with BRAF V600E means sporadic, not Lynch"
+ },
+ "2c82f30a-65cb-4f70-aa02-73a4e8a192f4": {
+  "condition": "Cholera",
+  "system": "gastrointestinal",
+  "topic": "Diarrheal infections",
+  "key_concept": "Cholera spares sodium-glucose cotransport, so oral rehydration works"
+ },
+ "b1e5c6d6-8c81-4420-be27-8f4ac8f784b3": {
+  "condition": "Eosinophilic esophagitis",
+  "system": "gastrointestinal",
+  "topic": "Esophageal disorders",
+  "key_concept": "Eosinophilic esophagitis: at least 15 eosinophils per HPF",
+  "free": true
+ },
+ "76870589-8041-4dab-b6ad-7aff0f419d31": {
+  "condition": "Gastroesophageal reflux disease (GERD)",
+  "system": "gastrointestinal",
+  "topic": "Esophageal disorders",
+  "key_concept": "Transient LES relaxations cause GERD"
+ },
+ "e64c5098-db54-4773-9870-912fbceedda2": {
+  "condition": "Zenker diverticulum",
+  "system": "gastrointestinal",
+  "topic": "Esophageal disorders",
+  "key_concept": "Zenker diverticulum: false diverticulum at Killian triangle"
+ },
+ "b821d7a3-bb2f-493c-9ca3-ef031946aaee": {
+  "condition": "Candida esophagitis",
+  "system": "gastrointestinal",
+  "topic": "Esophageal disorders",
+  "key_concept": "Candida esophagitis: yeast and pseudohyphae invading mucosa"
+ },
+ "5c330bed-71b5-44d9-bd03-21e55dcb5955": {
+  "condition": "Cholesterol cholelithiasis associated with terminal ileal disease or resection",
+  "system": "gastrointestinal",
+  "topic": "Gallstone disease",
+  "key_concept": "Ileal resection depletes bile acids, causing cholesterol stones"
+ },
+ "d78e23f9-66b1-4b0f-99e2-391b87ebd498": {
+  "condition": "Gastric mucosa-associated lymphoid tissue (MALT) lymphoma",
+  "system": "gastrointestinal",
+  "topic": "Gastric neoplasms",
+  "key_concept": "H. pylori-driven gastric MALT lymphoma regresses after eradication"
+ },
+ "0f2a7f33-80fb-458f-b982-feb8a6bac13d": {
+  "condition": "Helicobacter pylori-associated gastric MALT lymphoma",
+  "system": "gastrointestinal",
+  "topic": "Gastric neoplasms",
+  "key_concept": "MALT lymphoma depends on H. pylori-specific T-cell help"
+ },
+ "5d29f993-a106-4ac7-812e-9b27a38b788d": {
+  "condition": "Autoimmune metaplastic atrophic gastritis",
+  "system": "gastrointestinal",
+  "topic": "Gastritis",
+  "key_concept": "Autoimmune gastritis: iron deficiency precedes B12 deficiency"
+ },
+ "03664723-d495-4626-9deb-0bda217e974f": {
+  "condition": "Autoimmune metaplastic atrophic gastritis",
+  "system": "gastrointestinal",
+  "topic": "Gastritis",
+  "key_concept": "Achlorhydria causes compensatory hypergastrinemia"
+ },
+ "0942d28f-3d1b-4a18-9581-8f4d67804d6c": {
+  "condition": "Autoimmune metaplastic atrophic gastritis with vitamin B12 deficiency (pernicious anemia)",
+  "system": "gastrointestinal",
+  "topic": "Gastritis",
+  "key_concept": "Pernicious anemia from autoimmune parietal-cell loss"
+ },
+ "38780c5f-5d1f-455a-b4b0-c6121a6ca5e9": {
+  "condition": "Budd-Chiari syndrome",
+  "system": "gastrointestinal",
+  "topic": "Hepatic vascular disorders",
+  "key_concept": "Budd-Chiari syndrome: hepatic venous outflow obstruction"
+ },
+ "4a73ffbe-45d3-4ca9-ab5d-a11a3616ab7e": {
+  "condition": "Femoral hernia",
+  "system": "gastrointestinal",
+  "topic": "Hernias",
+  "key_concept": "Femoral hernia lies below the inguinal ligament"
+ },
+ "326e69eb-418e-484b-b163-84db2895fccf": {
+  "condition": "Crohn disease",
+  "system": "gastrointestinal",
+  "topic": "Inflammatory bowel disease",
+  "key_concept": "Crohn disease: transmural inflammation with fistulas"
+ },
+ "55d72cd3-f951-40a9-bfd9-c1fa0a67afac": {
+  "condition": "Oropharyngeal candidiasis (oral thrush)",
+  "system": "gastrointestinal",
+  "topic": "Oral candidiasis",
+  "key_concept": "Inhaled corticosteroids cause oral thrush"
+ },
+ "71df0033-13b7-4265-bfa1-204fb390d43c": {
+  "condition": "Pseudomembranous oral candidiasis associated with inhaled corticosteroid deposition",
+  "system": "gastrointestinal",
+  "topic": "Oral candidiasis",
+  "key_concept": "Spacer and mouth rinse reduce inhaled steroid thrush"
+ },
+ "0f2d410e-4a15-472f-816c-0fa42e630007": {
+  "condition": "Oral leukoplakia",
+  "system": "gastrointestinal",
+  "topic": "Oral cavity disorders",
+  "key_concept": "Leukoplakia is a premalignant, non-scrapable white plaque"
+ },
+ "d7908bf4-ebdb-4373-8f23-022cdfac0a3d": {
+  "condition": "Chronic pancreatitis with exocrine pancreatic insufficiency",
+  "system": "gastrointestinal",
+  "topic": "Pancreatitis",
+  "key_concept": "Chronic pancreatitis causes steatorrhea via enzyme insufficiency"
+ },
+ "d3ef7243-a501-4850-ab74-f9447e99edc2": {
+  "condition": "Juvenile polyposis syndrome",
+  "system": "gastrointestinal",
+  "topic": "Polyposis syndromes",
+  "key_concept": "Juvenile polyposis: hamartomatous polyps, SMAD4/BMPR1A"
+ },
+ "860bc598-cbc3-4891-a0bc-06ca717ee540": {
+  "condition": "Familial adenomatous polyposis",
+  "system": "gastrointestinal",
+  "topic": "Polyposis syndromes",
+  "key_concept": "FAP: germline APC loss plus somatic second hit"
+ },
+ "a204eea2-fcfb-463e-b7d5-7ed7363d71ab": {
+  "condition": "Splenic vein thrombosis causing left-sided portal hypertension",
+  "system": "gastrointestinal",
+  "topic": "Portal hypertension",
+  "key_concept": "Splenic vein thrombosis causes isolated gastric varices",
+  "free": true
+ },
+ "3609b61a-f076-4373-9605-f010670819bf": {
+  "condition": "Portal hypertensive esophageal varices",
+  "system": "gastrointestinal",
+  "topic": "Portal hypertension",
+  "key_concept": "Esophageal varices from portosystemic collaterals"
+ },
+ "4e4b4b61-723d-4a64-9c78-0c776d8a23da": {
+  "condition": "Chronic hepatitis B",
+  "system": "gastrointestinal",
+  "topic": "Viral hepatitis",
+  "key_concept": "Hepatitis B liver injury is immune-mediated"
+ },
+ "9357b563-70f6-4c32-8c04-add677893f43": {
+  "condition": "Wilson disease",
+  "system": "gastrointestinal",
+  "topic": "Wilson disease",
+  "key_concept": "Wilson disease: ATP7B copper transport defect"
+ },
+ "0f0d77c7-1415-4fca-a569-5ba75ec07086": {
+  "condition": "Tetanus",
+  "system": "general-principles",
+  "topic": "Bacterial toxins",
+  "key_concept": "Tetanospasmin blocks GABA and glycine release"
+ },
+ "9b3a0053-a24d-418f-9587-8cbb0a7569ea": {
+  "condition": "Respiratory diphtheria",
+  "system": "general-principles",
+  "topic": "Bacterial toxins",
+  "key_concept": "Diphtheria toxin ADP-ribosylates elongation factor 2"
+ },
+ "63dc06cd-346d-4ba3-b896-c99e2204292c": {
+  "condition": "Primary trimethylaminuria due to impaired FMO3 activity",
+  "system": "general-principles",
+  "topic": "Biochemistry of drug metabolism",
+  "key_concept": "Trimethylaminuria: FMO3 deficiency"
+ },
+ "cf5a2045-e091-48f1-95c2-9bba0636b066": {
+  "condition": "Age-related oocyte aneuploidy",
+  "system": "general-principles",
+  "topic": "Chromosomal disorders",
+  "key_concept": "Maternal age raises meiotic nondisjunction risk"
+ },
+ "adc9059d-0640-48f5-8342-0f82bbc4043d": {
+  "condition": "Vitamin A deficiency",
+  "system": "general-principles",
+  "topic": "Fat-soluble vitamins",
+  "key_concept": "Vitamin A deficiency impairs rhodopsin regeneration",
+  "free": true
+ },
+ "5313fdcc-920a-4e2a-b27e-9693021be734": {
+  "condition": "Angelman syndrome",
+  "system": "general-principles",
+  "topic": "Genomic imprinting",
+  "key_concept": "Angelman syndrome: loss of maternal UBE3A"
+ },
+ "9909c43b-4726-4f71-b5c9-e69b25e00af6": {
+  "condition": "Fanconi anemia",
+  "system": "general-principles",
+  "topic": "Mendelian inheritance",
+  "key_concept": "Autosomal recessive recurrence risk is 25%"
+ },
+ "84229121-58df-45ce-95ad-e0c8acb4fb4f": {
+  "condition": "Acute intermittent porphyria",
+  "system": "general-principles",
+  "topic": "Porphyrias",
+  "key_concept": "Acute intermittent porphyria: porphobilinogen deaminase deficiency",
+  "free": true
+ },
+ "a3b06764-f19b-4935-978e-208ae37592ae": {
+  "condition": "Kwashiorkor",
+  "system": "general-principles",
+  "topic": "Protein-energy malnutrition",
+  "key_concept": "Kwashiorkor fatty liver from impaired VLDL export"
+ },
+ "db99f8bc-f08c-4dc7-8f4e-2380eda639f5": {
+  "condition": "Fragile X syndrome",
+  "system": "general-principles",
+  "topic": "Trinucleotide repeat disorders",
+  "key_concept": "Fragile X: CGG expansion silences FMR1 by methylation"
+ },
+ "205d1db5-0191-470d-ad16-e39947999de4": {
+  "condition": "Fragile X syndrome",
+  "system": "general-principles",
+  "topic": "Trinucleotide repeat disorders",
+  "key_concept": "Full FMR1 mutation causes FMRP deficiency"
+ },
+ "e3a30834-a08a-4f78-abfe-f1af20c62d82": {
+  "condition": "Vitamin C deficiency",
+  "system": "general-principles",
+  "topic": "Water-soluble vitamins",
+  "key_concept": "Vitamin C deficiency impairs collagen hydroxylation"
+ },
+ "dfdcf83f-d88a-4178-99f1-99596b20fb95": {
+  "condition": "Inflammatory fever",
+  "system": "immune",
+  "topic": "Cytokines and inflammation",
+  "key_concept": "Prostaglandin E2 resets the hypothalamic set point in fever"
+ },
+ "d6fa4a12-99d6-4f4c-b193-170c8de83477": {
+  "condition": "Congenital thymic aplasia (eg, DiGeorge syndrome)",
+  "system": "immune",
+  "topic": "DiGeorge syndrome",
+  "key_concept": "DiGeorge syndrome: thymic aplasia causes T-cell deficiency"
+ },
+ "ec065889-0d26-46d9-b4cd-f23bf9327643": {
+  "condition": "DiGeorge syndrome (congenital thymic aplasia)",
+  "system": "immune",
+  "topic": "DiGeorge syndrome",
+  "key_concept": "DiGeorge syndrome (third and fourth pharyngeal pouches)"
+ },
+ "04bd7a01-22f1-4c5f-9d8a-5e47f231c359": {
+  "condition": "HIV-1 infection",
+  "system": "immune",
+  "topic": "HIV infection",
+  "key_concept": "Integrase inserts HIV DNA into the host genome"
+ },
+ "3cffe86b-97bc-4da8-94da-d35f09f3eb0d": {
+  "condition": "Disseminated histoplasmosis in advanced HIV infection",
+  "system": "immune",
+  "topic": "HIV infection",
+  "key_concept": "Disseminated histoplasmosis reflects failed Th1 macrophage activation"
+ },
+ "0357c4a2-280d-4bf9-8905-056a2487d081": {
+  "condition": "Hereditary angioedema due to C1 esterase inhibitor deficiency",
+  "system": "immune",
+  "topic": "Hereditary angioedema",
+  "key_concept": "C1 inhibitor deficiency: bradykinin-mediated angioedema"
+ },
+ "893e865d-aa09-478c-aa7c-a6b22b5de291": {
+  "condition": "Goodpasture syndrome (anti–glomerular basement membrane disease)",
+  "system": "immune",
+  "topic": "Hypersensitivity reactions",
+  "key_concept": "Goodpasture syndrome: anti-type IV collagen antibodies"
+ },
+ "d71fe86a-a78d-4312-85ae-759ed522c770": {
+  "condition": "Hypersensitivity pneumonitis (extrinsic allergic alveolitis)",
+  "system": "immune",
+  "topic": "Hypersensitivity reactions",
+  "key_concept": "Hypersensitivity pneumonitis: mixed type III/IV reaction"
+ },
+ "a20d4f48-eb51-4415-a546-c5c25dfd37e5": {
+  "condition": "Serum sickness",
+  "system": "immune",
+  "topic": "Hypersensitivity reactions",
+  "key_concept": "Serum sickness: type III immune-complex reaction",
+  "category": "Immunologically mediated disorders"
+ },
+ "837a1c27-a9eb-4ef6-b8aa-e56617971c10": {
+  "condition": "Allergic rhinitis",
+  "system": "immune",
+  "topic": "Hypersensitivity reactions",
+  "key_concept": "Allergic rhinitis is IgE-mediated type I hypersensitivity",
+  "category": "Immunologically mediated disorders"
+ },
+ "c5d3133a-1f80-48b2-8a9e-f23c1b826e61": {
+  "condition": "Allergic rhinitis",
+  "system": "immune",
+  "topic": "Hypersensitivity reactions",
+  "key_concept": "Allergen cross-links IgE on mast cells",
+  "free": true,
+  "category": "Immunologically mediated disorders"
+ },
+ "67eae925-938c-405b-a9cf-27ae2f0eddfb": {
+  "condition": "Adenosine deaminase deficiency causing severe combined immunodeficiency",
+  "system": "immune",
+  "topic": "Immunodeficiency disorders",
+  "key_concept": "ADA deficiency: toxic dATP accumulation in lymphocytes"
+ },
+ "550f5644-2447-4f75-acbf-767ddd3d3249": {
+  "condition": "Chronic granulomatous disease",
+  "system": "immune",
+  "topic": "Immunodeficiency disorders",
+  "key_concept": "Chronic granulomatous disease: NADPH oxidase defect"
+ },
+ "eb96bded-ce6a-4828-8284-300a67c22154": {
+  "condition": "Common variable immunodeficiency",
+  "system": "immune",
+  "topic": "Immunodeficiency disorders",
+  "key_concept": "CVID: normal B-cell count, defective differentiation to plasma cells"
+ },
+ "7bc39c80-e5a4-41c0-b66d-8e25fdfae33c": {
+  "condition": "Leukocyte adhesion deficiency type II (LAD-II)",
+  "system": "immune",
+  "topic": "Immunodeficiency disorders",
+  "key_concept": "LAD-II: defective fucosylation of selectin ligands"
+ },
+ "4b01653b-8465-48dc-9b30-68bf48b28085": {
+  "condition": "Selective IgA deficiency",
+  "system": "immune",
+  "topic": "Immunodeficiency disorders",
+  "key_concept": "Use IgG-based celiac serology in IgA deficiency",
+  "free": true
+ },
+ "89ac5453-c945-4a06-a6fb-6dcd7c1f9d6c": {
+  "condition": "Chronic granulomatous disease",
+  "system": "immune",
+  "topic": "Immunodeficiency disorders",
+  "key_concept": "CGD: catalase-positive infections, absent respiratory burst"
+ },
+ "b773fffd-7d20-42b5-b9c2-6ff11066f2ae": {
+  "condition": "Jarisch-Herxheimer reaction",
+  "system": "immune",
+  "topic": "Jarisch-Herxheimer reaction",
+  "key_concept": "Jarisch-Herxheimer reaction is cytokine release, not penicillin allergy"
+ },
+ "01b8f94e-db9d-426b-b089-761b50925b88": {
+  "condition": "Acute graft-versus-host disease after allogeneic hematopoietic stem-cell transplantation",
+  "system": "immune",
+  "topic": "Transplant immunology",
+  "key_concept": "Graft-versus-host disease: donor T cells attack host tissue"
+ },
+ "ef0c99e1-7ca0-4518-8b4b-f2fe7761e99e": {
+  "condition": "Chronic allograft rejection with graft vasculopathy",
+  "system": "immune",
+  "topic": "Transplant immunology",
+  "key_concept": "Chronic rejection via indirect allorecognition"
+ },
+ "7f270186-e194-471c-94f6-44ca3d0330cf": {
+  "condition": "Bilateral cryptorchidism with impaired spermatogenesis",
+  "system": "male-reproductive",
+  "topic": "Cryptorchidism",
+  "key_concept": "Cryptorchidism impairs spermatogenesis, spares testosterone"
+ },
+ "acf93768-da8d-45b4-b1e0-d1fb8438983c": {
+  "condition": "Undescended testicle (cryptorchidism)",
+  "system": "male-reproductive",
+  "topic": "Cryptorchidism",
+  "key_concept": "Undescended testis arrested near the internal inguinal ring"
+ },
+ "737c3f21-8604-4b8a-8f2d-1330268b8a85": {
+  "condition": "Undescended testicle (cryptorchidism)",
+  "system": "male-reproductive",
+  "topic": "Cryptorchidism",
+  "key_concept": "Higher temperature impairs germ cells in undescended testis"
+ },
+ "4efab99d-9027-441e-bb9a-a6ec5d0a823c": {
+  "condition": "Physiologic pubertal gynecomastia",
+  "system": "male-reproductive",
+  "topic": "Gynecomastia",
+  "key_concept": "Physiologic pubertal gynecomastia resolves with reassurance"
+ },
+ "12112a4d-163f-4f7e-87df-7ed67b751b97": {
+  "condition": "Klinefelter syndrome",
+  "system": "male-reproductive",
+  "topic": "Klinefelter syndrome",
+  "key_concept": "Klinefelter 47,XXY has one Barr body",
+  "free": true
+ },
+ "831a1480-73b9-499f-9d3f-272d00472499": {
+  "condition": "Testicular seminoma",
+  "system": "male-reproductive",
+  "topic": "Testicular tumors",
+  "key_concept": "Elevated AFP excludes pure seminoma",
+  "free": true
+ },
+ "c1933e60-531d-4248-9390-bc4923018e34": {
+  "condition": "Elder abuse",
+  "system": "multisystem",
+  "topic": "Abuse",
+  "key_concept": "Patterned bruising on protected areas suggests elder abuse"
+ },
+ "e4deabb9-402f-402e-9660-1cb09d25ed1a": {
+  "condition": "Acetaminophen toxicity causing acute hepatic injury",
+  "system": "multisystem",
+  "topic": "Acetaminophen toxicity",
+  "key_concept": "NAPQI depletes glutathione, causing centrilobular necrosis"
+ },
+ "e3bd8c3e-8843-43e9-8e07-5451915bd0be": {
+  "condition": "High-anion-gap metabolic acidosis with superimposed respiratory acidosis",
+  "system": "multisystem",
+  "topic": "Acid-base disorders",
+  "key_concept": "Winter formula identifies a superimposed respiratory acidosis"
+ },
+ "57bfdaab-b1e2-4725-8877-1b9f2014451c": {
+  "condition": "Amyloidosis",
+  "system": "multisystem",
+  "topic": "Amyloidosis",
+  "key_concept": "Amyloid: beta-pleated sheets with apple-green birefringence"
+ },
+ "3b61b849-aed1-4cce-bf97-977c944d1f88": {
+  "condition": "Primary blast injury",
+  "system": "multisystem",
+  "topic": "Blast injury",
+  "key_concept": "Primary blast injury damages air-filled organs",
+  "free": true
+ },
+ "5ef8df8b-2059-4895-9520-e8203f26328e": {
+  "condition": "High-voltage electrical injury",
+  "system": "multisystem",
+  "topic": "Burns and electrical injury",
+  "key_concept": "Electrical injury causes deep muscle necrosis under small burns"
+ },
+ "8ee8cc6b-62bd-452e-96ca-b5e5266a3354": {
+  "condition": "Cyanide toxicity from smoke inhalation after an enclosed-space blast",
+  "system": "multisystem",
+  "topic": "Cyanide and carbon monoxide poisoning",
+  "key_concept": "Cyanide: lactic acidosis with high venous oxygen saturation"
+ },
+ "6bd924c8-be08-4080-a021-4f43c37f22b1": {
+  "condition": "Acute cyanide poisoning from smoke inhalation",
+  "system": "multisystem",
+  "topic": "Cyanide and carbon monoxide poisoning",
+  "key_concept": "Cyanide poisoning in enclosed-space fires"
+ },
+ "54a9e322-93d2-4822-80ff-91d3ec09acb9": {
+  "condition": "Carbon monoxide poisoning",
+  "system": "multisystem",
+  "topic": "Cyanide and carbon monoxide poisoning",
+  "key_concept": "Carbon monoxide lowers oxygen content despite normal PaO2"
+ },
+ "54e6fd6f-cd96-464f-86c4-cc4336e91113": {
+  "condition": "Neurotoxic snake envenomation",
+  "system": "multisystem",
+  "topic": "Envenomation",
+  "key_concept": "Pressure immobilization slows lymphatic venom spread",
+  "category": "Toxins & environmental injury"
+ },
+ "89a4adb5-df95-421d-9369-e1b6cc2bcebe": {
+  "condition": "Pit viper envenomation",
+  "system": "multisystem",
+  "topic": "Envenomation",
+  "key_concept": "Pit viper venom causes consumptive coagulopathy",
+  "category": "Toxins & environmental injury"
+ },
+ "ba3567fb-cc17-46cd-bbfc-4dd291af7f21": {
+  "condition": "Fat embolism syndrome after femoral shaft fracture",
+  "system": "multisystem",
+  "topic": "Fat embolism syndrome",
+  "key_concept": "Fat embolism: hypoxemia, confusion and petechiae after fracture"
+ },
+ "42d1682b-c238-43b3-8d57-1416a687f376": {
+  "condition": "Fat embolism syndrome after long-bone fracture",
+  "system": "multisystem",
+  "topic": "Fat embolism syndrome",
+  "key_concept": "Fat embolism syndrome after long-bone fracture"
+ },
+ "b366f5cb-449a-4704-9bbd-da67c3625dfd": {
+  "condition": "Fat embolism syndrome",
+  "system": "multisystem",
+  "topic": "Fat embolism syndrome",
+  "key_concept": "Fat embolism syndrome after long-bone fracture"
+ },
+ "ef8b5443-9d74-4ea1-85f3-8202de09fb36": {
+  "condition": "Small-cell lung carcinoma–associated syndrome of inappropriate antidiuretic hormone secretion (SIADH)",
+  "system": "multisystem",
+  "topic": "Paraneoplastic syndromes",
+  "key_concept": "Small cell carcinoma causes SIADH via ectopic ADH",
+  "category": "Paraneoplastic & inherited cancer syndromes"
+ },
+ "9fdd2a88-a607-4dde-8872-29775c0dcab8": {
+  "condition": "Magnesium deficiency causing refractory hypokalemia",
+  "system": "multisystem",
+  "topic": "Potassium and magnesium disorders",
+  "key_concept": "Hypomagnesemia causes refractory hypokalemia via ROMK"
+ },
+ "25607d49-9203-49af-85e1-2f97836ed5f4": {
+  "condition": "Hyperventilation syndrome",
+  "system": "multisystem",
+  "topic": "Respiratory alkalosis",
+  "key_concept": "Alkalosis lowers ionized calcium, causing carpopedal spasm",
+  "free": true
+ },
+ "0ac231dc-b63c-4e8b-aa7b-8f7cd8eb49ae": {
+  "condition": "Neurogenic shock following acute spinal cord injury",
+  "system": "multisystem",
+  "topic": "Shock",
+  "key_concept": "Neurogenic shock: hypotension with bradycardia",
+  "category": "Shock & multiple trauma"
+ },
+ "d8ac4c14-978a-4132-a111-624e5d91c7a6": {
+  "condition": "Hypernatremia from extrarenal free-water loss",
+  "system": "multisystem",
+  "topic": "Sodium and water disorders",
+  "key_concept": "Hypernatremia with concentrated urine means extrarenal water loss"
+ },
+ "4ee78d97-3497-4a09-8595-a43696b9480e": {
+  "condition": "Coccidioidomycosis",
+  "system": "multisystem",
+  "topic": "Systemic mycoses",
+  "key_concept": "Coccidioides: inhaled arthroconidia form spherules in tissue"
+ },
+ "f0d40250-5ba9-430e-a03e-940c99f5a2ed": {
+  "condition": "Tumor lysis syndrome",
+  "system": "multisystem",
+  "topic": "Tumor lysis syndrome",
+  "key_concept": "Rasburicase degrades existing uric acid; allopurinol does not"
+ },
+ "60a1ca87-a2f7-4d4f-a63c-acd0f502922f": {
+  "condition": "Tumor lysis syndrome",
+  "system": "multisystem",
+  "topic": "Tumor lysis syndrome",
+  "key_concept": "Hyperphosphatemia causes hypocalcemia in tumor lysis syndrome"
+ },
+ "64801fa1-4cc3-4178-8412-036550444cd9": {
+  "condition": "Myositis ossificans",
+  "system": "musculoskeletal",
+  "topic": "Bone lesions",
+  "key_concept": "Myositis ossificans: zonal peripheral ossification"
+ },
+ "b0c58652-7a6a-41a2-942e-310c54c6ac32": {
+  "condition": "Acute compartment syndrome",
+  "system": "musculoskeletal",
+  "topic": "Compartment syndrome",
+  "key_concept": "Compartment pressure collapses the capillary perfusion gradient"
+ },
+ "06823248-18e2-4c47-a876-a2fbe01e761d": {
+  "condition": "Calcium pyrophosphate deposition disease (CPPD)",
+  "system": "musculoskeletal",
+  "topic": "Crystal arthropathies",
+  "key_concept": "Calcium pyrophosphate crystals (pseudogout)"
+ },
+ "a3fbf00b-1126-4d67-8209-f8b36d3fa5bf": {
+  "condition": "Hereditary hemochromatosis arthropathy",
+  "system": "musculoskeletal",
+  "topic": "Hereditary hemochromatosis",
+  "key_concept": "Hemochromatosis arthropathy of the second and third MCP joints"
+ },
+ "b3f08e84-f710-4ad6-8349-fd44f97edd69": {
+  "condition": "Malignant hyperthermia",
+  "system": "musculoskeletal",
+  "topic": "Malignant hyperthermia",
+  "key_concept": "Dantrolene blocks RyR1 calcium release"
+ },
+ "fc3d47dd-a4dd-42fd-8d46-95024f693061": {
+  "condition": "Carnitine palmitoyltransferase II deficiency",
+  "system": "musculoskeletal",
+  "topic": "Metabolic myopathies",
+  "key_concept": "CPT II deficiency: impaired long-chain fatty acid oxidation"
+ },
+ "5f1356c8-5018-48e1-8529-ecc7408cfa1b": {
+  "condition": "McArdle disease (glycogen storage disease type V)",
+  "system": "musculoskeletal",
+  "topic": "Metabolic myopathies",
+  "key_concept": "McArdle disease: no exercise-induced lactate rise"
+ },
+ "d38a0f59-2111-4c59-acee-6564feb75c1e": {
+  "condition": "McArdle disease (muscle glycogen phosphorylase deficiency)",
+  "system": "musculoskeletal",
+  "topic": "Metabolic myopathies",
+  "key_concept": "McArdle disease: second-wind phenomenon"
+ },
+ "3ebe861e-c7e0-4725-a2c4-b650fc863a40": {
+  "condition": "Duchenne muscular dystrophy",
+  "system": "musculoskeletal",
+  "topic": "Muscular dystrophies",
+  "key_concept": "Succinylcholine causes hyperkalemia in Duchenne muscular dystrophy",
+  "free": true
+ },
+ "d026ddad-85eb-4b6a-8f0d-8744d7ac5029": {
+  "condition": "Osteogenesis imperfecta",
+  "system": "musculoskeletal",
+  "topic": "Osteogenesis imperfecta",
+  "key_concept": "Osteogenesis imperfecta: defective type I collagen"
+ },
+ "d7f611e1-e631-4950-916f-44e11f5fadc9": {
+  "condition": "Vitamin D deficiency causing secondary hyperparathyroidism and osteomalacia",
+  "system": "musculoskeletal",
+  "topic": "Osteomalacia and rickets",
+  "key_concept": "Vitamin D deficiency causes secondary hyperparathyroidism and hypophosphatemia"
+ },
+ "0884dd61-14b7-416e-be76-471a7c5b101e": {
+  "condition": "Vitamin D deficiency osteomalacia",
+  "system": "musculoskeletal",
+  "topic": "Osteomalacia and rickets",
+  "key_concept": "Osteomalacia: defective osteoid mineralization"
+ },
+ "12d552a8-fb32-4a79-8f9a-3e4820dea1d1": {
+  "condition": "Atypical femoral fracture associated with prolonged bisphosphonate therapy",
+  "system": "musculoskeletal",
+  "topic": "Osteoporosis",
+  "key_concept": "Long-term bisphosphonates cause atypical femoral fractures"
+ },
+ "d9e28f47-680a-4778-9932-76463b87b720": {
+  "condition": "Paget disease of bone (osteitis deformans)",
+  "system": "musculoskeletal",
+  "topic": "Paget disease of bone",
+  "key_concept": "Paget disease: high alkaline phosphatase, normal calcium"
+ },
+ "74fc550a-32e4-450f-8d99-c69f04dcd815": {
+  "condition": "Sjögren syndrome",
+  "system": "musculoskeletal",
+  "topic": "Sjogren syndrome",
+  "key_concept": "Sjogren syndrome: lymphocytic destruction of salivary glands",
+  "free": true
+ },
+ "8989e779-f0b5-4603-ac56-7a0659c6951c": {
+  "condition": "Achondroplasia",
+  "system": "musculoskeletal",
+  "topic": "Skeletal dysplasias",
+  "key_concept": "Achondroplasia: activating FGFR3 mutation"
+ },
+ "cd5ff1be-770b-4e8b-badd-6c2d85da8847": {
+  "condition": "Alzheimer disease",
+  "system": "nervous",
+  "topic": "Alzheimer disease",
+  "key_concept": "Tau burden tracks cognitive decline better than amyloid"
+ },
+ "ef1c6fce-0a61-4b38-b05c-b4461f0971fe": {
+  "condition": "Brain metastasis-associated peritumoral edema",
+  "system": "nervous",
+  "topic": "Brain tumors",
+  "key_concept": "Vasogenic edema from blood-brain barrier disruption"
+ },
+ "75ca20a0-2767-4b59-beb1-e06d2f480170": {
+  "condition": "Locked-in syndrome due to ventral pontine injury",
+  "system": "nervous",
+  "topic": "Brainstem stroke syndromes",
+  "key_concept": "Locked-in syndrome: ventral pontine lesion spares consciousness"
+ },
+ "3906e121-e542-4996-8e06-53d8aa1970f3": {
+  "condition": "Acquired middle-ear cholesteatoma",
+  "system": "nervous",
+  "topic": "Disorders of the ear",
+  "key_concept": "Cholesteatoma: keratinizing squamous epithelium erodes ossicles"
+ },
+ "541760aa-83e1-407f-aa41-4b63c05dac75": {
+  "condition": "Acute otitis media",
+  "system": "nervous",
+  "topic": "Disorders of the ear",
+  "key_concept": "Eustachian tube dysfunction predisposes to acute otitis media",
+  "free": true
+ },
+ "2dbba660-c69c-497d-a249-61bd47e1ecae": {
+  "condition": "Auditory neuropathy spectrum disorder",
+  "system": "nervous",
+  "topic": "Disorders of the ear",
+  "key_concept": "Auditory neuropathy: normal otoacoustic emissions, abnormal ABR"
+ },
+ "3344cc23-690a-49fc-af35-cee76a8bd03b": {
+  "condition": "Noise-induced hearing loss",
+  "system": "nervous",
+  "topic": "Disorders of the ear",
+  "key_concept": "Noise-induced hearing loss: 4 kHz notch from hair-cell damage"
+ },
+ "780ab98d-1f00-454f-9b89-acb4a7cc944f": {
+  "condition": "Presbycusis (age-related sensorineural hearing loss)",
+  "system": "nervous",
+  "topic": "Disorders of the ear",
+  "key_concept": "Presbycusis: symmetric high-frequency sensorineural loss"
+ },
+ "7eb2d2d9-28bb-4dc9-ba79-d5cc090205d2": {
+  "condition": "Angle-recession glaucoma",
+  "system": "nervous",
+  "topic": "Glaucoma",
+  "key_concept": "Angle recession impairs trabecular outflow after blunt trauma"
+ },
+ "381edb67-89cc-4c78-9313-0dd64150759d": {
+  "condition": "Acute hepatic encephalopathy with cerebral edema",
+  "system": "nervous",
+  "topic": "Hepatic encephalopathy",
+  "key_concept": "Astrocyte glutamine accumulation causes cerebral edema"
+ },
+ "48f08503-502d-4cc3-8b13-457c0967285e": {
+  "condition": "Acute hyperammonemic encephalopathy with cerebral edema",
+  "system": "nervous",
+  "topic": "Hepatic encephalopathy",
+  "key_concept": "Astrocyte glutamine synthesis drives hyperammonemic swelling"
+ },
+ "6e489228-dc5c-4b51-b75a-e82e5c89a902": {
+  "condition": "Hereditary neuropathy with liability to pressure palsies",
+  "system": "nervous",
+  "topic": "Hereditary neuropathies",
+  "key_concept": "PMP22 deletion causes hereditary pressure palsies"
+ },
+ "b855d76e-ae1a-422e-8944-5d0b24502d76": {
+  "condition": "Subacute subdural hematoma",
+  "system": "nervous",
+  "topic": "Intracranial hemorrhage",
+  "key_concept": "Subdural hematoma: crescent-shaped bridging vein bleed in older adults"
+ },
+ "b4483930-d485-4a0f-81aa-9916ef5cb810": {
+  "condition": "Hemodynamic watershed ischemic infarction",
+  "system": "nervous",
+  "topic": "Ischemic stroke",
+  "key_concept": "Watershed infarction after systemic hypotension"
+ },
+ "18bebfcb-c2fa-47a7-b71f-3867114fcf78": {
+  "condition": "multiple sclerosis",
+  "system": "nervous",
+  "topic": "Multiple sclerosis",
+  "key_concept": "Uhthoff phenomenon: heat blocks conduction in demyelinated axons"
+ },
+ "caacfbf9-5a1a-4935-9ec0-b92d11b60b18": {
+  "condition": "Neurofibromatosis type 1 with a plexiform neurofibroma",
+  "system": "nervous",
+  "topic": "Neurocutaneous syndromes",
+  "key_concept": "NF1 loss prolongs Ras-GTP signaling"
+ },
+ "0864064b-8ff2-434e-a915-f3baba83eb51": {
+  "condition": "Neurofibromatosis type 1–associated plexiform neurofibroma",
+  "system": "nervous",
+  "topic": "Neurocutaneous syndromes",
+  "key_concept": "Neurofibromin is a Ras GTPase-activating protein"
+ },
+ "e10aaeea-d024-412b-aaa2-91f46796a33b": {
+  "condition": "Lambert-Eaton myasthenic syndrome associated with small-cell lung carcinoma",
+  "system": "nervous",
+  "topic": "Neuromuscular junction disorders",
+  "key_concept": "Lambert-Eaton myasthenic syndrome"
+ },
+ "7c87d77c-a649-4ab4-bf56-9bf66380b266": {
+  "condition": "Small-cell lung carcinoma–associated Lambert-Eaton myasthenic syndrome",
+  "system": "nervous",
+  "topic": "Neuromuscular junction disorders",
+  "key_concept": "Lambert-Eaton: antibodies against presynaptic calcium channels"
+ },
+ "9f0356b9-e6fb-4f2c-9a83-64f5134f4d75": {
+  "condition": "Parkinson disease",
+  "system": "nervous",
+  "topic": "Parkinson disease",
+  "key_concept": "Carbidopa blocks peripheral dopa decarboxylase"
+ },
+ "341c2d1d-1f43-4f43-9fb4-82f65cd567ab": {
+  "condition": "Presbyopia",
+  "system": "nervous",
+  "topic": "Refractive errors",
+  "key_concept": "Presbyopia from loss of lens elasticity"
+ },
+ "4aa86f3b-526b-4499-8633-627d26e0c8d7": {
+  "condition": "Rhegmatogenous retinal detachment",
+  "system": "nervous",
+  "topic": "Retinal detachment",
+  "key_concept": "Flashes, floaters and curtain defect mean retinal tear"
+ },
+ "f7fbf5a6-ef66-46cf-a0ca-0d20ce1efe00": {
+  "condition": "REM sleep behavior disorder",
+  "system": "nervous",
+  "topic": "Sleep disorders",
+  "key_concept": "REM sleep behavior disorder: loss of REM atonia"
+ },
+ "44421e65-33e9-41ba-a851-bdf0c512e1a5": {
+  "condition": "Sleep terror disorder (NREM arousal parasomnia)",
+  "system": "nervous",
+  "topic": "Sleep disorders",
+  "key_concept": "Sleep terrors: NREM arousal with no recall"
+ },
+ "22ed0dce-e2f9-4fbf-a313-a7f2058ae796": {
+  "condition": "Anterior spinal artery infarction after thoracoabdominal aortic surgery",
+  "system": "nervous",
+  "topic": "Spinal cord syndromes",
+  "key_concept": "Anterior spinal artery infarct spares dorsal columns"
+ },
+ "3c6e3959-1a2d-4aa0-b9f6-d2cac191ea0a": {
+  "condition": "Anterior spinal artery territory spinal cord infarction",
+  "system": "nervous",
+  "topic": "Spinal cord syndromes",
+  "key_concept": "Anterior spinal artery infarct after aortic surgery or hypotension"
+ },
+ "13b9ebef-4a20-4ff6-b669-fc88dbf1399a": {
+  "condition": "Cauda equina compression from a large lumbar disc extrusion",
+  "system": "nervous",
+  "topic": "Spinal cord syndromes",
+  "key_concept": "Cauda equina syndrome: asymmetric lower motor neuron deficits"
+ },
+ "48bdcc1e-b37d-4990-af7c-c2f331d1eea1": {
+  "condition": "Diffuse axonal injury",
+  "system": "nervous",
+  "topic": "Traumatic brain injury",
+  "key_concept": "Diffuse axonal injury from rotational acceleration"
+ },
+ "eada0629-01da-4ee5-b017-ebe51a53f1ba": {
+  "condition": "Traumatic hyphema",
+  "system": "nervous",
+  "topic": "Traumatic hyphema",
+  "key_concept": "Erythrocytes obstruct trabecular outflow in hyphema"
+ },
+ "8d28bc78-77c5-4692-8abd-05e33f21abcb": {
+  "condition": "Traumatic hyphema after blunt ocular trauma",
+  "system": "nervous",
+  "topic": "Traumatic hyphema",
+  "key_concept": "Blood in the trabecular meshwork raises intraocular pressure"
+ },
+ "955e062d-d487-4b7a-874f-62b052776a13": {
+  "condition": "Herpes simplex virus type 1 encephalitis",
+  "system": "nervous",
+  "topic": "Viral encephalitis",
+  "key_concept": "HSV-1 encephalitis targets the temporal lobes"
+ },
+ "95f6ab06-b9db-47c9-8fac-1cc7b8e467bf": {
+  "condition": "Subacute sclerosing panencephalitis",
+  "system": "nervous",
+  "topic": "Viral encephalitis",
+  "key_concept": "Subacute sclerosing panencephalitis is persistent measles infection",
+  "free": true
+ },
+ "86cd3e77-5244-4513-a0b0-48ef854e439b": {
+  "condition": "Cephalohematoma",
+  "system": "pregnancy",
+  "topic": "Birth injuries",
+  "key_concept": "Cephalohematoma does not cross suture lines"
+ },
+ "11197d3f-e631-4f3d-a1b2-f8c74005bd8e": {
+  "condition": "HELLP syndrome",
+  "system": "pregnancy",
+  "topic": "Hypertensive disorders of pregnancy",
+  "key_concept": "HELLP syndrome: hemolysis, elevated liver enzymes, low platelets",
+  "free": true
+ },
+ "930a4aa6-a809-40d2-9b39-d5cb2be4d00f": {
+  "condition": "Shoulder dystocia with anterior shoulder impaction",
+  "system": "pregnancy",
+  "topic": "Labor and delivery",
+  "key_concept": "Shoulder dystocia: anterior shoulder impacted behind pubic symphysis"
+ },
+ "84f5bdfc-3b41-41df-8f9f-a1887f75a044": {
+  "condition": "Physiologic neonatal jaundice",
+  "system": "pregnancy",
+  "topic": "Neonatal jaundice",
+  "key_concept": "Physiologic jaundice begins after 24 hours"
+ },
+ "1252bcac-bf6e-404b-9c68-6f7f07761d20": {
+  "condition": "Neonatal unconjugated hyperbilirubinemia",
+  "system": "pregnancy",
+  "topic": "Neonatal jaundice",
+  "key_concept": "Phototherapy converts bilirubin to water-soluble isomers"
+ },
+ "9dbf90b6-5cd4-4c10-a07a-4c68102c7a5b": {
+  "condition": "Physiologic neonatal jaundice",
+  "system": "pregnancy",
+  "topic": "Neonatal jaundice",
+  "key_concept": "Physiologic jaundice from immature UGT1A1 conjugation"
+ },
+ "831df3ed-0cfe-4d4b-bb29-29c3d47d5c53": {
+  "condition": "Physiologic hemodilution of pregnancy",
+  "system": "pregnancy",
+  "topic": "Physiologic changes of pregnancy",
+  "key_concept": "Physiologic anemia of pregnancy from plasma-volume expansion"
+ },
+ "2111a916-2813-4060-9c7b-9a98173e57b8": {
+  "condition": "Physiologic anemia of pregnancy",
+  "system": "pregnancy",
+  "topic": "Physiologic changes of pregnancy",
+  "key_concept": "Plasma volume rises more than red-cell mass in pregnancy"
+ },
+ "3e738e10-dc8c-4bb0-8bf8-b922d3436cf1": {
+  "condition": "Gestational thrombocytopenia",
+  "system": "pregnancy",
+  "topic": "Physiologic changes of pregnancy",
+  "key_concept": "Gestational thrombocytopenia: mild isolated late platelet decline"
+ },
+ "e301a174-98ed-4948-883e-e2c6acb2a884": {
+  "condition": "Physiologic anemia of pregnancy",
+  "system": "pregnancy",
+  "topic": "Physiologic changes of pregnancy",
+  "key_concept": "Physiologic anemia of pregnancy from hemodilution"
+ },
+ "a726dda9-ce83-4a98-b3de-420928aef568": {
+  "condition": "Physiologic anemia of pregnancy (hemodilution)",
+  "system": "pregnancy",
+  "topic": "Physiologic changes of pregnancy",
+  "key_concept": "Plasma volume expands more than red-cell mass in pregnancy"
+ },
+ "7bc18031-0670-4204-a882-09bcaceac4c5": {
+  "condition": "Supine hypotensive syndrome of pregnancy",
+  "system": "pregnancy",
+  "topic": "Physiologic changes of pregnancy",
+  "key_concept": "Supine hypotension from aortocaval compression"
+ },
+ "33f07136-d0ed-4c55-8d06-a47acfc17d73": {
+  "condition": "Postpartum hemorrhage due to uterine atony",
+  "system": "pregnancy",
+  "topic": "Postpartum hemorrhage",
+  "key_concept": "Uterine atony is the commonest cause of postpartum hemorrhage"
+ },
+ "500bb051-d111-4720-a3fe-1491d416161f": {
+  "condition": "Uterine atony causing postpartum hemorrhage",
+  "system": "pregnancy",
+  "topic": "Postpartum hemorrhage",
+  "key_concept": "Boggy uterus after placental delivery means uterine atony"
+ },
+ "b2cbebdd-28e6-4cb2-83e6-242721370046": {
+  "condition": "Uterine atony causing postpartum hemorrhage",
+  "system": "pregnancy",
+  "topic": "Postpartum hemorrhage",
+  "key_concept": "Myometrial contraction compresses spiral arteries after delivery"
+ },
+ "9a9c9108-c7e7-4e17-8d6e-6d7c035799fc": {
+  "condition": "Neural tube defect risk",
+  "system": "pregnancy",
+  "topic": "Prenatal care",
+  "key_concept": "Start folic acid before conception to prevent neural tube defects",
+  "free": true
+ },
+ "ce3a571d-cb9c-46d1-8ac3-d9eb40f94ee2": {
+  "condition": "Sheehan syndrome (postpartum hypopituitarism)",
+  "system": "pregnancy",
+  "topic": "Sheehan syndrome",
+  "key_concept": "Sheehan syndrome: failure to lactate after postpartum hemorrhage"
+ },
+ "fb5b256b-d06b-4425-a9fe-28f9e9b5444c": {
+  "condition": "Sheehan syndrome (postpartum ischemic anterior pituitary necrosis)",
+  "system": "pregnancy",
+  "topic": "Sheehan syndrome",
+  "key_concept": "Sheehan syndrome: ischemic anterior pituitary necrosis"
+ },
+ "63b18dc8-7066-43d0-bfff-e90b957e4032": {
+  "condition": "Sheehan syndrome (postpartum ischemic hypopituitarism)",
+  "system": "pregnancy",
+  "topic": "Sheehan syndrome",
+  "key_concept": "Sheehan syndrome causes multiple anterior pituitary deficiencies"
+ },
+ "758c5314-01e2-448d-b85f-d7b20160571a": {
+  "condition": "Persistent pulmonary hypertension of the newborn (PPHN)",
+  "system": "pregnancy",
+  "topic": "Teratology and drugs in pregnancy",
+  "key_concept": "PPHN: high pulmonary resistance causes right-to-left shunting"
+ },
+ "932d6574-bb79-4b58-8c35-2817f7f0401a": {
+  "condition": "Traumatic intraperitoneal bladder rupture",
+  "system": "renal",
+  "topic": "Bladder injury",
+  "key_concept": "Bladder dome rupture causes intraperitoneal extravasation",
+  "category": "Traumatic, obstructive & congenital disorders"
+ },
+ "a4c7ccc0-b067-4e7c-accf-6ee369b949e4": {
+  "condition": "Chronic kidney disease–associated secondary hyperparathyroidism",
+  "system": "renal",
+  "topic": "Chronic kidney disease",
+  "key_concept": "CKD causes secondary hyperparathyroidism"
+ },
+ "13117e90-1e92-4ba5-ad7a-82b161bb30b9": {
+  "condition": "Complete duplicated collecting system with an ectopic upper-pole ureter",
+  "system": "renal",
+  "topic": "Congenital renal anomalies",
+  "key_concept": "Ectopic upper-pole ureter causes continuous incontinence",
+  "category": "Traumatic, obstructive & congenital disorders"
+ },
+ "4ab8c805-6cb1-47cb-b7f3-2b51401a0593": {
+  "condition": "Horseshoe kidney",
+  "system": "renal",
+  "topic": "Congenital renal anomalies",
+  "key_concept": "Horseshoe kidney is trapped by the inferior mesenteric artery",
+  "category": "Traumatic, obstructive & congenital disorders"
+ },
+ "f8e7db8b-5b7e-4675-b287-02a4d6837b4e": {
+  "condition": "Posterior urethral valves causing fetal lower urinary tract obstruction",
+  "system": "renal",
+  "topic": "Congenital renal anomalies",
+  "key_concept": "Oligohydramnios from urinary obstruction causes pulmonary hypoplasia",
+  "category": "Traumatic, obstructive & congenital disorders"
+ },
+ "2c00d051-9a05-4cfc-9332-a1a031424b05": {
+  "condition": "Posterior urethral valves",
+  "system": "renal",
+  "topic": "Congenital renal anomalies",
+  "key_concept": "Posterior urethral valves cause bilateral hydronephrosis",
+  "category": "Traumatic, obstructive & congenital disorders"
+ },
+ "bb568a18-7a5f-4b40-85b3-db92ec09b355": {
+  "condition": "Lithium-induced nephrogenic diabetes insipidus",
+  "system": "renal",
+  "topic": "Diabetes insipidus",
+  "key_concept": "Lithium causes nephrogenic diabetes insipidus"
+ },
+ "5391a446-526c-4880-9d3c-8fc3f0442d26": {
+  "condition": "Lithium-induced nephrogenic diabetes insipidus",
+  "system": "renal",
+  "topic": "Diabetes insipidus",
+  "key_concept": "Nephrogenic DI: no response to desmopressin"
+ },
+ "389c2ae1-45eb-4854-be40-0d604c6bd58a": {
+  "condition": "Alport syndrome",
+  "system": "renal",
+  "topic": "Glomerular disease",
+  "key_concept": "Alport syndrome: type IV collagen defect",
+  "free": true,
+  "category": "Glomerular disease"
+ },
+ "5d91685b-dfbc-40ba-b9e1-69196a6725c2": {
+  "condition": "Acute nephritic syndrome",
+  "system": "renal",
+  "topic": "Nephritic syndrome",
+  "key_concept": "Red cell casts localize hematuria to the glomerulus",
+  "category": "Glomerular disease"
+ },
+ "ae94f956-4d66-45a1-bc25-dea526e72d95": {
+  "condition": "Poststreptococcal glomerulonephritis",
+  "system": "renal",
+  "topic": "Nephritic syndrome",
+  "key_concept": "Poststreptococcal GN: low C3 and granular deposits"
+ },
+ "d525c795-a77e-41b1-aa5e-bb709a77a7f6": {
+  "condition": "Poststreptococcal glomerulonephritis",
+  "system": "renal",
+  "topic": "Nephritic syndrome",
+  "key_concept": "Poststreptococcal GN follows pharyngitis by 1 to 3 weeks"
+ },
+ "1a496f86-1453-44da-a446-323af001e699": {
+  "condition": "Monoclonal light-chain proteinuria associated with plasma-cell dyscrasia",
+  "system": "renal",
+  "topic": "Proteinuria",
+  "key_concept": "Dipstick misses light-chain overflow proteinuria"
+ },
+ "bd00427f-f0a1-44c3-a44b-81e21eac8769": {
+  "condition": "Clear cell renal cell carcinoma",
+  "system": "renal",
+  "topic": "Renal neoplasms",
+  "key_concept": "Clear cell RCC: VHL loss and HIF accumulation"
+ },
+ "b236a6c2-a195-4bf2-9af0-a4607ab8b63c": {
+  "condition": "Renal oncocytoma",
+  "system": "renal",
+  "topic": "Renal neoplasms",
+  "key_concept": "Renal oncocytoma: mitochondria-rich intercalated-cell tumor",
+  "free": true
+ },
+ "26d39456-f9a8-489a-b69e-117ac6639d13": {
+  "condition": "Distal (type 1) renal tubular acidosis with calcium phosphate nephrolithiasis",
+  "system": "renal",
+  "topic": "Renal tubular acidosis",
+  "key_concept": "Distal RTA causes calcium phosphate stones"
+ },
+ "ad248a08-bb8f-4439-bd26-b61fc17c33e1": {
+  "condition": "Fanconi syndrome causing proximal renal tubular acidosis",
+  "system": "renal",
+  "topic": "Renal tubular acidosis",
+  "key_concept": "Proximal RTA can acidify urine once bicarbonate is depleted"
+ },
+ "1b1664b6-8116-4e62-8dfa-095934af7d97": {
+  "condition": "Fanconi syndrome (generalized proximal tubular reabsorptive dysfunction)",
+  "system": "renal",
+  "topic": "Renal tubular disorders",
+  "key_concept": "Fanconi syndrome: generalized proximal tubular dysfunction",
+  "category": "Metabolic & regulatory disorders"
+ },
+ "72491a04-33f1-4c74-a1f1-36af0500ac89": {
+  "condition": "Renal artery fibromuscular dysplasia",
+  "system": "renal",
+  "topic": "Renovascular hypertension",
+  "key_concept": "Fibromuscular dysplasia versus atherosclerotic renal artery stenosis"
+ },
+ "ecd7929e-22c9-449e-9b18-b082d2d1535f": {
+  "condition": "Renal artery fibromuscular dysplasia",
+  "system": "renal",
+  "topic": "Renovascular hypertension",
+  "key_concept": "Fibromuscular dysplasia: string-of-beads mid-distal renal artery"
+ },
+ "c92b809c-3de2-4f56-807e-52472e0c45d2": {
+  "condition": "Renal artery stenosis due to fibromuscular dysplasia",
+  "system": "renal",
+  "topic": "Renovascular hypertension",
+  "key_concept": "Fibromuscular dysplasia spares the renal artery ostium"
+ },
+ "269a7c02-326c-47e5-ac4e-cfddfae96b47": {
+  "condition": "Acute pyelonephritis",
+  "system": "renal",
+  "topic": "Urinary tract infections",
+  "key_concept": "White cell casts indicate pyelonephritis"
+ },
+ "d70db52b-1a52-4ed7-b6a4-1c9afb1f98bf": {
+  "condition": "Acute pyelonephritis",
+  "system": "renal",
+  "topic": "Urinary tract infections",
+  "key_concept": "Fever and flank pain distinguish pyelonephritis from cystitis"
+ },
+ "b34219bb-f640-4432-880c-f7958a5d627f": {
+  "condition": "Acute uncomplicated cystitis",
+  "system": "renal",
+  "topic": "Urinary tract infections",
+  "key_concept": "Nitrofurantoin reaches the bladder but not the renal parenchyma"
+ },
+ "68aa4b0f-2d3c-40b9-a7af-d4611490b717": {
+  "condition": "Acute severe asthma with impending ventilatory failure",
+  "system": "respiratory",
+  "topic": "Asthma",
+  "key_concept": "Rising PaCO2 in severe asthma means respiratory fatigue"
+ },
+ "0cbf8b84-327d-4bc0-b45a-1cfe1c4883ac": {
+  "condition": "Asthma",
+  "system": "respiratory",
+  "topic": "Asthma",
+  "key_concept": "Eosinophils drive the late-phase asthmatic response"
+ },
+ "35e15ff9-dd01-4db2-8b19-513807ba3ffb": {
+  "condition": "Chronic asthma with airway remodeling",
+  "system": "respiratory",
+  "topic": "Asthma",
+  "key_concept": "Airway remodeling causes fixed obstruction in chronic asthma"
+ },
+ "86237062-6830-4b6a-8a01-cc90f4ce17ce": {
+  "condition": "Pulmonary contusion",
+  "system": "respiratory",
+  "topic": "Chest trauma",
+  "key_concept": "Pulmonary contusion causes intrapulmonary shunting"
+ },
+ "ff03df17-0524-44a7-8926-9fd7e0750c5e": {
+  "condition": "Chronic bronchitis",
+  "system": "respiratory",
+  "topic": "Chronic obstructive pulmonary disease",
+  "key_concept": "Chronic bronchitis: increased Reid index"
+ },
+ "c2b5c20e-d209-492b-976c-5bbe0d2914a2": {
+  "condition": "Cystic fibrosis with bronchiectasis and exocrine pancreatic insufficiency",
+  "system": "respiratory",
+  "topic": "Cystic fibrosis",
+  "key_concept": "CFTR dysfunction causes bronchiectasis and pancreatic insufficiency"
+ },
+ "5426d31b-0cb9-4071-b73c-6bb56b318053": {
+  "condition": "Digital clubbing associated with a right-to-left shunt",
+  "system": "respiratory",
+  "topic": "Digital clubbing",
+  "key_concept": "Clubbing from megakaryocytes bypassing the lung"
+ },
+ "ada2e127-56a6-41cd-9f7b-8207160f5092": {
+  "condition": "Amiodarone-induced interstitial pneumonitis",
+  "system": "respiratory",
+  "topic": "Drug-induced lung disease",
+  "key_concept": "Amiodarone causes interstitial pneumonitis"
+ },
+ "5c6f3613-1b96-4846-a02c-58a21564a058": {
+  "condition": "opioid-induced alveolar hypoventilation",
+  "system": "respiratory",
+  "topic": "Hypoxemia",
+  "key_concept": "Hypoventilation causes hypoxemia with a normal A-a gradient",
+  "free": true
+ },
+ "4ae93cda-06d6-40e0-b819-d1e72b7a0e4c": {
+  "condition": "Lung squamous cell carcinoma causing humoral hypercalcemia of malignancy",
+  "system": "respiratory",
+  "topic": "Lung cancer",
+  "key_concept": "Squamous cell carcinoma secretes PTHrP"
+ },
+ "c56592e9-05f2-4555-9353-c61895715eb2": {
+  "condition": "Primary lung adenocarcinoma with pleural metastasis",
+  "system": "respiratory",
+  "topic": "Lung cancer",
+  "key_concept": "Malignant pleural effusion is M1a disease"
+ },
+ "b8f8743b-4fb8-428a-8ea8-ab5996e785d9": {
+  "condition": "Anterior epistaxis after minor nasal trauma",
+  "system": "respiratory",
+  "topic": "Nasal disorders",
+  "key_concept": "Anterior epistaxis arises from Kiesselbach plexus"
+ },
+ "9894a91b-1a81-4075-9627-fcb54818e39f": {
+  "condition": "Nasal septal hematoma",
+  "system": "respiratory",
+  "topic": "Nasal disorders",
+  "key_concept": "Septal hematoma threatens avascular septal cartilage"
+ },
+ "985f7bbd-d641-4859-ae4f-3733fa2cd79e": {
+  "condition": "Obesity hypoventilation syndrome",
+  "system": "respiratory",
+  "topic": "Obesity and the lungs",
+  "key_concept": "Obesity hypoventilation syndrome: awake hypercapnia"
+ },
+ "f1a89343-f821-4009-b961-a5d4e3871db9": {
+  "condition": "Obesity-associated reduction in functional residual capacity",
+  "system": "respiratory",
+  "topic": "Obesity and the lungs",
+  "key_concept": "Obesity lowers FRC by reducing expiratory reserve volume"
+ },
+ "2a8fe7ac-863d-46fa-81da-3db335e51307": {
+  "condition": "Chylothorax",
+  "system": "respiratory",
+  "topic": "Pleural effusions",
+  "key_concept": "Chylomicrons identify a chylothorax"
+ },
+ "e728caaf-078c-42c6-9c2b-84010c760bb3": {
+  "condition": "Asbestosis",
+  "system": "respiratory",
+  "topic": "Pneumoconioses",
+  "key_concept": "Asbestosis: lower-lobe fibrosis with asbestos bodies"
+ },
+ "f757352b-f860-4413-9eba-7a199c8b1774": {
+  "condition": "Traumatic tension pneumothorax",
+  "system": "respiratory",
+  "topic": "Pneumothorax",
+  "key_concept": "Tension pneumothorax impairs venous return",
+  "category": "Pleura, mediastinum & chest wall"
+ },
+ "2b9a58cc-e1e1-49d4-aa85-e00f7f10922f": {
+  "condition": "Primary ciliary dyskinesia",
+  "system": "respiratory",
+  "topic": "Primary ciliary dyskinesia",
+  "key_concept": "Kartagener syndrome: one cilia defect causes infections and situs inversus"
+ },
+ "22ec92cf-6299-489e-a862-0510f7a9b50e": {
+  "condition": "Primary ciliary dyskinesia (immotile cilia syndrome)",
+  "system": "respiratory",
+  "topic": "Primary ciliary dyskinesia",
+  "key_concept": "Primary ciliary dyskinesia: defective dynein arms"
+ },
+ "59bf0222-f47a-4da6-8976-2a328209056c": {
+  "condition": "Acute pulmonary embolism",
+  "system": "respiratory",
+  "topic": "Pulmonary embolism",
+  "key_concept": "Pulmonary embolism increases alveolar dead space",
+  "free": true
+ },
+ "f53f2373-4c3d-4061-8a74-876e2990133f": {
+  "condition": "Acne vulgaris",
+  "system": "skin",
+  "topic": "Acne vulgaris",
+  "key_concept": "Comedones distinguish acne vulgaris"
+ },
+ "616fea30-5aad-4a5e-96e5-c4494e98ca4d": {
+  "condition": "Pemphigus vulgaris",
+  "system": "skin",
+  "topic": "Autoimmune blistering diseases",
+  "key_concept": "Pemphigus vulgaris: anti-desmoglein antibodies, suprabasal acantholysis"
+ },
+ "92e35989-a99a-44dc-aed7-186638b248a2": {
+  "condition": "Epidermolysis bullosa acquisita",
+  "system": "skin",
+  "topic": "Autoimmune blistering diseases",
+  "key_concept": "Epidermolysis bullosa acquisita: anti-type VII collagen antibodies"
+ },
+ "c525d41e-3841-4d07-b5e5-8457e9a61911": {
+  "condition": "Erysipelas",
+  "system": "skin",
+  "topic": "Bacterial skin infections",
+  "key_concept": "Erysipelas: superficial dermal streptococcal infection",
+  "free": true
+ },
+ "d0567d5e-8149-4ebf-9f25-eee05cf75df5": {
+  "condition": "Bullous impetigo",
+  "system": "skin",
+  "topic": "Bacterial skin infections",
+  "key_concept": "Bullous impetigo: staphylococcal exfoliative toxin cleaves desmoglein 1"
+ },
+ "867ba0b7-78fe-474f-ade7-fc2299cbb968": {
+  "condition": "Basal cell carcinoma of the eyelid",
+  "system": "skin",
+  "topic": "Basal cell carcinoma",
+  "key_concept": "Pearly rolled-border eyelid lesion is basal cell carcinoma"
+ },
+ "d4d46441-95d1-4d0b-91b6-c192efdec994": {
+  "condition": "Partial-thickness thermal burn",
+  "system": "skin",
+  "topic": "Burns and wound healing",
+  "key_concept": "Partial-thickness burns heal from adnexal keratinocytes",
+  "free": true,
+  "category": "Pigmentation, trauma & congenital disorders"
+ },
+ "0ae0095c-5b63-4ab3-8aa4-ada0f2597ec3": {
+  "condition": "Nickel-induced allergic contact dermatitis",
+  "system": "skin",
+  "topic": "Contact dermatitis",
+  "key_concept": "Nickel allergic contact dermatitis is T-cell mediated"
+ },
+ "629eb00b-66af-46d0-b9e2-6f44a44dbc36": {
+  "condition": "Xeroderma pigmentosum due to a nucleotide-excision-repair defect",
+  "system": "skin",
+  "topic": "DNA repair defects",
+  "key_concept": "Xeroderma pigmentosum: defective nucleotide excision repair",
+  "category": "Pigmentation, trauma & congenital disorders"
+ },
+ "e74696bb-44ca-4f41-a5d1-feb48757d643": {
+  "condition": "Photoallergic contact dermatitis",
+  "system": "skin",
+  "topic": "Drug reactions of the skin",
+  "key_concept": "Photoallergic dermatitis is a type IV reaction in sun-exposed skin"
+ },
+ "6d251f2a-c672-459e-b0a6-9fa68b1e85a0": {
+  "condition": "Androgenetic alopecia",
+  "system": "skin",
+  "topic": "Hair disorders",
+  "key_concept": "Finasteride inhibits type II 5-alpha-reductase"
+ },
+ "08d2450b-f5d5-49b9-b59f-92e94864571d": {
+  "condition": "Herpes zoster (varicella-zoster virus reactivation)",
+  "system": "skin",
+  "topic": "Herpesvirus skin infections",
+  "key_concept": "Herpes zoster is reactivation of latent VZV"
+ },
+ "ffdbb69e-f4cf-404a-b2fb-552defbf26a8": {
+  "condition": "Chronic paronychia",
+  "system": "skin",
+  "topic": "Nail disorders",
+  "key_concept": "Chronic paronychia from cuticle barrier loss"
+ },
+ "42a02616-d819-4822-bd64-9e0ca0b9234e": {
+  "condition": "Cutaneous larva migrans",
+  "system": "skin",
+  "topic": "Parasitic skin infections",
+  "key_concept": "Cutaneous larva migrans: animal hookworm larvae in epidermis"
+ },
+ "dd948b83-5801-42fa-b3ca-cea84b30f82b": {
+  "condition": "Scabies",
+  "system": "skin",
+  "topic": "Parasitic skin infections",
+  "key_concept": "Scabies: burrows confirmed by skin scraping"
+ },
+ "03470c8a-28e9-4055-9ccd-70de654a2b5e": {
+  "condition": "Oculocutaneous albinism",
+  "system": "skin",
+  "topic": "Pigmentation disorders",
+  "key_concept": "Albinism: normal melanocytes, deficient melanin synthesis",
+  "category": "Pigmentation, trauma & congenital disorders"
+ },
+ "6de58a88-56f6-497e-afc6-78480a19175c": {
+  "condition": "Vitiligo",
+  "system": "skin",
+  "topic": "Pigmentation disorders",
+  "key_concept": "Vitiligo: autoimmune melanocyte destruction",
+  "category": "Pigmentation, trauma & congenital disorders"
+ },
+ "12ee7683-b3fa-4a75-97cf-f87f1be12fec": {
+  "condition": "Ruptured epidermal inclusion cyst",
+  "system": "skin",
+  "topic": "Skin cysts and benign tumors",
+  "key_concept": "Ruptured epidermal cyst causes foreign-body granulomatous reaction"
+ },
+ "56286a62-199a-4a46-a11e-34e50e15acf2": {
+  "condition": "Suspected physical abuse in an infant with fractures showing different stages of healing",
+  "system": "social-sciences",
+  "topic": "Child abuse",
+  "key_concept": "Fractures at different healing stages warrant abuse evaluation"
+ },
+ "63015373-be43-4344-abb4-e616477fe0cd": {
+  "condition": "Acute psychosis with imminent risk of self-harm",
+  "system": "social-sciences",
+  "topic": "Decision-making capacity and involuntary treatment",
+  "key_concept": "Imminent danger to self justifies involuntary evaluation"
+ },
+ "d172e648-0537-4a2d-bea3-9ae0695c9a84": {
+  "condition": "Acute psychosis with imminent risk of self-harm",
+  "system": "social-sciences",
+  "topic": "Decision-making capacity and involuntary treatment",
+  "key_concept": "Involuntary admission for imminent danger from mental illness"
+ },
+ "80b174ee-b67b-4005-ac66-a8536b2a6746": {
+  "condition": "Angelman syndrome",
+  "system": "social-sciences",
+  "topic": "Genetic counseling",
+  "key_concept": "Angelman recurrence risk depends on the molecular mechanism"
+ },
+ "a7bd16b0-1b53-48c9-9291-07c8dad188c8": {
+  "condition": "Suspected Lynch syndrome (hereditary mismatch-repair deficiency)",
+  "system": "social-sciences",
+  "topic": "Genetic counseling",
+  "key_concept": "MSH2/MSH6 loss warrants genetic referral for Lynch syndrome"
+ },
+ "9d278fe1-f2fd-48be-ac52-b906c3424224": {
+  "condition": "Diabetic ketoacidosis associated with interrupted access to insulin",
+  "system": "social-sciences",
+  "topic": "Health care access",
+  "key_concept": "Insulin cost barriers cause DKA admissions"
+ },
+ "d03efc6b-50b4-489f-8a9b-93d47d7b38a6": {
+  "condition": "Fee-for-service reimbursement",
+  "system": "social-sciences",
+  "topic": "Health care payment models",
+  "key_concept": "Fee-for-service rewards service volume"
+ },
+ "b7825419-43e0-41af-b08c-20788d0974bc": {
+  "condition": "Iatrogenic Cushing syndrome from exogenous glucocorticoid exposure",
+  "system": "social-sciences",
+  "topic": "Medical errors and disclosure",
+  "key_concept": "Report suspected undocumented steroid exposure through patient-safety channels"
+ },
+ "e647838f-5be4-4fd0-b1ef-4630972d8f26": {
+  "condition": "Known complication following care that met the accepted standard",
+  "system": "social-sciences",
+  "topic": "Medical errors and disclosure",
+  "key_concept": "Known complication with standard care is not negligence",
+  "free": true
+ },
+ "294965b2-dc8d-41d2-9cd6-426273842003": {
+  "condition": "Cancer-associated cachexia",
+  "system": "social-sciences",
+  "topic": "Palliative care",
+  "key_concept": "Cancer cachexia is inflammatory, not caloric, muscle loss"
+ },
+ "18593f5e-bf6d-4077-9551-0c671a77e441": {
+  "condition": "Opioid-induced hyperalgesia in palliative pain management",
+  "system": "social-sciences",
+  "topic": "Palliative care",
+  "key_concept": "Opioid-induced hyperalgesia worsens with dose escalation"
+ },
+ "3accc8dc-6847-4d4b-acbd-02a69beba66d": {
+  "condition": "Acute immune-mediated hemolytic transfusion reaction",
+  "system": "social-sciences",
+  "topic": "Patient safety",
+  "key_concept": "Acute hemolytic transfusion reaction: complement-mediated intravascular hemolysis"
+ },
+ "94ffd081-0333-48de-ba76-9d018fc7e764": {
+  "condition": "Iatrogenic recurrent laryngeal nerve injury after thyroid surgery",
+  "system": "social-sciences",
+  "topic": "Patient safety",
+  "key_concept": "Thyroidectomy can injure the recurrent laryngeal nerve"
+ },
+ "a92fbe5c-eba9-46a9-85ef-e9b06fdb0c13": {
+  "condition": "Missed subarachnoid hemorrhage after a negative delayed noncontrast head CT",
+  "system": "social-sciences",
+  "topic": "Patient safety",
+  "key_concept": "Delayed noncontrast CT can miss subarachnoid hemorrhage"
+ },
+ "6bc6e81d-54aa-427b-9df5-ed06fe86dd9b": {
+  "condition": "Patient-safety event surveillance and reporting bias",
+  "system": "social-sciences",
+  "topic": "Patient safety",
+  "key_concept": "Nonpunitive reporting raises reports without more events"
+ },
+ "2b38f01e-d915-4db1-9f1f-cfb7c55d67d5": {
+  "condition": "Progressive dysphagia with weight loss and iron-deficiency anemia",
+  "system": "social-sciences",
+  "topic": "Patient-centered communication",
+  "key_concept": "Address practical barriers that delay urgent referral"
+ },
+ "430908bc-2d0b-4fa1-a222-a65be4d6efe5": {
+  "condition": "Asthma",
+  "system": "social-sciences",
+  "topic": "Patient-centered communication",
+  "key_concept": "Inhaled steroids are controllers, not rescue inhalers"
+ },
+ "06ebf29f-9375-4458-99ee-9b8b3d8a66cb": {
+  "condition": "Carbon monoxide poisoning",
+  "system": "social-sciences",
+  "topic": "Public health",
+  "key_concept": "Clustered symptoms in one building suggest carbon monoxide",
+  "free": true
+ },
+ "538db62d-ddce-4b30-ac26-d32d33521651": {
+  "condition": "A hospital quality-improvement initiative to increase discharge-before-noon rates",
+  "system": "social-sciences",
+  "topic": "Quality improvement",
+  "key_concept": "Balancing measures detect unintended harm"
+ },
+ "3f7a7faf-7bcd-415f-a9e0-dc8c8115d12c": {
+  "condition": "Quality improvement process measures",
+  "system": "social-sciences",
+  "topic": "Quality improvement",
+  "key_concept": "Process measures assess whether care steps were done"
+ }
+}

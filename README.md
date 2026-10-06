@@ -9,7 +9,8 @@ USMLE question bank with ARGO, an adaptive analytics engine. Next.js 16 (App Rou
 - `src/lib/argo/` ARGO's TypeScript side: insight computations and the session planner. Per-answer model updates run in Postgres (`supabase/migrations/*engine*.sql`).
 - `src/lib/nuggets/match.ts` Nugget detection against the private high-yield index (gte-small embeddings via the `embed` Edge Function).
 - `supabase/migrations` schema, RLS and RPCs. `supabase/functions/embed` embedding function.
-- `content/seed` the launch question set in AQF. `scripts/seed.ts` imports it.
+- `content/seed` the Step 2 CK starter questions in AQF. `scripts/seed.ts` imports them.
+- `Approved Questions/approved_*.json` batches from the question authoring pipeline (not committed). `scripts/import-approved.ts` imports them; `content/approved/placements.json` gives each question (by `question_id`) its organ system, Library topic, key concept and free flag, plus an optional category override. Re-importing a batch updates in place (matched on `questions.source_ref`). The pipeline's `sources` are licensed notes and are never imported.
 - `content/schools/medical-schools.json` the medical school list for onboarding (open data: Wikidata CC0 + Hipo university list MIT). `scripts/seed-schools.ts` loads it, or the official WDOMS `School.csv` export with `--wdoms`.
 - `supabase/templates` auth emails (confirm, magic link, reset), mirrored in `supabase/config.toml`.
 - `src/app/(app)/admin` admin area: importer, question browser and AQF export, Nugget review, item analysis, Daily scheduler, users, feedback.
@@ -38,7 +39,9 @@ Stripe setup: set `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Vercel, ena
 
 ```bash
 npx tsx scripts/validate-aqf.ts content/seed/*.aqf.txt   # check question files
-npx tsx scripts/seed.ts                                  # (re)seed questions, Library, Nuggets, daily schedule
+npx tsx scripts/seed.ts                                  # (re)seed the Step 2 CK starter questions, Library, Nuggets
+npx tsx --conditions=react-server scripts/import-approved.ts "Approved Questions/approved_X.json" --dry-run --verbose
+npx tsx --conditions=react-server scripts/import-approved.ts "Approved Questions/approved_X.json"   # import an approved batch
 npx tsx scripts/seed-schools.ts                          # load the medical school list (idempotent)
 npx tsx scripts/seed-schools.ts --wdoms School.csv       # add schools from the official WDOMS export
 supabase db push --linked                                # apply migrations
