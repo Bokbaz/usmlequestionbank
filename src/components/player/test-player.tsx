@@ -443,6 +443,7 @@ export function TestPlayer({ data, initialPosition, askConfidence = true }: { da
 
             {item.review && (
               <Explanation
+                key={item.question_id}
                 item={item}
                 review={item.review}
                 errorType={errorTypes[pos]}

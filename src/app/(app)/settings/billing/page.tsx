@@ -11,6 +11,7 @@ import { writerSubscription } from "@/lib/billing";
 import { OFFERS, formatUsd, planAllows } from "@/lib/plans";
 import { stripeConfigured } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
+import { SUPPORT_EMAIL } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Plan and billing" };
 
@@ -109,6 +110,18 @@ export default async function BillingPage({ searchParams }: PageProps<"/settings
       </div>
 
       {!unlocked && <PricingTable currentPlan={plan} hasWriter={writerLive} />}
+
+      <p className="mt-8 text-[13.5px] text-muted">
+        Questions about a payment or a refund? Email{" "}
+        <a href={`mailto:${SUPPORT_EMAIL}`} className="font-semibold text-brand-strong hover:underline">
+          {SUPPORT_EMAIL}
+        </a>
+        . See the{" "}
+        <Link href="/refunds" className="font-semibold text-brand-strong hover:underline">
+          refund policy
+        </Link>
+        .
+      </p>
     </>
   );
 }

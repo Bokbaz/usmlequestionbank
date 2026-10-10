@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
 
   let customer = profile?.stripe_customer_id ?? null;
   if (!customer) {
-    const c = await stripe.customers.create({ email: user.email, name: profile?.display_name ?? undefined, metadata: { user_id: user.id } });
+    const c = await stripe.customers.create({ email: user.email ?? undefined, name: profile?.display_name ?? undefined, metadata: { user_id: user.id } });
     customer = c.id;
     await admin.from("profiles").update({ stripe_customer_id: customer }).eq("id", user.id);
   }
@@ -43,6 +43,12 @@ export async function GET(request: NextRequest) {
     metadata,
     success_url: `${origin}/settings/billing?success=${offerKey}`,
     cancel_url: `${origin}/pricing?canceled=1`,
+    // Shown above the pay button: the buyer accepts the terms and asks for access straight away.
+    custom_text: {
+      submit: {
+        message: `By paying you agree to our Terms (${origin}/terms) and ask for access to start immediately. Refund policy: ${origin}/refunds`,
+      },
+    },
   };
   const session =
     offerKey === "access"

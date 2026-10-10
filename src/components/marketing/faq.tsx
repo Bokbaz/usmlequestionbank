@@ -2,6 +2,8 @@
 
 import { Accordion } from "radix-ui";
 import { Plus } from "lucide-react";
+import { REFUND_DAYS, REFUND_MAX_ANSWERED } from "@/lib/legal";
+import { SUPPORT_EMAIL } from "@/lib/utils";
 
 const QA = [
   {
@@ -31,6 +33,14 @@ const QA = [
   {
     q: "What does the question-writing add-on do?",
     a: "If you've worked through every question on something you keep missing, ARGO writes new ones aimed at exactly that. Each one is checked before it reaches you.",
+  },
+  {
+    q: "Can I get a refund?",
+    a: `Yes. Email ${SUPPORT_EMAIL} within ${REFUND_DAYS} days of buying Full access, with fewer than ${REFUND_MAX_ANSWERED} questions answered, and we'll refund the full $48. The refund policy has the details.`,
+  },
+  {
+    q: "How do I reach you?",
+    a: `Email ${SUPPORT_EMAIL}. A real person reads every message.`,
   },
 ];
 

@@ -24,10 +24,16 @@ export type Profile = {
   created_at: string;
 };
 
-export const getUser = cache(async () => {
+export type SessionUser = { id: string; email: string | null };
+
+// Verifies the session JWT locally against the project's published signing keys (ES256), so a
+// page render no longer waits on a round trip to Supabase Auth.
+export const getUser = cache(async (): Promise<SessionUser | null> => {
   const supabase = await createClient();
-  const { data } = await supabase.auth.getUser();
-  return data.user ?? null;
+  const { data } = await supabase.auth.getClaims();
+  const claims = data?.claims;
+  if (!claims?.sub) return null;
+  return { id: claims.sub, email: typeof claims.email === "string" ? claims.email : null };
 });
 
 export const getProfile = cache(async (): Promise<Profile | null> => {

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/app/page-header";
 import { requireUser } from "@/lib/auth";
+import { SUPPORT_EMAIL } from "@/lib/utils";
 import { SettingsForm } from "./settings-form";
 
 export const metadata: Metadata = { title: "Settings" };
@@ -18,6 +19,10 @@ export default async function SettingsPage() {
             <Link href="/settings/billing" className="font-semibold text-brand-strong hover:underline">
               Plan and billing
             </Link>
+            . Need a hand?{" "}
+            <a href={`mailto:${SUPPORT_EMAIL}`} className="font-semibold text-brand-strong hover:underline">
+              {SUPPORT_EMAIL}
+            </a>
           </>
         }
       />

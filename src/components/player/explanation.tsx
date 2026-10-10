@@ -7,7 +7,6 @@ import { BookOpen, Check, Clock, Layers3, Users, X } from "lucide-react";
 import { Markdown } from "@/components/markdown";
 import { NuggetGlyph } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase/client";
 import { ERROR_META, type ErrorType } from "@/lib/argo/model";
 import type { ReviewPayload } from "@/lib/daily/types";
 import type { PlayerItem } from "./types";
@@ -34,31 +33,24 @@ export function Explanation({
   const isCorrect = selected?.id === review.correct_option_id;
   const omitted = !selected;
   const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
 
+  // The server builds the card from the question (see src/lib/flashcards.ts).
   async function addFlashcard() {
     setSaving(true);
-    const correctText = item.options.find((o) => o.id === review.correct_option_id)?.body ?? "";
-    const objective = review.educational_objective ?? "";
-    let front = objective;
-    for (const needle of [review.key_concept, correctText].filter(Boolean) as string[]) {
-      const re = new RegExp(needle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i");
-      if (re.test(objective)) {
-        front = objective.replace(re, "_____");
-        break;
-      }
-    }
-    if (front === objective) front = `${item.topic ?? item.system}: what is the key point?`;
-    const supabase = createClient();
-    const { data: auth } = await supabase.auth.getUser();
-    const { error } = await supabase.from("flashcards").insert({
-      user_id: auth.user!.id,
-      question_id: item.question_id,
-      front: `**${item.topic ?? item.system}**\n\n${front}`,
-      back: `**${correctText}**\n\n${objective}`,
-    });
+    const res = await fetch("/api/flashcards", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ questionId: item.question_id }),
+    }).catch(() => null);
     setSaving(false);
-    if (error) toast.error(error.message);
-    else toast.success("Added to flashcards");
+    if (res?.ok || res?.status === 409) {
+      setSaved(true);
+      toast.success(res.ok ? "Added to flashcards" : "Already in your flashcards");
+      return;
+    }
+    const body = (await res?.json().catch(() => null)) as { error?: string } | null;
+    toast.error(body?.error ?? "Could not save the flashcard. Try again.");
   }
 
   return (
@@ -163,8 +155,8 @@ export function Explanation({
             </Link>
           </Button>
         )}
-        <Button variant="secondary" size="sm" onClick={addFlashcard} loading={saving}>
-          <Layers3 className="size-4" /> Add to flashcards
+        <Button variant="secondary" size="sm" onClick={addFlashcard} loading={saving} disabled={saved}>
+          {saved ? <Check className="size-4" strokeWidth={3} /> : <Layers3 className="size-4" />} {saved ? "In your flashcards" : "Add to flashcards"}
         </Button>
         <span className="ml-auto text-[12.5px] text-faint">
           {item.code} · {item.system}

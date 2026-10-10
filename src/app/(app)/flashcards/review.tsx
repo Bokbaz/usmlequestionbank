@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
+import { Trash2 } from "lucide-react";
 import { Markdown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
 import { Kbd } from "@/components/ui/misc";
@@ -34,7 +35,18 @@ export function FlashcardReview({ cards, total, nextDue }: { cards: Card[]; tota
   const [queue, setQueue] = useState(cards);
   const [flipped, setFlipped] = useState(false);
   const [done, setDone] = useState(0);
+  const [removed, setRemoved] = useState(0);
   const card = queue[0];
+
+  async function remove() {
+    if (!card || !window.confirm("Delete this card from your deck?")) return;
+    const { error } = await createClient().from("flashcards").delete().eq("id", card.id);
+    if (error) return toast.error(error.message);
+    setQueue((q) => q.slice(1));
+    setFlipped(false);
+    setRemoved((n) => n + 1);
+    toast.success("Card deleted");
+  }
 
   async function grade(g: 0 | 1 | 2 | 3) {
     if (!card) return;
@@ -52,6 +64,7 @@ export function FlashcardReview({ cards, total, nextDue }: { cards: Card[]; tota
         <p className="text-[20px] font-[750]">All caught up</p>
         <p className="mt-2 text-muted">
           {done ? `${done} reviewed this session. ` : ""}
+          {removed ? `${removed} deleted. ` : ""}
           {nextDue ? `Next card due ${new Date(nextDue).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" })}.` : `${total} cards in your deck.`}
         </p>
       </div>
@@ -68,7 +81,12 @@ export function FlashcardReview({ cards, total, nextDue }: { cards: Card[]; tota
       }}
       tabIndex={0}
     >
-      <p className="tabular mb-3 text-[13px] text-muted">{queue.length} left in this session</p>
+      <div className="mb-3 flex items-center justify-between gap-3">
+        <p className="tabular text-[13px] text-muted">{queue.length} left in this session</p>
+        <Button variant="ghost" size="sm" onClick={remove} aria-label="Delete this card">
+          <Trash2 className="size-4" /> Delete
+        </Button>
+      </div>
       <div className="min-h-[300px] rounded-[14px] border border-border bg-surface p-8">
         <Markdown>{card.front}</Markdown>
         {flipped && (

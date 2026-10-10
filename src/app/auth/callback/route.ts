@@ -10,6 +10,11 @@ export async function GET(request: NextRequest) {
   const type = url.searchParams.get("type") as EmailOtpType | null;
   const rawNext = url.searchParams.get("next") ?? "/dashboard";
   const next = rawNext.startsWith("/") && !rawNext.startsWith("//") ? rawNext : "/dashboard";
+  // OAuth providers report a cancelled or refused consent here instead of sending a code.
+  if (url.searchParams.get("error")) {
+    return NextResponse.redirect(new URL(`/login?error=${encodeURIComponent("Google sign-in didn't finish. Try again, or use your email.")}`, url.origin));
+  }
+
   const supabase = await createClient();
 
   let error: string | null = null;

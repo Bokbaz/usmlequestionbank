@@ -10,7 +10,7 @@ import { ActivityCalendar } from "@/components/charts/calendar";
 import { Stat, StatCell, StatRow } from "@/components/charts/stat";
 import { effectivePlan, requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { getInsights } from "@/lib/argo/data";
+import { getArgoInputs, getInsights } from "@/lib/argo/data";
 import { planAllows } from "@/lib/plans";
 import { quickStart, startArgoSession } from "@/app/actions/tests";
 import type { DailyState } from "@/lib/daily/types";
@@ -46,7 +46,8 @@ export default async function DashboardPage() {
     .sort((a, b) => (a.accuracy ?? 0) - (b.accuracy ?? 0))
     .slice(0, 6);
   const peerBySystem = new Map<number, number | null>();
-  const { data: overview } = await supabase.rpc("performance_overview");
+  // getArgoInputs is request-cached: this reuses the performance_overview call getInsights made.
+  const { overview } = await getArgoInputs();
   for (const s of ((overview as { by_system?: { id: number; peer_accuracy: number | null }[] } | null)?.by_system ?? [])) peerBySystem.set(s.id, s.peer_accuracy);
 
   return (

@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { useTransition } from "react";
 import { DropdownMenu } from "radix-ui";
 import { useTheme } from "next-themes";
 import { ChevronsUpDown, CreditCard, LogOut, Moon, Settings, Sun } from "lucide-react";
+import { signOut } from "@/app/actions/auth";
 import { PLAN_NAME } from "@/lib/plans";
 
 type ShellUser = { name: string; email: string; plan: "free" | "core" | "argo"; isAdmin: boolean; streak: number };
 
 export function UserMenu({ user }: { user: ShellUser }) {
   const { resolvedTheme, setTheme } = useTheme();
+  const [signingOut, startSignOut] = useTransition();
   const initials = user.name
     .split(/\s+/)
     .map((p) => p[0])
@@ -54,16 +57,15 @@ export function UserMenu({ user }: { user: ShellUser }) {
             {resolvedTheme === "dark" ? "Light theme" : "Dark theme"}
           </DropdownMenu.Item>
           <DropdownMenu.Separator className="my-1 h-px bg-border" />
-          <form action="/auth/signout" method="post">
-            <DropdownMenu.Item asChild>
-              <button
-                type="submit"
-                className="flex h-9 w-full cursor-pointer items-center gap-2.5 rounded-[6px] px-2.5 text-[13.5px] font-medium text-text outline-none data-[highlighted]:bg-panel"
-              >
-                <LogOut className="size-4 text-muted" /> Sign out
-              </button>
-            </DropdownMenu.Item>
-          </form>
+          {/* A <form> inside the menu never submits: selecting the item closes the menu and
+              unmounts the button first. Call the action from onSelect instead. */}
+          <DropdownMenu.Item
+            disabled={signingOut}
+            onSelect={() => startSignOut(() => signOut())}
+            className="flex h-9 cursor-pointer items-center gap-2.5 rounded-[6px] px-2.5 text-[13.5px] font-medium text-text outline-none data-[disabled]:opacity-60 data-[highlighted]:bg-panel"
+          >
+            <LogOut className="size-4 text-muted" /> {signingOut ? "Signing out…" : "Sign out"}
+          </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

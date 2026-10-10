@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SUPPORT_EMAIL } from "@/lib/utils";
 
 const COLS = [
   {
@@ -26,12 +27,21 @@ const COLS = [
       { href: "/settings", label: "Settings" },
     ],
   },
+  {
+    title: "Help",
+    links: [
+      { href: `mailto:${SUPPORT_EMAIL}`, label: SUPPORT_EMAIL },
+      { href: "/terms", label: "Terms of service" },
+      { href: "/privacy", label: "Privacy policy" },
+      { href: "/refunds", label: "Refund policy" },
+    ],
+  },
 ];
 
 export function SiteFooter() {
   return (
     <footer className="overflow-hidden bg-ink text-on-ink">
-      <div className="mx-auto grid max-w-[1320px] gap-12 px-5 pb-12 pt-20 md:grid-cols-[1.4fr_repeat(3,1fr)] md:px-8">
+      <div className="mx-auto grid max-w-[1320px] gap-12 px-5 pb-12 pt-20 md:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)] md:px-8">
         <div className="max-w-[36ch]">
           <p className="display text-[26px] font-bold leading-[1.05]">A question bank that runs like an F1 team.</p>
           <p className="mt-4 text-[15px] leading-relaxed text-on-ink-muted">Big-bank quality for $48, once. Built to get you the score.</p>
@@ -42,9 +52,15 @@ export function SiteFooter() {
             <ul className="mt-4 grid gap-2.5">
               {c.links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-[14.5px] text-on-ink/85 transition-colors hover:text-signal">
-                    {l.label}
-                  </Link>
+                  {l.href.startsWith("mailto:") ? (
+                    <a href={l.href} className="break-all text-[14.5px] text-on-ink/85 transition-colors hover:text-signal">
+                      {l.label}
+                    </a>
+                  ) : (
+                    <Link href={l.href} className="text-[14.5px] text-on-ink/85 transition-colors hover:text-signal">
+                      {l.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -63,7 +79,7 @@ export function SiteFooter() {
 
       <div className="relative border-t border-on-ink/10 bg-ink">
         <div className="mx-auto flex max-w-[1320px] flex-col gap-2 px-5 py-6 text-[12.5px] text-on-ink-muted md:flex-row md:items-center md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} Argonaut USMLE. Not affiliated with or endorsed by the FSMB or NBME.</p>
+          <p>© {new Date().getFullYear()} Argonaut QBanks, London, UK. Argonaut USMLE is not affiliated with or endorsed by the FSMB or NBME.</p>
           <p>USMLE® is a registered trademark of the FSMB and NBME.</p>
         </div>
       </div>
