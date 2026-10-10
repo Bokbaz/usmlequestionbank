@@ -1,8 +1,21 @@
 import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import * as z from "zod";
+import skippedJson from "../../../content/approved/skipped.json";
+import {
+  ARGO_OPEN_SYSTEMS,
+  ARGO_SYSTEMS,
+  TOPIC_REUSE,
+  conditionTopic,
+  conditionWords,
+  isDuplicatePair,
+  matchOutlineCategory,
+  type ArgoPlacement,
+  type Similar,
+} from "@/lib/import/argo-format";
 import { composeArticle } from "@/lib/library/compose";
 import { AUTO_THRESHOLD, REVIEW_THRESHOLD, classifyMatch, embedTexts, findNuggetCandidates, questionMatchText } from "@/lib/nuggets/match";
+import { SYSTEMS, resolveSystem } from "@/lib/taxonomy";
 
 // Server half of the admin importer. The browser parses and previews the file, then sends
 // questions here in small chunks: upsert, embed, detect Nuggets. When every chunk is in,
@@ -142,6 +155,172 @@ function cardTitle(p: UpsertPayload) {
   const correct = p.options.find((o) => o.label === p.correct);
   const raw = p.key_concept || correct?.concept || correct?.body || p.topic || "High-yield concept";
   return raw.replace(/\.$/, "").slice(0, 160);
+}
+
+// ---------------------------------------------------------------- ARGO export placement
+
+export const ArgoPlaceItem = z.object({
+  index: z.number().int(),
+  sourceRef: z.string().min(1).max(80),
+  exam: z.enum(["step1", "step2ck", "step3"]),
+  // The pipeline's own system label, for example "respiratory_renal".
+  system: z.string().max(80),
+  category: z.string().max(500).nullable(),
+  condition: z.string().max(500).nullable(),
+  leadIn: z.string().max(2_000),
+  correctText: z.string().max(2_000),
+  keyConcept: z.string().max(300).nullable(),
+  objective: z.string().max(2_000).nullable(),
+});
+export type ArgoPlaceItem = z.infer<typeof ArgoPlaceItem>;
+
+type Neighbor = {
+  code: string;
+  exam: string;
+  system: string;
+  topic: string | null;
+  category: string | null;
+  condition: string | null;
+  lead_in: string;
+  answer: string | null;
+  similarity: number;
+};
+
+// Questions dropped as duplicates when their batch was imported with scripts/import-approved.ts.
+const recordedSkips = skippedJson as Record<string, { duplicate_of: string }>;
+
+const similar = (n: Neighbor, similarity = n.similarity): Similar => ({ code: n.code, similarity, leadIn: n.lead_in, answer: n.answer ?? "" });
+
+// Places questions from ARGO pipeline exports. Questions already in the bank (same
+// question_id) keep everything the site decided for them. New ones are embedded the way the
+// import will embed them and put next to their closest bank questions: organ system by a
+// similarity-weighted vote among the systems the pipeline label allows, then the nearest
+// question's topic, an existing topic named inside the condition, or a new topic named
+// after the condition.
+export async function placeArgo(sb: SupabaseClient, items: ArgoPlaceItem[]): Promise<ArgoPlacement[]> {
+  const out = new Map<number, ArgoPlacement>(items.map((i) => [i.index, { index: i.index }]));
+
+  type LiveRow = {
+    code: string;
+    source_ref: string;
+    is_free: boolean;
+    is_daily_eligible: boolean;
+    lead_in: string;
+    systems: { slug: string } | null;
+    topics: { name: string } | null;
+    categories: { name: string } | null;
+    disciplines: { slug: string } | null;
+    competencies: { slug: string } | null;
+    question_keys: { key_concept: string | null } | null;
+  };
+  const refs = [...new Set(items.flatMap((i) => [i.sourceRef, recordedSkips[i.sourceRef]?.duplicate_of].filter(Boolean) as string[]))];
+  const { data: live, error } = await sb
+    .from("questions")
+    .select(
+      "code, source_ref, is_free, is_daily_eligible, lead_in, systems(slug), topics(name), categories(name), disciplines(slug), competencies(slug), question_keys(key_concept)",
+    )
+    .in("source_ref", refs);
+  if (error) throw error;
+  const byRef = new Map(((live ?? []) as unknown as LiveRow[]).map((r) => [r.source_ref, r]));
+
+  const fresh: ArgoPlaceItem[] = [];
+  for (const item of items) {
+    const row = byRef.get(item.sourceRef);
+    if (row) {
+      out.get(item.index)!.existing = {
+        code: row.code,
+        system: row.systems?.slug ?? "",
+        topic: row.topics?.name ?? null,
+        category: row.categories?.name ?? null,
+        discipline: row.disciplines?.slug ?? null,
+        competency: row.competencies?.slug ?? null,
+        keyConcept: row.question_keys?.key_concept ?? null,
+        isFree: row.is_free,
+        isDaily: row.is_daily_eligible,
+      };
+      continue;
+    }
+    const original = byRef.get(recordedSkips[item.sourceRef]?.duplicate_of ?? "");
+    if (original) out.get(item.index)!.duplicate = { code: original.code, similarity: 1, leadIn: original.lead_in, answer: "", recorded: true };
+    fresh.push(item);
+  }
+  if (!fresh.length) return [...out.values()];
+
+  const [{ data: topicRows, error: tErr }, { data: categoryRows, error: cErr }] = await Promise.all([
+    sb.from("topics").select("name, systems(slug), categories(name)"),
+    sb.from("categories").select("name, systems(slug)"),
+  ]);
+  if (tErr) throw tErr;
+  if (cErr) throw cErr;
+  const topics = (topicRows ?? []) as unknown as { name: string; systems: { slug: string }; categories: { name: string } | null }[];
+  const categories = (categoryRows ?? []) as unknown as { name: string; systems: { slug: string } }[];
+
+  let vectors: number[][];
+  try {
+    vectors = await embedTexts(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      embedBearer(),
+      fresh.map((i) => questionMatchText({ stem: "", leadIn: i.leadIn, correctText: i.correctText, keyConcept: i.keyConcept, objective: i.objective })),
+    );
+  } catch (e) {
+    for (const i of fresh) out.get(i.index)!.error = `embedding failed: ${e instanceof Error ? e.message : e}`;
+    return [...out.values()];
+  }
+
+  await Promise.all(
+    fresh.map(async (item, n) => {
+      const placement = out.get(item.index)!;
+      const { data, error: mErr } = await sb.rpc("admin_match_questions", { p_embedding: JSON.stringify(vectors[n]), p_count: 10 });
+      if (mErr) {
+        placement.error = mErr.message;
+        return;
+      }
+      const neighbors = (data ?? []) as Neighbor[];
+
+      const label = item.system.toLowerCase();
+      const resolved = resolveSystem(label.replace(/_/g, " "));
+      const own = ARGO_SYSTEMS[label] ?? (resolved ? [resolved] : []);
+      const allowed = ARGO_OPEN_SYSTEMS.has(label) || !own.length ? SYSTEMS.map((s) => s.slug as string) : own;
+      const votes = new Map<string, number>();
+      for (const nb of neighbors.filter((x) => allowed.includes(x.system)).slice(0, 5)) {
+        votes.set(nb.system, (votes.get(nb.system) ?? 0) + nb.similarity ** 8);
+      }
+      const system = [...votes].sort((a, b) => b[1] - a[1])[0]?.[0] ?? own[0] ?? allowed[0];
+
+      const nearest = neighbors.find((x) => x.system === system && x.topic);
+      const conditionSet = conditionWords(item.condition);
+      const named = topics
+        .filter((t) => t.systems.slug === system)
+        .map((t) => ({ t, words: conditionWords(t.name) }))
+        .filter((x) => x.words.size && [...x.words].every((w) => conditionSet.has(w)))
+        .sort((a, b) => b.words.size - a.words.size)[0]?.t;
+      const outline = () =>
+        matchOutlineCategory(
+          item.category ?? undefined,
+          categories.filter((c) => c.systems.slug === system).map((c) => c.name),
+        );
+      const newTopic = conditionTopic(item.condition ?? undefined);
+      if (nearest && nearest.similarity >= TOPIC_REUSE) {
+        placement.suggested = { system, topic: nearest.topic!, category: nearest.category ?? outline(), basis: "neighbor", neighbor: similar(nearest) };
+      } else if (named) {
+        placement.suggested = { system, topic: named.name, category: named.categories?.name ?? outline(), basis: "topic-name" };
+      } else if (newTopic) {
+        placement.suggested = { system, topic: newTopic, category: outline(), basis: "condition", neighbor: nearest ? similar(nearest) : undefined };
+      } else if (nearest) {
+        placement.suggested = { system, topic: nearest.topic!, category: nearest.category ?? outline(), basis: "neighbor", neighbor: similar(nearest) };
+      } else {
+        placement.error = "no condition and no similar question to take a topic from";
+      }
+      // Lets the importer find duplicates within the file too.
+      placement.vector = vectors[n].map((v) => Math.round(v * 1e5) / 1e5);
+
+      if (!placement.duplicate) {
+        const twin = neighbors.find((x) => x.exam === item.exam && isDuplicatePair(x.similarity, item.condition, x.condition));
+        if (twin) placement.duplicate = similar(twin);
+      }
+    }),
+  );
+  return [...out.values()];
 }
 
 // The embed Edge Function only needs a valid project JWT at the gateway.

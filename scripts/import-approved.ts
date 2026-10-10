@@ -1,7 +1,7 @@
-// Imports an approved-question batch exported by the question authoring pipeline
-// ("Approved Questions/approved_*.json" array or *.jsonl, one item per line: APPROVED items
-// with question_id, exam_target, system, category, condition, difficulty, physician_task,
-// stem, lead_in, choices, correct_choice, explanations, tags, sources ...).
+// Imports an approved-question batch exported by the ARGO authoring pipeline, in any of its
+// formats (.json, .jsonl, .csv or .txt; see src/lib/import/argo-format.ts). The admin
+// importer at /admin/import reads the same files with the same mapping; this script is for
+// batches placed by hand.
 //
 // Placement (organ system, Library topic, key concept, free sample) comes from
 // content/approved/placements.json, keyed by question_id, because the pipeline's systems
@@ -21,8 +21,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { createClient } from "@supabase/supabase-js";
+import { toUpsertPayload } from "../src/lib/aqf/parse";
+import { argoCompetency, argoToQuestion, detectArgo, matchOutlineCategory, parseArgo } from "../src/lib/import/argo-format";
 import { UpsertPayload, importChunk, recomposeTopics } from "../src/lib/import/pipeline";
-import { resolveDiscipline, resolveExam, SYSTEMS, type DisciplineSlug } from "../src/lib/taxonomy";
+import { SYSTEMS } from "../src/lib/taxonomy";
 
 const root = path.resolve(__dirname, "..");
 for (const line of fs.readFileSync(path.join(root, ".env.local"), "utf8").split("\n")) {
@@ -30,113 +32,44 @@ for (const line of fs.readFileSync(path.join(root, ".env.local"), "utf8").split(
   if (i > 0 && !line.startsWith("#")) process.env[line.slice(0, i)] ??= line.slice(i + 1).trim();
 }
 
-type Approved = {
-  question_id: string;
-  exam_target: string;
-  system: string;
-  category: string;
-  condition: string;
-  difficulty: "EASY" | "MEDIUM" | "HARD" | "ULTRAHARD";
-  physician_task: string;
-  educational_objective: string;
-  core_concept: string;
-  stem: string;
-  lead_in: string;
-  choices: { label: string; text: string }[];
-  correct_choice: string;
-  correct_explanation: string;
-  distractor_explanations: Record<string, string>;
-  tags: { kind: string; value: string }[];
-  status: string;
-};
-
 type Placement = { condition?: string; system: string; topic: string; key_concept: string; category?: string | null; free?: boolean };
-
-const DIFFICULTY: Record<Approved["difficulty"], number> = { EASY: 2, MEDIUM: 3, HARD: 4, ULTRAHARD: 5 };
-
-// Discipline tags are free text ("cardiovascular physiology", "Biostatistics and epidemiology").
-function discipline(q: Approved): DisciplineSlug | null {
-  const values = q.tags.filter((t) => t.kind.toLowerCase().startsWith("discipline")).map((t) => t.value);
-  for (const v of values) {
-    const exact = resolveDiscipline(v);
-    if (exact) return exact;
-    const s = v.toLowerCase();
-    if (s.includes("biostat") || s.includes("epidemiol")) return "biostatistics-epi";
-    if (s.includes("pharmacol")) return "pharmacology";
-    if (s.includes("physiolog")) return "physiology";
-    if (s.includes("patholog")) return "pathology";
-    if (s.includes("anatom") || s.includes("embryol")) return "anatomy";
-    if (s.includes("genetic")) return "genetics";
-    if (s.includes("microbio")) return "microbiology";
-    if (s.includes("immunol")) return "immunology";
-    if (s.includes("biochem") || s.includes("nutrition")) return "biochemistry";
-    if (s.includes("histol")) return "histology";
-    if (s.includes("behavioral") || s.includes("neuroscience")) return "behavioral-science";
-    if (s.includes("ethic") || s.includes("social") || s.includes("palliative") || s.includes("quality") || s.includes("systems") || s.includes("economics")) return "ethics";
-  }
-  return null;
-}
-
-function competency(q: Approved, system: string): string {
-  if (system === "biostatistics") return "evidence-based";
-  if (system === "social-sciences") {
-    const c = q.category.toLowerCase();
-    if (c.includes("systems-based") || c.includes("patient safety")) return "systems-safety";
-    if (c.includes("communication")) return "communication";
-    if (c.includes("ethics")) return "professionalism";
-  }
-  switch (q.physician_task) {
-    case "diagnosis":
-      return "dx-diagnosis";
-    case "communication":
-      return "communication";
-    case "learning":
-      return "evidence-based";
-    default:
-      return "foundational-science";
-  }
-}
-
-// Match the outline category text to one of the system's categories by shared words.
-const STOP = new Set(["and", "the", "of", "on", "to", "in", "including", "disorders", "disease", "diseases", "system", "other", "related", "include", "issues"]);
-const words = (s: string) => new Set(s.toLowerCase().replace(/&/g, " ").split(/[^a-z]+/).filter((w) => w.length > 2 && !STOP.has(w)).map((w) => w.replace(/s$/, "")));
-function category(text: string, candidates: string[]): string | null {
-  const a = words(text);
-  let best: { name: string; score: number; coverage: number } | null = null;
-  for (const name of candidates) {
-    const b = words(name);
-    if (!b.size) continue;
-    const shared = [...b].filter((w) => a.has(w)).length;
-    const score = shared / (a.size + b.size - shared);
-    if (shared && (!best || score > best.score)) best = { name, score, coverage: shared / b.size };
-  }
-  // Half of the candidate's words must appear in the outline text.
-  return best && best.coverage >= 0.5 ? best.name : null;
-}
 
 async function main() {
   const file = process.argv.slice(2).find((a) => !a.startsWith("--"));
   const dryRun = process.argv.includes("--dry-run");
-  if (!file) throw new Error("Usage: import-approved.ts <approved.json> [--dry-run]");
-  const raw = fs.readFileSync(path.resolve(file), "utf8");
-  const parsed = (file.endsWith(".jsonl") ? raw.split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l)) : JSON.parse(raw)) as Approved[];
+  if (!file) throw new Error("Usage: import-approved.ts <approved export> [--dry-run]");
+  const text = fs.readFileSync(path.resolve(file), "utf8");
+  const format = detectArgo(path.basename(file), text);
+  if (!format) throw new Error("Not an ARGO export (.json, .jsonl, .csv or .txt)");
+  const parsed = parseArgo(format, text);
+  if (parsed.fileErrors.length) {
+    console.error(parsed.fileErrors.join("\n"));
+    process.exit(1);
+  }
   const placements = JSON.parse(fs.readFileSync(path.join(root, "content/approved/placements.json"), "utf8")) as Record<string, Placement>;
   // Questions that repeat one already in the bank (same exam and testing point) are listed
   // in skipped.json with what they duplicate, and are never imported.
   const skipped = JSON.parse(fs.readFileSync(path.join(root, "content/approved/skipped.json"), "utf8")) as Record<string, { duplicate_of: string }>;
-  const items = parsed.filter((q) => q.status === "APPROVED" && !skipped[q.question_id]);
-  if (parsed.length > items.length) console.log(`Skipping ${parsed.length - items.length} (not approved or listed in skipped.json)`);
+  const items = parsed.items.filter((q) => !skipped[q.questionId]);
+  const left = parsed.notApproved + parsed.items.length - items.length;
+  if (left) console.log(`Skipping ${left} (not approved or listed in skipped.json)`);
 
-  const missing = items.filter((q) => !placements[q.question_id]);
+  const missing = items.filter((q) => !placements[q.questionId]);
   if (missing.length) {
     console.error(`${missing.length} questions have no placement in content/approved/placements.json:`);
-    for (const q of missing) console.error(`  ${q.question_id}  ${q.system} | ${q.category} | ${q.condition}`);
+    for (const q of missing) console.error(`  ${q.questionId}  ${q.system} | ${q.category ?? ""} | ${q.condition ?? ""}`);
     process.exit(1);
   }
 
   const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false } });
-  const { data: cats, error: cErr } = await sb.from("categories").select("name, systems(slug)");
+  const [{ data: cats, error: cErr }, { data: topicRows, error: tErr }] = await Promise.all([
+    sb.from("categories").select("name, systems(slug)"),
+    sb.from("topics").select("name, categories(name)"),
+  ]);
   if (cErr) throw cErr;
+  if (tErr) throw tErr;
+  // The .txt and .csv exports have no outline category: use the topic's own.
+  const topicCategory = new Map((topicRows as unknown as { name: string; categories: { name: string } | null }[]).map((t) => [t.name, t.categories?.name ?? null]));
   const catsBySystem = new Map<string, string[]>();
   for (const c of cats as unknown as { name: string; systems: { slug: string } }[]) {
     catsBySystem.set(c.systems.slug, [...(catsBySystem.get(c.systems.slug) ?? []), c.name]);
@@ -144,39 +77,29 @@ async function main() {
 
   const payloads: { index: number; payload: UpsertPayload }[] = [];
   const problems: string[] = [];
-  items.forEach((q, index) => {
-    const pl = placements[q.question_id];
-    if (!SYSTEMS.some((s) => s.slug === pl.system)) problems.push(`${q.question_id}: unknown system ${pl.system}`);
-    const exam = resolveExam(q.exam_target.replace(/^STEP/i, "Step "));
-    if (!exam) problems.push(`${q.question_id}: unknown exam ${q.exam_target}`);
-    const optionExplanations = { ...q.distractor_explanations, [q.correct_choice]: `Correct. ${q.core_concept}` };
+  items.forEach((item, index) => {
+    const pl = placements[item.questionId];
+    if (!SYSTEMS.some((s) => s.slug === pl.system)) problems.push(`${item.questionId}: unknown system ${pl.system}`);
+    const category =
+      pl.category !== undefined
+        ? pl.category
+        : item.category
+          ? matchOutlineCategory(item.category, catsBySystem.get(pl.system) ?? [])
+          : (topicCategory.get(pl.topic) ?? null);
+    const q = argoToQuestion(item, index);
     const parsed = UpsertPayload.safeParse({
-      exam,
+      ...toUpsertPayload({
+        ...q,
+        system: pl.system,
+        category: category ?? undefined,
+        topic: pl.topic,
+        keyConcept: pl.key_concept,
+        competency: argoCompetency(item.physicianTask, pl.system, item.category),
+        isFree: pl.free === true,
+      }),
       status: "published",
-      stem: q.stem,
-      lead_in: q.lead_in,
-      media: [],
-      system: pl.system,
-      discipline: discipline(q),
-      competency: competency(q, pl.system),
-      category: pl.category !== undefined ? pl.category : category(q.category, catsBySystem.get(pl.system) ?? []),
-      topic: pl.topic,
-      difficulty: DIFFICULTY[q.difficulty] ?? 3,
-      is_free: pl.free === true,
-      is_daily_eligible: q.difficulty === "ULTRAHARD",
-      tags: [q.condition.slice(0, 60)],
-      options: q.choices.map((c) => ({ label: c.label, body: c.text, concept: null })),
-      correct: q.correct_choice,
-      explanation: q.correct_explanation,
-      option_explanations: optionExplanations,
-      objective: q.educational_objective,
-      textbook: null,
-      key_concept: pl.key_concept,
-      references: [],
-      source: "import",
-      source_ref: q.question_id,
     });
-    if (!parsed.success) problems.push(`${q.question_id}: ${parsed.error.issues[0].path.join(".")} ${parsed.error.issues[0].message}`);
+    if (!parsed.success) problems.push(`${item.questionId}: ${parsed.error.issues[0].path.join(".")} ${parsed.error.issues[0].message}`);
     else payloads.push({ index, payload: parsed.data });
   });
   if (problems.length) {
@@ -193,7 +116,7 @@ async function main() {
   if (process.argv.includes("--verbose")) {
     const pairs = new Map<string, number>();
     for (const { index, payload } of payloads) {
-      const key = `${payload.system} | ${items[index].category} -> ${payload.category ?? "(none)"}`;
+      const key = `${payload.system} | ${items[index].category ?? ""} -> ${payload.category ?? "(none)"}`;
       pairs.set(key, (pairs.get(key) ?? 0) + 1);
     }
     for (const [k, n] of [...pairs].sort()) console.log(`  ${n}x ${k}`);
@@ -218,7 +141,7 @@ async function main() {
     for (const r of results) {
       if (r.id) (r.created ? created++ : updated++);
       if (r.topicId) topicIds.add(r.topicId);
-      if (r.error) errors.push(`${items[r.index].question_id} ${r.code ?? ""}: ${r.error}`);
+      if (r.error) errors.push(`${items[r.index].questionId} ${r.code ?? ""}: ${r.error}`);
       if (r.nugget) nuggets[r.nugget] = (nuggets[r.nugget] ?? 0) + 1;
     }
     process.stdout.write(`\r${Math.min(i + 20, payloads.length)}/${payloads.length}`);

@@ -12,6 +12,7 @@ import {
   resolveSystem,
   type ExamKey,
 } from "@/lib/taxonomy";
+import type { ArgoPlacement } from "@/lib/import/argo-format";
 
 export type AqfOption = { label: string; body: string; concept?: string };
 
@@ -50,6 +51,11 @@ export type AqfQuestion = {
   meta: string[];
   // Fields filled in by AI in the importer, shown for review before committing.
   ai?: { structured?: boolean; classified?: boolean };
+  // ARGO pipeline exports (lib/import/argo-format.ts): the pipeline's question_id, which
+  // re-imports match on, its own labels, and where the server placed the question.
+  sourceRef?: string;
+  argo?: { system: string; category?: string; condition?: string; physicianTask?: string; examLabel: string; removedQuestion?: string; sameIdAs?: number };
+  placement?: ArgoPlacement;
 };
 
 export type AqfParseResult = { questions: AqfQuestion[]; fileErrors: string[] };
@@ -477,5 +483,6 @@ export function toUpsertPayload(q: AqfQuestion, extra: { batchId?: string; sourc
     nuggets: q.nuggets.length ? q.nuggets : undefined,
     batch_id: extra.batchId ?? null,
     source: extra.source ?? "import",
+    source_ref: q.sourceRef,
   };
 }

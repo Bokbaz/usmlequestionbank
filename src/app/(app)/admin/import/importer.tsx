@@ -2,19 +2,31 @@
 
 import Link from "next/link";
 import { useMemo, useRef, useState } from "react";
-import { AlertTriangle, CheckCircle2, ChevronDown, FileText, Sparkles, Upload, XCircle } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ChevronDown, Copy, FileText, Sparkles, Upload, XCircle } from "lucide-react";
 import { toast } from "sonner";
 import { Badge, NuggetGlyph } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/input";
+import { Input, Textarea } from "@/components/ui/input";
 import { ProgressBar } from "@/components/ui/misc";
 import { Segmented } from "@/components/ui/segmented";
 import { parseAqf, revalidateAqf, toUpsertPayload, type AqfQuestion } from "@/lib/aqf/parse";
+import {
+  applyPlacement,
+  argoCompetency,
+  argoMatchInput,
+  argoToQuestion,
+  detectArgo,
+  isDuplicatePair,
+  parseArgo,
+  validateArgo,
+  type ArgoFormat,
+  type ArgoPlacement,
+} from "@/lib/import/argo-format";
 import { SYSTEMS, resolveCompetency, resolveDiscipline, resolveSystem, systemName } from "@/lib/taxonomy";
 import { cn, plural } from "@/lib/utils";
 
-type Phase = "input" | "review" | "importing" | "done";
-type Filter = "all" | "errors" | "warnings" | "ready";
+type Phase = "input" | "placing" | "review" | "importing" | "done";
+type Filter = "all" | "errors" | "warnings" | "ready" | "duplicates";
 type ItemResult = { index: number; code: string | null; id?: string; created?: boolean; topicId?: number | null; error?: string; nugget?: "curated" | "auto" | "review" | "none" };
 type Classified = { index: number; system: string; discipline: string; competency: string; category: string | null; topic: string; key_concept: string; difficulty: number };
 type Structured = {
@@ -30,6 +42,9 @@ type Structured = {
 
 const PAGE = 50;
 const CHUNK = 20;
+const PLACE_CHUNK = 10;
+
+const ARGO_LABEL: Record<ArgoFormat, string> = { json: "ARGO export (JSON)", jsonl: "ARGO export (JSONL)", csv: "ARGO export (CSV)", txt: "ARGO export (text)" };
 
 async function post<T>(url: string, body: unknown): Promise<T> {
   const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
@@ -54,6 +69,29 @@ function chunk<T>(arr: T[], size: number) {
   return out;
 }
 
+// ARGO exports carry their own checks (placement, question_id).
+const revalidate = (q: AqfQuestion) => (q.argo ? validateArgo(q) : revalidateAqf(q));
+
+const dot = (a: number[], b: number[]) => a.reduce((s, v, i) => s + v * b[i], 0);
+
+// Marks later questions in the file that repeat an earlier new one (same exam and testing
+// point). Bank duplicates were flagged by the server already.
+function markFileDuplicates(qs: AqfQuestion[]): AqfQuestion[] {
+  const kept: AqfQuestion[] = [];
+  return qs.map((q) => {
+    const p = q.placement;
+    if (!p?.vector || p.existing || p.duplicate) return q;
+    const twin = kept.find((k) => k.exam === q.exam && isDuplicatePair(dot(p.vector!, k.placement!.vector!), q.argo?.condition, k.argo?.condition));
+    if (!twin) {
+      kept.push(q);
+      return q;
+    }
+    const similarity = dot(p.vector, twin.placement!.vector!);
+    const answer = twin.options.find((o) => o.label === twin.correct)?.body ?? "";
+    return { ...q, placement: { ...p, duplicate: { code: `#${twin.index}`, similarity, leadIn: twin.leadIn, answer, inFile: twin.index } } };
+  });
+}
+
 function applyClassification(q: AqfQuestion, c: Classified): AqfQuestion {
   const given = (k: string) => q.meta.includes(k);
   const next: AqfQuestion = { ...q, ai: { ...q.ai, classified: true } };
@@ -67,12 +105,12 @@ function applyClassification(q: AqfQuestion, c: Classified): AqfQuestion {
   if (!q.topic && c.topic) next.topic = c.topic;
   if (!q.keyConcept && c.key_concept) next.keyConcept = c.key_concept;
   if (!given("difficulty")) next.difficulty = Math.min(5, Math.max(1, Math.round(c.difficulty)));
-  return revalidateAqf(next);
+  return revalidate(next);
 }
 
 function applyStructure(q: AqfQuestion, s: Structured): AqfQuestion {
   const optionExplanations = Object.fromEntries(s.option_explanations.map((e) => [e.label, e.text]));
-  return revalidateAqf({
+  return revalidate({
     ...q,
     stem: s.stem.trim(),
     leadIn: s.lead_in.trim(),
@@ -104,17 +142,25 @@ export function Importer({ ai }: { ai: boolean }) {
   const [progress, setProgress] = useState({ done: 0, total: 0, created: 0, updated: 0, failed: 0, auto: 0, review: 0, curated: 0 });
   const [results, setResults] = useState<ItemResult[]>([]);
   const [finished, setFinished] = useState<{ articles: number; libraryError: string | null; stopped: boolean } | null>(null);
+  const [argoFormat, setArgoFormat] = useState<ArgoFormat | null>(null);
+  const [placing, setPlacing] = useState({ done: 0, total: 0 });
+  // Duplicates are skipped unless the admin chooses to import them.
+  const [importDuplicates, setImportDuplicates] = useState<Set<number>>(new Set());
   const stopRef = useRef(false);
   const fileInput = useRef<HTMLInputElement>(null);
 
   // A fallback system fills in questions that neither state nor suggest one.
   const view = useMemo(
-    () => questions.map((q) => (!q.system && fallbackSystem ? revalidateAqf({ ...q, system: fallbackSystem }) : q)),
+    () => questions.map((q) => (!q.system && !q.argo && fallbackSystem ? revalidateAqf({ ...q, system: fallbackSystem }) : q)),
     [questions, fallbackSystem],
   );
+  const skipped = (q: AqfQuestion) => Boolean(q.placement?.duplicate) && !importDuplicates.has(q.index);
   const errors = view.filter((q) => q.errors.length);
-  const warned = view.filter((q) => !q.errors.length && q.warnings.length);
-  const ready = view.filter((q) => !q.errors.length);
+  const duplicates = view.filter((q) => q.placement?.duplicate);
+  const warned = view.filter((q) => !q.errors.length && !skipped(q) && q.warnings.length);
+  const ready = view.filter((q) => !q.errors.length && !skipped(q));
+  const updates = ready.filter((q) => q.placement?.existing).length;
+  const unplaced = view.filter((q) => q.placement?.error);
   const toClassify = view.filter(needsClassification);
   const toRepair = view.filter((q) => q.errors.length && q.raw);
   const bySystem = useMemo(() => {
@@ -122,18 +168,101 @@ export function Importer({ ai }: { ai: boolean }) {
     for (const q of ready) m.set(q.system ?? "?", (m.get(q.system ?? "?") ?? 0) + 1);
     return [...m.entries()].sort((a, b) => b[1] - a[1]);
   }, [ready]);
-  const shown = filter === "errors" ? errors : filter === "warnings" ? warned : filter === "ready" ? ready.filter((q) => !q.warnings.length) : view;
+  const shown =
+    filter === "errors"
+      ? errors
+      : filter === "warnings"
+        ? warned
+        : filter === "ready"
+          ? ready.filter((q) => !q.warnings.length)
+          : filter === "duplicates"
+            ? duplicates
+            : view;
   const pages = Math.max(1, Math.ceil(shown.length / PAGE));
 
   function load(text: string, name: string | null) {
+    setFileName(name);
+    setPage(0);
+    setOpenIndex(null);
+    setImportDuplicates(new Set());
+    const format = detectArgo(name, text);
+    setArgoFormat(format);
+    if (format) return loadArgo(format, text);
     const res = parseAqf(text);
     setQuestions(res.questions);
     setFileErrors(res.fileErrors);
-    setFileName(name);
     setFilter(res.questions.some((q) => q.errors.length) ? "errors" : "all");
-    setPage(0);
-    setOpenIndex(null);
     setPhase("review");
+  }
+
+  // ARGO pipeline exports: parse, then let the server place every question before review.
+  async function loadArgo(format: ArgoFormat, text: string) {
+    const res = parseArgo(format, text);
+    const parsed = res.items.map((item, i) => argoToQuestion(item, i + 1));
+    const ids = new Map<string, number>();
+    const fileErrors = [...res.fileErrors];
+    if (res.notApproved) fileErrors.push(`${plural(res.notApproved, "question")} not marked APPROVED left out`);
+    setFileErrors(fileErrors);
+    setQuestions(parsed);
+    if (!parsed.length) return setPhase("review");
+    const placed = await place(parsed);
+    const final = markFileDuplicates(placed).map((q) => {
+      // The same question_id twice in one file: only the first copy imports.
+      const first = q.sourceRef ? ids.get(q.sourceRef) : undefined;
+      if (q.sourceRef && first == null) ids.set(q.sourceRef, q.index);
+      return validateArgo({ ...q, argo: q.argo && { ...q.argo, sameIdAs: first }, placement: q.placement && { ...q.placement, vector: undefined } });
+    });
+    setQuestions(final);
+    setFilter(final.some((q) => q.errors.length) ? "errors" : "all");
+    setPhase("review");
+  }
+
+  async function place(targets: AqfQuestion[]): Promise<AqfQuestion[]> {
+    setPhase("placing");
+    setPlacing({ done: 0, total: targets.length });
+    const byIndex = new Map<number, ArgoPlacement>();
+    await pool(chunk(targets, PLACE_CHUNK), 3, async (group) => {
+      const items = group.map((q) => {
+        const m = argoMatchInput(q);
+        return {
+          index: q.index,
+          sourceRef: q.sourceRef ?? `missing-${q.index}`,
+          exam: q.exam,
+          system: (q.argo?.system ?? "").slice(0, 80),
+          category: q.argo?.category?.slice(0, 500) ?? null,
+          condition: q.argo?.condition?.slice(0, 500) ?? null,
+          leadIn: m.leadIn.slice(0, 2_000),
+          correctText: m.correctText.slice(0, 2_000),
+          keyConcept: m.keyConcept ?? null,
+          objective: m.objective?.slice(0, 2_000) ?? null,
+        };
+      });
+      try {
+        const res = await post<{ placements: ArgoPlacement[] }>("/api/admin/import", { action: "place", items });
+        for (const p of res.placements) byIndex.set(p.index, p);
+      } catch (e) {
+        for (const q of group) byIndex.set(q.index, { index: q.index, error: e instanceof Error ? e.message : "request failed" });
+      }
+      setPlacing((p) => ({ ...p, done: p.done + group.length }));
+    });
+    return targets.map((q) => applyPlacement(q, byIndex.get(q.index) ?? { index: q.index, error: "no answer from the server" }));
+  }
+
+  async function retryPlacement() {
+    const placed = await place(unplaced);
+    replace(markFileDuplicates(placed).map((q) => validateArgo({ ...q, placement: q.placement && { ...q.placement, vector: undefined } })));
+    setPhase("review");
+  }
+
+  // Manual placement in the review: system and topic of one question.
+  function edit(q: AqfQuestion, change: { system?: string; topic?: string }) {
+    const next: AqfQuestion = { ...q, ...change };
+    if (change.system && change.system !== q.system) {
+      next.category = undefined;
+      if (q.argo && !q.placement?.existing) next.competency = argoCompetency(q.argo.physicianTask, change.system, q.argo.category);
+    }
+    if (change.topic !== undefined) next.topic = change.topic.trim() || undefined;
+    replace([revalidate(next)]);
   }
 
   async function readFile(file: File) {
@@ -272,6 +401,8 @@ export function Importer({ ai }: { ai: boolean }) {
 
   function reset() {
     setPhase("input");
+    setArgoFormat(null);
+    setImportDuplicates(new Set());
     setQuestions([]);
     setFileErrors([]);
     setPasted("");
@@ -304,12 +435,12 @@ export function Importer({ ai }: { ai: boolean }) {
             )}
           >
             <Upload className="size-6 text-brand-strong" />
-            <span className="text-[15px] font-semibold">Drop a .txt file or click to choose</span>
-            <span className="text-[13px] text-muted">Any size. Parsing happens in your browser before anything is saved.</span>
+            <span className="text-[15px] font-semibold">Drop a question file or click to choose</span>
+            <span className="text-[13px] text-muted">ARGO exports (.json, .jsonl, .csv, .txt) or Argonaut Question Format. Nothing is saved until you import.</span>
             <input
               ref={fileInput}
               type="file"
-              accept=".txt,.md,.aqf,text/plain"
+              accept=".txt,.md,.aqf,.json,.jsonl,.ndjson,.csv,text/plain,application/json,text/csv"
               className="sr-only"
               onChange={(e) => {
                 const f = e.target.files?.[0];
@@ -328,6 +459,27 @@ export function Importer({ ai }: { ai: boolean }) {
           </div>
         </div>
         <FormatGuide />
+      </div>
+    );
+  }
+
+  // ---------------------------------------------------------------- placing
+  if (phase === "placing") {
+    return (
+      <div className="rounded-[10px] border border-border bg-surface p-6">
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <p className="text-[18px] font-[750]">
+            Matching questions to the bank
+            {fileName ? <span className="font-normal text-muted"> · {fileName}</span> : null}
+          </p>
+          <p className="tabular text-[14px] text-muted">
+            {placing.done.toLocaleString()} / {placing.total.toLocaleString()}
+          </p>
+        </div>
+        <ProgressBar value={placing.total ? (100 * placing.done) / placing.total : 0} className="mt-4 h-2" />
+        <p className="mt-4 text-[13px] text-muted">
+          Questions already in the bank keep their system and topic. New ones go next to their closest questions, and repeats of existing questions are set aside. Nothing is saved yet.
+        </p>
       </div>
     );
   }
@@ -428,10 +580,20 @@ export function Importer({ ai }: { ai: boolean }) {
           <div className="flex min-w-0 items-center gap-3">
             <FileText className="size-5 shrink-0 text-brand-strong" />
             <div className="min-w-0">
-              <p className="truncate text-[15px] font-semibold">{fileName ?? "Pasted text"}</p>
+              <p className="truncate text-[15px] font-semibold">
+                {fileName ?? "Pasted text"}
+                {argoFormat && <span className="font-normal text-muted"> · {ARGO_LABEL[argoFormat]}</span>}
+              </p>
               <p className="text-[13px] text-muted">
                 {plural(view.length, "question")} found · <span className="text-correct">{ready.length.toLocaleString()} ready</span>
+                {argoFormat ? (
+                  <>
+                    {" "}
+                    ({(ready.length - updates).toLocaleString()} new, {updates.toLocaleString()} {updates === 1 ? "update" : "updates"})
+                  </>
+                ) : null}
                 {warned.length ? <> · {warned.length.toLocaleString()} with warnings</> : null}
+                {duplicates.length ? <> · {plural(duplicates.length, "duplicate")}</> : null}
                 {errors.length ? <> · <span className="text-incorrect">{errors.length.toLocaleString()} blocked</span></> : null}
               </p>
             </div>
@@ -470,9 +632,36 @@ export function Importer({ ai }: { ai: boolean }) {
                 { value: "draft", label: "Draft" },
               ]}
             />
-            <p className="text-[12.5px] text-muted">Questions with their own Status line keep it.</p>
+            <p className="text-[12.5px] text-muted">
+              {argoFormat ? "Applies to new questions. Questions already in the bank keep their status." : "Questions with their own Status line keep it."}
+            </p>
           </div>
-          <div className="grid gap-1.5">
+          {duplicates.length > 0 && (
+            <div className="grid content-start gap-1.5">
+              <p className="text-[13px] font-semibold">Duplicates</p>
+              <Segmented
+                value={importDuplicates.size === duplicates.length ? "import" : "skip"}
+                onChange={(v) => setImportDuplicates(v === "import" ? new Set(duplicates.map((q) => q.index)) : new Set())}
+                options={[
+                  { value: "skip", label: `Skip ${duplicates.length}` },
+                  { value: "import", label: "Import anyway" },
+                ]}
+              />
+              <p className="text-[12.5px] text-muted">Same exam and testing point as a question already in the bank or earlier in this file. Open one to compare or decide per question.</p>
+            </div>
+          )}
+          {unplaced.length > 0 && (
+            <div className="grid content-start gap-1.5">
+              <p className="text-[13px] font-semibold">Placement</p>
+              <div>
+                <Button size="sm" variant="secondary" onClick={retryPlacement}>
+                  Retry {plural(unplaced.length, "question")}
+                </Button>
+              </div>
+              <p className="text-[12.5px] text-muted">These could not be matched to the bank and stay blocked until placed.</p>
+            </div>
+          )}
+          <div className={cn("grid gap-1.5", argoFormat && "hidden")}>
             <label htmlFor="fallback-system" className="text-[13px] font-semibold">
               System for questions without one
             </label>
@@ -531,6 +720,7 @@ export function Importer({ ai }: { ai: boolean }) {
               { value: "errors", label: `Blocked ${errors.length}` },
               { value: "warnings", label: `Warnings ${warned.length}` },
               { value: "ready", label: `Clean ${ready.length - warned.length}` },
+              ...(duplicates.length ? [{ value: "duplicates" as const, label: `Duplicates ${duplicates.length}` }] : []),
             ]}
           />
           {pages > 1 && (
@@ -555,6 +745,16 @@ export function Importer({ ai }: { ai: boolean }) {
               open={openIndex === q.index}
               onToggle={() => setOpenIndex((i) => (i === q.index ? null : q.index))}
               onRepair={ai && q.errors.length && q.raw ? () => repair([q]) : undefined}
+              onEdit={(change) => edit(q, change)}
+              skipped={skipped(q)}
+              onToggleDuplicate={() =>
+                setImportDuplicates((prev) => {
+                  const next = new Set(prev);
+                  if (next.has(q.index)) next.delete(q.index);
+                  else next.add(q.index);
+                  return next;
+                })
+              }
               busy={aiTask != null}
             />
           ))}
@@ -565,13 +765,34 @@ export function Importer({ ai }: { ai: boolean }) {
   );
 }
 
-function QuestionRow({ q, open, onToggle, onRepair, busy }: { q: AqfQuestion; open: boolean; onToggle: () => void; onRepair?: () => void; busy: boolean }) {
-  const state = q.errors.length ? "error" : q.warnings.length ? "warning" : "ok";
+function QuestionRow({
+  q,
+  open,
+  onToggle,
+  onRepair,
+  onEdit,
+  skipped,
+  onToggleDuplicate,
+  busy,
+}: {
+  q: AqfQuestion;
+  open: boolean;
+  onToggle: () => void;
+  onRepair?: () => void;
+  onEdit: (change: { system?: string; topic?: string }) => void;
+  skipped: boolean;
+  onToggleDuplicate: () => void;
+  busy: boolean;
+}) {
+  const state = q.errors.length ? "error" : skipped ? "skipped" : q.warnings.length ? "warning" : "ok";
+  const p = q.placement;
   return (
     <li className="border-b border-border last:border-0">
       <button type="button" onClick={onToggle} aria-expanded={open} className="grid w-full grid-cols-[auto_1fr_auto] items-start gap-3 px-4 py-3 text-left hover:bg-panel/60">
         {state === "error" ? (
           <XCircle className="mt-0.5 size-4 text-incorrect" />
+        ) : state === "skipped" ? (
+          <Copy className="mt-0.5 size-4 text-faint" />
         ) : state === "warning" ? (
           <AlertTriangle className="mt-0.5 size-4 text-warning" />
         ) : (
@@ -581,6 +802,9 @@ function QuestionRow({ q, open, onToggle, onRepair, busy }: { q: AqfQuestion; op
           <span className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[12.5px] text-muted">
             <span className="tabular">#{q.index}</span>
             {q.code && <span className="font-semibold text-text">{q.code}</span>}
+            {p?.existing && <Badge tone="neutral">Update</Badge>}
+            {p && !p.existing && !p.error && !p.duplicate && <Badge tone="brand">New</Badge>}
+            {p?.duplicate && <Badge tone={skipped ? "neutral" : "warning"}>{skipped ? "Duplicate, skipped" : "Duplicate, importing"}</Badge>}
             {q.system && <span>{systemName(q.system)}</span>}
             {q.topic && <span>· {q.topic}</span>}
             {q.nuggets.length > 0 && <NuggetGlyph />}
@@ -594,6 +818,26 @@ function QuestionRow({ q, open, onToggle, onRepair, busy }: { q: AqfQuestion; op
       </button>
       {open && (
         <div className="grid gap-4 border-t border-border bg-panel/40 px-4 py-4 text-[14px] md:px-11">
+          {p?.duplicate && (
+            <div className="grid gap-2 rounded-[8px] border border-border bg-surface p-3 text-[13.5px]">
+              <p className="font-semibold">
+                {p.duplicate.inFile != null
+                  ? `Same testing point as question #${p.duplicate.inFile} in this file (${Math.round(100 * p.duplicate.similarity)}% similar)`
+                  : p.duplicate.recorded
+                    ? `Recorded as a duplicate of ${p.duplicate.code} when its batch was imported`
+                    : `Same testing point as ${p.duplicate.code} in the bank (${Math.round(100 * p.duplicate.similarity)}% similar)`}
+              </p>
+              <p className="text-muted">
+                {p.duplicate.leadIn}
+                {p.duplicate.answer ? <span className="text-text"> · {p.duplicate.answer}</span> : null}
+              </p>
+              <div>
+                <Button size="sm" variant="secondary" onClick={onToggleDuplicate}>
+                  {skipped ? "Import this one anyway" : "Skip this one"}
+                </Button>
+              </div>
+            </div>
+          )}
           <p className="max-h-60 overflow-y-auto whitespace-pre-line leading-relaxed">{q.stem || "(no stem)"}</p>
           <p className="font-semibold">{q.leadIn || "(no lead-in)"}</p>
           <ul className="grid gap-1">
@@ -621,6 +865,7 @@ function QuestionRow({ q, open, onToggle, onRepair, busy }: { q: AqfQuestion; op
               </div>
             ))}
           </dl>
+          {q.argo && <Placement q={q} onEdit={onEdit} />}
           {(q.errors.length > 0 || q.warnings.length > 0) && (
             <ul className="grid gap-1 text-[13px]">
               {q.errors.map((e) => (
@@ -648,10 +893,64 @@ function QuestionRow({ q, open, onToggle, onRepair, busy }: { q: AqfQuestion; op
   );
 }
 
+// Where an ARGO export question goes, with the system and topic editable before import.
+function Placement({ q, onEdit }: { q: AqfQuestion; onEdit: (change: { system?: string; topic?: string }) => void }) {
+  const p = q.placement;
+  const s = p?.suggested;
+  const why = p?.existing
+    ? `Already in the bank as ${p.existing.code}: the text is updated, its placement and flags are kept.`
+    : s?.basis === "neighbor" && s.neighbor
+      ? `Placed next to ${s.neighbor.code} (${Math.round(100 * s.neighbor.similarity)}% similar).`
+      : s?.basis === "topic-name"
+        ? "Existing topic named in the condition."
+        : s
+          ? "New Library topic named after the condition."
+          : null;
+  return (
+    <div className="grid gap-2 rounded-[8px] border border-border bg-surface p-3">
+      <div className="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+        <label className="grid gap-1 text-[12.5px] text-muted">
+          System
+          <select
+            value={q.system ?? ""}
+            onChange={(e) => onEdit({ system: e.target.value })}
+            className="h-9 rounded-[6px] border border-border bg-surface px-2 text-[14px] text-text"
+          >
+            {!q.system && <option value="">Choose a system</option>}
+            {SYSTEMS.map((sys) => (
+              <option key={sys.slug} value={sys.slug}>
+                {sys.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="grid gap-1 text-[12.5px] text-muted">
+          Library topic
+          <Input key={`${q.index}-${q.topic}`} defaultValue={q.topic ?? ""} onBlur={(e) => e.target.value !== (q.topic ?? "") && onEdit({ topic: e.target.value })} className="h-9 text-[14px]" />
+        </label>
+      </div>
+      {why && <p className="text-[12.5px] text-muted">{why}</p>}
+      {q.argo && (
+        <p className="text-[12.5px] text-faint">
+          File: {q.argo.system}
+          {q.argo.condition ? ` · ${q.argo.condition}` : ""}
+          {q.sourceRef ? ` · ${q.sourceRef}` : ""}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function FormatGuide() {
   return (
     <div className="rounded-[10px] border border-border bg-surface p-5 text-[13.5px]">
-      <p className="text-[15px] font-semibold">Argonaut Question Format</p>
+      <p className="text-[15px] font-semibold">ARGO exports</p>
+      <p className="mt-1.5 text-muted">
+        Upload an approved batch exactly as exported: <span className="font-mono text-[12.5px]">approved_….json</span>, <span className="font-mono text-[12.5px]">.jsonl</span>,{" "}
+        <span className="font-mono text-[12.5px]">.csv</span> or <span className="font-mono text-[12.5px]">.txt</span>. All four give the same result. Questions already in the bank are updated in place and keep
+        their system and topic; new ones are placed next to their closest questions, and repeats are set aside for you to check. Source notes in the file are never imported.
+      </p>
+      <p className="mt-5 text-[15px] font-semibold">Argonaut Question Format</p>
       <p className="mt-1.5 text-muted">
         One block per question. Only the vignette, choices and answer are required; everything else improves filtering, ARGO tracking and the Library. Loosely formatted text (numbered questions, &quot;Answer: C&quot;) is
         also understood.

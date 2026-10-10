@@ -1,6 +1,6 @@
 # Argonaut Question Format (AQF)
 
-AQF is the plain-text format the admin importer (`/admin/import`) reads. One file can hold any number of questions. The parser is lenient: loosely formatted text pasted from elsewhere ("Question 12", "A)", "Answer: C") is understood too, and the importer shows every problem before anything is saved.
+AQF is the plain-text format the admin importer (`/admin/import`) reads. The importer also reads ARGO pipeline exports as they are; see [ARGO pipeline exports](#argo-pipeline-exports). One file can hold any number of questions. The parser is lenient: loosely formatted text pasted from elsewhere ("Question 12", "A)", "Answer: C") is understood too, and the importer shows every problem before anything is saved.
 
 Re-importing a question with the same `ID` updates it in place. Answer history is kept when option labels survive the edit.
 
@@ -105,6 +105,39 @@ Metadata lines (`System:`, `Difficulty:` ...) may appear anywhere outside the St
 2. Optional AI assist (requires `ANTHROPIC_API_KEY`): **Classify** fills missing system, discipline, competency, category, topic and key concept; **Repair** restructures blocks the parser could not read. Neither rewrites medical content.
 3. Questions are saved in chunks of 20. For each one the testing point is embedded and compared with the high-yield index: strong matches become Nuggets automatically, borderline ones go to `/admin/nuggets` for review.
 4. Library chapters are rebuilt for every topic touched by the import.
+
+## ARGO pipeline exports
+
+The importer also reads approved batches from the ARGO authoring pipeline exactly as exported, in any of its four formats. All four give the same questions on the site (`src/lib/import/argo-format.ts`).
+
+| File | Shape |
+|---|---|
+| `approved_….json` | Array of items |
+| `approved_….jsonl` | One item per line |
+| `approved_….csv` | One row per item: choices in columns `A` to `E`, `distractor_explanations` and `tags` as JSON text |
+| `approved_….txt` | Readable blocks separated by a row of `=`: `Question ID:`, vignette, lead-in, choices, `Correct Answer:`, explanation, `Why each other option is incorrect:`, `Educational Objective:`, `Core Concept:`, `Tags:`, `Sources:` |
+
+The `.txt` and `.csv` exports carry exam, system, difficulty, physician task and condition only as tags (`EXAM: STEP1; SYSTEM: respiratory_renal; ...`). When a file has both, the item's own fields win over tags. Only `APPROVED` items are read; `sources` (licensed study notes) are never read.
+
+How fields map:
+
+| On the site | From the file |
+|---|---|
+| Stem, lead-in, options, answer | `stem`, `lead_in`, `choices`, `correct_choice`. A question repeated at the end of the stem is removed (the lead-in is the question); quoted speech stays. |
+| Explanation | `correct_explanation` |
+| Option explanations | `distractor_explanations`, plus `Correct. <core concept>` for the answer |
+| Objective | `educational_objective` |
+| Key concept | the `core testing point` tag, else `core_concept` |
+| Exam, difficulty | `exam_target`; `EASY` 2, `MEDIUM` 3, `HARD` 4, `ULTRAHARD` 5. `ULTRAHARD` joins the Daily pool. |
+| Discipline, task | `DISCIPLINE` tags; `physician_task` |
+| Tags | the condition |
+| Re-import match | `question_id` (stored as `source_ref`) |
+
+Placement:
+
+- **Already in the bank** (same `question_id`): the text is updated in place; system, topic, category, key concept, discipline, task, Free, Daily and status stay as the site has them.
+- **New**: the pipeline's systems are combined (`respiratory_renal`), so each question is embedded and compared with the bank. The system is a similarity-weighted vote of its 5 closest questions among the systems its label allows (`multisystem` and `social` may go anywhere). The topic is the closest question's topic in that system when it is at least 88% similar, else an existing topic whose name sits inside the condition, else a new topic named after the condition. On the 1,361 hand-placed questions this matched the hand-picked system 84% of the time. Every placement can be changed in the review before importing.
+- **Duplicates**: a new question on the same exam with the same testing point as a bank question (96% similar, or 93% with mostly the same condition words), or as an earlier question in the file, is set aside. So are questions listed in `content/approved/skipped.json`. Open one to compare and import it anyway if it is different.
 
 ## Exporting
 

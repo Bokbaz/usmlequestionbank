@@ -1,11 +1,13 @@
 import { NextResponse } from "next/server";
 import * as z from "zod";
 import { getAdminClient } from "@/lib/auth";
-import { UpsertPayload, importChunk, recomposeTopics, type ItemResult } from "@/lib/import/pipeline";
+import { ArgoPlaceItem, UpsertPayload, importChunk, placeArgo, recomposeTopics, type ItemResult } from "@/lib/import/pipeline";
 
 export const maxDuration = 120;
 
 const Body = z.discriminatedUnion("action", [
+  // ARGO pipeline exports: where each question goes before anything is saved.
+  z.object({ action: z.literal("place"), items: z.array(ArgoPlaceItem).min(1).max(25) }),
   z.object({ action: z.literal("start"), fileName: z.string().max(200).nullable(), total: z.number().int().min(0) }),
   z.object({
     action: z.literal("chunk"),
@@ -28,6 +30,14 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ error: "Invalid request", issues: parsed.error.issues.slice(0, 5) }, { status: 400 });
   const body = parsed.data;
   const sb = admin.supabase;
+
+  if (body.action === "place") {
+    try {
+      return NextResponse.json({ placements: await placeArgo(sb, body.items) });
+    } catch (e) {
+      return NextResponse.json({ error: e instanceof Error ? e.message : String(e) }, { status: 500 });
+    }
+  }
 
   if (body.action === "start") {
     const { data, error } = await sb
