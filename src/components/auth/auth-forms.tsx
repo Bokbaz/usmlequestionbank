@@ -12,7 +12,7 @@ import { claimGuestDaily } from "@/lib/daily/guest";
 import { SUPPORT_EMAIL } from "@/lib/utils";
 
 function safeNext(raw: string | null, fallback: string) {
-  return raw && raw.startsWith("/") && !raw.startsWith("//") ? raw : fallback;
+  return raw && raw.startsWith("/") && !raw.startsWith("//") && !raw.includes("\\") ? raw : fallback;
 }
 
 // Google's four-colour "G" (their brand rules require the original colours on a light button).
@@ -213,10 +213,10 @@ function CheckInbox({ email, next, onRestart }: { email: string; next: string; o
   );
 }
 
-export function SignupForm() {
+export function SignupForm({ nextPath, checkout = false }: { nextPath?: string; checkout?: boolean } = {}) {
   const router = useRouter();
   const params = useSearchParams();
-  const next = safeNext(params.get("next"), "/welcome");
+  const next = nextPath ?? safeNext(params.get("next"), "/welcome");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -225,6 +225,8 @@ export function SignupForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [checkEmail, setCheckEmail] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const Heading = checkout ? "h2" : "h1";
 
   const mismatch = confirm.length > 0 && (confirmTouched || confirm.length >= password.length) && confirm !== password;
   const matches = confirm.length >= 8 && confirm === password;
@@ -235,7 +237,7 @@ export function SignupForm() {
       setError("Use at least 8 characters for your password.");
       return;
     }
-    if (password !== confirm) {
+    if (!checkout && password !== confirm) {
       setConfirmTouched(true);
       setError("The two passwords don't match.");
       return;
@@ -272,21 +274,21 @@ export function SignupForm() {
   return (
     <form onSubmit={onSubmit} className="grid gap-5" noValidate>
       <div>
-        <h1 className="heading text-[30px] font-bold leading-tight">Create your account</h1>
-        <p className="mt-1.5 text-[15px] text-muted">Free to start, no card needed. $48 for lifetime access when you&apos;re ready.</p>
+        <Heading className="heading text-[30px] font-bold leading-tight">{checkout ? "Save your access to an account" : "Create your account"}</Heading>
+        <p className="mt-1.5 text-[15px] text-muted">{checkout ? "Continue with Google or your email, then pay securely here." : "Free to start, no card needed. $48 for lifetime access when you're ready."}</p>
       </div>
       <GoogleButton next={next} onError={setError} />
       <OrDivider />
-      <Field label="Name" htmlFor="name" hint="Shown on leaderboards. You can change it later.">
+      {!checkout && <Field label="Name" htmlFor="name" hint="Shown on leaderboards. You can change it later.">
         <Input id="name" autoComplete="name" required value={name} onChange={(e) => setName(e.target.value)} />
-      </Field>
+      </Field>}
       <Field label="Email" htmlFor="email">
         <Input id="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)} />
       </Field>
       <Field label="Password" htmlFor="password" hint="At least 8 characters.">
-        <Input id="password" type="password" autoComplete="new-password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className="relative"><Input id="password" type={showPassword ? "text" : "password"} autoComplete="new-password" required value={password} onChange={(e) => setPassword(e.target.value)} className={checkout ? "pr-16" : undefined} />{checkout && <button type="button" aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword} onClick={() => setShowPassword((visible) => !visible)} className="absolute right-3 top-1/2 -translate-y-1/2 text-[12px] font-semibold text-brand-strong">{showPassword ? "Hide" : "Show"}</button>}</div>
       </Field>
-      <Field label="Confirm password" htmlFor="confirm" error={mismatch ? "Doesn't match the password above." : null}>
+      {!checkout && <Field label="Confirm password" htmlFor="confirm" error={mismatch ? "Doesn't match the password above." : null}>
         <div className="relative">
           <Input
             id="confirm"
@@ -307,7 +309,7 @@ export function SignupForm() {
             />
           )}
         </div>
-      </Field>
+      </Field>}
       {error && (
         <p className="rounded-[8px] bg-incorrect-soft px-3 py-2.5 text-[14px] font-medium text-incorrect" role="alert">
           {error}
@@ -329,7 +331,7 @@ export function SignupForm() {
       </p>
       <p className="text-center text-[14px] text-muted">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-brand-strong hover:underline">
+        <Link href={`/login?next=${encodeURIComponent(next)}`} className="font-semibold text-brand-strong hover:underline">
           Log in
         </Link>
       </p>

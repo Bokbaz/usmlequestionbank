@@ -20,12 +20,10 @@ export function PricingTable({ currentPlan, hasWriter = false }: { currentPlan?:
     : { label: "Start free", href: "/signup" };
   const accessCta: Cta = unlocked
     ? { label: "Unlocked", href: "/settings/billing", disabled: true }
-    : { label: `Unlock for ${formatUsd(access.amountUsd)}`, href: "/api/stripe/checkout?offer=access" };
+    : { label: `Unlock for ${formatUsd(access.amountUsd)}`, href: "/checkout?offer=access" };
   const writerCta: Cta = hasWriter
     ? { label: "Active", href: "/settings/billing", disabled: true }
-    : signedIn && !unlocked
-      ? { label: "Needs Full access", href: "/settings/billing", disabled: true }
-      : { label: "Add it", href: "/api/stripe/checkout?offer=writer" };
+    : { label: signedIn && !unlocked ? "Get QBank + ARGO" : "Add ARGO", href: "/checkout?offer=writer" };
 
   return (
     <div>
@@ -142,7 +140,6 @@ function CtaButton({
   );
   return (
     <Button asChild variant={variant} size="lg" className={cn("group", className)}>
-      {/* Checkout is a route handler that redirects to Stripe: use a full navigation. */}
       {cta.href.startsWith("/api/") ? (
         <a href={cta.href} rel="nofollow">
           {label}

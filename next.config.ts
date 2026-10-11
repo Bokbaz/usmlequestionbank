@@ -24,6 +24,22 @@ const CANONICAL = "https://argonautusmle.com";
 
 const nextConfig: NextConfig = {
   htmlLimitedBots: HTML_LIMITED_BOTS,
+  async headers() {
+    const policy = [
+      "default-src 'self'",
+      `script-src 'self' 'unsafe-inline' ${process.env.NODE_ENV === "development" ? "'unsafe-eval' " : ""}https://*.stripe.com`,
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https://*.stripe.com",
+      "font-src 'self' data:",
+      "connect-src 'self' https://*.stripe.com https://*.stripe.network https://*.link.com https://*.supabase.co wss://*.supabase.co",
+      "frame-src https://*.stripe.com https://*.link.com",
+      "form-action 'self' https://*.stripe.com",
+      "base-uri 'self'",
+      "object-src 'none'",
+      "frame-ancestors 'self'",
+    ].join("; ");
+    return [{ source: "/checkout/:path*", headers: [{ key: "Content-Security-Policy", value: policy }] }];
+  },
   // Social card routes read the Geist TTFs from disk at runtime.
   outputFileTracingIncludes: {
     "/opengraph-image": ["./src/assets/fonts/*.ttf"],

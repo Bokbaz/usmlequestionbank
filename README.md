@@ -40,12 +40,43 @@ Supabase's built-in mailer only delivers to members of the Supabase organisation
 
 ## Billing
 
-Configured in `src/lib/plans.ts`; Stripe Checkout uses inline prices, so no products need creating in Stripe.
+Branded embedded Stripe Checkout lives at `/checkout`. Pricing links preserve the selected product through sign-up, email confirmation and Google sign-in. New customers can add ARGO to the lifetime purchase in one checkout; the QBank is charged once and only the generator renews.
 
-- **Full access**: $48 one-time payment (`mode: payment`). Sets the plan to `argo` with no expiry. A full refund revokes it.
-- **ARGO question writing**: $4.99/month subscription (`price_key = 'writer'`), sold only to Full-access accounts. Quota: `ARGO_WRITE_MONTHLY_LIMIT` drafts per rolling 30 days (default 15).
+- **Question Bank Lifetime Access**: $48 once. Product metadata: `app=argonaut_usmle`, `argonaut_offer=access`, `entitlement=qbank_lifetime`.
+- **ARGO Question Generator Subscription**: $4.99/month. Metadata: `app=argonaut_usmle`, `argonaut_offer=writer`, `entitlement=argo_generator`. Requires QBank access. Quota: `ARGO_WRITE_MONTHLY_LIMIT` drafts per rolling 30 days (default 15). ARGO checkout stays disabled until `ANTHROPIC_API_KEY` is set.
+- **Settings → Billing**: license status, renewal/end dates, actual transaction amounts, receipts, payment methods, and onsite cancellation/resumption. Payment-method updates and invoice downloads use the Stripe Customer Portal.
 
-Stripe setup: set `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` in Vercel, enable the customer portal (for add-on cancellation), and point a webhook at `/api/stripe/webhook` with these events: `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted`, `charge.refunded`.
+Fulfillment verifies the signature, retrieves Stripe's current objects, resolves ownership through the customer and saved Checkout Session, and validates the product metadata. It never checks an exact amount or Price ID to issue a license. New prices and coupons (including 100% off) continue granting the same product license. `STRIPE_ACCESS_PRICE_ID` and `STRIPE_WRITER_PRICE_ID` select the prices being sold; without overrides the stable lookup keys in `src/lib/plans.ts` are used. When changing a price, update the Price override and the advertised `OFFERS.amountUsd` together, keeping product metadata unchanged.
+
+`billing_apply_event` applies the event and licenses in a single database transaction. Repeated delivery is harmless, failed transactions can retry, and successful refunds are remembered even if they arrive before fulfillment. **Any successful refund, including a partial refund, revokes the licenses paid for by that charge.** For a combined initial purchase, that means both QBank and that ARGO period. Refunds of older ARGO invoices do not remove newer paid periods. A refunded current ARGO period also cancels the subscription to prevent future charges. Pending/failed refunds do not revoke access. Other paid licenses and independent admin grants are preserved.
+
+Generator access comes from paid invoices and ends when its paid period expires; an active/past-due subscription alone does not grant unpaid access. Period-end cancellation preserves the paid period. A success URL or browser refresh never grants access. `/checkout/return` polls the authenticated status endpoint until the webhook has saved the license.
+
+### Runtime setup
+
+See `.env.example`. Production secrets should be sensitive Vercel environment variables; never commit them or send them to the client.
+
+1. `STRIPE_RESTRICTED_KEY` (preferred), or existing `STRIPE_SECRET_KEY`; `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` from the **same account and mode**. Restricted permissions: Customers, Checkout Sessions, Subscriptions and Customer Portal **write**; Products, Prices, Invoices/Invoice Payments, PaymentIntents, Charges and Refunds **read**. Subscription write is needed for cancellation and refund revocation.
+2. `STRIPE_WEBHOOK_SECRET` for `https://argonautusmle.com/api/stripe/webhook`. Events are exported as `BILLING_EVENTS` in `src/lib/billing-model.ts`: Checkout completion and async success/failure, subscription created/updated/deleted, invoice paid/payment failed, charge refunded and refund updated. Pin webhook payloads to the SDK API version, currently `2026-09-30.endive`.
+3. `STRIPE_ACCESS_PRICE_ID`, `STRIPE_WRITER_PRICE_ID`, and `STRIPE_PORTAL_CONFIGURATION_ID`. The configured portal allows invoice history, payment methods and cancellation at period end.
+4. `ANTHROPIC_API_KEY` to activate generator purchases and generation.
+
+Live Argonaut catalog created on 2026-10-11:
+
+| Item | Stripe ID |
+| --- | --- |
+| QBank product | `prod_VQEoExmZbosvOX` |
+| QBank $48 Price | `price_1UPOL7Gfqh9WpBimbYXas8DJ` |
+| ARGO product | `prod_VQEonKrF6ge98B` |
+| ARGO $4.99/month Price | `price_1UPOLIGfqh9WpBimRoMU64TU` |
+| Portal configuration | `bpc_1UPOS9Gfqh9WpBimDneOtr2P` |
+| Webhook endpoint | `we_1UPOVTGfqh9WpBimzMWF01yS` |
+
+The license migration is `20261011152356_product_licenses.sql` and is applied to the linked Supabase project. Its private event/refund/manual-plan tables deliberately have no client RLS policies. Clients can read only their own public billing records; only the service role can call the fulfillment RPC.
+
+Tax collection is not enabled: no active Stripe Tax registrations were present when configuring this integration. Configure registrations and product tax codes before enabling automatic tax. See [Stripe Tax setup](https://docs.stripe.com/tax/set-up).
+
+Run `npm run test:billing` for the real PostgreSQL migration/RPC regression tests (PGlite). They cover changed/zero amounts, duplicate and out-of-order delivery, refund-before-fulfillment, bundled refunds, paid subscription periods, stale subscription events, manual grants, rollback/retry and service-role checks. Use a separate Stripe sandbox with its own catalog, webhook and keys for payment testing; never point preview test purchases at live keys. Live payment completion has not been tested until application keys are installed.
 
 ## Common tasks
 

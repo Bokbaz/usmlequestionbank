@@ -1,10 +1,4 @@
-// Commercial configuration, in one place. Stripe Checkout uses inline price data, so no
-// Stripe dashboard setup is needed beyond the API key and webhook.
-//
-// Two products:
-//   Full access           $48 once     every question, the Library and ARGO analytics; never expires
-//   ARGO question writing $4.99/month  add-on for full-access students: new questions written
-//                                      for their weakest concepts
+// Display prices. Fulfillment uses stable Stripe product identities, never these amounts.
 
 export type PlanTier = "free" | "core" | "argo";
 
@@ -15,7 +9,9 @@ export const PLAN_NAME: Record<PlanTier, string> = { free: "Free", core: "QBank"
 
 export const OFFERS = {
   access: {
-    name: "Full access",
+    name: "Question Bank Lifetime Access",
+    entitlement: "qbank_lifetime",
+    lookupKey: "argonaut_qbank_lifetime",
     amountUsd: 48,
     mode: "payment",
     tagline: "Everything, paid once. No subscription, no expiry date.",
@@ -29,7 +25,9 @@ export const OFFERS = {
     ],
   },
   writer: {
-    name: "ARGO question writing",
+    name: "ARGO Question Generator Subscription",
+    entitlement: "argo_generator",
+    lookupKey: "argonaut_argo_monthly",
     amountUsd: 4.99,
     mode: "subscription",
     tagline: "New questions written for the topics you keep missing.",

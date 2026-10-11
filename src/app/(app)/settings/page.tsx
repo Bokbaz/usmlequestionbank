@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/app/page-header";
 import { requireUser } from "@/lib/auth";
 import { SUPPORT_EMAIL } from "@/lib/utils";
 import { SettingsForm } from "./settings-form";
+import { SettingsNav } from "@/components/billing/settings-nav";
 
 export const metadata: Metadata = { title: "Settings" };
 
@@ -26,6 +27,7 @@ export default async function SettingsPage() {
           </>
         }
       />
+      <SettingsNav active="profile" />
       <SettingsForm
         initial={{
           display_name: profile.display_name ?? "",

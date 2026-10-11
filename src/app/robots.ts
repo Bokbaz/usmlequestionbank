@@ -5,6 +5,7 @@ import { SITE_URL } from "@/lib/utils";
 // crawl budget. Login and signup stay crawlable so crawlers can see their noindex tags.
 const PRIVATE = [
   "/api/",
+  "/checkout",
   "/auth/",
   "/admin",
   "/dashboard",

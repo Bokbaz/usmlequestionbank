@@ -169,7 +169,7 @@ We want you to pay for Argonaut because it works for you, not because you're stu
 
 ## Full access (${ACCESS}, one payment)
 
-If Argonaut isn't right for you, email ${MAIL} within **${REFUND_DAYS} days** of your purchase and we'll refund the full ${ACCESS}, as long as you've answered fewer than **${REFUND_MAX_ANSWERED} questions** since buying. No forms and no guilt trip. Refunds go back to the original payment method, and your account returns to the free plan.
+If Argonaut isn't right for you, email ${MAIL} within **${REFUND_DAYS} days** of your purchase and we'll refund the full amount you paid, as long as you've answered fewer than **${REFUND_MAX_ANSWERED} questions** since buying. No forms and no guilt trip. Refunds go back to the original payment method, and the license issued by that purchase is revoked.
 
 After ${REFUND_DAYS} days, or once you've answered ${REFUND_MAX_ANSWERED} questions or more, Full access isn't refundable, because by then you've had real use of the bank. If something went wrong on our side, such as a technical fault that stopped you using what you paid for, tell us and we'll put it right, including with a refund where that's fair.
 

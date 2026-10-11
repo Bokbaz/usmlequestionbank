@@ -52,9 +52,11 @@ export async function updateSession(request: NextRequest) {
     return rewrite;
   }
   if (signedIn && (path === "/login" || path === "/signup")) {
+    const next = request.nextUrl.searchParams.get("next") ?? "/dashboard";
+    const destination = new URL(next.startsWith("/") && !next.startsWith("//") && !next.includes("\\") ? next : "/dashboard", request.nextUrl.origin);
     const url = request.nextUrl.clone();
-    url.pathname = request.nextUrl.searchParams.get("next") ?? "/dashboard";
-    url.search = "";
+    url.pathname = destination.pathname;
+    url.search = destination.search;
     const redirect = NextResponse.redirect(url);
     response.cookies.getAll().forEach((c) => redirect.cookies.set(c));
     return redirect;
