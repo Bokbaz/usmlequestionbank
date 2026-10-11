@@ -3,12 +3,13 @@ import { cn } from "@/lib/utils";
 
 const NAV = Array.from({ length: 14 }, (_, i) => i + 1);
 
-// Static preview of the real test player (same layout and tokens).
+// Static preview of the real test player (same layout and tokens): a timed 20-question, 30-minute
+// block, the block length of the current Step 1 and Step 2 CK.
 export function ExamDemo() {
   return (
     <div className="overflow-hidden rounded-[8px] border border-border bg-surface shadow-[0_40px_90px_-40px_oklch(0.2_0.025_215/0.35)]">
       <div className="flex items-center gap-4 bg-ink px-4 py-2.5 text-on-ink">
-        <span className="text-[13px] font-semibold">Item 12 of 40</span>
+        <span className="text-[13px] font-semibold">Item 12 of 20</span>
         <span className="hidden items-center gap-1.5 rounded-[5px] bg-on-ink/10 px-2 py-1 text-[12px] font-semibold text-on-ink sm:inline-flex">
           <Flag className="size-3.5 fill-gold text-gold" /> Marked
         </span>
@@ -23,7 +24,7 @@ export function ExamDemo() {
             <NotebookPen className="size-3.5" /> Notes
           </span>
         </div>
-        <span className="tabular rounded-[5px] bg-on-ink/10 px-2 py-1 text-[12.5px] font-semibold">47:18</span>
+        <span className="tabular rounded-[5px] bg-on-ink/10 px-2 py-1 text-[12.5px] font-semibold" title="Block time remaining">13:42</span>
       </div>
       <div className="flex">
         <ol className="hidden w-14 shrink-0 border-r border-border bg-panel py-2 sm:block" aria-hidden>

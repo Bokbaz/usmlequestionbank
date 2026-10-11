@@ -62,7 +62,8 @@ Never `#000` or `#fff`. Data-viz palettes (`--viz-*`, `--seq-*`, `--div-*`, `--s
 ## Layout
 
 - 4px spacing base. Marketing container 1320px; app content 1240px; reading surfaces 72ch.
-- Marketing order: teal hero (headline, ARGO line + CTAs, timing tower, answer trace) → **Why Argonaut: the three selling points** (real-exam questions, ARGO, $48 lifetime) → carbon ARGO telemetry → questions → Nuggets + Library split → carbon Daily Challenge → pricing → FAQ → teal closing call → carbon footer with a full-width wordmark.
+- Marketing order: teal hero (headline, ARGO line + CTAs, timing tower, answer trace) → **Why Argonaut: the three selling points** (real-exam questions, ARGO, $48 lifetime) → pick your exam (Step 1 / Step 2 CK, live counts) → carbon ARGO telemetry → questions → Nuggets + Library split → carbon Daily Challenge → pricing → FAQ → teal closing call → carbon footer with a full-width wordmark and links to every public page.
+- Content pages (exam, free questions, subjects, Library, guides) use `components/marketing/content.tsx`: breadcrumb, eyebrow, display H1 with the lead beside it over a 2px rule, then `Section`s that alternate bg / surface / ink, ruled `LinkRows` instead of card grids, `FactSheet` timing-sheet rows, and the teal `CtaBand` to close. FAQs are native `<details>` so answers are in the HTML.
 
 ## Motion
 

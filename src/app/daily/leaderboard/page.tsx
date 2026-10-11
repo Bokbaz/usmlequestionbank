@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Flame, Zap } from "lucide-react";
+import { NOINDEX } from "@/lib/seo/metadata";
 import { createClient } from "@/lib/supabase/server";
 import { flagEmoji } from "@/lib/countries";
 import type { LeaderRow } from "@/lib/daily/types";
 import { Button } from "@/components/ui/button";
 import { cn, formatSeconds } from "@/lib/utils";
 
-export const metadata: Metadata = { title: "Leaderboard" };
+// A thin, constantly changing list: useful to players, not to search results (audit A17).
+export const metadata: Metadata = {
+  title: "Daily Challenge leaderboard",
+  description: "Today's fastest correct answers and the longest streaks in the Argonaut USMLE Daily Challenge.",
+  robots: NOINDEX,
+};
 export const dynamic = "force-dynamic";
 
 type StreakRow = { rank: number; username: string; display_name: string | null; country: string | null; streak: number; best_streak: number; is_me: boolean | null };

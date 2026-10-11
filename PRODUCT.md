@@ -16,7 +16,11 @@ Argonaut USMLE is a question bank that competes head-on with UWorld, AMBOSS and 
 
 The paid differentiator is ARGO, Argonaut's proprietary analytics engine. ARGO measures everything a student does (accuracy, timing, answer changes, confidence, distractor choices, forgetting), models what they are weakest at, and keeps generating targeted question sets until the measured weakness is gone. The question bank becomes dynamic and tailored to each student.
 
-Nuggets flag ultra-high-yield concepts. The free Daily Challenge (one brutal Step 1 question, timed, global leaderboard) is the acquisition funnel into accounts and paid plans.
+Nuggets flag ultra-high-yield concepts. The free Daily Challenge (one brutal Step 1 question, timed, global leaderboard) is the acquisition funnel into accounts and paid plans; once its day ends, each Daily question joins the free public archive.
+
+Public, no login: free questions (and past Dailies) with full explanations at stable URLs, free Library chapters, exam and subject pages, guides. These are how search engines and AI assistants find Argonaut, so their claims must be checkable: counts come live from the bank, exam facts link to usmle.org with a checked date, and competitor facts link to the competitor's own site.
+
+How questions are made (say it this way, accurately): drafted with AI from reference notes, written to the NBME Item-Writing Guide, reviewed and approved by a clinician (MD or DO) before going live. Never call an AI-drafted question physician-written.
 
 Success looks like: students trust the questions, feel measurably sharper week over week, and can see exactly why.
 
@@ -28,7 +32,7 @@ Headline: **The USMLE Qbank that studies you.** Powered by ARGO, which learns a 
 
 Three selling points, made straight after the hero and repeated through the funnel: (1) questions that are accurate to the real exam, (2) ARGO measures 16 data points on every answer to find the exact weak spots and adapt (numbers don't lie), (3) $48 for lifetime access, because education should be affordable and should never be a subscription.
 
-Motto: **a question bank that runs like a hyper-efficient Formula 1 team.** The analytics go so deep that not improving is practically a mathematical impossibility. The F1 team is the organising metaphor (telemetry, timing, pit stops, race engineer); use it with a light touch so students who don't follow F1 still understand every line.
+Motto: **a question bank that runs like a hyper-efficient Formula 1 team.** Every answer measured, every weak spot ranked, then drilled until it closes. The F1 team is the organising metaphor (telemetry, timing, pit stops, race engineer); use it with a light touch so students who don't follow F1 still understand every line. Never promise a result: no "impossible not to improve", no pass or score guarantees (the terms say we can't promise one). Describe what ARGO does instead.
 
 Two missions, stated plainly on the site:
 1. Main: do our genuine best to get every student the score they want (a Step 1 pass they never had to sweat, a Step 2 CK score they're proud of; Step 1 is pass/fail).

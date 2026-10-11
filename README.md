@@ -4,7 +4,7 @@ USMLE question bank with ARGO, an adaptive analytics engine. Next.js 16 (App Rou
 
 ## Layout
 
-- `src/app` routes: marketing (`(marketing)`), auth (`(auth)`), the signed-in app (`(app)`), the full-screen test player (`test/[id]`), the public Daily Challenge (`daily`), API routes (`api`).
+- `src/app` routes: marketing and public content (`(marketing)`), auth (`(auth)`), the signed-in app (`(app)`), the full-screen test player (`test/[id]`), the public Daily Challenge (`daily`), API routes (`api`), plus `robots.ts`, `sitemap.ts`, `manifest.ts`, `llms.txt` and social images.
 - `src/lib/aqf/parse.ts` parses the **Argonaut Question Format** used for bulk imports (see `docs/question-format.md`).
 - `src/lib/argo/` ARGO's TypeScript side: insight computations and the session planner. Per-answer model updates run in Postgres (`supabase/migrations/*engine*.sql`).
 - `src/lib/nuggets/match.ts` Nugget detection against the private high-yield index (gte-small embeddings via the `embed` Edge Function).
@@ -15,6 +15,18 @@ USMLE question bank with ARGO, an adaptive analytics engine. Next.js 16 (App Rou
 - `supabase/templates` auth emails (confirm, magic link, reset), mirrored in `supabase/config.toml`.
 - `src/app/(app)/admin` admin area: importer, question browser and AQF export, Nugget review, item analysis, Daily scheduler, users, feedback.
 - `src/lib/ai/` optional Claude features (need `ANTHROPIC_API_KEY`): importer classify/repair and ARGO question writing (write, then blind solve and keyed audit).
+
+## Public site and SEO
+
+Everything a visitor or crawler can read without an account is prerendered and refreshed hourly (ISR), with metadata in `<head>`.
+
+- **Canonical host** is `https://argonautusmle.com` (`SITE_URL` in `src/lib/utils.ts`, not an env var). `next.config.ts` 308-redirects `www.` and the `argonaut-usmle.vercel.app` alias to it (API routes on the alias are left alone for webhooks). Every indexable page sets a self-canonical through `pageMetadata()` (`src/lib/seo/metadata.ts`); never put a canonical in a layout.
+- **Public data** comes from `src/lib/public/content.ts` (service role, server only). It is the one place that decides what is public: published bank questions only; full text only for `is_free` questions and past Daily Challenges; full Library text only for free chapters. Locked chapters render as title and summary with `noindex`.
+- **Pages**: exam pages (`/usmle-step-1-question-bank`, `/usmle-step-2-ck-question-bank`), free questions (`/free-usmle-practice-questions` and per exam), one page per public question (`/practice-questions/<exam>/<code>-<topic>`; old slugs redirect), the public Library (`/library`; signed-in users are rewritten to the in-app Library at `/study/library` by the proxy), subject pages (`src/lib/public/hubs.ts`), guides and the UWorld comparison (`src/lib/public/guides.ts`), `/features/argo`, `/about`, `/editorial-policy`.
+- **Facts that go stale**: official exam format and outline shares live in `src/lib/exams.ts` (`OFFICIAL_CHECKED`); competitor prices and counts in `src/lib/public/competitors.ts` (`CHECKED`). Re-check them against the linked sources and update the date together.
+- **Crawling**: `src/app/robots.ts` (AI search crawlers read everything public; training-only crawlers get marketing pages only, matching the terms), `src/app/sitemap.ts` (indexable URLs only), `src/app/llms.txt/route.ts`, structured data in `src/lib/seo/schema.ts` (no ratings or claims the page doesn't show), social cards via `opengraph-image.tsx` files and `src/lib/seo/og.tsx` (Geist TTFs in `src/assets/fonts`, OFL).
+- **Adding a subject page**: add an entry to `HUBS` (check the classification is clean first) and a two-line `page.tsx` plus `opengraph-image.tsx` at its path. It appears in the footer, sitemap and llms.txt automatically.
+- **Search Console / Bing**: verify the domain by DNS, or set `GOOGLE_SITE_VERIFICATION` / `BING_SITE_VERIFICATION` for meta-tag verification, then submit `/sitemap.xml`.
 
 ## Environment
 

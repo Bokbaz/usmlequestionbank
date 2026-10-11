@@ -11,12 +11,12 @@ import { DrillChapterButton } from "./drill-button";
 
 type Catalog = { id: number; slug: string; title: string; summary: string | null; system_slug: string; system_name: string; is_free: boolean; reading_minutes: number; question_count: number; has_nugget: boolean; unlocked: boolean };
 
-export async function generateMetadata({ params }: PageProps<"/library/[slug]">): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps<"/study/library/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   return { title: slug.replace(/-/g, " ").replace(/^\w/, (c) => c.toUpperCase()) };
 }
 
-export default async function ArticlePage({ params }: PageProps<"/library/[slug]">) {
+export default async function ArticlePage({ params }: PageProps<"/study/library/[slug]">) {
   const { slug } = await params;
   await requireUser(`/library/${slug}`);
   const supabase = await createClient();

@@ -115,11 +115,11 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
             <p className="eyebrow flex items-center gap-2 text-on-ink-muted">
               <Zap className="size-3.5 text-signal" /> Daily Challenge #{state.number}
             </p>
-            <h1 className="display mt-5 text-[clamp(34px,3.2vw,46px)] font-bold">
+            <h2 className="display mt-5 text-[clamp(34px,3.2vw,46px)] font-bold">
               One question.
               <br />
               Two minutes.
-            </h1>
+            </h2>
             <p className="mt-5 max-w-[46ch] text-[16px] leading-relaxed text-on-ink-muted">
               Today&apos;s question is a hard one, from {state.system ?? "any system"}
               {state.discipline ? ` (${state.discipline.toLowerCase()})` : ""}. The clock starts when you reveal it. Right
@@ -225,10 +225,10 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
             <p className={cn("eyebrow", r?.is_correct ? "text-on-ink-muted" : "text-faint")}>Daily Challenge #{state.number}</p>
-            <h1 className="mt-3 flex items-center gap-3 text-[34px] font-bold tracking-[-0.02em]">
+            <h2 className="mt-3 flex items-center gap-3 text-[34px] font-bold tracking-[-0.02em]">
               {r?.is_correct ? <Check className="size-8 text-correct" strokeWidth={3} /> : <X className="size-8 text-incorrect" strokeWidth={3} />}
               {r?.is_correct ? (r.score > 0 ? `Correct in ${formatSeconds(r.time_ms)}` : "Correct") : r?.timed_out ? "Out of time" : "Not today"}
-            </h1>
+            </h2>
             <p className={cn("mt-2 text-[15px]", r?.is_correct ? "text-on-ink-muted" : "text-muted")}>
               {r?.is_correct
                 ? r.score > 0

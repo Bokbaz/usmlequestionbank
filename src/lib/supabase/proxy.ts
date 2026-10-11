@@ -1,7 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const PROTECTED = ["/dashboard", "/qbank", "/tests", "/test/", "/performance", "/argo", "/notebook", "/flashcards", "/settings", "/admin", "/nuggets"];
+const PROTECTED = ["/dashboard", "/qbank", "/tests", "/test/", "/performance", "/argo", "/notebook", "/flashcards", "/settings", "/admin", "/nuggets", "/study"];
+
+// Same URL, two Libraries: signed-in students get the in-app Library (their unlocked chapters, drill
+// buttons, sidebar) from /study/library; everyone else, crawlers included, gets the public
+// catalogue prerendered at /library.
+const isLibrary = (path: string) => (path === "/library" || path.startsWith("/library/")) && !path.includes("opengraph-image");
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -36,6 +41,15 @@ export async function updateSession(request: NextRequest) {
     const redirect = NextResponse.redirect(url);
     response.cookies.getAll().forEach((c) => redirect.cookies.set(c));
     return redirect;
+  }
+  if (signedIn && isLibrary(path)) {
+    const url = request.nextUrl.clone();
+    url.pathname = `/study${path}`;
+    const rewrite = NextResponse.rewrite(url, { request });
+    response.cookies.getAll().forEach((c) => rewrite.cookies.set(c));
+    const cacheControl = response.headers.get("cache-control");
+    if (cacheControl) rewrite.headers.set("cache-control", cacheControl);
+    return rewrite;
   }
   if (signedIn && (path === "/login" || path === "/signup")) {
     const url = request.nextUrl.clone();

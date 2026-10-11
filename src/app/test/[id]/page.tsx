@@ -3,9 +3,10 @@ import { notFound, redirect } from "next/navigation";
 import { TestPlayer } from "@/components/player/test-player";
 import type { PlayerData } from "@/components/player/types";
 import { getProfile, getUser } from "@/lib/auth";
+import { NOINDEX } from "@/lib/seo/metadata";
 import { createClient } from "@/lib/supabase/server";
 
-export const metadata: Metadata = { title: "Test" };
+export const metadata: Metadata = { title: "Test", robots: NOINDEX };
 
 export default async function TestPage({ params, searchParams }: PageProps<"/test/[id]">) {
   const { id } = await params;

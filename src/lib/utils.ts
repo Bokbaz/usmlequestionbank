@@ -39,7 +39,9 @@ export function clamp(n: number, min: number, max: number) {
   return Math.min(max, Math.max(min, n));
 }
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://argonaut-usmle.vercel.app";
+// Canonical origin for metadata, canonicals, sitemaps and structured data. Fixed on purpose so
+// previews and the vercel.app alias always point search engines at the real domain.
+export const SITE_URL = "https://argonautusmle.com";
 
 export const SUPPORT_EMAIL = "support@argonautusmle.com";
 

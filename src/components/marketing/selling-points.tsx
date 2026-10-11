@@ -2,34 +2,18 @@
 
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
+import { DATA_POINTS } from "@/lib/argo/data-points";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
-// What ARGO logs on every answer. Mirrors the attempts table; keep in sync with AnswerTrace.
-const DATA_POINTS = [
-  "Right or wrong",
-  "Time taken",
-  "First answer picked",
-  "Final answer picked",
-  "Number of changes",
-  "Right-to-wrong or wrong-to-right",
-  "How sure you were",
-  "Struck out the right answer",
-  "Opened lab values",
-  "Position in the block",
-  "Organ system",
-  "Discipline",
-  "Physician task",
-  "Topic",
-  "Predicted vs actual",
-  "Days since you last saw it",
-];
 
 const EXAM_SPECS = [
   "Full clinical vignettes with one best answer",
-  "Mapped to the official USMLE content outline",
-  "All five choices explained, not just the right one",
+  "Written to the NBME Item-Writing Guide, approved by a clinician",
+  "Mapped to the official USMLE content outlines",
+  "Every answer choice explained, not just the right one",
+  "Timed blocks of 20 questions in 30 minutes, like the 2026 exam",
   "Test-day screen: timer, lab values, highlighter, strike-out",
 ];
 
@@ -111,11 +95,11 @@ export function SellingPoints() {
         }
       >
         <p>
-          Every question is written the way the real exam writes them: a full patient case, one best answer, no trick wording.
-          Practice that looks like test day is practice that carries over to test day.
+          Every question follows the NBME Item-Writing Guide, the rules the real exam&apos;s writers work to: a full patient case, one
+          best answer, no trick wording. A clinician reviews each one before it goes live.
         </p>
         <p>
-          You also get an explanation for every answer choice, not just the right one, so you learn why the other four are wrong. That
+          You also get an explanation for every answer choice, not just the right one, so you learn why the others are wrong. That
           is usually where the points are hiding.
         </p>
       </Row>
@@ -154,7 +138,7 @@ export function SellingPoints() {
           around the worst one. When it closes, ARGO moves on to the next.
         </p>
         <p className="font-semibold text-text">
-          Numbers don&apos;t lie. Put the reps in, and not improving becomes very hard to do.
+          Numbers don&apos;t lie. You see exactly which topics cost you points, and whether the last session closed the gap.
         </p>
       </Row>
 
@@ -174,7 +158,7 @@ export function SellingPoints() {
               ))}
             </dl>
             <p className="mt-5 border-t border-border pt-4 text-[13.5px] leading-snug text-muted">
-              Every question, every explanation, ARGO and the Library. Free to start, no card needed.
+              Every question, every explanation, ARGO and the Library, for as long as Argonaut runs. Free to start, no card needed.
             </p>
           </div>
         }

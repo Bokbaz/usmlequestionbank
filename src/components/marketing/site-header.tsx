@@ -9,14 +9,19 @@ import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 
+// Plain links so crawlers see every public entry point (audit A18): both exams, free practice,
+// the Library, ARGO and pricing.
 const NAV = [
-  { href: "/daily", label: "Daily Challenge" },
-  { href: "/#argo", label: "ARGO" },
-  { href: "/#library", label: "Library" },
+  { href: "/usmle-step-1-question-bank", label: "Step 1" },
+  { href: "/usmle-step-2-ck-question-bank", label: "Step 2 CK" },
+  { href: "/free-usmle-practice-questions", label: "Free questions" },
+  { href: "/daily", label: "Daily" },
+  { href: "/library", label: "Library" },
+  { href: "/features/argo", label: "ARGO" },
   { href: "/pricing", label: "Pricing" },
 ];
 
-// Transparent over the signal-orange hero, solid once the page scrolls.
+// Transparent over the teal hero, solid once the page scrolls.
 export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
@@ -40,17 +45,17 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
         signal ? "on-signal border-b border-transparent bg-transparent" : "border-b border-border bg-surface",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1320px] items-center gap-8 px-5 md:px-8">
+      <div className="mx-auto flex h-16 max-w-[1320px] items-center gap-6 px-5 md:px-8 xl:gap-8">
         <Link href="/" aria-label="Argonaut USMLE home" className="shrink-0">
           <Logo tone={signal ? "signal" : "default"} />
         </Link>
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
           {NAV.map((n) => (
             <Link
               key={n.href}
               href={n.href}
               className={cn(
-                "rounded-[4px] px-3 py-2 text-[14px] font-bold transition-colors duration-150",
+                "rounded-[4px] px-2.5 py-2 text-[14px] font-bold transition-colors duration-150 xl:px-3",
                 signal ? "text-on-brand hover:bg-on-brand/10" : "text-muted hover:text-text",
               )}
             >
@@ -58,7 +63,7 @@ export function SiteHeader({ overHero = true }: { overHero?: boolean }) {
             </Link>
           ))}
         </nav>
-        <div className="ml-auto hidden items-center gap-2 md:flex">
+        <div className="ml-auto hidden items-center gap-2 lg:flex">
           {signedIn ? (
             <Button asChild variant={signal ? "carbon" : "primary"} size="md">
               <Link href="/dashboard">Open dashboard</Link>
@@ -86,7 +91,7 @@ function MobileMenu({ signal, signedIn }: { signal: boolean; signedIn: boolean }
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <button
-          className={cn("ml-auto grid size-10 place-items-center rounded-[4px] md:hidden", signal ? "text-on-brand" : "text-text")}
+          className={cn("ml-auto grid size-10 place-items-center rounded-[4px] lg:hidden", signal ? "text-on-brand" : "text-text")}
           aria-label="Open menu"
         >
           <Menu className="size-5" />

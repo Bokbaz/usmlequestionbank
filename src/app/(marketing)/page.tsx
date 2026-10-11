@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ArgoMark } from "@/components/brand/logo";
@@ -13,41 +14,33 @@ import { NuggetDemo } from "@/components/marketing/nugget-demo";
 import { LibraryDemo } from "@/components/marketing/library-demo";
 import { DailyTeaser } from "@/components/marketing/daily-teaser";
 import { PricingTable } from "@/components/marketing/pricing-table";
-import { Faq } from "@/components/marketing/faq";
+import { Faq, PRODUCT_FAQ } from "@/components/marketing/faq";
+import { Ruler } from "@/components/marketing/ruler";
+import { JsonLd } from "@/components/seo/json-ld";
+import { EXAMS, EXAM_KEYS } from "@/lib/exams";
+import { getBankStats, type BankStats } from "@/lib/public/content";
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, pageMetadata } from "@/lib/seo/metadata";
+import { PRODUCT_ID, faqPage, fullAccessProduct, organization, webPage, website } from "@/lib/seo/schema";
 import { createPublicClient } from "@/lib/supabase/public";
 import type { DailyState, LeaderRow } from "@/lib/daily/types";
 
 export const revalidate = 60;
 
+export const metadata: Metadata = pageMetadata({ title: { absolute: DEFAULT_TITLE }, description: DEFAULT_DESCRIPTION, path: "/" });
+
 async function getData() {
+  const stats = getBankStats().catch(() => null);
   try {
     const sb = createPublicClient();
     const [daily, leaders] = await Promise.all([sb.rpc("daily_today", { p_guest: null }), sb.rpc("daily_leaderboard", { p_limit: 5 })]);
     return {
       daily: (daily.data as DailyState) ?? null,
       leaders: (leaders.data as LeaderRow[]) ?? [],
+      stats: await stats,
     };
   } catch {
-    return { daily: null, leaders: [] };
+    return { daily: null, leaders: [], stats: await stats };
   }
-}
-
-// Fine tick marks along an edge: the "measured to the millimetre" motif.
-function Ruler({ id, className }: { id: string; className?: string }) {
-  return (
-    <svg className={className} width="100%" height="14" aria-hidden>
-      <defs>
-        <pattern id={id} width="80" height="14" patternUnits="userSpaceOnUse">
-          <rect x="0" width="1.5" height="14" fill="currentColor" />
-          <rect x="40" width="1" height="9" fill="currentColor" />
-          {[8, 16, 24, 32, 48, 56, 64, 72].map((x) => (
-            <rect key={x} x={x} width="1" height="5" fill="currentColor" opacity="0.7" />
-          ))}
-        </pattern>
-      </defs>
-      <rect width="100%" height="14" fill={`url(#${id})`} />
-    </svg>
-  );
 }
 
 // A faint accuracy trace behind the hero copy, drawn once on load.
@@ -93,7 +86,7 @@ const BANK_FACTS = [
 ];
 
 export default async function HomePage() {
-  const { daily, leaders } = await getData();
+  const { daily, leaders, stats } = await getData();
 
   return (
     <>
@@ -104,7 +97,7 @@ export default async function HomePage() {
           <HeroBackdrop />
           <div className="relative mx-auto max-w-[1320px] px-5 pt-28 md:px-8 md:pt-36">
             <div className="flex items-center gap-4 motion-safe:animate-[fade-up_700ms_var(--ease-out-expo)_both]">
-              <p className="eyebrow">USMLE Step 1 · Step 2 CK</p>
+              <p className="eyebrow">USMLE Step 1 &amp; Step 2 CK question bank</p>
               <span className="h-px flex-1 bg-on-brand/30" />
               <p className="readout hidden text-[12px] text-on-brand-muted sm:block">ARGO · 16 channels · live</p>
             </div>
@@ -124,6 +117,7 @@ export default async function HomePage() {
                       line
                     )}
                   </span>
+                  {i === 0 ? " " : null}
                 </span>
               ))}
             </h1>
@@ -178,6 +172,8 @@ export default async function HomePage() {
           </div>
         </section>
 
+        <ExamPaths stats={stats} />
+
         {/* ARGO: the motto, shown as telemetry */}
         <section id="argo" className="relative bg-ink text-on-ink">
           <div className="mx-auto max-w-[1320px] px-5 py-28 md:px-8 md:py-36">
@@ -187,7 +183,7 @@ export default async function HomePage() {
                 <p className="eyebrow text-on-ink-muted">ARGO analytics</p>
               </div>
               <h2 className="display mt-7 max-w-[22ch] text-[clamp(34px,4.6vw,68px)] font-bold">
-                Analytics so deep, not improving is practically a <span className="text-signal">mathematical impossibility.</span>
+                Every answer measured. Every weak spot ranked. <span className="text-signal">Then drilled until it closes.</span>
               </h2>
             </Reveal>
 
@@ -210,7 +206,12 @@ export default async function HomePage() {
               </ol>
               <Reveal delay={0.1}>
                 <Telemetry />
-                <p className="mt-4 text-[13px] text-on-ink-muted">Example data. Dashed lines mark ARGO sessions.</p>
+                <p className="mt-4 text-[13px] text-on-ink-muted">
+                  Example data. Dashed lines mark ARGO sessions.{" "}
+                  <Link href="/features/argo" className="font-semibold text-on-ink underline decoration-signal underline-offset-4 hover:text-signal">
+                    How ARGO picks your next questions
+                  </Link>
+                </p>
               </Reveal>
             </div>
           </div>
@@ -224,7 +225,9 @@ export default async function HomePage() {
                 <p className="eyebrow text-brand-strong">The questions</p>
                 <h2 className="display mt-6 text-[clamp(36px,4.4vw,64px)] font-bold">Feels like test day. That&apos;s the point.</h2>
                 <p className="mt-6 max-w-[46ch] text-[18px] leading-relaxed text-muted">
-                  Written to NBME standards. Every answer choice explained: the right one, and the four that tempted you.
+                  Written to the NBME Item-Writing Guide and approved by a clinician before it goes live. Timed blocks run 20 questions
+                  in 30 minutes, the same block length as the real exam since May 2026. Every answer choice explained: the right one, and
+                  the ones that tempted you.
                 </p>
               </Reveal>
               <Reveal delay={0.08} className="lg:col-span-5 lg:col-start-8">
@@ -240,6 +243,21 @@ export default async function HomePage() {
             </div>
             <Reveal delay={0.1} className="mt-16">
               <ExamDemo />
+              <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-[15px] font-bold">
+                {[
+                  { href: "/free-usmle-practice-questions", label: "Try a free question" },
+                  { href: "/editorial-policy", label: "How we write and review questions" },
+                  { href: "/guides/usmle-exam-interface", label: "The 2026 exam format" },
+                ].map((l) => (
+                  <Link
+                    key={l.href}
+                    href={l.href}
+                    className="inline-flex items-center gap-2 text-text underline decoration-brand-strong decoration-2 underline-offset-[6px] hover:decoration-text"
+                  >
+                    {l.label} <ArrowRight className="size-4" />
+                  </Link>
+                ))}
+              </div>
             </Reveal>
           </div>
         </section>
@@ -262,7 +280,8 @@ export default async function HomePage() {
               <p className="eyebrow text-brand-strong">The Library</p>
               <h2 className="display mt-6 text-[clamp(34px,3.8vw,56px)] font-bold">Read it. Then drill it.</h2>
               <p className="mt-5 max-w-[44ch] text-[17px] leading-relaxed text-muted">
-                Short, high-yield chapters for every system, built from the explanations. One click takes you from a chapter to its
+                {stats ? `${stats.chapters.toLocaleString("en-US")} short, high-yield chapters` : "Short, high-yield chapters"} for every
+                system, built from the key takeaways of the questions{stats ? `, ${stats.freeChapters} of them free to read` : ""}. One click takes you from a chapter to its
                 questions.
               </p>
               <div className="mt-10">
@@ -338,6 +357,63 @@ export default async function HomePage() {
           </div>
         </section>
       </main>
+      <JsonLd
+        graph={[
+          organization(),
+          website(),
+          webPage({ path: "/", name: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, extra: { about: { "@id": PRODUCT_ID } } }),
+          fullAccessProduct(stats?.total),
+          faqPage("/", PRODUCT_FAQ),
+        ]}
+      />
     </>
+  );
+}
+
+// The two exam journeys, with live counts from the bank.
+function ExamPaths({ stats }: { stats: BankStats | null }) {
+  const copy = {
+    step1: "Mechanisms and foundational science through full clinical vignettes, mapped to the Step 1 content outline.",
+    step2ck: "Clinical decisions: the next best step in diagnosis and management, across every Step 2 CK system.",
+  } as const;
+  return (
+    <section className="border-y border-border bg-panel">
+      <div className="mx-auto max-w-[1320px] px-5 py-20 md:px-8 md:py-24">
+        <Reveal className="grid gap-6 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-7">
+            <p className="eyebrow text-brand-strong">Pick your exam</p>
+            <h2 className="display mt-6 text-[clamp(34px,4vw,60px)] font-bold">Step 1 or Step 2 CK. One price covers both.</h2>
+          </div>
+          <p className="max-w-[40ch] text-[17px] leading-relaxed text-muted lg:col-span-5">
+            Each exam has its own bank, written for what that exam tests. Start with the free questions, no account needed.
+          </p>
+        </Reveal>
+        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-12">
+          {EXAM_KEYS.map((key, i) => {
+            const exam = EXAMS[key];
+            const s = stats?.exams[key];
+            return (
+              <Reveal key={key} delay={i * 0.08} className="border-t-2 border-text pt-6">
+                <div className="flex flex-wrap items-baseline justify-between gap-4">
+                  <h3 className="display text-[clamp(30px,3vw,44px)] font-bold">{exam.long}</h3>
+                  {s && <p className="readout text-[14px] text-brand-strong">{s.total.toLocaleString("en-US")} questions · {s.systems.length} systems</p>}
+                </div>
+                <p className="mt-4 max-w-[52ch] text-[16.5px] leading-relaxed text-muted">{copy[key]}</p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <Button asChild size="lg" className="group">
+                    <Link href={exam.bankPath}>
+                      {exam.name} question bank <ArrowRight className="size-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                    </Link>
+                  </Button>
+                  <Button asChild size="lg" variant="secondary">
+                    <Link href={exam.freePath}>{s ? `${s.free} free ${exam.name} questions` : `Free ${exam.name} questions`}</Link>
+                  </Button>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 }

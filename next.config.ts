@@ -1,7 +1,53 @@
 import type { NextConfig } from "next";
 
+// User agents that get page metadata in <head> instead of streamed into <body>: Next's default
+// list, plus Googlebot, AI crawlers and SEO tools, which read the raw HTML. Public pages are
+// prerendered anyway; this covers the dynamic ones.
+const HTML_LIMITED_BOTS = new RegExp(
+  [
+    // Next.js defaults (next/dist/shared/lib/router/utils/html-bots)
+    "[\\w-]+-Google", "Google-[\\w-]+", "Chrome-Lighthouse", "Slurp", "DuckDuckBot", "baiduspider", "yandex", "sogou",
+    "bitlybot", "tumblr", "vkShare", "quora link preview", "redditbot", "ia_archiver", "Bingbot", "BingPreview", "applebot",
+    "facebookexternalhit", "facebookcatalog", "Twitterbot", "LinkedInBot", "Slackbot", "Discordbot", "WhatsApp",
+    "SkypeUriPreview", "Yeti", "googleweblight",
+    // Search, AI assistants and crawlers that don't run JavaScript
+    "Googlebot", "GoogleOther", "GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "Claude-SearchBot",
+    "PerplexityBot", "Perplexity-User", "CCBot", "Amazonbot", "Bytespider", "meta-externalagent", "DuckAssistBot",
+    "MistralAI-User", "cohere-ai",
+    // Anything else that says it is a bot
+    "bot\\b", "crawler", "spider",
+  ].join("|"),
+  "i",
+);
+
+const CANONICAL = "https://argonautusmle.com";
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  htmlLimitedBots: HTML_LIMITED_BOTS,
+  // Social card routes read the Geist TTFs from disk at runtime.
+  outputFileTracingIncludes: {
+    "/opengraph-image": ["./src/assets/fonts/*.ttf"],
+    "/**/opengraph-image": ["./src/assets/fonts/*.ttf"],
+  },
+  async redirects() {
+    return [
+      // One preferred host: https://argonautusmle.com. (www needs a DNS record pointing at Vercel.)
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.argonautusmle.com" }],
+        destination: `${CANONICAL}/:path*`,
+        permanent: true,
+      },
+      // The vercel.app alias serves the same site. API routes are left alone so webhooks that
+      // still point there keep working.
+      {
+        source: "/:path((?!api/).*)",
+        has: [{ type: "host", value: "argonaut-usmle.vercel.app" }],
+        destination: `${CANONICAL}/:path`,
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

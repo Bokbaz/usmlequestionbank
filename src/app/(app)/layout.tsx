@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { MobileTopbar, Sidebar } from "@/components/app/sidebar";
 import { effectivePlan, getProfile, getUser } from "@/lib/auth";
+import { NOINDEX } from "@/lib/seo/metadata";
+
+// Private study area: never in search results (and anonymous requests redirect to /login).
+export const metadata: Metadata = { robots: NOINDEX };
 
 export default async function AppLayout({ children }: { children: React.ReactNode }) {
   const user = await getUser();

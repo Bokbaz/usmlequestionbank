@@ -37,6 +37,12 @@ export function DailyTeaser({ daily, leaders }: { daily: DailyState | null; lead
                 <Link href="/daily/leaderboard">Full leaderboard</Link>
               </Button>
             </div>
+            <Link
+              href="/daily#archive"
+              className="mt-6 inline-flex items-center gap-2 text-[15px] font-bold text-on-ink underline decoration-signal decoration-2 underline-offset-[6px] hover:text-signal"
+            >
+              Past challenges, free with full explanations <ArrowRight className="size-4" />
+            </Link>
             {daily?.available && (
               <dl className="mt-12 grid max-w-[520px] grid-cols-3 border-t border-on-ink/15 pt-6">
                 <div>

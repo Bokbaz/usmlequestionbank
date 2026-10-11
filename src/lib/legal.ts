@@ -5,6 +5,7 @@ import { SUPPORT_EMAIL } from "@/lib/utils";
 // if a feature starts collecting new data or a price changes, update these and LEGAL_UPDATED.
 
 export const LEGAL_UPDATED = "10 October 2026";
+export const LEGAL_UPDATED_ISO = "2026-10-10";
 
 // Refunds for Full access: inside this window and under this much use, no questions asked.
 export const REFUND_DAYS = 14;

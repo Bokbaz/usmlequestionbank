@@ -4,6 +4,8 @@ import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { LibraryBrowser, type CatalogRow } from "./library-browser";
 
+// Signed-in Library, served at /library through a rewrite in the proxy (lib/supabase/proxy.ts).
+// Anonymous visitors and crawlers get the public catalogue at app/(marketing)/library instead.
 export const metadata: Metadata = { title: "Library" };
 
 export default async function LibraryPage() {

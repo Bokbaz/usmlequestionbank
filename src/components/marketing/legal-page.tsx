@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/marketing/content";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { Markdown } from "@/components/markdown";
+import { JsonLd } from "@/components/seo/json-ld";
+import { breadcrumbs, webPage } from "@/lib/seo/schema";
 import { SUPPORT_EMAIL } from "@/lib/utils";
 
 const DOCS = [
@@ -36,6 +39,13 @@ export function LegalPage({ title, updated, path, body }: { title: string; updat
             </nav>
           </aside>
           <article className="min-w-0 lg:col-span-8 lg:col-start-5">
+            <Breadcrumbs
+              className="mb-8"
+              items={[
+                { name: "Home", path: "/" },
+                { name: title, path },
+              ]}
+            />
             <p className="eyebrow text-brand-strong">Legal</p>
             <h1 className="display mt-5 text-[clamp(36px,4.6vw,64px)] font-bold">{title}</h1>
             <p className="readout mt-4 text-[13px] text-muted">Last updated {updated}</p>
@@ -43,6 +53,15 @@ export function LegalPage({ title, updated, path, body }: { title: string; updat
           </article>
         </div>
       </main>
+      <JsonLd
+        graph={[
+          breadcrumbs([
+            { name: "Home", path: "/" },
+            { name: title, path },
+          ]),
+          webPage({ path, name: `${title} | Argonaut USMLE`, description: `${title} for Argonaut USMLE, last updated ${updated}.`, crumbs: [{ name: title, path }] }),
+        ]}
+      />
     </>
   );
 }

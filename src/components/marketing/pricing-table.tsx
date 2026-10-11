@@ -144,7 +144,9 @@ function CtaButton({
     <Button asChild variant={variant} size="lg" className={cn("group", className)}>
       {/* Checkout is a route handler that redirects to Stripe: use a full navigation. */}
       {cta.href.startsWith("/api/") ? (
-        <a href={cta.href}>{label}</a>
+        <a href={cta.href} rel="nofollow">
+          {label}
+        </a>
       ) : (
         <Link href={cta.href} prefetch={false}>
           {label}

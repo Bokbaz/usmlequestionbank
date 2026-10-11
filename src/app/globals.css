@@ -337,6 +337,24 @@
   }
 }
 
+/* FAQ and answer reveals: native <details>, so the text is in the HTML from the start. Where the
+   browser supports it, the panel eases open instead of snapping. */
+:root {
+  interpolate-size: allow-keywords;
+}
+.faq-item::details-content,
+.reveal-panel::details-content {
+  block-size: 0;
+  overflow-y: clip;
+  transition:
+    block-size 280ms var(--ease-out-quart),
+    content-visibility 280ms allow-discrete;
+}
+.faq-item[open]::details-content,
+.reveal-panel[open]::details-content {
+  block-size: auto;
+}
+
 @keyframes expand {
   from { height: 0; opacity: 0; }
   to { height: var(--radix-accordion-content-height); opacity: 1; }
