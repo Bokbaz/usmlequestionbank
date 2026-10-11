@@ -73,12 +73,12 @@ export default async function AboutPage() {
       <Section eyebrow="How we work" title="How questions are written and checked">
         <Prose>
           <p>
-            Each question is drafted with AI from reference notes and written to the NBME Item-Writing Guide: a full patient case, one best answer and an
-            explanation for every choice. A clinician then reviews the facts, the keyed answer and every explanation, and approves the question before it goes
+            Each question is written to the NBME Item-Writing Guide: a full patient case, one best answer and an
+            explanation for every choice. An MD then reviews the facts, the keyed answer and every explanation, and approves the question before it goes
             live. Students can flag any question, and every report is read.
           </p>
           <p>
-            We say plainly where AI is used, and we never call an AI-drafted question physician-written. The <Link href="/editorial-policy">editorial policy</Link>{" "}
+            The <Link href="/editorial-policy">editorial policy</Link>{" "}
             has the full process, including corrections.
           </p>
         </Prose>

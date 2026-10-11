@@ -63,7 +63,7 @@ export const EXAM_COPY: Record<
       },
       {
         q: "Who writes the questions?",
-        a: "Each question is drafted with AI from reference notes, written to the NBME Item-Writing Guide, and reviewed and approved by a clinician before it goes live. [Read our editorial policy](/editorial-policy).",
+        a: "Each question is written to the NBME Item-Writing Guide and reviewed and approved by a clinician before it goes live. [Read our editorial policy](/editorial-policy).",
       },
       {
         q: "Can I use Argonaut alongside UWorld or AMBOSS?",
@@ -110,7 +110,7 @@ export const EXAM_COPY: Record<
       },
       {
         q: "Who writes the questions?",
-        a: "Each question is drafted with AI from reference notes, written to the NBME Item-Writing Guide, and reviewed and approved by a clinician before it goes live. [Read our editorial policy](/editorial-policy).",
+        a: "Each question is written to the NBME Item-Writing Guide and reviewed and approved by a clinician before it goes live. [Read our editorial policy](/editorial-policy).",
       },
       {
         q: "How does ARGO help with Step 2 CK?",
@@ -346,7 +346,7 @@ export async function ExamPage({ exam: key }: { exam: ExamKey }) {
         title="Who writes the questions"
         intro={
           <p>
-            Each question is drafted with AI from reference notes and written to the NBME Item-Writing Guide. A clinician reviews the facts, the keyed
+            Each question is written to the NBME Item-Writing Guide. A clinician reviews the facts, the keyed
             answer and every explanation, and approves it before it goes live.
           </p>
         }

@@ -28,7 +28,7 @@ export async function GET() {
 - Optional add-on: ARGO question writing, ${writer} a month, writes new questions for a student's weakest concepts once the bank's questions on them are used up.
 - Refunds: full refund within ${REFUND_DAYS} days of purchase if fewer than ${REFUND_MAX_ANSWERED} questions have been answered.
 - Format: single-best-answer clinical vignettes, tutor and timed modes. Timed blocks default to ${DEFAULT_BLOCK} questions in 30 minutes (90 seconds per question), matching the USMLE block format in use since May 2026.
-- How questions are made: drafted with AI from reference notes, written to the NBME Item-Writing Guide, then reviewed and approved by a clinician (MD or DO) before going live. Students can report problems on any question.
+- How questions are made: written to the NBME Item-Writing Guide, then reviewed and approved by a clinician (MD or DO) before going live. Students can report problems on any question.
 - ARGO: records 16 data points per answer (accuracy, timing, confidence, answer changes, topic history) and builds sessions of weak-spot questions, confusion drills, spaced retests and coverage scouts. It does not predict USMLE scores.
 - Free: ${n(s.publicQuestions)} practice questions with full explanations (including every past Daily Challenge), free Library chapters, and a daily Step 1 question challenge with a global leaderboard.
 - Exams covered: USMLE Step 1 and Step 2 CK. Step 3 is planned, not available yet.

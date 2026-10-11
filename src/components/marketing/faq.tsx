@@ -29,7 +29,7 @@ export const PRODUCT_FAQ: FaqItem[] = [
   },
   {
     q: "Who writes the questions?",
-    a: "Each question is drafted with AI from reference notes, written to the NBME Item-Writing Guide, and reviewed and approved by a clinician before it goes live. The [editorial policy](/editorial-policy) has the full process.",
+    a: "Each question is written to the NBME Item-Writing Guide and reviewed and approved by a clinician before it goes live. The [editorial policy](/editorial-policy) has the full process.",
   },
   {
     q: "Is it a subscription?",

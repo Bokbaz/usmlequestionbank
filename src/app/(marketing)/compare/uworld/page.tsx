@@ -27,7 +27,7 @@ export default async function CompareUworldPage() {
     ["Try before you buy", `${free} free questions, no account`, "No trial account; a demo with a few sample questions"],
     ["Self-assessments", "None", "One to three included with 90-day and longer plans"],
     ["Adaptive practice", "ARGO: sessions built around your weak spots", "Not compared here"],
-    ["How questions are written", "AI-drafted to the NBME Item-Writing Guide, approved by a clinician", "Not compared here"],
+    ["How questions are written", "Written to the NBME Item-Writing Guide, reviewed by an MD", "Not compared here"],
     ["Refunds", `Full refund within ${REFUND_DAYS} days if under ${REFUND_MAX_ANSWERED} questions answered`, "See UWorld's terms"],
   ];
 

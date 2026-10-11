@@ -20,7 +20,7 @@ Nuggets flag ultra-high-yield concepts. The free Daily Challenge (one brutal Ste
 
 Public, no login: free questions (and past Dailies) with full explanations at stable URLs, free Library chapters, exam and subject pages, guides. These are how search engines and AI assistants find Argonaut, so their claims must be checkable: counts come live from the bank, exam facts link to usmle.org with a checked date, and competitor facts link to the competitor's own site.
 
-How questions are made (say it this way, accurately): drafted with AI from reference notes, written to the NBME Item-Writing Guide, reviewed and approved by a clinician (MD or DO) before going live. Never call an AI-drafted question physician-written.
+How questions are made: the full process (drafted with AI from reference notes, written to the NBME Item-Writing Guide, reviewed and approved by a clinician (MD or DO) before going live) is stated on the editorial policy page only. Everywhere else, say questions are written to the NBME Item-Writing Guide and approved by a clinician, and link to the editorial policy. Never call an AI-drafted question physician-written.
 
 Success looks like: students trust the questions, feel measurably sharper week over week, and can see exactly why.
 

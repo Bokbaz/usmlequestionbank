@@ -117,8 +117,8 @@ export function QuestionView({ q, headingLevel = 2 }: { q: PublicQuestion; headi
 
       <footer className="mt-8 grid gap-2 border-t border-border pt-5 text-[13.5px] leading-relaxed text-muted">
         <p>
-          <span className="font-semibold text-text">Written and reviewed by the Argonaut editorial team.</span> Drafted with AI from reference notes,
-          then reviewed and approved by a clinician.{" "}
+          <span className="font-semibold text-text">Written and reviewed by the Argonaut editorial team.</span> A clinician
+          approves every question before it goes live.{" "}
           <Link href="/editorial-policy" className="font-semibold text-text underline underline-offset-2">
             How we write questions
           </Link>
