@@ -167,7 +167,9 @@ export default async function CompareUworldPage() {
           <p>
             Either way, compare the questions, not the marketing. Ours are free to try: <Link href="/free-usmle-step-1-questions">Step 1</Link> and{" "}
             <Link href="/free-usmle-step-2-ck-questions">Step 2 CK</Link>. For the wider market, see{" "}
-            <Link href="/guides/usmle-question-bank-comparison">USMLE question banks compared</Link>.
+            <Link href="/guides/usmle-question-bank-comparison">USMLE question banks compared</Link>, the{" "}
+            <Link href="/guides/best-usmle-question-bank">best USMLE question bank in 2026</Link> and{" "}
+            <Link href="/compare/uworld-alternatives">UWorld alternatives</Link>.
           </p>
         </Prose>
       </Section>

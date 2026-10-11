@@ -18,7 +18,6 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/usmle-step-2-ck-question-bank", label: "USMLE Step 2 CK question bank" },
       { href: "/features/argo", label: "ARGO adaptive practice" },
       { href: "/pricing", label: "Pricing: $48 once" },
-      { href: "/compare/uworld", label: "Argonaut vs UWorld" },
     ],
   },
   {
@@ -42,6 +41,17 @@ const COLS: { title: string; links: { href: string; label: string }[] }[] = [
       { href: "/guides/usmle-step-1-study-plan", label: "Step 1 study plan" },
       { href: "/guides/usmle-step-2-ck-study-plan", label: "Step 2 CK study plan" },
       { href: "/guides/how-to-review-usmle-questions", label: "How to review Qbank questions" },
+    ],
+  },
+  {
+    title: "Compare",
+    links: [
+      { href: "/guides/best-usmle-question-bank", label: "Best USMLE question bank 2026" },
+      { href: "/compare/uworld-alternatives", label: "UWorld alternatives" },
+      { href: "/compare/amboss-alternatives", label: "AMBOSS alternatives" },
+      { href: "/compare/kaplan-alternatives", label: "Kaplan Qbank alternatives" },
+      { href: "/compare/usmle-rx-alternatives", label: "USMLE-Rx alternatives" },
+      { href: "/compare/uworld", label: "Argonaut vs UWorld" },
       { href: "/guides/usmle-question-bank-comparison", label: "USMLE question banks compared" },
     ],
   },
@@ -94,7 +104,7 @@ export async function SiteFooter() {
           </div>
         </div>
 
-        <nav aria-label="Footer" className="grid grid-cols-2 gap-x-8 gap-y-11 sm:grid-cols-3 lg:col-span-8 lg:pl-6">
+        <nav aria-label="Footer" className="grid grid-cols-2 gap-x-8 gap-y-11 sm:grid-cols-3 lg:col-span-8 lg:pl-6 xl:grid-cols-4">
           {COLS.map((c) => (
             <div key={c.title}>
               <p className="eyebrow text-on-ink-muted">{c.title}</p>

@@ -131,6 +131,7 @@ type BankRow = {
   topic_id: number | null;
   is_free: boolean;
   is_nugget: boolean;
+  created_at: string;
   updated_at: string;
 };
 
@@ -139,14 +140,14 @@ const getBankRows = cached(async (): Promise<BankRow[]> => {
   const rows = await all<BankRow & { exam: string }>((a, b) =>
     sb
       .from("questions")
-      .select("id, code, exam, system_id, discipline_id, competency_id, category_id, topic_id, is_free, is_nugget, updated_at")
+      .select("id, code, exam, system_id, discipline_id, competency_id, category_id, topic_id, is_free, is_nugget, created_at, updated_at")
       .eq("status", "published")
       .is("owner_id", null)
       .order("code")
       .range(a, b),
   );
   return rows.filter((r): r is BankRow => r.exam === "step1" || r.exam === "step2ck");
-}, "public-bank-rows");
+}, "public-bank-rows-v2");
 
 type PastDaily = { day: string; number: number; questionId: string };
 
@@ -426,6 +427,9 @@ export type BankStats = {
   freeChapters: number;
   publicQuestions: number;
   pastDailies: number;
+  /** UTC date (YYYY-MM-DD) the newest currently published record was created, and how many were created in the last 30 days. */
+  latestCreated: string | null;
+  createdLast30Days: number;
 };
 
 export const getBankStats = cached(async (): Promise<BankStats> => {
@@ -450,8 +454,10 @@ export const getBankStats = cached(async (): Promise<BankStats> => {
     freeChapters: catalog.filter((c) => c.free).length,
     publicQuestions: publicQs.length,
     pastDailies: publicQs.filter((q) => q.daily).length,
+    latestCreated: rows.reduce<string | null>((a, r) => (a && a > r.created_at ? a : r.created_at), null)?.slice(0, 10) ?? null,
+    createdLast30Days: rows.filter((r) => Date.parse(r.created_at) > Date.now() - 30 * 86_400_000).length,
   };
-}, "public-bank-stats");
+}, "public-bank-stats-v3");
 
 // ---------------------------------------------------------------- subject hubs
 

@@ -155,6 +155,10 @@ export default async function QbankComparisonGuide() {
           <Link href="/guides/how-to-review-usmle-questions" className="font-semibold text-text underline decoration-brand-strong decoration-2 underline-offset-4">
             how to review USMLE questions
           </Link>
+          . For our ranking on accuracy, price, size, free resources, adaptability and freshness, see{" "}
+          <Link href="/guides/best-usmle-question-bank" className="font-semibold text-text underline decoration-brand-strong decoration-2 underline-offset-4">
+            the best USMLE question bank in 2026
+          </Link>
           .
         </p>
       </Section>

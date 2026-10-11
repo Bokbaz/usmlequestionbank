@@ -13,6 +13,16 @@ export type Guide = {
 
 export const GUIDES: Guide[] = [
   {
+    path: "/guides/best-usmle-question-bank",
+    title: "Best USMLE Question Bank 2026: 5 Qbanks Ranked on 6 Metrics",
+    h1: "The best USMLE question bank in 2026, ranked on six metrics",
+    description:
+      "UWorld, AMBOSS, Kaplan, USMLE-Rx and Argonaut ranked on accuracy, price, question count, free resources, adaptive practice and updates, with dated sources.",
+    summary: "Five Qbanks compared on accuracy, price, size, free resources, adaptivity and freshness.",
+    published: "2026-10-11",
+    updated: "2026-10-11",
+  },
+  {
     path: "/guides/usmle-exam-interface",
     title: "2026 USMLE Exam Format: 30-Minute Blocks Explained",
     h1: "The 2026 USMLE exam format, explained",
@@ -69,6 +79,46 @@ export const GUIDES: Guide[] = [
     description:
       "A dated, Argonaut-written comparison of Argonaut and UWorld for USMLE Step 1 and Step 2 CK: price, access terms, question counts and how questions are written.",
     summary: "Price, access and features side by side, written by Argonaut.",
+    published: "2026-10-11",
+    updated: "2026-10-11",
+  },
+  {
+    path: "/compare/uworld-alternatives",
+    title: "UWorld Alternatives 2026: 4 Cheaper USMLE Qbanks Compared",
+    h1: "The best UWorld alternatives for USMLE in 2026",
+    description:
+      "Need a UWorld alternative for Step 1 or Step 2 CK? Argonaut, USMLE-Rx, AMBOSS and Kaplan compared on price, access, size, free trials and adaptive practice.",
+    summary: "Four cheaper Qbanks compared with UWorld, and when to stay.",
+    published: "2026-10-11",
+    updated: "2026-10-11",
+  },
+  {
+    path: "/compare/amboss-alternatives",
+    title: "AMBOSS Alternatives 2026: USMLE Qbanks With No Membership",
+    h1: "The best AMBOSS alternatives for USMLE in 2026",
+    description:
+      "Need an AMBOSS alternative for Step 1 or Step 2 CK? Argonaut, UWorld, USMLE-Rx and Kaplan compared on price, renewals, size, free trials and adaptivity.",
+    summary: "Qbanks without a yearly membership, compared with AMBOSS.",
+    published: "2026-10-11",
+    updated: "2026-10-11",
+  },
+  {
+    path: "/compare/kaplan-alternatives",
+    title: "Kaplan Qbank Alternatives 2026: USMLE Step 1 and Step 2 CK",
+    h1: "The best Kaplan Qbank alternatives for USMLE in 2026",
+    description:
+      "Need a Kaplan Qbank alternative for USMLE? Argonaut, UWorld, USMLE-Rx and AMBOSS compared on price, both-exam coverage, size, free trials and adaptivity.",
+    summary: "Covering both exams for less than Kaplan's two Qbanks.",
+    published: "2026-10-11",
+    updated: "2026-10-11",
+  },
+  {
+    path: "/compare/usmle-rx-alternatives",
+    title: "USMLE-Rx Alternatives 2026: Qbanks With No Yearly Renewal",
+    h1: "The best USMLE-Rx alternatives in 2026",
+    description:
+      "Need a USMLE-Rx alternative? Argonaut, UWorld, AMBOSS and Kaplan compared with Qmax on price, access length, size, free trials and adaptive practice.",
+    summary: "Alternatives to Qmax's 12-month subscription, compared.",
     published: "2026-10-11",
     updated: "2026-10-11",
   },

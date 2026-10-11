@@ -157,7 +157,22 @@ export function writerAddonProduct(): Node {
 }
 
 // Guides and comparisons: written by the editorial team, published by Argonaut QBanks.
-export function article({ path, headline, description, published, modified }: { path: string; headline: string; description: string; published: string; modified: string }): Node {
+export function article({
+  path,
+  headline,
+  description,
+  published,
+  modified,
+  citations,
+}: {
+  path: string;
+  headline: string;
+  description: string;
+  published: string;
+  modified: string;
+  /** Sources the page cites (its visible source notes). */
+  citations?: string[];
+}): Node {
   const url = absoluteUrl(path);
   return {
     "@type": "Article",
@@ -167,10 +182,12 @@ export function article({ path, headline, description, published, modified }: { 
     inLanguage: "en-US",
     datePublished: published,
     dateModified: modified,
+    image: { "@type": "ImageObject", url: absoluteUrl("/opengraph-image"), width: 1200, height: 630 },
     author: EDITORIAL_TEAM,
     publisher: { "@id": ORG_ID },
     mainEntityOfPage: { "@id": `${url}#webpage` },
     isAccessibleForFree: true,
+    ...(citations?.length ? { citation: citations.map((c) => ({ "@type": "CreativeWork", url: absoluteUrl(c) })) } : {}),
   };
 }
 
