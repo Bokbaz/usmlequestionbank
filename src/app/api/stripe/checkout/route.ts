@@ -56,15 +56,13 @@ export async function POST(request: NextRequest) {
     const metadata = { app: BILLING_APP, user_id: user.id, offer, price_key: includesWriter ? "writer" : "access" };
     const session = await stripe.checkout.sessions.create({
       customer, client_reference_id: user.id, metadata, mode: includesWriter ? "subscription" : "payment",
-      ui_mode: "embedded_page", redirect_on_completion: "if_required",
+      ui_mode: "elements",
       return_url: `${origin}/checkout/return?session_id={CHECKOUT_SESSION_ID}`,
-      integration_identifier: `argonaut_embedded_${requestId.replaceAll("-", "").slice(0, 8).split("").map((c) => String.fromCharCode(97 + parseInt(c, 16))).join("")}`,
+      integration_identifier: `argonaut_elements_${requestId.replaceAll("-", "").slice(0, 8).split("").map((c) => String.fromCharCode(97 + parseInt(c, 16))).join("")}`,
       allow_promotion_codes: true,
       line_items: prices.filter((p) => p !== null).map((price) => ({ price: price.id, quantity: 1 })),
-      branding_settings: { display_name: "Argonaut USMLE", background_color: "#f8fafb", button_color: "#015a64", font_family: "inter", border_style: "rectangular" },
-      custom_text: { submit: { message: `By purchasing, you agree to our Terms (${origin}/terms) and request immediate access. Refund policy: ${origin}/refunds.` } },
       ...(includesWriter ? { subscription_data: { metadata, billing_mode: { type: "flexible" as const } } } : { payment_intent_data: { metadata }, invoice_creation: { enabled: true } }),
-    }, { idempotencyKey: `argonaut-checkout-${user.id}-${requestId}-${includesAccess}-${includesWriter}` });
+    }, { idempotencyKey: `argonaut-checkout-elements-${user.id}-${requestId}-${includesAccess}-${includesWriter}` });
     const { error } = await db.from("billing_checkouts").upsert({ id: session.id, user_id: user.id, offer, includes_access: includesAccess, includes_writer: includesWriter, expires_at: new Date(session.expires_at * 1000).toISOString() });
     if (error) throw error;
     return NextResponse.json({ clientSecret: session.client_secret, sessionId: session.id });

@@ -40,7 +40,7 @@ Supabase's built-in mailer only delivers to members of the Supabase organisation
 
 ## Billing
 
-Branded embedded Stripe Checkout lives at `/checkout`. Pricing links preserve the selected product through sign-up, email confirmation and Google sign-in. New customers can add ARGO to the lifetime purchase in one checkout; the QBank is charged once and only the generator renews.
+Branded embedded Stripe Checkout lives at `/checkout`, using Checkout Sessions with Stripe's Payment and Express Checkout Elements (`ui_mode: elements`). The panel shows the Argonaut logo, selected products, Stripe's current total and monthly renewal, and supports promotion codes. The payment fields follow the site's light/dark theme through the Appearance API. Pricing links preserve the selected product through sign-up, email confirmation and Google sign-in. New customers can add ARGO to the lifetime purchase in one checkout; the QBank is charged once and only the generator renews.
 
 - **Question Bank Lifetime Access**: $48 once. Product metadata: `app=argonaut_usmle`, `argonaut_offer=access`, `entitlement=qbank_lifetime`.
 - **ARGO Question Generator Subscription**: $4.99/month. Metadata: `app=argonaut_usmle`, `argonaut_offer=writer`, `entitlement=argo_generator`. Requires QBank access. Quota: `ARGO_WRITE_MONTHLY_LIMIT` drafts per rolling 30 days (default 15). ARGO checkout stays disabled until `ANTHROPIC_API_KEY` is set.
