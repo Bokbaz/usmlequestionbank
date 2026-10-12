@@ -104,9 +104,9 @@ export default async function DashboardPage() {
                   body={
                     daily.state === "done" && daily.payload?.result
                       ? daily.payload.result.is_correct
-                        ? `Correct in ${formatSeconds(daily.payload.result.time_ms)} · rank #${daily.payload.result.rank} of ${daily.payload.result.players}`
+                        ? `Correct in ${formatSeconds(daily.payload.result.time_ms)} · rank #${daily.payload.result.rank.toLocaleString()} of ${daily.payload.result.players.toLocaleString()}`
                         : "Missed today. Review the explanation and come back tomorrow."
-                      : `${daily.system ?? "Mixed"} · ultra hard · 2 minutes · ${daily.players} played`
+                      : `${daily.system ?? "Mixed"} · ultra hard · 2 minutes · ${daily.players.toLocaleString()} played`
                   }
                   action={
                     <Button asChild size="sm" variant={daily.state === "done" ? "secondary" : "primary"}>

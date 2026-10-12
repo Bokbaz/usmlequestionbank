@@ -232,9 +232,9 @@ export function DailyGame({ initial }: { initial: DailyState | null }) {
             <p className={cn("mt-2 text-[15px]", r?.is_correct ? "text-on-ink-muted" : "text-muted")}>
               {r?.is_correct
                 ? r.score > 0
-                  ? `Score ${r.score} · ${signedIn ? `rank #${r.rank} of ${r.players}` : `you would rank #${r.rank} of ${r.players}`}`
+                  ? `Score ${r.score} · ${signedIn ? `rank #${r.rank.toLocaleString()} of ${r.players.toLocaleString()}` : `you would rank #${r.rank.toLocaleString()} of ${r.players.toLocaleString()}`}`
                   : "Answered too quickly to be ranked."
-                : `${state.pct_correct ?? 0}% of ${state.players} players got this one. Read the explanation below.`}
+                : `${state.pct_correct ?? 0}% of ${state.players.toLocaleString()} players got this one. Read the explanation below.`}
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
