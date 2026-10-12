@@ -18,6 +18,8 @@ export type Competitor = {
   tryFree: string;
   notes: string;
   source: string;
+  /** One price for the pricing page board: the listed cost of covering Step 1 and Step 2 CK. */
+  headline: { usd: number; label: string };
   // The six metrics of /guides/best-usmle-question-bank, one short factual line each.
   metrics: {
     /** How the company describes the way its questions match the exam. */
@@ -58,6 +60,7 @@ export const COMPETITORS: Competitor[] = [
     tryFree: "No trial account; a demo with a few sample questions",
     notes: "Plans of 90 days or longer include one to three self-assessments. QBank Plus ($448 to $848) adds medical videos.",
     source: UWORLD_S1,
+    headline: { usd: 1158, label: "Step 1 + Step 2 CK, 1 year each" },
     metrics: {
       accuracy: "Written by licensed authors; described as “at or above exam-level difficulty” and aligned to the content outline",
       price: "$349 to $749 per exam; $1,158 for a year of both",
@@ -95,6 +98,7 @@ export const COMPETITORS: Competitor[] = [
     tryFree: "5-day free trial",
     notes: "Includes the AMBOSS library, study plans and a score predictor. 30-day money-back guarantee on direct purchases.",
     source: AMBOSS_S1,
+    headline: { usd: 378, label: "6 months, then $149 a year" },
     metrics: {
       accuracy: "Clinical vignettes in “the same format” as the licensing exams; questions linked to its medical library",
       price: "$298 to $378 for a Step 1 package, plus a $149 yearly membership renewal",
@@ -136,6 +140,7 @@ export const COMPETITORS: Competitor[] = [
     tryFree: "7-day free trial",
     notes: "Two full-length practice tests with each Qbank, progress reports and an AI tutor.",
     source: KAPLAN_S1,
+    headline: { usd: 358, label: "Two Qbanks, from $199 + $159" },
     metrics: {
       accuracy: "“Exam-like questions” in an interface that replicates the exam, with step-by-step strategies",
       price: "From $199 (Step 1) plus from $159 (Step 2 CK)",
@@ -177,6 +182,7 @@ export const COMPETITORS: Competitor[] = [
     tryFree: "5-day free trial of the Rx360+ bundle",
     notes: "Includes three Step 1 and Step 2 CK self-assessments.",
     source: RX_PRICING,
+    headline: { usd: 299, label: "Both exams, 12 months" },
     metrics: {
       accuracy: "Questions that “match the difficulty” of the exam, with step-by-step explanations",
       price: "$299 for 12 months of both exams ($399 for the Rx360+ bundle)",

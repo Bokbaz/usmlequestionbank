@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Check, Minus } from "lucide-react";
 import { Breadcrumbs, Container, ContentPage, FactSheet, Section } from "@/components/marketing/content";
 import { Faq, PRODUCT_FAQ } from "@/components/marketing/faq";
+import { CountUp, PriceBoard, type BoardRow } from "@/components/marketing/price-board";
 import { PricingTableLive } from "@/components/marketing/pricing-table-live";
 import { JsonLd } from "@/components/seo/json-ld";
 import { REFUND_DAYS, REFUND_MAX_ANSWERED } from "@/lib/legal";
 import { OFFERS, formatUsd } from "@/lib/plans";
+import { CHECKED, COMPETITORS } from "@/lib/public/competitors";
 import { getBankStats } from "@/lib/public/content";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { breadcrumbs, faqPage, fullAccessProduct, webPage, writerAddonProduct } from "@/lib/seo/schema";
@@ -35,6 +37,22 @@ export default async function PricingPage() {
   ];
   const n = (x?: number) => (x == null ? "" : x.toLocaleString("en-US"));
 
+  const boardRows: BoardRow[] = [
+    { key: "argonaut", name: "Argonaut", usd: OFFERS.access.amountUsd, label: "Both exams. Forever.", argonaut: true },
+    ...COMPETITORS.map((c) => ({ key: c.key, name: c.name, usd: c.headline.usd, label: c.headline.label })),
+  ];
+  type Fact = { label: string; sub: string; to?: number; prefix?: string; suffix?: string; text?: string };
+  const facts: Fact[] = [
+    stats
+      ? { to: stats.publicQuestions, label: "free questions", sub: "Full explanations. No card, no account." }
+      : { text: "Free", label: "questions to start", sub: "Full explanations. No card, no account." },
+    stats
+      ? { to: stats.total, label: "questions in the bank", sub: "Step 1 and Step 2 CK, one payment." }
+      : { text: "All", label: "questions in the bank", sub: "Step 1 and Step 2 CK, one payment." },
+    { to: 1, label: "payment, ever", sub: "Lifetime access. Full access never renews." },
+    { to: REFUND_DAYS, suffix: " days", label: "full refund", sub: `Not for you? Email us within ${REFUND_DAYS} days, under ${REFUND_MAX_ANSWERED} questions answered.` },
+  ];
+
   // What each option includes, in plain rows (audit A14: limits, duration and add-ons in one place).
   const rows: [string, Cell, Cell][] = [
     ["Exams", "Step 1 and Step 2 CK samples", "Step 1 and Step 2 CK, in full"],
@@ -59,25 +77,53 @@ export default async function PricingPage() {
 
   return (
     <ContentPage>
-      <Container className="pb-24 pt-8 md:pt-12">
-        <Breadcrumbs items={crumbs} />
-        <div className="mt-10 grid gap-6 border-b-2 border-text pb-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <p className="eyebrow text-brand-strong">{access} once · Step 1 + Step 2 CK</p>
-            <h1 className="display mt-6 text-[clamp(40px,5.6vw,84px)] font-bold">
-              <span className="mb-3 block text-[0.34em] leading-tight tracking-[-0.02em] text-muted">USMLE question bank pricing</span>{" "}
-              Pay once. Get everything.
-            </h1>
-          </div>
-          <p className="max-w-[40ch] text-[18px] leading-relaxed text-muted lg:col-span-4">
-            {access} unlocks every question for Step 1 and Step 2 CK, the full Library and all of ARGO. No subscription, no expiry date. Add question writing
-            for {writer} a month if you want new questions built around your misses.
+      <section className="bg-ink text-on-ink">
+        <Container className="pb-16 pt-8 md:pb-24 md:pt-12">
+          <Breadcrumbs items={crumbs} className="[&_a:hover]:text-on-ink [&_ol]:text-on-ink-muted [&_span]:text-on-ink" />
+          <p className="eyebrow mt-10 text-signal">USMLE question bank pricing</p>
+          <h1 className="display mt-5 text-[clamp(44px,7vw,104px)] font-bold">
+            Pay once. <span className="text-signal">Own it for life.</span>
+          </h1>
+          <p className="mt-5 max-w-[52ch] text-[18px] leading-relaxed text-on-ink-muted">
+            Step 1 and Step 2 CK, every question, all of ARGO. No subscription, no clock, no renewals.
           </p>
-        </div>
-        <div className="mt-16">
-          <PricingTableLive />
-        </div>
-      </Container>
+          <div className="mt-12 md:mt-16">
+            <PriceBoard rows={boardRows} checked={CHECKED} compareHref="/guides/usmle-question-bank-comparison" />
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-b border-border bg-surface">
+        <Container className="grid gap-px overflow-hidden py-0 sm:grid-cols-2 lg:grid-cols-4">
+          {facts.map((f) => (
+            <div key={f.label} className="border-b border-border py-10 sm:px-6 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:first:pl-0">
+              <p className="display text-[clamp(48px,5vw,72px)] font-bold text-brand-strong">
+                {f.text ?? <CountUp to={f.to!} prefix={f.prefix} suffix={f.suffix} className="font-display tracking-[-0.04em]" />}
+              </p>
+              <p className="mt-3 text-[17px] font-bold leading-snug">{f.label}</p>
+              <p className="mt-1 text-[14.5px] leading-snug text-muted">{f.sub}</p>
+            </div>
+          ))}
+        </Container>
+      </section>
+
+      <section className="bg-bg">
+        <Container className="py-20 md:py-28">
+          <p className="display max-w-[18ch] text-[clamp(36px,5.2vw,76px)] font-bold">
+            Exam-standard questions. <span className="text-brand-strong">Not exam-standard prices.</span>
+          </p>
+          <p className="mt-6 max-w-[56ch] text-[18px] leading-relaxed text-muted">
+            Education shouldn&apos;t be gatekept. Every question is written to the NBME Item-Writing Guide and approved by a clinician, at a price a
+            student can actually pay.{" "}
+            <Link href="/editorial-policy" className="font-semibold text-text underline underline-offset-2">
+              How we write questions
+            </Link>
+          </p>
+          <div className="mt-14">
+            <PricingTableLive />
+          </div>
+        </Container>
+      </section>
 
       <Section tone="surface" eyebrow="Compare" title="What's included" intro={<p>Everything free stays free. Full access adds the rest, once.</p>}>
         <div className="overflow-x-auto">
